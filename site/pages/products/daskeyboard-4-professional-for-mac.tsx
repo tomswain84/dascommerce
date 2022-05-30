@@ -1,3 +1,4 @@
+import NKeyRollover from "@components/product/NKeyRollover"
 import ProductHeader from "@components/product/ProductHeader"
 import Banner from "@components/section/Banner"
 import FootbarRuler from "@components/section/FootbarRuler"
@@ -108,20 +109,7 @@ const D4ProfessionalForMac: VFC = () => {
         }}
       />
       <hr />
-      <Banner
-        textAlign="left"
-        background="dark"
-        padding={30}
-        title={`N-KEY <span class="text-red">ROLLOVER</span>.`}
-        description={`
-          Programmers and fast typists will love to hear that Das Keyboard 4 for Mac supports full n-key rollover (NKRO) over USB. No need to use a PS2 adapter anymore. <span class="bg-red badge">shift</span> + <span class="bg-gray-dark badge">mute</span> to toggle NKRO.
-        `}
-        image={{
-          position: 'right',
-          src: '/images/product-images/product-details/4-professional-for-mac/img-n_key_rollover.png',
-          rounded: true
-        }}
-      />
+      <NKeyRollover />
       <hr />
       <Banner
         textAlign="left"

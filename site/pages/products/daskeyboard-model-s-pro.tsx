@@ -1,3 +1,4 @@
+import NKeyRollover from "@components/product/NKeyRollover"
 import ProductHeader from "@components/product/ProductHeader"
 import Banner from "@components/section/Banner"
 import ForceDiagram from "@components/section/ForceDiagram"
@@ -76,16 +77,7 @@ const ModelSPro: VFC = () => {
         }}
       />
       <hr />
-      <Banner
-        textAlign="left"
-        title={`N-KEY <span class="text-red">ROLLOVER</span>.`}
-        description={`Gamers and fast typists will love to hear that Das Keyboard 4 supports full n-key rollover (NKRO) over USB. No need to use a PS2 adapter anymore. Just press <span class="bg-red badge">shift</span> + <span class="bg-gray-dark badge">mute</span> to toggle NKRO`}
-        image={{
-          position: 'right',
-          src: "/images/product-images/product-details/4-professional/img-n_key_rollover.png",
-          rounded: true
-        }}
-      />
+      <NKeyRollover />
       <hr />
       <Banner
         textAlign="left"
