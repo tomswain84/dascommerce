@@ -1,4 +1,5 @@
 import '../assets/scss/application.scss';
+import '../assets/scss/style.scss';
 import '../assets/scss/structure.scss';
 
 import { FC, useEffect } from 'react'

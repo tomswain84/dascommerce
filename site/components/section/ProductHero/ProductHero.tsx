@@ -12,11 +12,14 @@ interface Props {
     src: string
   }
 }
-const ProductHero: VFC<Props> = ({ heading, title, image }) => {
+const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, currency }) => {
   return (
     <>
       <div>{heading}</div>
       <div>{title}</div>
+      {hasPrice && (
+        <div>STARTING AT: <span className="text-red fw-bold">{currency || '$'}{price}</span></div>
+      )}
       <img className="img-fluid" src={image.src} alt={title} />
     </>
   )

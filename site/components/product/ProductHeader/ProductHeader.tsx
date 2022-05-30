@@ -3,16 +3,18 @@ import type { VFC } from "react"
 interface Props {
   title: string
   price: number
-  currency: '$'
+  currency?: '$'
   canBuy: boolean
 }
 const ProductHeader: VFC<Props> = ({ title, price, currency, canBuy }) => {
   return (
     <>
       <div className="d-flex justify-content-between">
-        <div>
+        <div className="d-flex align-items-end">
           <h1>{title}</h1>
-          <p>{currency}{price}</p>
+          {price && (
+            <p className="ms-2 text-lg fw-bold">{currency || '$'}{price}</p>
+          )}
         </div>
         <div>
           {canBuy && (
