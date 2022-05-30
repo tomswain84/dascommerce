@@ -20,10 +20,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head />
+      <hr />
       <Layout pageProps={pageProps}>
         <div className='container'>
           <Header />
           <Component {...pageProps} />
+          <hr />
           <Footer />
         </div>
       </Layout>

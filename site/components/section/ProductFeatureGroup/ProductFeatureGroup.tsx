@@ -2,7 +2,7 @@ import type { VFC } from "react"
 
 const ProductFeatureGroup: VFC = () => {
   return (
-    <>FEATURE GROUP</>
+    <h2 className="text-center">FEATURE GROUP</h2>
   )
 }
 export default ProductFeatureGroup

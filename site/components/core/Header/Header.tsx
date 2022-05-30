@@ -5,8 +5,8 @@ import Menu from '@components/core/Menu'
 const Header: VFC = () => {
   return (
     <div>
-      <div> Header</div>
-      <div className='d-flex justify-content-start'>
+      <h2 className='text-center'> Header</h2>
+      <div className='d-flex justify-content-between'>
         <Logo />
         <Menu />
       </div>
