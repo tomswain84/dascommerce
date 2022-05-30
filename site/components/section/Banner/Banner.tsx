@@ -2,11 +2,12 @@
 import type { VFC } from "react"
 
 interface BannerImage {
-  position: "left" | "right" | "bottom" | "top"
+  position: "left" | "right" | "bottom" | "top" | 'center'
   src: string
   rounded?: boolean
   width?: string | number
-  height?: string | number
+  height?: string | number,
+  blend?: boolean
 }
 interface SectionBannerProps {
   image: BannerImage,
@@ -54,7 +55,7 @@ const SectionBanner: VFC<SectionBannerProps> = ({ image, title, titleExtra, butt
   return (
     <div className={`d-flex justify-content-center align-items-center ${flexDirection} ${backgroundClass}`} style={{ gap: 10, padding: padding || 0 }}>
       <div className={`d-flex position-relative justify-content-center ${col}`}>
-        <img className={`img-fluid ${image.rounded ? 'rounded' : ''}`} src={image.src} alt={title} />
+        <img className={`img-fluid ${image.blend ? 'blend-plus-lighter' : ''} ${image.rounded ? 'rounded' : ''}`} src={image.src} alt={title} />
       </div>
       <div className={`text-${textAlign || 'center'} ${col} ${textColorClass}`}>
         <h5 dangerouslySetInnerHTML={{ __html: title }} />

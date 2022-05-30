@@ -9,11 +9,11 @@ interface Props {
 }
 const ProductVideo: VFC<Props> = ({ title, description, video }) => {
   return (
-    <>
-      <h2 dangerouslySetInnerHTML={{ __html: title }} />
-      <p>{description}</p>
-      <iframe src={video.src} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-    </>
+    <div className="text-center">
+      <h2 className="text-red" dangerouslySetInnerHTML={{ __html: title }} />
+      <p className="fw-bold fs-3">{description}</p>
+      <iframe className="rounded" src={video.src} height={500} width='100%' frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+    </div>
   )
 }
 export default ProductVideo

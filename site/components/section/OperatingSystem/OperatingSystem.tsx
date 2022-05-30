@@ -2,7 +2,7 @@ import type { VFC } from "react"
 
 const OperatingSystem: VFC<{}> = () => {
   return (
-    <>Operating System</>
+    <h2 className="text-center">Operating System</h2>
   )
 }
 export default OperatingSystem
