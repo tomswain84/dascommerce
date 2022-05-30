@@ -92,6 +92,9 @@
       ],
       "@utils/*": [
         "utils/*"
+      ],
+      "@data/*": [
+        "data/*"
       ]
     },
     "debug": true,
