@@ -2,7 +2,7 @@ import type { VFC } from "react"
 
 const FootbarRuler: VFC<{}> = () => {
   return (
-    <>FootbarRuler</>
+    <h2 className="text-center">FootbarRuler</h2>
   )
 }
 export default FootbarRuler

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { VFC } from "react"
 
 interface Props {
@@ -15,6 +16,7 @@ const ProductFeature: VFC<Props> = ({ caption, heading, title, description, imag
       <h2>{heading}</h2>
       <h3>{title}</h3>
       <p>{description}</p>
+      <img src={image} alt={heading} />
     </>
   )
 }

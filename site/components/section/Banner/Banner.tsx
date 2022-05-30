@@ -11,11 +11,12 @@ interface BannerImage {
 interface SectionBannerProps {
   image: BannerImage,
   title: string,
+  titleExtra?: string
   button?: string,
   description: string
   textAlign?: 'center' | 'left' | 'right'
 }
-const SectionBanner: VFC<SectionBannerProps> = ({ image, title, button, description, textAlign }) => {
+const SectionBanner: VFC<SectionBannerProps> = ({ image, title, titleExtra, button, description, textAlign }) => {
   let flexDirection, col
   switch (image.position) {
     case "right":
@@ -42,6 +43,9 @@ const SectionBanner: VFC<SectionBannerProps> = ({ image, title, button, descript
       </div>
       <div className={`text-${textAlign || 'center'} ${col}`}>
         <h5 dangerouslySetInnerHTML={{ __html: title }} />
+        {titleExtra && (
+          <h4 dangerouslySetInnerHTML={{ __html: titleExtra }} />
+        )}
         <p dangerouslySetInnerHTML={{ __html: description }} />
         {button && (
           <button className="text-capitalize">{button}</button>
