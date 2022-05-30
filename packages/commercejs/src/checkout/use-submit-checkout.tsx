@@ -5,7 +5,7 @@ import { useCallback } from 'react'
 import useSubmitCheckout, {
   UseSubmitCheckout,
 } from '@vercel/commerce/checkout/use-submit-checkout'
-import { useCheckoutContext } from '@components/checkout/context'
+import { useCheckoutContext } from '@archive/components/checkout/context'
 
 export default useSubmitCheckout as UseSubmitCheckout<typeof handler>
 
