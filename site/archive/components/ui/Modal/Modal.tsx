@@ -1,7 +1,7 @@
 import { FC, useRef, useEffect, useCallback } from 'react'
 import s from './Modal.module.css'
 import FocusTrap from '@lib/focus-trap'
-import { Cross } from '@components/icons'
+import { Cross } from '@archive/components/icons'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 interface ModalProps {

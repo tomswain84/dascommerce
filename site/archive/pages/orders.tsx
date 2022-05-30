@@ -1,8 +1,8 @@
 import type { GetStaticPropsContext } from 'next'
 import commerce from '@lib/api/commerce'
-import { Bag } from '@components/icons'
-import { Layout } from '@components/common'
-import { Container, Text } from '@components/ui'
+import { Bag } from '@archive/components/icons'
+import { Layout } from '@archive/components/common'
+import { Container, Text } from '@archive/components/ui'
 
 export async function getStaticProps({
   preview,

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import { Container } from '@components/ui'
-import { ArrowRight } from '@components/icons'
+import { Container } from '@archive/components/ui'
+import { ArrowRight } from '@archive/components/icons'
 import s from './Hero.module.css'
 import Link from 'next/link'
 interface HeroProps {

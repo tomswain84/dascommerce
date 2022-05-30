@@ -1,9 +1,9 @@
 import s from './ProductSidebar.module.css'
 import { useAddItem } from '@framework/cart'
 import { FC, useEffect, useState } from 'react'
-import { ProductOptions } from '@components/product'
+import { ProductOptions } from '@archive/components/product'
 import type { Product } from '@commerce/types/product'
-import { Button, Text, Rating, Collapse, useUI } from '@components/ui'
+import { Button, Text, Rating, Collapse, useUI } from '@archive/components/ui'
 import {
   getProductVariant,
   selectDefaultOptionFromProduct,

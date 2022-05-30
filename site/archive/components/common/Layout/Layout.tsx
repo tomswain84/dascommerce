@@ -3,17 +3,17 @@ import s from './Layout.module.css'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { CommerceProvider } from '@framework'
-import LoginView from '@components/auth/LoginView'
-import { useUI } from '@components/ui/context'
-import { Navbar, Footer } from '@components/common'
-import ShippingView from '@components/checkout/ShippingView'
-import CartSidebarView from '@components/cart/CartSidebarView'
+import LoginView from '@archive/components/auth/LoginView'
+import { useUI } from '@archive/components/ui/context'
+import { Navbar, Footer } from '@archive/components/common'
+import ShippingView from '@archive/components/checkout/ShippingView'
+import CartSidebarView from '@archive/components/cart/CartSidebarView'
 import { useAcceptCookies } from '@lib/hooks/useAcceptCookies'
-import { Sidebar, Button, LoadingDots } from '@components/ui'
-import PaymentMethodView from '@components/checkout/PaymentMethodView'
-import CheckoutSidebarView from '@components/checkout/CheckoutSidebarView'
-import { CheckoutProvider } from '@components/checkout/context'
-import { MenuSidebarView } from '@components/common/UserNav'
+import { Sidebar, Button, LoadingDots } from '@archive/components/ui'
+import PaymentMethodView from '@archive/components/checkout/PaymentMethodView'
+import CheckoutSidebarView from '@archive/components/checkout/CheckoutSidebarView'
+import { CheckoutProvider } from '@archive/components/checkout/context'
+import { MenuSidebarView } from '@archive/components/common/UserNav'
 import type { Page } from '@commerce/types/page'
 import type { Category } from '@commerce/types/site'
 import type { Link as LinkProps } from '../UserNav/MenuSidebarView'
@@ -28,22 +28,22 @@ const dynamicProps = {
   loading: Loading,
 }
 
-const SignUpView = dynamic(() => import('@components/auth/SignUpView'), {
+const SignUpView = dynamic(() => import('@archive/components/auth/SignUpView'), {
   ...dynamicProps,
 })
 
 const ForgotPassword = dynamic(
-  () => import('@components/auth/ForgotPassword'),
+  () => import('@archive/components/auth/ForgotPassword'),
   {
     ...dynamicProps,
   }
 )
 
-const FeatureBar = dynamic(() => import('@components/common/FeatureBar'), {
+const FeatureBar = dynamic(() => import('@archive/components/common/FeatureBar'), {
   ...dynamicProps,
 })
 
-const Modal = dynamic(() => import('@components/ui/Modal'), {
+const Modal = dynamic(() => import('@archive/components/ui/Modal'), {
   ...dynamicProps,
   ssr: false,
 })

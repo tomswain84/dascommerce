@@ -1,7 +1,7 @@
 import { FC, useEffect, useState, useCallback } from 'react'
 import { validate } from 'email-validator'
-import { useUI } from '@components/ui/context'
-import { Logo, Button, Input } from '@components/ui'
+import { useUI } from '@archive/components/ui/context'
+import { Logo, Button, Input } from '@archive/components/ui'
 
 interface Props {}
 

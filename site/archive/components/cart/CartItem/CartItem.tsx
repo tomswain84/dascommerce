@@ -3,12 +3,12 @@ import cn from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import s from './CartItem.module.css'
-import { useUI } from '@components/ui/context'
+import { useUI } from '@archive/components/ui/context'
 import type { LineItem } from '@commerce/types/cart'
 import usePrice from '@framework/product/use-price'
 import useUpdateItem from '@framework/cart/use-update-item'
 import useRemoveItem from '@framework/cart/use-remove-item'
-import Quantity from '@components/ui/Quantity'
+import Quantity from '@archive/components/ui/Quantity'
 
 type ItemOption = {
   name: string

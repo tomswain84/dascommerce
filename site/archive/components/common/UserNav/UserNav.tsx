@@ -1,10 +1,10 @@
 import cn from 'clsx'
 import Link from 'next/link'
 import s from './UserNav.module.css'
-import { Avatar } from '@components/common'
+import { Avatar } from '@archive/components/common'
 import useCart from '@framework/cart/use-cart'
-import { useUI } from '@components/ui/context'
-import { Heart, Bag, Menu } from '@components/icons'
+import { useUI } from '@archive/components/ui/context'
+import { Heart, Bag, Menu } from '@archive/components/icons'
 import CustomerMenuContent from './CustomerMenuContent'
 import useCustomer from '@framework/customer/use-customer'
 import React from 'react'
@@ -12,7 +12,7 @@ import {
   Dropdown,
   DropdownTrigger as DropdownTriggerInst,
   Button,
-} from '@components/ui'
+} from '@archive/components/ui'
 
 import type { LineItem } from '@commerce/types/cart'
 

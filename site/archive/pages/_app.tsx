@@ -4,8 +4,8 @@ import 'keen-slider/keen-slider.min.css'
 
 import { FC, useEffect } from 'react'
 import type { AppProps } from 'next/app'
-import { Head } from '@components/common'
-import { ManagedUIContext } from '@components/ui/context'
+import { Head } from '@archive/components/common'
+import { ManagedUIContext } from '@archive/components/ui/context'
 
 const Noop: FC = ({ children }) => <>{children}</>
 

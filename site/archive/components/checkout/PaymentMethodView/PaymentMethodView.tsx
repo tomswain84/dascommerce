@@ -2,9 +2,9 @@ import { FC } from 'react'
 import cn from 'clsx'
 
 import useAddCard from '@framework/customer/card/use-add-item'
-import { Button, Text } from '@components/ui'
-import { useUI } from '@components/ui/context'
-import SidebarLayout from '@components/common/SidebarLayout'
+import { Button, Text } from '@archive/components/ui'
+import { useUI } from '@archive/components/ui/context'
+import SidebarLayout from '@archive/components/common/SidebarLayout'
 
 import s from './PaymentMethodView.module.css'
 

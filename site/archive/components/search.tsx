@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-import { Layout } from '@components/common'
-import { ProductCard } from '@components/product'
+import { Layout } from '@archive/components/common'
+import { ProductCard } from '@archive/components/product'
 import type { Product } from '@commerce/types/product'
-import { Container, Skeleton } from '@components/ui'
+import { Container, Skeleton } from '@archive/components/ui'
 
 import useSearch from '@framework/product/use-search'
 

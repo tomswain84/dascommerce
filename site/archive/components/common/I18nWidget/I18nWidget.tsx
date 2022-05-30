@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { FC, useState } from 'react'
 import { useRouter } from 'next/router'
 import s from './I18nWidget.module.css'
-import { Cross, ChevronUp } from '@components/icons'
+import { Cross, ChevronUp } from '@archive/components/icons'
 import ClickOutside from '@lib/click-outside'
 interface LOCALE_DATA {
   name: string
