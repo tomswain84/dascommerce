@@ -2,7 +2,7 @@ import type { VFC } from "react"
 
 const RelatedProducts: VFC<{}> = () => {
   return (
-    <>Related Products</>
+    <h2>Related Products</h2>
   )
 }
 export default RelatedProducts
