@@ -1,7 +1,7 @@
 import Banner from "@components/section/Banner"
 import type { VFC } from "react"
 
-const NKeyRollover: VFC = () => {
+const NKeyRollover: VFC<{ supportMac?: boolean }> = ({ supportMac }) => {
   return (
     <Banner
       textAlign="left"
@@ -11,7 +11,7 @@ const NKeyRollover: VFC = () => {
       description={`
           Gamers and fast typists will love to hear that Das Keyboard 4 supports full n-key rollover (NKRO) over USB. No need to use a PS2 adapter anymore. Just press <span class="bg-red badge">shift</span> + <span class="bg-gray-dark badge">mute</span> to toggle NKRO.
           <br/><br/>
-          Full n-key rollover works with Windows, Linux, and Mac OS X.
+          Full n-key rollover works with Windows, Linux${supportMac || supportMac === undefined ? ', and Mac OS X' : ''}.
         `}
       image={{
         position: 'right',

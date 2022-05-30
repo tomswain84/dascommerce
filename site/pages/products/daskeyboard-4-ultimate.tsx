@@ -1,3 +1,5 @@
+import BuiltToLastVideo from "@components/product/BuiltToLastVideo"
+import CherryMXSwitches from "@components/product/CherryMXSwitches"
 import KeyboardFont from "@components/product/KeyboardFont"
 import NKeyRollover from "@components/product/NKeyRollover"
 import ProductHeader from "@components/product/ProductHeader"
@@ -55,18 +57,9 @@ const D4Ultimate: VFC = () => {
         }}
       />
       <hr />
-      <ProductVideo
-        title={`BUILD <span class="text-red">TO LAST</span>.`}
-        description='The perfect blend of technology and art.'
-        video={{
-          src: 'https://www.youtube.com/embed/9byG-aS4Hf0?rel=0'
-        }}
-      />
+      <BuiltToLastVideo />
       <hr />
-      <TextBlock
-        title={`CHERRY <span class="text-red">MX SWITCHES</span>.`}
-        description='Das Keyboard uses best-in-class, Cherry MX mechanical key switches that provide tactile and audio feedback so accurate it allows you to execute every keystroke with lightning-fast precision. Its high-performance, gold-plated switches provide the best contact and typing experience because, unlike other metals, gold does not rust, increasing the lifespan of the switch. The Das Keyboard 4 Professional mechanical keyboard is available in both the Cherry MX brown and Cherry MX blue switches.'
-      />
+      <CherryMXSwitches />
       <hr />
       <div className="row">
         <div className="col-md-6">
