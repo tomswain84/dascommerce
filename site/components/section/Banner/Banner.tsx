@@ -1,4 +1,4 @@
-import Image from "next/image"
+/* eslint-disable @next/next/no-img-element */
 import type { VFC } from "react"
 
 interface BannerImage {
@@ -20,7 +20,7 @@ const SectionBanner: VFC<SectionBannerProps> = ({ image, title, button, descript
   switch (image.position) {
     case "right":
       flexDirection = 'flex-row-reverse'
-      col = ''
+      col = 'col-md-6'
       break
     case 'bottom':
       flexDirection = 'flex-column-reverse'
@@ -32,25 +32,17 @@ const SectionBanner: VFC<SectionBannerProps> = ({ image, title, button, descript
       break
     default: // left
       flexDirection = 'flex-row'
-      col = ''
+      col = 'col-md-6'
       break
   }
   return (
     <div className={`d-flex justify-content-center align-items-center ${flexDirection}`} style={{ gap: 10 }}>
       <div className={`d-flex position-relative justify-content-center ${col}`}>
-        <Image
-          className="rounded-3"
-          src={image.src} alt={title}
-          layout="fixed"
-          width={image.width || 500} height={image.height || 500}
-          objectFit="cover"
-          quality={100}
-          unoptimized={true}
-        />
+        <img className="img-fluid" src={image.src} alt={title} />
       </div>
       <div className={`text-${textAlign || 'center'} ${col}`}>
-        <h5>{title}</h5>
-        <p>{description}</p>
+        <h5 dangerouslySetInnerHTML={{ __html: title }} />
+        <p dangerouslySetInnerHTML={{ __html: description }} />
         {button && (
           <button className="text-capitalize">{button}</button>
         )}

@@ -5,7 +5,12 @@ const ProductDetail: VFC<{ slug: string }> = ({ slug }) => {
   const product = products.find(p => p.slug === slug)
   if (!product) return null
   return (
-    <>PRODUCT PAGE</>
+    <>
+      <div className="d-flex justify-content-between">
+        <h1>{product.name}</h1>
+
+      </div>
+    </>
   )
 }
 export default ProductDetail
