@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image"
 import Link from "next/link"
 import type { VFC } from "react"
@@ -20,7 +21,7 @@ const ProductCard: VFC<{ product: Product }> = ({ product }) => {
   return (
     <div className="col-sm-6 p-2">
       <div className="card p-4 text-center border-secondary">
-        <Image src={product.image} layout="intrinsic" width={'100%'} height={300} unoptimized={true} objectFit="cover" alt={product.name} />
+        <img className="img-fluid" src={product.image} alt={product.name} />
         <hr />
         <h6>{product.collection}</h6>
         <h4>{product.name}</h4>
