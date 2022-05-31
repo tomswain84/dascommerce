@@ -31,7 +31,7 @@ const ProductScreen: VFC<Props> = ({ title, description, hasScreenBase, backgrou
       break
   }
   return (
-    <section className={`text-center ${video ? '' : 'breakout-bottom'} p-4 ${backgroundClass} ${textColorClass}`} id={video ? 'softwareVideo' : 'softwareImage'}>
+    <section className={`section-pad text-center ${video ? '' : 'breakout-bottom'} p-4 ${backgroundClass} ${textColorClass}`} id={video ? 'softwareVideo' : 'softwareImage'}>
       <h4 className="text-red">{title}</h4>
       <p className="fw-bold fs-4 animated-cursor cursor-light">{description}</p>
       <div className="col video-col">

@@ -1,6 +1,6 @@
 import HeroBanner from "@components/home/HeroBanner";
 import HomeCollection from "@components/home/HomeCollection";
-import HomeVideo from "@components/home/MonitorBanner";
+import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure";
 import SectionBanner from "@components/section/Banner";
 import Reviews from "@components/section/Reviews";
 
@@ -14,7 +14,7 @@ const Home = () => {
         <hr />
         <HomeCollection />
         <hr />
-        <HomeVideo />
+        <DragDropAppletConfigure />
         <hr />
         <SectionBanner
           title="DAS KEYBOARD VALUES"

@@ -1,4 +1,7 @@
+import CustomizeKeyboard from "@components/product/CustomizeKeyboard"
+import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure"
 import ProductHeader from "@components/product/ProductHeader"
+import QMessagePreview from "@components/product/QMessagePreview"
 import AppletsCTA from "@components/section/AppletsCTA"
 import Banner from "@components/section/Banner"
 import FeatureList from "@components/section/FeatureList"
@@ -61,38 +64,12 @@ const D5QS: VFC<{}> = () => {
       />
       <hr />
       <div className="section-pad">
-        <ProductScreen
-          title='LIMITLESS POSSIBILITIES'
-          background="light"
-          description='CONFIGURE RGB NOTIFICATIONS WITH DRAG AND DROP APPLETS'
-          hasScreenBase
-          video={{
-            src: '/video/q-applet.mp4',
-            poster: '/images/img-home-software_mockup.png'
-          }}
-        />
+        <DragDropAppletConfigure />
       </div>
       <div className="mt-5">&nbsp;</div>
-      <div className="section-pad">
-        <ProductScreen
-          title="DAS KEYBOARD Q MESSAGE PREVIEW"
-          description="PREVIEW ANY MESSAGE WITH A KEYPRESS"
-          background="dark"
-          image={{
-            src: '/images/product-images/product-details/x50q/X50Q_message_preview.gif'
-          }}
-        />
-      </div>
-      <div className="section-pad">
-        <ProductScreen
-          title="APPLETS FOR POWER USERS AND CODERS"
-          description="CUSTOMIZE YOUR KEYBOARD TO YOUR NEEDS"
-          background="dark"
-          image={{
-            src: 'https://4eighty.com/sites/daskeyboard/images/product-images/product-details/x50q/Twitch_applet_design.png'
-          }}
-        />
-      </div>
+      <QMessagePreview />
+      <hr />
+      <CustomizeKeyboard />
       <hr />
       <ProductApplets />
       <hr />

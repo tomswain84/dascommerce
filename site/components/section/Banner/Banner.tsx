@@ -34,6 +34,10 @@ const SectionBanner: VFC<SectionBannerProps> = ({ image, title, titleExtra, butt
       flexDirection = 'flex-column'
       col = 'col-md-12'
       break
+    case 'center':
+      flexDirection = 'flex-column'
+      col = 'col-md-12'
+      break
     default: // left
       flexDirection = 'flex-row'
       col = 'col-md-6'
@@ -52,16 +56,20 @@ const SectionBanner: VFC<SectionBannerProps> = ({ image, title, titleExtra, butt
       backgroundClass = 'bg-white'
       break
   }
+  const imageBlock = (
+    <div className={`d-flex position-relative justify-content-center ${col}`}>
+      <img className={`img-fluid ${image.blend ? 'blend-plus-lighter' : ''} ${image.rounded ? 'rounded' : ''}`} src={image.src} alt={title} />
+    </div>
+  )
   return (
     <div className={`d-flex justify-content-center align-items-center ${flexDirection} ${backgroundClass}`} style={{ gap: 10, padding: padding || 0 }}>
-      <div className={`d-flex position-relative justify-content-center ${col}`}>
-        <img className={`img-fluid ${image.blend ? 'blend-plus-lighter' : ''} ${image.rounded ? 'rounded' : ''}`} src={image.src} alt={title} />
-      </div>
+      {image.position !== 'center' ? imageBlock : null}
       <div className={`text-${textAlign || 'center'} ${col} ${textColorClass}`}>
         <h5 dangerouslySetInnerHTML={{ __html: title }} />
         {titleExtra && (
           <h4 dangerouslySetInnerHTML={{ __html: titleExtra }} />
         )}
+        {image.position === 'center' && imageBlock}
         <p dangerouslySetInnerHTML={{ __html: description }} />
         {button && (
           <button className="text-capitalize">{button}</button>

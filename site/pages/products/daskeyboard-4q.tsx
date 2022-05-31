@@ -1,4 +1,7 @@
+import CustomizeKeyboard from "@components/product/CustomizeKeyboard"
+import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure"
 import ProductHeader from "@components/product/ProductHeader"
+import QMessagePreview from "@components/product/QMessagePreview"
 import AppletsCTA from "@components/section/AppletsCTA"
 import Banner from "@components/section/Banner"
 import FeatureList from "@components/section/FeatureList"
@@ -55,34 +58,11 @@ const D4Q: VFC = () => {
         }}
       />
       <hr />
-      <ProductScreen
-        title="LIMITLESS POSSIBILITIES"
-        description="CONFIGURE RGB NOTIFICATIONS WITH DRAG AND DROP APPLETS"
-        hasScreenBase
-        background="light"
-        video={{
-          src: '/video/q-applet.mp4',
-          poster: '/images/img-home-software_mockup.png'
-        }}
-      />
+      <DragDropAppletConfigure />
       <hr />
-      <ProductScreen
-        title="DAS KEYBOARD Q MESSAGE PREVIEW"
-        description="PREVIEW ANY MESSAGE WITH A KEYPRESS"
-        background="dark"
-        image={{
-          src: '/images/product-images/product-details/x50q/X50Q_message_preview.gif'
-        }}
-      />
+      <QMessagePreview />
       <hr />
-      <ProductScreen
-        title="APPLETS FOR POWER USERS AND CODERS"
-        description="CUSTOMIZE YOUR KEYBOARD TO YOUR NEEDS"
-        background="dark"
-        image={{
-          src: '/images/product-images/product-details/x50q/Twitch_applet_design.png'
-        }}
-      />
+      <CustomizeKeyboard />
       <hr />
       <ProductApplets />
       <hr />
