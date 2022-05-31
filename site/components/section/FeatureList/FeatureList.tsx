@@ -2,7 +2,7 @@ import type { VFC } from "react"
 
 const FeatureList: VFC<{}> = () => {
   return (
-    <>Feature List</>
+    <h2 className="text-center">Feature List</h2>
   )
 }
 export default FeatureList
