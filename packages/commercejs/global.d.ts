@@ -1,1 +1,1 @@
-declare module '@components/checkout/context'
+declare module '@archive/components/checkout/context'

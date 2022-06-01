@@ -1,91 +1,55 @@
-import commerce from '@lib/api/commerce'
-import { Layout } from '@components/common'
-import { ProductCard } from '@components/product'
-import { Grid, Marquee, Hero } from '@components/ui'
-// import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
-import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
+import HeroBanner from "@components/home/HeroBanner";
+import HomeCollection from "@components/home/HomeCollection";
+import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure";
+import SectionBanner from "@components/section/Banner";
+import Reviews from "@components/section/Reviews";
 
-export async function getStaticProps({
-  preview,
-  locale,
-  locales,
-}: GetStaticPropsContext) {
-  const config = { locale, locales }
-  const productsPromise = commerce.getAllProducts({
-    variables: { first: 6 },
-    config,
-    preview,
-    // Saleor provider only
-    ...({ featured: true } as any),
-  })
-  const pagesPromise = commerce.getAllPages({ config, preview })
-  const siteInfoPromise = commerce.getSiteInfo({ config, preview })
-  const { products } = await productsPromise
-  const { pages } = await pagesPromise
-  const { categories, brands } = await siteInfoPromise
-
-  return {
-    props: {
-      products,
-      categories,
-      brands,
-      pages,
-    },
-    revalidate: 60,
-  }
-}
-
-export default function Home({
-  products,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+const Home = () => {
   return (
     <>
-      <Grid variant="filled">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgProps={{
-              width: i === 0 ? 1080 : 540,
-              height: i === 0 ? 1080 : 540,
-              priority: true,
-            }}
-          />
-        ))}
-      </Grid>
-      <Marquee variant="secondary">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
-        ))}
-      </Marquee>
-      <Hero
-        headline=" Dessert dragée halvah croissant."
-        description="Cupcake ipsum dolor sit amet lemon drops pastry cotton candy. Sweet carrot cake macaroon bonbon croissant fruitcake jujubes macaroon oat cake. Soufflé bonbon caramels jelly beans. Tiramisu sweet roll cheesecake pie carrot cake. "
-      />
-      <Grid layout="B" variant="filled">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgProps={{
-              width: i === 0 ? 1080 : 540,
-              height: i === 0 ? 1080 : 540,
-            }}
-          />
-        ))}
-      </Grid>
-      <Marquee>
-        {products.slice(3).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
-        ))}
-      </Marquee>
-      {/* <HomeAllProductsGrid
-        newestProducts={products}
-        categories={categories}
-        brands={brands}
-      /> */}
+      <h1>HOME PAGE</h1>
+      <div>
+        <hr />
+        <HeroBanner />
+        <hr />
+        <HomeCollection />
+        <hr />
+        <DragDropAppletConfigure />
+        <hr />
+        <SectionBanner
+          title="DAS KEYBOARD VALUES"
+          description="We are a badass company that makes badass products for badass customers. We are quality obsessed and develop all our products with premium materials."
+          button="Read More"
+          image={{
+            position: 'left',
+            src: '/images/img-home-values.png'
+          }} />
+        <hr />
+        <SectionBanner
+          title="LONG LASTING, DURABLE SWITCHES."
+          description="All of our keyboards are designed with high-performance, gold-plated mechanical key switches. Learn more about the different switches Das Keyboard offers."
+          button="Learn More"
+          image={{
+            position: 'bottom',
+            src: '/images/img-home-switches.png'
+          }}
+        />
+        <hr />
+        <SectionBanner
+          title="A BRAND NEW KEYBOARD FONT."
+          description="Das Keyboard’s key cap font has been specially designed to provide ease of reading and harmonious view of the keyboard key caps. Das Keyboard’s font looks modern while keeping some of its lines from older, well established fonts. The overall result is sleek and easily readable while not drawing unnecessary attention."
+          image={{
+            position: 'left',
+            src: '/images/product-images/product-details/4-professional/img_blueprint-D.png',
+            width: 250,
+            height: 309
+          }}
+
+        />
+        <hr />
+        <Reviews />
+      </div>
     </>
   )
-}
-
-Home.Layout = Layout
+};
+export default Home;

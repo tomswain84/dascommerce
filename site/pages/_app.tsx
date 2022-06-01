@@ -1,11 +1,12 @@
-import '@assets/main.css'
-import '@assets/chrome-bug.css'
-import 'keen-slider/keen-slider.min.css'
+import '../assets/scss/application.scss';
+import '../assets/scss/style.scss';
+import '../assets/scss/structure.scss';
 
 import { FC, useEffect } from 'react'
 import type { AppProps } from 'next/app'
-import { Head } from '@components/common'
-import { ManagedUIContext } from '@components/ui/context'
+import Head from '@components/core/Head';
+import Header from '@components/core/Header';
+import Footer from '@components/core/Footer';
 
 const Noop: FC = ({ children }) => <>{children}</>
 
@@ -19,11 +20,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head />
-      <ManagedUIContext>
-        <Layout pageProps={pageProps}>
+      <hr />
+      <Layout pageProps={pageProps}>
+        <div className='container'>
+          <Header />
           <Component {...pageProps} />
-        </Layout>
-      </ManagedUIContext>
+          <hr />
+          <Footer />
+        </div>
+      </Layout>
     </>
   )
 }

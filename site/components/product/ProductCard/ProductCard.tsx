@@ -1,138 +1,50 @@
-import { FC } from 'react'
-import cn from 'clsx'
-import Link from 'next/link'
-import type { Product } from '@commerce/types/product'
-import s from './ProductCard.module.css'
-import Image, { ImageProps } from 'next/image'
-import WishlistButton from '@components/wishlist/WishlistButton'
-import usePrice from '@framework/product/use-price'
-import ProductTag from '../ProductTag'
+/* eslint-disable @next/next/no-img-element */
+import Image from "next/image"
+import Link from "next/link"
+import type { VFC } from "react"
 
-interface Props {
-  className?: string
-  product: Product
-  noNameTag?: boolean
-  imgProps?: Omit<ImageProps, 'src' | 'layout' | 'placeholder' | 'blurDataURL'>
-  variant?: 'default' | 'slim' | 'simple'
+interface Product {
+  id: number,
+  name: string,
+  slug: string,
+  collection: string,
+  price: number,
+  currency: string | '$',
+  image: string,
+  description: string,
+  tags: string[],
+  keystroke: string,
+  switch: string
 }
 
-const placeholderImg = '/product-img-placeholder.svg'
-
-const ProductCard: FC<Props> = ({
-  product,
-  imgProps,
-  className,
-  noNameTag = false,
-  variant = 'default',
-}) => {
-  const { price } = usePrice({
-    amount: product.price.value,
-    baseAmount: product.price.retailPrice,
-    currencyCode: product.price.currencyCode!,
-  })
-
-  const rootClassName = cn(
-    s.root,
-    { [s.slim]: variant === 'slim', [s.simple]: variant === 'simple' },
-    className
-  )
-
+const ProductCard: VFC<{ product: Product }> = ({ product }) => {
   return (
-    <Link href={`/product/${product.slug}`}>
-      <a className={rootClassName} aria-label={product.name}>
-        {variant === 'slim' && (
-          <>
-            <div className={s.header}>
-              <span>{product.name}</span>
-            </div>
-            {product?.images && (
-              <div>
-                <Image
-                  quality="85"
-                  src={product.images[0]?.url || placeholderImg}
-                  alt={product.name || 'Product Image'}
-                  height={320}
-                  width={320}
-                  layout="fixed"
-                  {...imgProps}
-                />
-              </div>
-            )}
-          </>
-        )}
-
-        {variant === 'simple' && (
-          <>
-            {process.env.COMMERCE_WISHLIST_ENABLED && (
-              <WishlistButton
-                className={s.wishlistButton}
-                productId={product.id}
-                variant={product.variants[0]}
-              />
-            )}
-            {!noNameTag && (
-              <div className={s.header}>
-                <h3 className={s.name}>
-                  <span>{product.name}</span>
-                </h3>
-                <div className={s.price}>
-                  {`${price} ${product.price?.currencyCode}`}
-                </div>
-              </div>
-            )}
-            <div className={s.imageContainer}>
-              {product?.images && (
-                <div>
-                  <Image
-                    alt={product.name || 'Product Image'}
-                    className={s.productImage}
-                    src={product.images[0]?.url || placeholderImg}
-                    height={540}
-                    width={540}
-                    quality="85"
-                    layout="responsive"
-                    {...imgProps}
-                  />
-                </div>
-              )}
-            </div>
-          </>
-        )}
-
-        {variant === 'default' && (
-          <>
-            {process.env.COMMERCE_WISHLIST_ENABLED && (
-              <WishlistButton
-                className={s.wishlistButton}
-                productId={product.id}
-                variant={product.variants[0] as any}
-              />
-            )}
-            <ProductTag
-              name={product.name}
-              price={`${price} ${product.price?.currencyCode}`}
-            />
-            <div className={s.imageContainer}>
-              {product?.images && (
-                <div>
-                  <Image
-                    alt={product.name || 'Product Image'}
-                    className={s.productImage}
-                    src={product.images[0]?.url || placeholderImg}
-                    height={540}
-                    width={540}
-                    quality="85"
-                    layout="responsive"
-                    {...imgProps}
-                  />
-                </div>
-              )}
-            </div>
-          </>
-        )}
-      </a>
-    </Link>
+    <div className="col-sm-6 p-2">
+      <div className="card p-4 text-center border-secondary">
+        <img className="img-fluid" src={product.image} alt={product.name} />
+        <hr />
+        <h6>{product.collection}</h6>
+        <h4>{product.name}</h4>
+        <h4>STARTING AT {product.currency}{product.price}</h4>
+        <p>{product.description}</p>
+        <hr />
+        <div className="d-flex flex-wrap justify-content-center">
+          {product.tags.map(t => (<span key={t} className="rounded-pill px-2 border border-secondary text-nowrap m-1">{t}</span>))}
+        </div>
+        <hr />
+        <div className="d-flex justify-content-between">
+          <div className="d-flex flex-column align-items-start">
+            <strong>{product.keystroke}</strong>
+            <p>KEYSTROKE</p>
+          </div>
+          <div className="d-flex flex-column align-items-end">
+            <strong>{product.switch}</strong>
+            <p>SWITCHBRAND</p>
+          </div>
+        </div>
+        <Link href={`/products/${product.slug}`}>PRODUCT DETAILS</Link>
+      </div>
+    </div>
   )
 }
-
 export default ProductCard

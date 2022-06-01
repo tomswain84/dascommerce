@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 import { SWRHook } from '@vercel/commerce/utils/types'
 import useCheckout, { UseCheckout } from '@vercel/commerce/checkout/use-checkout'
 import useSubmitCheckout from './use-submit-checkout'
-import { useCheckoutContext } from '@components/checkout/context'
+import { useCheckoutContext } from '@archive/components/checkout/context'
 
 export default useCheckout as UseCheckout<typeof handler>
 
