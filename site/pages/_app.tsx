@@ -8,6 +8,15 @@ import Head from '@components/core/Head';
 import Header from '@components/core/Header';
 import Footer from '@components/core/Footer';
 
+// font awesome
+import { library, config } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+config.autoAddCss = false;
+library.add(fab, fas);
+
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
 const Noop: FC = ({ children }) => <>{children}</>
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -20,14 +29,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head />
-      <hr />
       <Layout pageProps={pageProps}>
-        <div className='container'>
-          <Header />
-          <Component {...pageProps} />
-          <hr />
-          <Footer />
-        </div>
+        <Header />
+        <Component {...pageProps} />
+        <hr />
+        <Footer />
       </Layout>
     </>
   )

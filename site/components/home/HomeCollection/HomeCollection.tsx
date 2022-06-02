@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import CollectionCard from "@components/collection/CollectionCard"
 import type { VFC } from "react"
 
@@ -36,19 +37,32 @@ const HomeCollection: VFC = () => {
   ]
   return (
     <>
-      <h2>A MECHANICAL KEYBOARD</h2>
-      <h4>FOR EVERY BADASS.</h4>
-      <button>SHOP ALL KEYBOARDS</button>
-      {/* collection list */}
-      <div className="row">
-        {
-          collections.map((collection, index) => (
-            <div className="col-6 mt-4" key={index} >
-              <CollectionCard collection={collection} />
+      <section id="categoryKeyboards" className="bg-white section-pad mt-5 mt-xl-0">
+        <div className="container-boxed mt-xxl-5 pt-xxl-5">
+          <div className="row mt-xxl-5">
+            <div className="col-12">
+              <figure className="heading text-center mb-0">
+                <figcaption>
+                  <h1>
+                    <small>A Mechanical Keyboard</small>
+                    <br />For Every Badass.
+                  </h1>
+                </figcaption>
+              </figure>
             </div>
-          ))
-        }
-      </div>
+            <div className="col-12 d-flex py-4">
+              <a className="btn btn-outline-primary text-gray-dark mx-auto" href="products/category-mechanical-keyboards?filter=all" title="Shop All Keyboards">Shop All Keyboards<i className="fa-solid fa-plus ms-2"></i></a>
+            </div>
+          </div>
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-2">
+            {
+              collections.map((collection, index) => (
+                <CollectionCard key={index} collection={collection} />
+              ))
+            }
+          </div>
+        </div>
+      </section >
     </>
   )
 }

@@ -91,7 +91,7 @@ hr {
 }
 hr {
   opacity: 1 !important;
-//   margin: 0 !important;
+  margin: 0 !important;
 }
 a {
   color: var(--red);
@@ -385,7 +385,7 @@ header#navPrimary ul li a {
   transition: 0.3s ease-in-out;
 }
 header#navPrimary ul li.dropdown a:not(.dropdown-item):after {
-  font-family: 'Font Awesome 6 Free';
+  /* font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   font-size: 0.75rem;
   content: '\f107' !important;
@@ -393,7 +393,16 @@ header#navPrimary ul li.dropdown a:not(.dropdown-item):after {
   margin: 0;
   padding: 0 0 0 4px;
   transform: translateY(1px);
-  color: var(--red);
+  color: var(--red); */
+  display: none;
+}
+header#navPrimary ul li.dropdown a.dropdown-toggle {
+  position: relative;
+  
+  & > svg {
+    position: absolute;
+    top: 7px;
+  }
 }
 header#navPrimary ul li.dropdown div.dropdown-menu {
   background-color: var(--graydark);
