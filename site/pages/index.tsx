@@ -4,6 +4,15 @@ import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure
 import SectionBanner from "@components/section/Banner";
 import Reviews from "@components/section/Reviews";
 
+export async function getStaticProps() {
+  return {
+    props: {
+      bodyId: 'home',
+      bodyClass: 'single-content',
+    },
+  }
+}
+
 const Home = () => {
   return (
     <>

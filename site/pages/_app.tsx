@@ -24,7 +24,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     document.body.classList?.remove('loading')
-  }, [])
+    document.body.id = pageProps.bodyId
+    document.body.classList?.add(pageProps.bodyClass)
+  })
 
   return (
     <>
