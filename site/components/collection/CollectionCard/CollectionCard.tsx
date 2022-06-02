@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link"
+import Link from "@components/core/Link"
 import type { VFC } from "react"
 
 interface Props {
@@ -21,14 +21,13 @@ const CollectionCard: VFC<{ collection: Props }> = ({ collection }) => {
             </h1>
             <Link
               href="/products/category-mechanical-keyboards?filter=${filter}"
+              className="btn btn-outline-primary stretched-link"
               passHref
             >
-              <div className="btn btn-outline-primary stretched-link" >
-                <span>
-                  View Keyboards
-                  <i className="fa-solid fa-plus text-red ms-4" />
-                </span>
-              </div>
+              <span>
+                View Keyboards
+                <i className="fa-solid fa-plus text-red ms-4" />
+              </span>
             </Link>
           </figcaption>
         </div>

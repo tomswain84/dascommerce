@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import CollectionCard from "@components/collection/CollectionCard"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { VFC } from "react"
 
 const HomeCollection: VFC = () => {
@@ -51,7 +52,12 @@ const HomeCollection: VFC = () => {
               </figure>
             </div>
             <div className="col-12 d-flex py-4">
-              <a className="btn btn-outline-primary text-gray-dark mx-auto" href="products/category-mechanical-keyboards?filter=all" title="Shop All Keyboards">Shop All Keyboards<i className="fa-solid fa-plus ms-2"></i></a>
+              <a className="btn btn-outline-primary text-gray-dark mx-auto" href="products/category-mechanical-keyboards?filter=all" title="Shop All Keyboards">
+                Shop All Keyboards
+                <i>
+                  <FontAwesomeIcon className="ms-2" icon='plus' />
+                </i>
+              </a>
             </div>
           </div>
           <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-2">
