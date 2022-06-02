@@ -71,9 +71,9 @@ const D4Professional: VFC = () => {
       </div>
       <hr />
       <Banner
+        sectionId=""
         textAlign="left"
         background="light"
-        padding={20}
         title={`<span class="text-red">OVERSIZED VOLUME KNOB</span>`}
         titleExtra='AND DEDICATED MEDIA CONTROLS'
         description={`With its large volume knob, Das Keyboard 4 allows users to quickly adjust volume while on a Skype call, in a Google hangout, or streaming online music. The Das Keyboard 4 also provides quick access to dedicated media controls such as mute, play, pause, next and previous track. A quick-access instant sleep button has been added to save energy while going to lunch or attending meetings.`}
@@ -84,6 +84,7 @@ const D4Professional: VFC = () => {
       />
       <hr />
       <Banner
+        sectionId=""
         textAlign="left"
         title={`USB 3.0 <span class="text-red">SUPERSPEED HUB</span>`}
         description='Need to transfer videos to your workstation but don’t have time to wait all day for file transfers to complete? Don’t worry. Das Keyboard 4 has a blazing fast two-port USB 3.0 hub to transfer music, high resolution pictures and large videos at up to 5Gb per second. That’s 10 times faster than USB 2.0. It is backwards compatible with all USB 2.0/1.1 devices and hosts so previous peripheral investments are protected.'
@@ -101,9 +102,9 @@ const D4Professional: VFC = () => {
       <FootbarRuler />
       <hr />
       <Banner
+        sectionId=""
         textAlign="left"
         background="dark"
-        padding={30}
         title={`EVERY DETAIL <span class="text-red">MATTERS</span>`}
         description={`
           Featuring a stunning look, Das Keyboard 4 Professional has been completely redesigned with a sleek anodized aluminum top panel, a resonance-free bottom enclosure, a magnetically attached footbar, and a laser-engraved aluminum bottom label… all which make the design feel more badass and the typing feel more responsive.

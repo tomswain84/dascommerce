@@ -21,7 +21,7 @@ interface BannerImage {
   className?: string
 }
 interface SectionBannerProps {
-  sectionId: string
+  sectionId?: string
   image: BannerImage,
   title: string,
   titleExtra?: string

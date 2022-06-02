@@ -39,7 +39,6 @@ const X50Q: VFC = () => {
         textAlign="left"
         title={`<span class="text-red">WIN AT WORK AND WIN IN THE ENDGAME</span>`}
         background='dark'
-        padding={20}
         description='A smart RGB keyboard for those that want to win at work, and at gaming. Q Software transforms the X50Q into an essential productivity tool that streamlines information gathering, keeping professionals focused and operating at the highest level of concentration. Instead of relying on alerts from different devices, the Das Keyboard X50Q displays them directly on its RGB keys. For example, if your website is down, you have been assigned a new task on Basecamp or Trello, or if your favorite Twitch user is online, the Das Keyboard X50Q will display a notification by changing the color of its keys. Built-in features include macros to play recorded keystroke sequences and multiple built-in RGB profiles.'
         image={{
           position: 'bottom',
@@ -91,7 +90,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">16.8 MILLION ULTRA BRIGHT COLORS</span>`}
             titleExtra='AT WORK OR IN YOUR CAVE, THE X50Q RGB SHINES EVERYWHERE'
             description='Due to its enhanced brightness mode(*) and its modern switch design, the X50Q delivers intense colors that are not washed out by daylight - a problem that most RGB keyboards suffer from.'
@@ -105,7 +103,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">FRICTION FREE</span>`}
             titleExtra='SOFT TOUCH PALM REST'
             description='Das Keyboard X50Q includes a frictionless detachable palm rest that helps typists rest their palms comfortably.'
@@ -119,7 +116,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">BUILT TO LAST FOR YEARS</span>`}
             titleExtra='DURABLE ALUMINUM PANEL'
             description={`
@@ -137,7 +133,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">ONE-CLICK ACTION</span>`}
             titleExtra='MACRO FUNCTIONS'
             description='Allows you to program customizable keys to perform a series of actions with one click. For example, you can set a specific pattern of keystrokes to create a specific sequence that helps you attack a space alien or to mine for materials. They can also come in handy for combinations without having to try to remember what all of the hotkeys are.'
@@ -151,7 +146,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">PREVENT INTERRUPTIONS</span>`}
             titleExtra='GAMING MODE'
             description='The X50Q has a toggle that locks the Windows key from triggering the start menu, preventing the game from being pushed to the background and enables the Function keys and the Numpad keys to be used for macro functions.'
@@ -165,7 +159,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">SIMPLE CONTROL AT YOUR FINGERTIPS</span>`}
             titleExtra='QUICK ACCESS MEDIA CONTROLS'
             description='Das Keyboard X50Q provides direct controls to quickly set sound level, play or pause songs, and adjust RGB brightness while gaming or working.'
@@ -179,7 +172,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">REGISTER ALL KEY PRESSES</span>`}
             titleExtra='FULL N-KEY ROLLOVER'
             description='With 100% anti-ghosting with full n-key rollover, no matter how many keys you press simultaneously, all of them will be reliably registered. Whether you type super fast or your gameplay finger dexterity is amazing, the X50Q NKRO is able to deliver the spanking your opponent deserve.'
@@ -193,7 +185,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">PROTECT THE ENVIRONMENT</span>`}
             titleExtra='ENERGY-SAVING SLEEP FUNCTION'
             description='A small details that makes a big difference: The X50Q has a function control to put the computer to sleep instantly. It saves energy and helps the environment.'
@@ -207,7 +198,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="center"
             background="dark"
-            padding={20}
             title={`<span class="text-red">KEEP YOUR DESK TIDY</span>`}
             titleExtra='EXTRA LONG BRAIDED CABLE'
             description='The X50Q sports an extra-long 2-meter (6.5ft) braided USB cable that goes through desk grommets to keep the desk clean.'
@@ -223,7 +213,6 @@ const X50Q: VFC = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">KEYPRESS PRECISION</span>`}
             titleExtra='WASD KEYCAPS INCLUDED'
             description='Accurate key presses are mandatory. The included gaming textured WASD keycap upgrade kit will give you a huge tactical advantage. Precision and style on your path to total domination. Key puller included as well.'
