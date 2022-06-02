@@ -1,5 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { VFC } from "react"
+import BannerBottom from "./BannerBottom"
+import BannerLeft from "./BannerLeft"
+
+interface BannerButton {
+  label: string,
+  variant: 'primary' | 'outline-primary'
+  href?: string,
+}
 
 interface BannerImage {
   position: "left" | "right" | "bottom" | "top" | 'center'
@@ -9,41 +18,26 @@ interface BannerImage {
   width?: string | number
   height?: string | number,
   blend?: boolean
+  className?: string
 }
 interface SectionBannerProps {
+  sectionId: string
   image: BannerImage,
   title: string,
   titleExtra?: string
-  button?: string,
+  button?: string | BannerButton,
   description: string
   textAlign?: 'center' | 'left' | 'right',
   background?: 'light' | 'dark'
-  padding?: number | string
+  containerPadding?: number | string
+  className?: string
+  noCol?: boolean
 }
-const SectionBanner: VFC<SectionBannerProps> = ({ image, title, titleExtra, button, description, textAlign, background, padding }) => {
-  let flexDirection, col
-  switch (image.position) {
-    case "right":
-      flexDirection = 'flex-row-reverse'
-      col = 'col-md-6'
-      break
-    case 'bottom':
-      flexDirection = 'flex-column-reverse'
-      col = 'col-md-12'
-      break
-    case 'top':
-      flexDirection = 'flex-column'
-      col = 'col-md-12'
-      break
-    case 'center':
-      flexDirection = 'flex-column'
-      col = 'col-md-12'
-      break
-    default: // left
-      flexDirection = 'flex-row'
-      col = 'col-md-6'
-      break
-  }
+export interface BannerProps extends SectionBannerProps {
+  BannerButton: () => JSX.Element | null,
+}
+const SectionBanner: VFC<SectionBannerProps> = (props) => {
+  const { sectionId, image, title, titleExtra, button, description, textAlign, background, className } = props
   let backgroundClass, textColorClass = 'text-black'
   switch (background) {
     case 'dark':
@@ -57,57 +51,57 @@ const SectionBanner: VFC<SectionBannerProps> = ({ image, title, titleExtra, butt
       backgroundClass = 'bg-white'
       break
   }
-  const imageBlock = (
-    <>
-      <div className="col-md-6 order-md-1 d-md-flex align-items-center position-relative">
-        {image.srcFull && (
-          <img className="full-image position-absolute d-none d-xxl-inline" src={image.srcFull} alt={title} />
-        )}
-        <img className="half-image img-fluid" src={image.src} alt={title} />
-      </div>
-      {/* <div className={`d-flex position-relative justify-content-center ${col}`}>
-        <img className={`img-fluid ${image.blend ? 'blend-plus-lighter' : ''} ${image.rounded ? 'rounded' : ''}`} src={image.src} alt={title} />
-      </div> */}
-    </>
-  )
+  const BannerButton = () => {
+    let buttonClass = 'btn',
+      renderingButton: BannerButton
+    if (button) {
+      if (typeof button === 'string') {
+        renderingButton = {
+          variant: 'primary',
+          label: button
+        }
+      }
+      else {
+        renderingButton = button
+      }
+      switch (renderingButton.variant) {
+        case 'primary':
+          buttonClass += ' btn-primary'
+          break
+        case 'outline-primary':
+          buttonClass += ' btn-outline-primary text-gray-dark'
+          break
+      }
+      return (
+        <a className={buttonClass} href={renderingButton.href || '#'} title={renderingButton.label}>
+          {renderingButton.label}
+          <FontAwesomeIcon icon='caret-right' className={`ms-2 ${renderingButton.variant === 'outline-primary' ? 'text-red' : ''}`} />
+        </a>
+      )
+    }
+    return null
+  }
+
+  const bannerProps = {
+    BannerButton,
+    ...props,
+    textAlign: textAlign || 'center'
+  }
+  const BannerComponent = () => {
+    switch (image.position) {
+      case 'left':
+        return <BannerLeft {...bannerProps} />
+      case 'bottom':
+        return <BannerBottom {...bannerProps} />
+      default:
+        return null
+    }
+  }
+
   return (
-    <>
-      <section id="values" className="bg-gray-darker dark-section pt-5">
-        <div className="container-boxed pt-md-5 mt-xl-5">
-          <div className="row mt-xxl-5">
-            <div className="col-md-6 order-md-2 d-md-flex align-items-end align-items-xxl-start">
-              <figure className="heading text-center mt-5 mt-md-3 pt-md-5">
-                <figcaption>
-                  <h1 dangerouslySetInnerHTML={{ __html: title }} />
-                </figcaption>
-                <p dangerouslySetInnerHTML={{ __html: description }} />
-                {button && (
-                  <a className="btn btn-primary" href="values" title="Read More">
-                    {button}
-                    <i className="fa-solid fa-caret-right ms-2"></i>
-                  </a>
-                )}
-              </figure>
-            </div>
-            {imageBlock}
-          </div>
-        </div>
-      </section>
-      {/* <div className={`d-flex justify-content-center align-items-center ${flexDirection} ${backgroundClass}`} style={{ gap: 10, padding: padding || 0 }}>
-        {image.position !== 'center' ? imageBlock : null}
-        <div className={`text-${textAlign || 'center'} ${col} ${textColorClass}`}>
-          <h5 dangerouslySetInnerHTML={{ __html: title }} />
-          {titleExtra && (
-            <h4 dangerouslySetInnerHTML={{ __html: titleExtra }} />
-          )}
-          {image.position === 'center' && imageBlock}
-          <p dangerouslySetInnerHTML={{ __html: description }} />
-          {button && (
-            <button className="text-capitalize">{button}</button>
-          )}
-        </div>
-      </div> */}
-    </>
+    <section id={sectionId} className={`${className || ''} ${backgroundClass}`}>
+      <BannerComponent />
+    </section>
   )
 }
 
