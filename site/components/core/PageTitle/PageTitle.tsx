@@ -25,8 +25,7 @@ const defaultProps: Props = {
 }
 const PageTitle: VFC<Props> = (props = defaultProps) => {
   const { title, type, product } = props
-  const isProduct = type === 'product' && typeof product == 'object'
-  console.log(isProduct, product)
+  const isProduct = type === 'product'
   const isCategory = type === 'category'
   return (
     <section id="pageTitle" className="bg-gray-darker text-white">
@@ -35,17 +34,13 @@ const PageTitle: VFC<Props> = (props = defaultProps) => {
           <div className="col text-center d-sm-flex align-items-center justify-content-between">
             <h1>
               {stripHTML(title, true)}
-              {isProduct && (
-                <>
-                  {product.price && product.currency && (
-                    <span className="price text-red small d-block d-md-inline">
-                      {product.currency}{product.price}
-                    </span>
-                  )}
-                </>
+              {isProduct && product && product.price && product.currency && (
+                <span className="price text-red small d-block d-md-inline">
+                  {product.currency}{product.price}
+                </span>
               )}
             </h1>
-            {isProduct && (
+            {isProduct && product && (
               <div id="productCTA" className="mb-4 mb-sm-0 d-sm-flex align-items-center justify-content-end d-none">
                 {product.canBuy && (
                   <a id="buyNow" className="btn btn-blue" href={product.buyUrl} title="Buy Now">Buy Now</a>
