@@ -23,9 +23,24 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as any).Layout || Noop
 
   useEffect(() => {
+    async function loadBootstrap() {
+      // await import bootstrap scripts
+      const bootstrap = await import('bootstrap')
+      // initial the tooltips
+      const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+    }
+    loadBootstrap()
+
     document.body.classList?.remove('loading')
-    document.body.id = pageProps.bodyId
-    document.body.classList?.add(pageProps.bodyClass)
+    if (pageProps.bodyId) {
+      document.body.id = pageProps.bodyId
+    }
+    if (pageProps.bodyClass) {
+      document.body.classList?.add(pageProps.bodyClass.split(' '))
+    }
   })
 
   return (

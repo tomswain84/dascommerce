@@ -1,12 +1,7 @@
 import NextHead from 'next/head'
-import { useEffect, VFC } from 'react'
+import { VFC } from 'react'
 
 const Head: VFC = () => {
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      require('bootstrap/dist/js/bootstrap')
-    }
-  }, [])
   return (
     <NextHead>
       {/* Required meta tags */}

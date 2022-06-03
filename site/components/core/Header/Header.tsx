@@ -7,7 +7,7 @@ import Link from '../Link'
 
 const Header: VFC = () => {
   return (
-    <div>
+    <>
       <section id="navSecondary" className="bg-gray-dark">
         <div className="container-boxed">
           <div className="row text-gray-medium d-flex align-items-center">
@@ -301,7 +301,7 @@ const Header: VFC = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   )
 }
 export default Header

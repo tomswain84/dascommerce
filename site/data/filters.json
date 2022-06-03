@@ -1,0 +1,52 @@
+[
+  {
+    "name": "All",
+    "tag": "all",
+    "filter": "all"
+  },
+  {
+    "name": "Supercharged",
+    "tag": "supercharged",
+    "filter": "supercharged"
+  },
+  {
+    "name": "Minimalist",
+    "tag": "minimalist",
+    "filter": "minimalist"
+  },
+  {
+    "name": "Backlit",
+    "tag": "backlit",
+    "filter": "backlit"
+  },
+  {
+    "name": "Smart RGB",
+    "tag": "smart-rgb",
+    "filter": "smartrgb"
+  },
+  {
+    "name": "Aluminum",
+    "tag": "aluminum",
+    "filter": "aluminum"
+  },
+  {
+    "name": "For PC",
+    "tag": "pc",
+    "filter": "forpc"
+  },
+  {
+    "name": "For Mac",
+    "tag": "mac",
+    "filter": "formac"
+  },
+  {
+    "name": "For Linux",
+    "tag": "linux",
+    "filter": "linux"
+  },
+  {
+    "name": "Ubuntu",
+    "tag": "ubuntu",
+    "filter": "ubuntu"
+  }
+]
