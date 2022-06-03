@@ -22,7 +22,6 @@ const CollectionCard: VFC<{ collection: Props }> = ({ collection }) => {
             <Link
               href="/products/category-mechanical-keyboards?filter=${filter}"
               className="btn btn-outline-primary stretched-link"
-              passHref
             >
               <span>
                 View Keyboards
