@@ -39,7 +39,6 @@ const D5QS: VFC<{}> = () => {
       <Banner
         textAlign="left"
         background="dark"
-        padding={20}
         title={`<span class="text-red">THE INFORMATION YOU NEED - ON YOUR KEYBOARD</span>`}
         description={`
           The Das Keyboard 5QS is the second generation of the 5Q keyboard, the smart RGB mechanical keyboard that helps boost productivity by displaying information (e.g. weather, stock quotes, project progress, CPU usage, etc..) in color on the keyboard’s keys. Smart RGB mechanical keyboard with macros to play recorded keystroke sequences and multiple built-in RGB profiles. Built-in features include macros to play recorded keystroke sequences, multiple built-in RGB profiles and effects, and an RGB profile editor.
@@ -84,7 +83,6 @@ const D5QS: VFC<{}> = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">2X BRIGHTER: RGB+</span>`}
             titleExtra='BRILLIANT COLORS THAT ARE NOT WASHED OUT'
             description={`
@@ -105,7 +103,6 @@ const D5QS: VFC<{}> = () => {
             <Banner
               textAlign="left"
               background="dark"
-              padding={20}
               title={`<span class="text-red">ALUMINUM TOP</span>`}
               titleExtra='BUILT TO LAST'
               description='Das Keyboard 5QS sports an anodized black aluminum top panel. Made with first-class electronics this top panel will be serving you for years to come.'
@@ -120,7 +117,6 @@ const D5QS: VFC<{}> = () => {
           <Banner
             textAlign="left"
             background="dark"
-            padding={20}
             title={`<span class="text-red">DETACHABLE WRIST REST</span>`}
             titleExtra='COMFORTABLE TYPING'
             description='Das Keyboard 5QS features a detachable wrist rest that’s attached magnetically and helps typists rest their palms comfortably.'

@@ -742,7 +742,7 @@ section#reviews ul.nav-tabs li {
   align-items: center;
   justify-content: center;
 }
-section#reviews ul.nav-tabs li:before {
+/* section#reviews ul.nav-tabs li:before {
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   color: var(--red);
@@ -752,7 +752,7 @@ section#reviews ul.nav-tabs li:first-of-type:before {
 }
 section#reviews ul.nav-tabs li:nth-of-type(2):before {
   content: '\f007';
-}
+} */
 section#reviews ul.nav-tabs li a {
   opacity: 0.25;
   font-size: 0.75rem;

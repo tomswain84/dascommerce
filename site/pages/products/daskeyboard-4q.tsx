@@ -40,7 +40,6 @@ const D4Q: VFC = () => {
       <Banner
         textAlign="left"
         background="dark"
-        padding={'40px 20px 40px 20px'}
         title={`<span class="text-red">THE INFORMATION YOU NEED - ON YOUR KEYBOARD</span>`}
         description="The Das Keyboard 4Q is the smart RGB Cherry MX version of the iconic industry-standard Das Keyboard 4 Professional. It is the ultimate productivity tool that keeps programmers focused on writing software and operating at the highest level of concentration. No more unwanted interruptions. Instead of relying on snooze-able, momentary alerts from different devices, the Das Keyboard 4Q ambiently tracks the most important information directly on its RGB keys. Users can configure it for their needs. For example, if a website is down or you have been assigned a new task, or if the software build fails, the Das Keyboard 4Q will change color and let you know."
         image={{
@@ -85,7 +84,6 @@ const D4Q: VFC = () => {
         <Banner
           textAlign="left"
           background="dark"
-          padding={20}
           title={`<span class="text-red">DURABLE ALUMINUM PANEL</span>`}
           titleExtra="BUILT TO LAST FOR YEARS"
           description="Das Keyboard 4Q sports an anodized black aluminum top panel. Made with first-class electronics this top panel will be serving you for years to come."
@@ -99,7 +97,6 @@ const D4Q: VFC = () => {
         <Banner
           textAlign="left"
           background="dark"
-          padding={20}
           title={`<span class="text-red">KEEP YOUR GAMING SPACE CLEAN</span>`}
           titleExtra="EXTRA LONG BRAIDED CABLE"
           description="The 4Q sports a 2-meter (6.5ft) braided USB cable that goes through desk grommets to keep the desk clean."
@@ -113,7 +110,6 @@ const D4Q: VFC = () => {
         <Banner
           textAlign="left"
           background="dark"
-          padding={20}
           title={`<span class="text-red">USB CONVENIENCE AT YOUR FINGERTIPS</span>`}
           titleExtra="TWO-PORT USB HUB"
           description="Das Keyboard 4Q has a convenient two-port USB Hub for transferring files and connecting devices. No more reaching to the back of your computer."
@@ -127,7 +123,6 @@ const D4Q: VFC = () => {
         <Banner
           textAlign="left"
           background="dark"
-          padding={20}
           title={`<span class="text-red">QUICK ACCESS FOR AUDIO PLAYBACK AND VOLUME</span>`}
           titleExtra="DEDICATED MEDIA CONTROLS"
           description="Direct controls to quickly set sound level, play or pause songs, and adjust volume while gaming or working."

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link"
+import Link from "@components/core/Link"
 import type { VFC } from "react"
 
 interface Props {
@@ -10,16 +10,27 @@ interface Props {
 const CollectionCard: VFC<{ collection: Props }> = ({ collection }) => {
   const { name, filter, image } = collection
   return (
-    <div className="rounded">
-      <Link href={`/products/category-mechanical-keyboards?filter=${filter}`} passHref>
-        <div>
-          <img src={image} alt={name} className='img-fluid' />
-          <div className="d-flex flex-column mt-2">
-            <span className="card-title">DAS KEYBOARD</span>
-            <span className="card-text">{name}</span>
-          </div>
+    <div className="col">
+      <figure className="heading card">
+        <div className="card-body">
+          <img src={image} className="card-img" alt={name} />
+          <figcaption className="card-img-overlay">
+            <h1 className="card-title">
+              <small>Das Keyboard</small>
+              <br />{name}
+            </h1>
+            <Link
+              href="/products/category-mechanical-keyboards?filter=${filter}"
+              className="btn btn-outline-primary stretched-link"
+            >
+              <span>
+                View Keyboards
+                <i className="fa-solid fa-plus text-red ms-4" />
+              </span>
+            </Link>
+          </figcaption>
         </div>
-      </Link>
+      </figure>
     </div>
   )
 }

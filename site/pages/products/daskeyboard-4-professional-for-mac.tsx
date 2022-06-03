@@ -75,9 +75,9 @@ const D4ProfessionalForMac: VFC = () => {
       </div>
       <hr />
       <Banner
+        sectionId=""
         textAlign="left"
         background="light"
-        padding={20}
         title={`<span class="text-red">OVERSIZED VOLUME KNOB</span>`}
         titleExtra='AND DEDICATED MEDIA CONTROLS'
         description={`
@@ -92,6 +92,7 @@ const D4ProfessionalForMac: VFC = () => {
       />
       <hr />
       <Banner
+        sectionId=""
         textAlign="left"
         title={`USB 3.0 <span class="text-red">SUPERSPEED HUB</span>.`}
         description='Need to transfer videos to your workstation but don’t have time to wait all day for file transfers to complete? Don’t worry. Das Keyboard 4 for Mac has a blazing fast two-port USB 3.0 hub to transfer music, high resolution pictures and large videos at up to 5Gb per second. That’s 10 times faster than USB 2.0. It is backwards compatible with all USB 2.0/1.1 devices and hosts so previous peripheral investments are protected.'
@@ -107,7 +108,6 @@ const D4ProfessionalForMac: VFC = () => {
       <Banner
         textAlign="left"
         background="light"
-        padding={30}
         title={`MAC OS SPECIFIC <span class="text-red">KEY FUNCTIONS</span>.`}
         description='In addition to standard command and Alt/Option keys, Das Keyboard 4 Professional for Mac offers quick, convenient access to a number of other Mac specific key functions. The Das Keyboard 4 Professional for Mac makes it easy to toggle between screens, view your desktop along with other applications that you have open, and access your brightness controls all at the push of a button.'
         image={{
@@ -122,7 +122,6 @@ const D4ProfessionalForMac: VFC = () => {
       <Banner
         textAlign="left"
         background="dark"
-        padding={'30 20 30 20'}
         title={`EVERY DETAIL <span class="text-red">MATTERS</span>.`}
         description={`
           Featuring a stunning look, Das Keyboard 4 Professional for Mac has been designed with a slick anodized aluminum top panel, a resonance-free bottom enclosure, a magnetically attached footbar, and a laser-engraved aluminum bottom label… all which make the design feel more badass and the typing feel more responsive.

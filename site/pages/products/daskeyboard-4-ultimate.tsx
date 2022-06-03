@@ -103,9 +103,9 @@ const D4Ultimate: VFC = () => {
       <FootbarRuler />
       <hr />
       <Banner
+        sectionId=""
         textAlign="left"
         background="dark"
-        padding={20}
         title={`EVERY DETAIL <span class="text-red">MATTERS</span>.`}
         description={`
           Featuring a stunning look, Das Keyboard 4 Professional has been completely redesigned with a sleek anodized aluminum top panel, a resonance-free bottom enclosure, a magnetically attached footbar, and a laser-engraved aluminum bottom label… all which make the design feel more badass and the typing feel more responsive.
@@ -122,8 +122,8 @@ const D4Ultimate: VFC = () => {
       <TechnicalSpecifications />
       <hr />
       <Banner
+        sectionId=""
         textAlign="left"
-        padding={20}
         title={`EXTRA LONG <span class="text-red">CABLE</span>.`}
         description='Das Keyboard 4 sports a 2-meter (6.5ft) cable that goes through desk grommets to keep your workspace neat and tidy. Now equipped with only one USB cable to power keyboard and USB hub at the same time.'
         image={{
@@ -134,9 +134,9 @@ const D4Ultimate: VFC = () => {
       />
       <hr />
       <Banner
+        sectionId=""
         textAlign="left"
         background="dark"
-        padding={20}
         title={`BLANK <span class="text-red">AND BADASS</span>.`}
         description='Type faster than you ever thought possible on one of these blank babies. The Das Keyboard 4 Ultimate is a completely blank keyboard for badass typists and gaming enthusiasts.'
         image={{

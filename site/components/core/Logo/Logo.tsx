@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from 'next/link'
 import type { VFC } from 'react'
+import Link from '../Link'
 
 const Logo: VFC = () => {
   return (
-    <Link href="/" passHref>
-      <img src='/images/logo-das_keyboard-red_white.png' alt='Daskeyboard' />
+    <Link href="/">
+      <img id="siteLogo" src="/images/logo-das_keyboard-red_white.png" className="img-fluid" alt="Das Keyboard" />
     </Link>
   )
 }
