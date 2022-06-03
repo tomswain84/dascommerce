@@ -95,8 +95,8 @@ const Footer: VFC = () => {
       href: '/affiliates-program'
     },
   ]
-  const FooterLink = (link: FooterLink) => (
-    <li>
+  const FooterLink = (link: FooterLink, index: number) => (
+    <li key={index}>
       <FontAwesomeIcon icon='dot-circle' className='text-red me-2' />
       {link.blank ? (
         <a
@@ -216,7 +216,7 @@ const Footer: VFC = () => {
                   </a>
                 </li>
                 <li>
-                  <Link href="blog" title="Blog">
+                  <Link href="/blog" title="Blog">
                     <FontAwesomeIcon icon='rss' />
                   </Link>
                 </li>
