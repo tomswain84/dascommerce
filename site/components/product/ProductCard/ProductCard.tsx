@@ -2,7 +2,6 @@
 import type { VFC } from "react"
 import filters from '@data/filters.json'
 import Link from "@components/core/Link"
-import Tooltip from "@components/core/Tooltip"
 
 interface Product {
   id: number,
@@ -49,9 +48,7 @@ const ProductCard: VFC<{ product: Product }> = ({ product }) => {
                 data-bs-toggle="tooltip"
                 title={item.name}
               >
-                <Tooltip text={item.name}>
-                  {item.name}
-                </Tooltip>
+                {item.name}
               </Link>
             ))}
           </div>
