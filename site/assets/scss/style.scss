@@ -431,11 +431,9 @@ body.four-series .four-series {
   display: initial !important;
 }
 .filterDiv {
-  display: none;
   max-width: 400px;
 }
 body.product-page .filterDiv {
-  display: none;
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
@@ -495,7 +493,6 @@ div.tags {
   justify-content: center;
 }
 div.tags a.tag {
-  display: none;
   font-size: 8px;
   font-weight: 500;
   text-transform: uppercase;
@@ -504,17 +501,6 @@ div.tags a.tag {
   padding: 5px 10px;
   border-radius: 1rem;
   margin: 0.25rem;
-}
-.supercharged div.tags a.tag-supercharged,
-.minimalist div.tags a.tag-minimalist,
-.backlit div.tags a.tag-backlit,
-.smart-rgb div.tags a.tag-smart-rgb,
-.aluminum div.tags a.tag-aluminum,
-.mac div.tags a.tag-mac,
-.for-pc div.tags a.tag-pc,
-.for-linux div.tags a.tag-linux,
-.ubuntu div.tags a.tag-ubuntu {
-  display: initial;
 }
 
 div.product-cards figure.card figcaption.card-body div.specs {
