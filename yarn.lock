@@ -1022,7 +1022,7 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@popperjs/core@^2.11.5":
+"@popperjs/core@^2.11.5", "@popperjs/core@^2.9.2":
   version "2.11.5"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.5.tgz#db5a11bf66bdab39569719555b0f76e138d7bd64"
   integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
@@ -1478,6 +1478,13 @@
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@types/body-scroll-lock/-/body-scroll-lock-3.1.0.tgz#435f6abf682bf58640e1c2ee5978320b891970e7"
   integrity sha512-3owAC4iJub5WPqRhxd8INarF2bWeQq1yQHBgYhN0XLBJMpd5ED10RrJ3aKiAwlTyL5wK7RkBD4SZUQz2AAAMdA==
+
+"@types/bootstrap@^5.1.12":
+  version "5.1.12"
+  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-5.1.12.tgz#4d704f6385fda2f1a56cc458f1f4cafab6e9f7e3"
+  integrity sha512-pSS5BGEgepwzdbsBGswBWFmgrnYpp7c4UfuYe1FJWwkrcjm/JVwfG4gBkOYtd92Otd3RdJK0ByBWMkBROfLEPw==
+  dependencies:
+    "@popperjs/core" "^2.9.2"
 
 "@types/chec__commerce.js@*", "@types/chec__commerce.js@^2.8.4":
   version "2.8.4"

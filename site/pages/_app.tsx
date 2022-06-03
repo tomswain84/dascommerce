@@ -23,9 +23,18 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as any).Layout || Noop
 
   useEffect(() => {
+    async function loadBootstrap() {
+      await import('bootstrap')
+    }
+    loadBootstrap()
+
     document.body.classList?.remove('loading')
-    document.body.id = pageProps.bodyId
-    document.body.classList?.add(pageProps.bodyClass)
+    if (pageProps.bodyId) {
+      document.body.id = pageProps.bodyId
+    }
+    if (pageProps.bodyClass) {
+      document.body.classList?.add(pageProps.bodyClass.split(' '))
+    }
   })
 
   return (
