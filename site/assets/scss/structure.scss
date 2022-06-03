@@ -569,14 +569,14 @@ footer#siteFooter section#giveaway {
 footer#siteFooter #footerWrap ul li:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
-footer#siteFooter #footerWrap ul li:before {
+/* footer#siteFooter #footerWrap ul li:before {
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   content: '\f192' !important;
   border: none;
   margin-right: 0.5rem;
   color: var(--red);
-}
+} */
 footer#siteFooter ul li a {
   color: var(--white);
 }
