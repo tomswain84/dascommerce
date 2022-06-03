@@ -25,7 +25,7 @@ const defaultProps: Props = {
 }
 const PageTitle: VFC<Props> = (props = defaultProps) => {
   const { title, type, product } = props
-  const isProduct = type === 'product' && product
+  const isProduct = type === 'product' && typeof product == 'object'
   const isCategory = type === 'category'
   return (
     <section id="pageTitle" className="bg-gray-darker text-white">
