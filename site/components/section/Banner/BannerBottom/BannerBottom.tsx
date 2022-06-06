@@ -3,13 +3,13 @@ import stripHTML from "@lib/strip-html"
 import type { VFC } from "react"
 import { BannerProps } from "../Banner"
 
-const BannerBottom: VFC<BannerProps> = ({ title, description, image, containerPadding, BannerButton }) => {
+const BannerBottom: VFC<BannerProps> = ({ title, description, image, containerPadding, textAlign, BannerButton }) => {
   return (
     <>
       <div className={`container-boxed ${containerPadding || ''}`}>
         <div className="row mb-md-4">
           <div className="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-            <figure className="heading text-center">
+            <figure className={`heading text-${textAlign || 'center'}`}>
               <figcaption>
                 <h1 dangerouslySetInnerHTML={{ __html: title }} />
               </figcaption>

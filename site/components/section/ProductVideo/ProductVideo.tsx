@@ -9,11 +9,25 @@ interface Props {
 }
 const ProductVideo: VFC<Props> = ({ title, description, video }) => {
   return (
-    <div className="text-center">
-      <h2 className="text-red" dangerouslySetInnerHTML={{ __html: title }} />
-      <p className="fw-bold fs-3 animated-cursor cursor-dark">{description}</p>
-      <iframe className="rounded" src={video.src} height={500} width='100%' frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-    </div>
+    <section className="bg-white section-pad">
+      <div className="container-boxed">
+        <div className="row">
+          <div className="col-12">
+            <figure className="heading text-center mb-5">
+              <figcaption>
+                <h2>
+                  <small>{title}</small>
+                  <br /><span className="animated-cursor cursor-dark">{description}</span>
+                </h2>
+              </figcaption>
+            </figure>
+            <div className="video ratio ratio-16x9">
+              <iframe src={video.src} title="YouTube video" allowFullScreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 export default ProductVideo

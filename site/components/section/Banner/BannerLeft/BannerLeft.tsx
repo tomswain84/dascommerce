@@ -3,7 +3,7 @@ import stripHTML from "@lib/strip-html"
 import type { VFC, FC } from "react"
 import { BannerProps } from '../Banner'
 
-const BannerLeft: VFC<BannerProps> = ({ title, textAlign, description, containerPadding, image, noCol, BannerButton }) => {
+const BannerLeft: VFC<BannerProps> = ({ title, titleExtra, textAlign, description, containerPadding, image, noCol, BannerButton }) => {
   const NoColWrapper: FC<{ className: string }> = (props) => {
     if (noCol) {
       return (
@@ -18,18 +18,25 @@ const BannerLeft: VFC<BannerProps> = ({ title, textAlign, description, container
       </div>
     )
   }
-  const ImageFigure = () => (
+  const ContentBlock = () => (
     <NoColWrapper className="col-md-6 order-md-2 d-md-flex align-items-end align-items-xxl-start">
       <figure className={`heading text-${textAlign} mt-5 mt-md-3 pt-md-5`}>
         <figcaption>
-          <h1 dangerouslySetInnerHTML={{ __html: title }} />
+          {titleExtra ? (
+            <h2>
+              <small>{stripHTML(title)}</small>
+              <br />{titleExtra}
+            </h2>
+          ) : (
+            <h1 dangerouslySetInnerHTML={{ __html: title }} />
+          )}
         </figcaption>
         <p dangerouslySetInnerHTML={{ __html: description }} />
         <BannerButton />
       </figure>
     </NoColWrapper>
   )
-  const ContentBlock = () => (
+  const ImageBlock = () => (
     <NoColWrapper className="col-md-6 order-md-1 d-md-flex align-items-center position-relative">
       {image.srcFull && (
         <img className="full-image position-absolute d-none d-xxl-inline" src={image.srcFull} alt={title} />
@@ -48,11 +55,11 @@ const BannerLeft: VFC<BannerProps> = ({ title, textAlign, description, container
           {noCol ? (
             <div className="col-xl-10 offset-xl-1 d-md-flex align-items-center justify-content-between">
               <ContentBlock />
-              <ImageFigure />
+              <ImageBlock />
             </div>
           ) : (
             <>
-              <ImageFigure />
+              <ImageBlock />
               <ContentBlock />
             </>
           )}
