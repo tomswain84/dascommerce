@@ -32,7 +32,7 @@ const SwitchGammaZulu: VFC<{}> = () => {
                   <i>
                     <FontAwesomeIcon icon="pause" className="me-2" />
                   </i>
-                  Play Soft Tactile Sound
+                  Pause Soft Tactile Sound
                 </span>
               </a>
               <a className="btn btn-primary my-3 my-sm-0 ms-sm-3" href="#" title="About Gamma Zulu Switches">About Gamma Zulu Switches</a>

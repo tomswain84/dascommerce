@@ -3,7 +3,6 @@ import CustomizeKeyboard from "@components/product/CustomizeKeyboard"
 import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure"
 import QMessagePreview from "@components/product/QMessagePreview"
 import AppletsCTA from "@components/section/AppletsCTA"
-import Banner from "@components/section/Banner"
 import SpecificationList from "@components/section/SpecificationList"
 import ProductCompatibility from "@components/product/ProductCompatibility"
 import ProductApplets from "@components/section/ProductApplets"
@@ -11,7 +10,6 @@ import ProductHero from "@components/section/ProductHero"
 import ProductPerformance from "@components/section/ProductPerformance"
 import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
-import SwitchGammaZulu from "@components/section/SwitchGammaZulu"
 import PageTitle from "@components/core/PageTitle"
 import AppletDashboard from "@components/product/AppletDashboard"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
@@ -111,7 +109,12 @@ const D5QS: VFC<{}> = () => {
 
       <AppletsCTA />
 
-      <ProductCompatibility />
+      <ProductCompatibility
+        image={{
+          src: '/images/product-images/product-details/5qs/DK5Q_Qbutton_view.jpg',
+          alt: "DK5QS Q Button View"
+        }}
+      />
 
       <ProductPerformance />
 
