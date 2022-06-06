@@ -10,7 +10,8 @@
     "description": "A smart keyboard for professionals who also like gaming and winning. Fastest Gamma Zulu switches, gaming look and palm rest.",
     "tags": ["supercharged", "backlit", "smart-rgb", "aluminum", "pc"],
     "keystroke": "100M",
-    "switch": "GAMMA ZULU"
+    "switch": "GAMMA ZULU",
+    "series": "Q"
   },
   {
     "id": 2,
@@ -30,7 +31,8 @@
       "ubuntu"
     ],
     "keystroke": "100M",
-    "switch": "GAMMA ZULU"
+    "switch": "GAMMA ZULU",
+    "series": "Q"
   },
   {
     "id": 3,
@@ -50,7 +52,8 @@
       "ubuntu"
     ],
     "keystroke": "50M",
-    "switch": "CHERRY MX RGB"
+    "switch": "CHERRY MX RGB",
+    "series": "Q"
   },
   {
     "id": 4,
@@ -63,7 +66,8 @@
     "description": "An expression of refinement and a premium typing experience, the DasKeyboard 4 Professional features dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
     "tags": ["supercharged", "aluminum", "pc"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "series": "FOUR"
   },
   {
     "id": 5,
@@ -76,7 +80,8 @@
     "description": "For the expert typist desiring ultimate sleekness, the stealthy DasKeyboard 4 Ultimate has blank keys, dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
     "tags": ["supercharged", "minimalist", "aluminum", "pc"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "series": "FOUR"
   },
   {
     "id": 6,
@@ -89,7 +94,8 @@
     "description": "Designed for Mac compatibility, this premium finish mechanical keyboard features dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
     "tags": ["supercharged", "aluminum", "mac"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "series": "FOUR"
   },
   {
     "id": 7,

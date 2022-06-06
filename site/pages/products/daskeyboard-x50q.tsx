@@ -343,7 +343,10 @@ const X50Q: VFC = () => {
         }
       ]} />
       <hr />
-      <RelatedProducts />
+      <RelatedProducts
+        title="Q Series"
+        series="Q"
+      />
     </>
   )
 }
