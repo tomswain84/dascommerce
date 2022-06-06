@@ -6,6 +6,7 @@ import SwitchGammaZulu from "../SwitchGammaZulu"
 interface Heading {
   type: 'heading'
   heading: string
+  description?: string
 }
 interface Content extends ProductFeatureProps {
   type: 'content'
@@ -27,6 +28,9 @@ const ProductFeatureGroup: VFC<Props> = ({ rows }) => {
               <div className={`row mb-4 ${index > 0 ? 'mt-5' : ''}`}>
                 <div className="col text-center">
                   <h2>{row.heading}</h2>
+                  {row.description && (
+                    <p>{row.description}</p>
+                  )}
                 </div>
               </div>
             )}

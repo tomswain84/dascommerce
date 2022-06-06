@@ -2,19 +2,17 @@
 import PageTitle from "@components/core/PageTitle"
 import CustomizeKeyboard from "@components/product/CustomizeKeyboard"
 import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure"
-import ProductHeader from "@components/product/ProductHeader"
 import QMessagePreview from "@components/product/QMessagePreview"
 import AppletsCTA from "@components/section/AppletsCTA"
-import Banner from "@components/section/Banner"
-import FeatureList from "@components/section/SpecificationList"
+import SpecificationList from "@components/section/SpecificationList"
 import ProductApplets from "@components/section/ProductApplets"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import ProductHero from "@components/section/ProductHero"
 import ProductPerformance from "@components/section/ProductPerformance"
-import ProductScreen from "@components/section/ProductScreen"
 import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
 import type { VFC } from "react"
+import AppletDashboard from "@components/product/AppletDashboard"
 
 export async function getStaticProps() {
   return {
@@ -49,19 +47,12 @@ const X50Q: VFC = () => {
           breakoutSrc: '/images/product-images/product-details/x50q/X50_4_side-m.jpg'
         }}
       />
-      <section className="bg-gray-darker dark-section section-pad">
-        <div className="container-boxed">
-          <div id="appletDashboard" className="row align-items-center justify-content-between">
-            <div className="col-12 col-xl-8 col-xxl-6">
-              <h2 className="text-red">Win at work and win in the endgame</h2>
-              <p className="mt-3"> A smart RGB keyboard for those that want to win at work, and at gaming. Q Software transforms the X50Q into an essential productivity tool that streamlines information gathering, keeping professionals focused and operating at the highest level of concentration. Instead of relying on alerts from different devices, the Das Keyboard X50Q displays them directly on its RGB keys. For example, if your website is down, you have been assigned a new task on Basecamp or Trello, or if your favorite Twitch user is online, the Das Keyboard X50Q will display a notification by changing the color of its keys. Built-in features include macros to play recorded keystroke sequences and multiple built-in RGB profiles.</p>
-            </div>
-            <div className="col-12 col-xl-4 col-xxl-6">
-              <img className="img-fluid blend-plus-lighter" src="/images/product-images/product-details/x50q/dkx50q_intro.png" alt="Applet Dashboard" />
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <AppletDashboard
+        title="Win at work and win in the endgame"
+        description="A smart RGB keyboard for those that want to win at work, and at gaming. Q Software transforms the X50Q into an essential productivity tool that streamlines information gathering, keeping professionals focused and operating at the highest level of concentration. Instead of relying on alerts from different devices, the Das Keyboard X50Q displays them directly on its RGB keys. For example, if your website is down, you have been assigned a new task on Basecamp or Trello, or if your favorite Twitch user is online, the Das Keyboard X50Q will display a notification by changing the color of its keys. Built-in features include macros to play recorded keystroke sequences and multiple built-in RGB profiles."
+        image="/images/product-images/product-details/x50q/dkx50q_intro.png"
+      />
 
       <ProductVideo
         title='DAS KEYBOARD Q SOFWARE'
@@ -216,133 +207,136 @@ const X50Q: VFC = () => {
         ]}
       />
 
-      <FeatureList rows={[
-        {
-          type: 'heading',
-          heading: 'SPECIFICATIONS'
-        },
-        {
-          type: 'feature',
-          columns: [
-            [
-              {
-                title: 'PRODUCT INFORMATION',
-                items: [
-                  'Backlighting: RGB',
-                  'Connection Type: USB 2.0',
-                  'Keycap Material: ABS',
-                  'Aluminum top panel: Yes',
-                  'USB Ports (Built-in): No',
-                  'Dedicated Media Controls: Volume Knob, Play/Pause, Track Forward/Backward',
-                  'Easy Access Media Controls: Yes',
-                  'Firmware Updatable: Yes',
-                ]
-              },
-              {
-                title: 'SYSTEM REQUIREMENTS',
-                items: [
-                  'Windows 10',
-                  'One 2.0 USB port',
-                  'Internet connection for software download',
-                  'This keyboard is compatible with Windows only.',
-                ]
-              },
-              {
-                title: 'WARRANTY INFORMATION',
-                items: [
-                  '1-Year Limited Hardware Warranty'
-                ]
-              },
-              {
-                title: 'PACKAGE CONTENT',
-                items: [
-                  'Keyboard',
-                  'Palm rest',
-                  'WASD two-tone keycaps',
-                  'Keycap puller',
-                  'User documentation',
-                ]
-              },
-              {
-                title: 'USER MANUAL',
-                type: 'button',
-                button: {
-                  text: 'View the X50Q User Manual',
-                  href: 'https://docs.google.com/document/d/1I79ZG7MzYzkSWdniAYGYTSsBkf85drA7lVeI6Q03BTU/edit?usp=sharing',
-                  blank: true,
+      <SpecificationList
+        id="keyboardSpects"
+        background="darker"
+        rows={[
+          {
+            type: 'heading',
+            heading: 'SPECIFICATIONS'
+          },
+          {
+            type: 'feature',
+            columns: [
+              [
+                {
+                  title: 'PRODUCT INFORMATION',
+                  items: [
+                    '<strong>Backlighting</strong>: RGB',
+                    '<strong>Connection Type</strong>: USB 2.0',
+                    '<strong>Keycap Material</strong>: ABS',
+                    '<strong>Aluminum top panel</strong>: Yes',
+                    '<strong>USB Ports (Built-in)</strong>: No',
+                    '<strong>Dedicated Media Controls</strong>: Volume Knob, Play/Pause, Track Forward/Backward',
+                    '<strong>Easy Access Media Controls</strong>: Yes',
+                    '<strong>Firmware Updatable</strong>: Yes',
+                  ]
+                },
+                {
+                  title: 'SYSTEM REQUIREMENTS',
+                  items: [
+                    'Windows 10',
+                    'One 2.0 USB port',
+                    'Internet connection for software download',
+                    'This keyboard is compatible with Windows only.',
+                  ]
+                },
+                {
+                  title: 'WARRANTY INFORMATION',
+                  items: [
+                    '1-Year Limited Hardware Warranty'
+                  ]
+                },
+                {
+                  title: 'PACKAGE CONTENT',
+                  items: [
+                    'Keyboard',
+                    'Palm rest',
+                    'WASD two-tone keycaps',
+                    'Keycap puller',
+                    'User documentation',
+                  ]
+                },
+                {
+                  title: 'USER MANUAL',
+                  type: 'button',
+                  button: {
+                    text: 'View the X50Q User Manual',
+                    href: 'https://docs.google.com/document/d/1I79ZG7MzYzkSWdniAYGYTSsBkf85drA7lVeI6Q03BTU/edit?usp=sharing',
+                    blank: true,
+                  }
                 }
-              }
-            ],
-            [
-              {
-                title: 'PHYSICAL SPECIFICATIONS',
-                items: [
-                  'Height: 1.28 in (3.2 cm)',
-                  'Width: 6.63 in (16.8 cm)',
-                  'Length: 18 in (45.7 cm)',
-                  'Weight: 3.5 lbs (1.55 kg)',
-                  'Cable: 6.5 ft (2 m)',
-                ]
-              },
-              {
-                title: 'GAMMA ZULU SWITCHES MADE BY OMRON FOR DAS KEYBOARD',
-                items: [
-                  'Feel:Soft tactile',
-                  'Gold Cross Point Contacts:2',
-                  'Durability:100 million actuations',
-                  'Actuation distance:0.06 in (1.5 mm)',
-                  'Actuation force:1.6 oz (45 g)',
-                  'Total travel distance::0.14 in (3.5 mm)',
-                ]
-              },
-              {
-                title: 'AVAILABLE LAYOUTS',
-                items: [
-                  '104 US',
-                  '105 UK',
-                  '105 DE',
-                  '105 NO',
-                ]
-              },
-              {
-                title: 'SOFTWARE',
-                type: 'button',
-                button: {
-                  text: 'Download Das Keyboard Q Software',
-                  href: 'https://www.daskeyboard.io/',
-                  description: 'Additional language keycaps are available as an add-on. (See accessories below.)',
+              ],
+              [
+                {
+                  title: 'PHYSICAL SPECIFICATIONS',
+                  items: [
+                    '<strong>Height</strong>: 1.28 in (3.2 cm)',
+                    '<strong>Width</strong>: 6.63 in (16.8 cm)',
+                    '<strong>Length</strong>: 18 in (45.7 cm)',
+                    '<strong>Weight</strong>: 3.5 lbs (1.55 kg)',
+                    '<strong>Cable</strong>: 6.5 ft (2 m)',
+                  ]
+                },
+                {
+                  title: 'GAMMA ZULU SWITCHES MADE BY OMRON FOR DAS KEYBOARD',
+                  items: [
+                    '<strong>Feel</strong>: Soft tactile',
+                    '<strong>Gold Cross Point Contacts</strong>: 2',
+                    '<strong>Durability</strong>: 100 million actuations',
+                    '<strong>Actuation distance</strong>: 0.06 in (1.5 mm)',
+                    '<strong>Actuation force</strong>: 1.6 oz (45 g)',
+                    '<strong>Total travel distance</strong>: 0.14 in (3.5 mm)',
+                  ]
+                },
+                {
+                  title: 'AVAILABLE LAYOUTS',
+                  items: [
+                    '104 US',
+                    '105 UK',
+                    '105 DE',
+                    '105 NO',
+                  ]
+                },
+                {
+                  title: 'SOFTWARE',
+                  type: 'button',
+                  button: {
+                    text: 'Download Das Keyboard Q Software',
+                    href: 'https://www.daskeyboard.io/',
+                    description: 'Additional language keycaps are available as an add-on. (See accessories below.)',
+                  }
                 }
-              }
+              ]
             ]
-          ]
-        },
-        {
-          type: 'heading',
-          heading: 'ACCESSORIES'
-        },
-        {
-          type: 'feature',
-          columns: [
-            [
-              {
-                title: 'TRANSLUCENT KEYCAP SET',
-                items: [
-                  'Without inscriptions for 104 and 105 key layouts.',
-                  'With inscriptions for US, UK, German, French, Nordic, Spanish, and Russian.',
-                  'With inscriptions for Dvorak Layout',
-                ]
-              },
-              {
-                title: 'BLACK, PROFESSIONAL FONT KEYCAP SET',
-                items: [
-                  'With inscriptions, available only in US'
-                ]
-              }
+          },
+          {
+            type: 'heading',
+            heading: 'ACCESSORIES'
+          },
+          {
+            type: 'feature',
+            columns: [
+              [
+                {
+                  title: 'TRANSLUCENT KEYCAP SET',
+                  items: [
+                    'Without inscriptions for 104 and 105 key layouts.',
+                    'With inscriptions for US, UK, German, French, Nordic, Spanish, and Russian.',
+                    'With inscriptions for Dvorak Layout',
+                  ]
+                },
+                {
+                  title: 'BLACK, PROFESSIONAL FONT KEYCAP SET',
+                  items: [
+                    'With inscriptions, available only in US'
+                  ]
+                }
+              ]
             ]
-          ]
-        }
-      ]} />
-      <hr />
+          }
+        ]} />
+
       <RelatedProducts
         title="Q Series"
         series="Q"

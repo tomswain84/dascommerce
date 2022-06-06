@@ -7,7 +7,7 @@ import Banner from "@components/section/Banner"
 import FeatureList from "@components/section/SpecificationList"
 import ForceDiagram from "@components/section/ForceDiagram"
 import Materials from "@components/section/Materials"
-import OperatingSystem from "@components/section/OperatingSystem"
+import ProductCompatibility from "@components/product/ProductCompatibility"
 import ProductApplets from "@components/section/ProductApplets"
 import ProductHero from "@components/section/ProductHero"
 import ProductScreen from "@components/section/ProductScreen"
@@ -67,7 +67,7 @@ const D4Q: VFC = () => {
       <hr />
       <AppletsCTA />
       <hr />
-      <OperatingSystem />
+      <ProductCompatibility />
       <hr />
       <Materials />
       <hr />

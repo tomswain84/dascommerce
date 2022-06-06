@@ -8,14 +8,14 @@ const FeatureItem: VFC<FeatureItemProps> = ({ text }) => {
   return (
     <li>
       <FontAwesomeIcon icon="dot-circle" className="me-1 text-red" />
-      {text}
+      <span dangerouslySetInnerHTML={{ __html: text }} />
     </li>
   )
 }
 
 interface FeatureColumnProps {
   type?: 'list' | 'button'
-  title: string
+  title?: string
   items?: string[]
   button?: {
     text: string
@@ -27,10 +27,12 @@ interface FeatureColumnProps {
 const FeatureColumn: VFC<FeatureColumnProps> = ({ title, items, type: _type, button }) => {
   const type = _type || 'list'
   return (
-    <div className="col">
-      <h3 className="text-red mb-2">{title}</h3>
+    <>
+      {title && (
+        <h3 className="text-red mb-2">{title}</h3>
+      )}
       {type === 'list' && items && (
-        <ul className="list-unstyled">
+        <ul className={`list-unstyled ${!title ? 'mt-4' : ''}`}>
           {items.map((item, index) => (
             <FeatureItem key={index} text={item} />
           ))}
@@ -42,7 +44,7 @@ const FeatureColumn: VFC<FeatureColumnProps> = ({ title, items, type: _type, but
           {button.description && <p>{button.description}</p>}
         </>
       )}
-    </div>
+    </>
   )
 }
 
@@ -55,12 +57,13 @@ interface FeatureRow {
   columns: FeatureColumnProps[][]
 }
 interface FeatureListProps {
+  id: string
+  background: 'dark' | 'darker'
   rows: Array<HeadingRow | FeatureRow>
 }
-const FeatureList: VFC<FeatureListProps> = ({ rows }) => {
+const FeatureList: VFC<FeatureListProps> = ({ id: sectionId, background, rows }) => {
   return (
-    // keyboardSpects
-    <section id="keyboardSpects" className="content-container bg-gray-darker dark-section section-pad">
+    <section id={sectionId} className={`content-container dark-section section-pad bg-gray-${background}`}>
       <div id="contentContainer" className="container-boxed">
         {rows.map((row, index) => (
           <div className={`row ${index && row.type === 'heading' ? 'mt-5' : ''}`} key={index}>
