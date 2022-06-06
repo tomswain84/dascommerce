@@ -19,12 +19,13 @@ interface Product {
 
 const ProductCard: VFC<{ product: Product }> = ({ product }) => {
   const tags = filters.filter(f => product.tags.includes(f.tag))
+  const productUrl = `/products/${product.slug}`
   return (
     <div id="5QS" className="col filterDiv smart-rgb for-pc for-mac supercharged backlit aluminum ubuntu q-series">
       <figure className="card category-keyboards <?=$product_series?>">
-        <a className="btn" href="<?=$product_url?>" title="Product Details">
+        <Link className="btn" href={productUrl} title="Product Details">
           <img src={product.image} className="img-fluid card-img-top" alt={product.name} />
-        </a>
+        </Link>
         <figure className="heading text-center">
           <figcaption>
             <h2>
@@ -64,7 +65,7 @@ const ProductCard: VFC<{ product: Product }> = ({ product }) => {
           </div>
         </figcaption>
         <div className="card-footer">
-          <Link className="btn" href={`/products/${product.slug}`} title="Product Details">Product Details</Link>
+          <Link className="btn" href={productUrl} title="Product Details">Product Details</Link>
         </div>
       </figure>
     </div>
