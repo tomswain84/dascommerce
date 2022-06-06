@@ -52,7 +52,9 @@ const D5QS: VFC<{}> = () => {
         }}
       />
       <hr />
-      <FeatureList />
+      <FeatureList
+        rows={[]}
+      />
       <hr />
       <ProductVideo
         title='DAS KEYBOARD Q SOFWARE'
@@ -129,10 +131,9 @@ const D5QS: VFC<{}> = () => {
         </div>
       </div>
       <hr />
-      <FeatureList />
-      <FeatureList />
+      <FeatureList rows={[]} />
       <hr />
-      <RelatedProducts />
+      <RelatedProducts title="" series="Q" />
     </>
   )
 }

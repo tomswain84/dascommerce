@@ -134,9 +134,14 @@ const D4Q: VFC = () => {
         />
       </div>
       <hr />
-      <FeatureList />
+      <FeatureList
+        rows={[]}
+      />
       <hr />
-      <RelatedProducts />
+      <RelatedProducts
+        title=""
+        series="Q"
+      />
     </>
   )
 }
