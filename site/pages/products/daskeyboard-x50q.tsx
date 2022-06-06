@@ -6,7 +6,7 @@ import ProductHeader from "@components/product/ProductHeader"
 import QMessagePreview from "@components/product/QMessagePreview"
 import AppletsCTA from "@components/section/AppletsCTA"
 import Banner from "@components/section/Banner"
-import FeatureList from "@components/section/FeatureList"
+import FeatureList from "@components/section/SpecificationList"
 import ProductApplets from "@components/section/ProductApplets"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import ProductHero from "@components/section/ProductHero"
@@ -216,8 +216,132 @@ const X50Q: VFC = () => {
         ]}
       />
 
-      <FeatureList />
-      <FeatureList />
+      <FeatureList rows={[
+        {
+          type: 'heading',
+          heading: 'SPECIFICATIONS'
+        },
+        {
+          type: 'feature',
+          columns: [
+            [
+              {
+                title: 'PRODUCT INFORMATION',
+                items: [
+                  'Backlighting: RGB',
+                  'Connection Type: USB 2.0',
+                  'Keycap Material: ABS',
+                  'Aluminum top panel: Yes',
+                  'USB Ports (Built-in): No',
+                  'Dedicated Media Controls: Volume Knob, Play/Pause, Track Forward/Backward',
+                  'Easy Access Media Controls: Yes',
+                  'Firmware Updatable: Yes',
+                ]
+              },
+              {
+                title: 'SYSTEM REQUIREMENTS',
+                items: [
+                  'Windows 10',
+                  'One 2.0 USB port',
+                  'Internet connection for software download',
+                  'This keyboard is compatible with Windows only.',
+                ]
+              },
+              {
+                title: 'WARRANTY INFORMATION',
+                items: [
+                  '1-Year Limited Hardware Warranty'
+                ]
+              },
+              {
+                title: 'PACKAGE CONTENT',
+                items: [
+                  'Keyboard',
+                  'Palm rest',
+                  'WASD two-tone keycaps',
+                  'Keycap puller',
+                  'User documentation',
+                ]
+              },
+              {
+                title: 'USER MANUAL',
+                type: 'button',
+                button: {
+                  text: 'View the X50Q User Manual',
+                  href: 'https://docs.google.com/document/d/1I79ZG7MzYzkSWdniAYGYTSsBkf85drA7lVeI6Q03BTU/edit?usp=sharing',
+                  blank: true,
+                }
+              }
+            ],
+            [
+              {
+                title: 'PHYSICAL SPECIFICATIONS',
+                items: [
+                  'Height: 1.28 in (3.2 cm)',
+                  'Width: 6.63 in (16.8 cm)',
+                  'Length: 18 in (45.7 cm)',
+                  'Weight: 3.5 lbs (1.55 kg)',
+                  'Cable: 6.5 ft (2 m)',
+                ]
+              },
+              {
+                title: 'GAMMA ZULU SWITCHES MADE BY OMRON FOR DAS KEYBOARD',
+                items: [
+                  'Feel:Soft tactile',
+                  'Gold Cross Point Contacts:2',
+                  'Durability:100 million actuations',
+                  'Actuation distance:0.06 in (1.5 mm)',
+                  'Actuation force:1.6 oz (45 g)',
+                  'Total travel distance::0.14 in (3.5 mm)',
+                ]
+              },
+              {
+                title: 'AVAILABLE LAYOUTS',
+                items: [
+                  '104 US',
+                  '105 UK',
+                  '105 DE',
+                  '105 NO',
+                ]
+              },
+              {
+                title: 'SOFTWARE',
+                type: 'button',
+                button: {
+                  text: 'Download Das Keyboard Q Software',
+                  href: 'https://www.daskeyboard.io/',
+                  description: 'Additional language keycaps are available as an add-on. (See accessories below.)',
+                }
+              }
+            ]
+          ]
+        },
+        {
+          type: 'heading',
+          heading: 'ACCESSORIES'
+        },
+        {
+          type: 'feature',
+          columns: [
+            [
+              {
+                title: 'TRANSLUCENT KEYCAP SET',
+                items: [
+                  'Without inscriptions for 104 and 105 key layouts.',
+                  'With inscriptions for US, UK, German, French, Nordic, Spanish, and Russian.',
+                  'With inscriptions for Dvorak Layout',
+                ]
+              },
+              {
+                title: 'BLACK, PROFESSIONAL FONT KEYCAP SET',
+                items: [
+                  'With inscriptions, available only in US'
+                ]
+              }
+            ]
+          ]
+        }
+      ]} />
       <hr />
       <RelatedProducts />
     </>
