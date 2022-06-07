@@ -7,7 +7,8 @@ interface Props {
   description?: string
   image?: {
     src: string
-    alt?: string
+    alt?: string,
+    blend?: boolean
   }
 }
 const OversizedVolume: VFC<Props> = ({ heading, title, description, image }) => {
@@ -16,7 +17,7 @@ const OversizedVolume: VFC<Props> = ({ heading, title, description, image }) => 
       <div className="container-boxed">
         <div className="row align-items-center">
           <div className="col-12 col-md-6">
-            <img className="mb-5 mb-md-0 pe-3 breakout img-fluid" src="../images/product-images/product-details/4-professional/img-dk4-oversized_volume_knob.png" alt="Oversized Volume Knob" />
+            <img className={`mb-5 mb-md-0 pe-3 breakout img-fluid ${image?.blend ? 'blend-darken' : ''}`} src={image ? image.src : '/images/product-images/product-details/4-professional/img-dk4-oversized_volume_knob.png'} alt="Oversized Volume Knob" />
           </div>
           <div className="col-12 col-md-6">
             <figure className="heading mb-0">

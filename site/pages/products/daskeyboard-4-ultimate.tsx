@@ -87,7 +87,12 @@ const D4Ultimate: VFC = () => {
 
       <ForceDiagram type="both" />
 
-      <OversizedVolume />
+      <OversizedVolume
+        image={{
+          src: '/images/product-images/product-details/4-ultimate/img-dk4-oversized_volume_knob.jpg',
+          blend: true
+        }}
+      />
 
       <Banner
         sectionPad
