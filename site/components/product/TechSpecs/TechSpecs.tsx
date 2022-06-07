@@ -1,18 +1,10 @@
 import type { VFC, FC } from "react"
 import { Product } from "@components/product/ProductCard/ProductCard"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import ListItem from "@components/core/ListItem"
 
 interface Props {
   product: Product
-}
-
-const SpecItem: FC = ({ children }) => {
-  return (
-    <li className="position-relative ps-4">
-      <FontAwesomeIcon icon="dot-circle" className="me-2 text-red position-absolute start-0" />
-      {children}
-    </li>
-  )
 }
 const TechSpecs: VFC<Props> = ({ product }) => {
   const totalBlocks = product.specs?.length || 1
@@ -42,16 +34,16 @@ const TechSpecs: VFC<Props> = ({ product }) => {
                       {specs.items.map((item, index) => (
                         <>
                           {typeof item === 'string' && (
-                            <SpecItem key={index}>
+                            <ListItem key={index}>
                               <span dangerouslySetInnerHTML={{ __html: item }}></span>
-                            </SpecItem>
+                            </ListItem>
                           )}
                           {Array.isArray(item) && (
                             <ul className="list-unstyled my-2">
                               {item.map((subItem, subIndex) => (
-                                <SpecItem key={subIndex}>
+                                <ListItem key={subIndex}>
                                   <span dangerouslySetInnerHTML={{ __html: subItem }}></span>
-                                </SpecItem>
+                                </ListItem>
                               ))}
                             </ul>
                           )}

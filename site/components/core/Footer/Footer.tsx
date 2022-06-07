@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import stripHTML from '@lib/strip-html'
 import type { VFC } from 'react'
 import Link from '../Link'
+import ListItem from '../ListItem'
 
 interface FooterLink {
   title: string
@@ -96,8 +97,7 @@ const Footer: VFC = () => {
     },
   ]
   const FooterLink = (link: FooterLink, index: number) => (
-    <li key={index}>
-      <FontAwesomeIcon icon='dot-circle' className='text-red me-2' />
+    <ListItem key={index}>
       {link.blank ? (
         <a
           href={link.href}
@@ -113,7 +113,7 @@ const Footer: VFC = () => {
           html={link.title}
         />
       )}
-    </li>
+    </ListItem>
   )
   return (
     <footer id="siteFooter">

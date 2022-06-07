@@ -1,18 +1,6 @@
+import ListItem from "@components/core/ListItem"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { VFC } from "react"
-
-interface FeatureItemProps {
-  text: string
-}
-const FeatureItem: VFC<FeatureItemProps> = ({ text }) => {
-  return (
-    <li className="position-relative ps-4">
-      <FontAwesomeIcon icon="dot-circle" className="me-2 text-red position-absolute start-0" />
-      <span dangerouslySetInnerHTML={{ __html: text }} />
-    </li>
-  )
-}
-
 interface FeatureColumnProps {
   type?: 'list' | 'button'
   title?: string
@@ -34,7 +22,7 @@ const FeatureColumn: VFC<FeatureColumnProps> = ({ title, items, type: _type, but
       {type === 'list' && items && (
         <ul className={`list-unstyled ${!title ? 'mt-4' : ''}`}>
           {items.map((item, index) => (
-            <FeatureItem key={index} text={item} />
+            <ListItem key={index} text={item} />
           ))}
         </ul>
       )}
