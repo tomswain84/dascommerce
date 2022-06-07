@@ -24,12 +24,14 @@ interface BannerImage {
 interface SectionBannerProps {
   sectionId?: string
   image: BannerImage,
-  title: string,
-  titleExtra?: string
-  button?: string | BannerButton,
-  description: string
-  textAlign?: 'center' | 'left' | 'right',
-  background?: 'light' | 'dark' | 'white'
+  content: {
+    title: string,
+    titleExtra?: string
+    description: string
+    textAlign?: 'center' | 'left' | 'right',
+    button?: string | BannerButton,
+    background?: 'light' | 'dark' | 'white'
+  }
   containerPadding?: number | string
   className?: string
   noCol?: boolean
@@ -38,7 +40,8 @@ export interface BannerProps extends SectionBannerProps {
   BannerButton: () => JSX.Element | null,
 }
 const SectionBanner: VFC<SectionBannerProps> = (props) => {
-  const { sectionId, image, title, titleExtra, button, description, textAlign, background, className } = props
+  const { sectionId, image, className } = props
+  const { title, titleExtra, button, description, textAlign, background } = props.content
   let backgroundClass, textColorClass = 'text-black'
   switch (background) {
     case 'dark':

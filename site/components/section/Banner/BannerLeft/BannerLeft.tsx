@@ -3,7 +3,8 @@ import stripHTML from "@lib/strip-html"
 import type { VFC, FC } from "react"
 import { BannerProps } from '../Banner'
 
-const BannerLeft: VFC<BannerProps> = ({ title, titleExtra, textAlign, description, containerPadding, image, noCol, BannerButton }) => {
+const BannerLeft: VFC<BannerProps> = ({ containerPadding, image, content, noCol, BannerButton }) => {
+  const { title, titleExtra, textAlign, description } = content
   const NoColWrapper: FC<{ className: string }> = (props) => {
     if (noCol) {
       return (

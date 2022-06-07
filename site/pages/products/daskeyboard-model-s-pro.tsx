@@ -1,6 +1,8 @@
 import CherryMXSwitches from "@components/product/CherryMXSwitches"
 import NKeyRollover from "@components/product/NKeyRollover"
 import ProductHeader from "@components/product/ProductHeader"
+import SwitchCherryBlue from "@components/product/SwitchCherryBlue"
+import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 import Banner from "@components/section/Banner"
 import ForceDiagram from "@components/section/ForceDiagram"
 import ProductHero from "@components/section/ProductHero"
@@ -31,8 +33,10 @@ const ModelSPro: VFC = () => {
       />
       <hr />
       <Banner
-        title={`UBER <span class="text-red">QUALITY</span>`}
-        description="When Germans engineer it, you know it has to be good. We’re perfectionists focused on creating top rated products for our fellow overachievers. Das Keyboard Model S Professional mechanical keyboard is made of the highest-quality materials and robust construction."
+        content={{
+          title: `UBER <span class="text-red">QUALITY</span>`,
+          description: "When Germans engineer it, you know it has to be good. We’re perfectionists focused on creating top rated products for our fellow overachievers. Das Keyboard Model S Professional mechanical keyboard is made of the highest-quality materials and robust construction."
+        }}
         image={{
           position: 'left',
           src: '/images/product-images/product-details/model-s-pro/img-dkms_quality.jpg'
@@ -49,10 +53,10 @@ const ModelSPro: VFC = () => {
       <hr />
       <div className="row">
         <div className="col-md-6">
-          <SwitchCherry />
+          <SwitchCherryBrown />
         </div>
         <div className="col-md-6">
-          <SwitchCherry />
+          <SwitchCherryBlue />
         </div>
       </div>
       <hr />
@@ -66,9 +70,11 @@ const ModelSPro: VFC = () => {
       </div>
       <hr />
       <Banner
-        textAlign="left"
-        title={`TYPE <span class="text-red">SIGNIFICANTLY FASTER</span>.`}
-        description="Type faster than you ever thought possible on this mechanical wonder. The addictive tactile feedback allows you to have a faster, more accurate typing experience.<br/>Gold plated switches provide the best contact and typing experience because, unlike other metals, gold does not rust and lasts over time."
+        content={{
+          textAlign: "left",
+          title: `TYPE <span class="text-red">SIGNIFICANTLY FASTER</span>.`,
+          description: "Type faster than you ever thought possible on this mechanical wonder. The addictive tactile feedback allows you to have a faster, more accurate typing experience.<br/>Gold plated switches provide the best contact and typing experience because, unlike other metals, gold does not rust and lasts over time."
+        }}
         image={{
           position: 'left',
           src: "/images/product-images/product-details/model-s-pro/model-s-professional-side-view.jpg"
@@ -78,9 +84,11 @@ const ModelSPro: VFC = () => {
       <NKeyRollover />
       <hr />
       <Banner
-        textAlign="left"
-        title={`UBER <span class="text-red">QUALITY</span>.`}
-        description={`When Germans engineer it, you know it has to be good. We’re perfectionists focused on creating top rated products for our fellow overachievers. Das Keyboard Model S Professional mechanical keyboard is made of the highest-quality materials and robust construction.`}
+        content={{
+          textAlign: "left",
+          title: `UBER <span class="text-red">QUALITY</span>.`,
+          description: `When Germans engineer it, you know it has to be good. We’re perfectionists focused on creating top rated products for our fellow overachievers. Das Keyboard Model S Professional mechanical keyboard is made of the highest-quality materials and robust construction.`
+        }}
         image={{
           position: 'left',
           src: "/images/product-images/product-details/model-s-pro/model-s-professional-reflection.png",

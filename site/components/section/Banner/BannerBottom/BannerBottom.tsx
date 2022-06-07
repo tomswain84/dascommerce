@@ -3,7 +3,8 @@ import stripHTML from "@lib/strip-html"
 import type { VFC } from "react"
 import { BannerProps } from "../Banner"
 
-const BannerBottom: VFC<BannerProps> = ({ title, titleExtra, description, image, containerPadding, textAlign, background, BannerButton }) => {
+const BannerBottom: VFC<BannerProps> = ({ content, image, containerPadding, BannerButton }) => {
+  const { title, titleExtra, description, textAlign, background } = content
   return (
     <>
       <div className={`container-boxed ${containerPadding || ''}`}>

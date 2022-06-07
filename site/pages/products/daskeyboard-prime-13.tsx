@@ -1,4 +1,5 @@
 import ProductHeader from "@components/product/ProductHeader"
+import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 import Banner from "@components/section/Banner"
 import ForceDiagram from "@components/section/ForceDiagram"
 import ProductExtra from "@components/section/ProductExtra"
@@ -33,9 +34,11 @@ const Prime13: VFC = () => {
       />
       <hr />
       <Banner
-        textAlign="left"
-        title="CONNECT YOUR SOUL TO THE MACHINE"
-        description="Focus on your work: no-nonsense features to get the job done"
+        content={{
+          textAlign: "left",
+          title: "CONNECT YOUR SOUL TO THE MACHINE",
+          description: "Focus on your work: no-nonsense features to get the job done"
+        }}
         image={{
           position: 'bottom',
           src: '/images/product-images/product-details/prime-13/prime13-mecahnical-keybaord-front-view.jpg'
@@ -43,9 +46,11 @@ const Prime13: VFC = () => {
       />
       <hr />
       <Banner
-        textAlign="center"
-        title={`<span class="text-red">MINIMALIST DESIGN</span>`}
-        description="Start with pure lines sculpted in aluminum, add clean white backlit keys with a modern font face, and you get an incredibly efficient tool that helps get the job done."
+        content={{
+          textAlign: "center",
+          title: `<span class="text-red">MINIMALIST DESIGN</span>`,
+          description: "Start with pure lines sculpted in aluminum, add clean white backlit keys with a modern font face, and you get an incredibly efficient tool that helps get the job done."
+        }}
         image={{
           position: 'bottom',
           src: '/images/product-images/product-details/prime-13/prime13-mechanical-keyboard-side-view.jpg'
@@ -53,9 +58,11 @@ const Prime13: VFC = () => {
       />
       <hr />
       <Banner
-        textAlign="center"
-        title={`<span class="text-red">TYPE ANYWHERE, EVEN IN YOUR CAVE.</span>`}
-        description="The Das Keyboard Prime 13 wields white LED backlit keys with 7 levels of brightness. Plenty-enough settings even for desks located in challengingly-dark environments."
+        content={{
+          textAlign: "center",
+          title: `<span class="text-red">TYPE ANYWHERE, EVEN IN YOUR CAVE.</span>`,
+          description: "The Das Keyboard Prime 13 wields white LED backlit keys with 7 levels of brightness. Plenty-enough settings even for desks located in challengingly-dark environments."
+        }}
         image={{
           position: 'bottom',
           src: '/images/product-images/product-details/prime-13/prime13-backligth-animated.gif'
@@ -106,21 +113,20 @@ const Prime13: VFC = () => {
       <hr />
       <div className="row">
         <div className="col-md-6">
-          <SwitchCherry />
+          <SwitchCherryBrown />
         </div>
         <div className="col-md-6">
           <ForceDiagram />
         </div>
       </div>
       <hr />
-      <ProductFeatureGroup />
+      <ProductFeatureGroup rows={[]} />
       <hr />
       <ProductFeature
         heading="KEEP YOUR SPACE CLEAN"
         title="EXTRA LONG BRAIDED CABLE"
         description="The Prime 13 sports a 2-meter (6.5ft) braided USB cable that goes through desk grommets to keep the desk clean."
-        image=""
-        layout="image-center"
+        image={{ src: '', position: 'left' }}
       />
       <hr />
       <ProductFaqs />
