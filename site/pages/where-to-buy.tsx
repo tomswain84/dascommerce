@@ -5,6 +5,7 @@ import type { VFC } from "react"
 export async function getStaticProps() {
   return {
     props: {
+      title: "Where To Buy",
       bodyId: 'where-to-buy',
       bodyClass: 'single-content',
     },
@@ -196,7 +197,7 @@ const WhereToBuy: VFC<{}> = () => {
               <a href="/company-information/become-a-reseller"> <span id="where-to-buy_content_1_right" metadot-translation="" className="ng-isolate-scope">Become a reseller</span> </a>
 
               <p className="fw-bold mb-2">Government sales</p>
-              <img className="mw-100" src="/sites/daskeyboard/images/gsa_logo.jpg" alt="GSA" />
+              <img className="mw-100" src="/images/gsa_logo.jpg" alt="GSA" />
 
               <h2 className="mt-5">Middle East region</h2>
 
