@@ -5,11 +5,16 @@ interface Props {
   sectionId?: string
   title: string
   description: string
+  className?: string
+  margin?: {
+    top?: number
+    bottom?: number
+  }
   video: {
     src: string
   }
 }
-const ProductVideo: VFC<Props> = ({ theme, sectionId, title, description, video }) => {
+const ProductVideo: VFC<Props> = ({ theme, sectionId, title, description, className, video, margin }) => {
   return (
     <>
       {theme === 'light' && (
@@ -34,11 +39,18 @@ const ProductVideo: VFC<Props> = ({ theme, sectionId, title, description, video 
         </section>
       )}
       {theme === 'dark' && (
-        <section id={sectionId || 'video'} className="pt-5 mt-5 bg-white">
-          <div className="container-boxed pb-5 pt-xl-5 mt-sm-5">
+        <section
+          id={sectionId || 'video'}
+          className={`pt-5 bg-white ${className || 'mt-5'}`}
+          style={{
+            marginTop: margin && margin.top ? `${margin.top}px !important` : 0,
+            marginBottom: margin && margin.bottom ? `${margin.bottom}px !important` : 0,
+          }}
+        >
+          <div className={`container-boxed pb-5`}>
             <div className="row mb-md-4">
               <div className="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                <figure className="heading text-center mt-5">
+                <figure className="heading text-center">
                   <figcaption>
                     <h1 dangerouslySetInnerHTML={{ __html: title }} />
                   </figcaption>

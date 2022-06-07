@@ -1,9 +1,6 @@
 import type { VFC } from "react"
 import CherryMXSwitches from "@components/product/CherryMXSwitches"
 import NKeyRollover from "@components/product/NKeyRollover"
-import ProductHeader from "@components/product/ProductHeader"
-import SwitchCherryBlue from "@components/product/SwitchCherryBlue"
-import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 import Banner from "@components/section/Banner"
 import ForceDiagram from "@components/section/ForceDiagram"
 import ProductHero from "@components/section/ProductHero"
@@ -47,7 +44,7 @@ const ModelSPro: VFC = () => {
 
       <Banner
         sectionId="values"
-        className="pt-5"
+        className="pt-5 mb-5"
         content={{
           background: 'light',
           title: `UBER <span class="text-red">QUALITY</span>`,
@@ -62,6 +59,8 @@ const ModelSPro: VFC = () => {
 
       <ProductVideo
         theme="dark"
+        className="mt-5"
+        margin={{ top: 120 }}
         title={`SUPER <span class="text-red">AWESOME FEEL</span>.`}
         description="Behold the outstanding tactile and audio response with every keystroke you make. This high-performance, mechanical keyboard feels amazing on your fingertips and offers two distinct tactile experiences - click and soft. Your fingers will love it."
         video={{ src: "https://www.youtube.com/embed/NHIMMqhW3kY?rel=0" }}

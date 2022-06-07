@@ -15,8 +15,9 @@ interface Props {
     breakoutSrc?: string,
     contained?: boolean
   }
+  className?: string
 }
-const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, currency, isCherry, fill }) => {
+const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, currency, isCherry, fill, className }) => {
   const ImageBlock: VFC = () => (
     <>
       <img className="img-fluid d-none d-sm-block breakout" src={image.src} alt={stripHTML(title)} />
@@ -47,22 +48,25 @@ const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, curre
   )
   return (
     <>
-      <section className="bg-white section-pad">
+      <section className={`bg-white section-pad ${className || ''}`}>
         <div className="container-boxed">
           <div className="row">
             {fill ? (
-              <div className="col-sm-6">
-                <div className="row align-items-center">
-                  <div className="col">
-                    <Heading noCherry />
-                  </div>
-                  {isCherry && (
+              <>
+                <div className="col-sm-6">
+                  <div className="row align-items-center">
                     <div className="col">
-                      <Cherry />
+                      <Heading noCherry />
                     </div>
-                  )}
+                    {isCherry && (
+                      <div className="col">
+                        <Cherry />
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+                {!image.contained && <ImageBlock />}
+              </>
             ) : (
               <div className="col">
                 <Heading />

@@ -340,6 +340,57 @@
     "description": "Need a Model S designed for Mac compatibility? The Das Keyboard Model S Professional for Mac, featuring a two-port USB 2.0 Hi-Speed hub and glossy black top panel, is for you.",
     "tags": ["supercharged", "mac"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "specs": [
+      {
+        "title": "Product Information",
+        "items": [
+          "Cherry MX blue mechanical key switches with gold contacts (clicky tactile)",
+          "5-key rollover",
+          "Enhanced 104-key layout",
+          "Laser-etched key cap inscriptions to prevent fading"
+        ]
+      },
+      {
+        "title": "SYSTEM REQUIREMENTS",
+        "items": [
+          "PC or Mac, Windows, Linux, or Mac OS X",
+          "2 USB ports or 1 USB port + 1 PS/2 port",
+          "USB to PS/2 adapter (included)",
+          "Media controls are not available using a PS2 connection",
+          "No driver required"
+        ]
+      },
+      {
+        "title": "TECHNICAL INFORMATION",
+        "items": [
+          "Glossy black upper enclosure with matching black USB cable – Darth Vader approved",
+          "Two-port USB hub 1.1 and 2.0 compatible",
+          "Blue LEDs",
+          "Extra long two-meter (6.6-foot) USB cable"
+        ]
+      },
+      {
+        "title": "ENVIRONMENTAL DATA",
+        "items": [
+          "Operating temperature: 0°C to over 50°C",
+          "Operating humidity: 0% to 60%"
+        ]
+      },
+      {
+        "title": "ELECTRICAL DATA",
+        "items": [
+          "The USB hub has two ports and does not require an external power supply. It’s compatible with the 1.1 and 2.0 standards. Both ports can be active at the same time, but one can temporarily shut down if the current consumption is too high."
+        ]
+      },
+      {
+        "title": "EVEN MORE INFORMATION",
+        "items": [
+          "Dimensions: 18in x 6.5in x 1in (thickest portion, feet not extended, 1.5in w/ extended feet)",
+          "Weight: 1.36 kg (3 lbs)",
+          "Bumps on F and J keys (home keys)"
+        ]
+      }
+    ]
   }
 ]
