@@ -179,7 +179,30 @@
     "description": "Sleek tenkeyless design with PBT keycaps and Cherry MX Brown switches will help you type faster. Enjoy the pleasing ultra-modern design piece sitting at your workstation.",
     "tags": ["supercharged", "aluminum", "pc"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "specs": [
+      "Cherry MX Brown mechanical key switches with gold contacts",
+      "PBT keycaps in charcoal grey and black sublimation",
+      "Factory-oiled large key switches",
+      "87-key tenkeyless mechanical keyboard design",
+      "Bumps on F and J keys (home keys)",
+      "NKRO over USB for faster gaming, programming, or anything that makes you a productivity ninja",
+      "Dedicated Windows key disable-control for better gaming",
+      "Media and special function keys",
+      "Anodized aluminum black top panel for sleek design and durability",
+      "Two-port USB 2.0 hub",
+      "Footbar to raise keyboard is also a functioning ruler (efficiency is our jam)",
+      "Extra long 6.5 ft (201 cm) USB cable with single USB type-A connector",
+      "Firmware updatable",
+      "System requirements:",
+      [
+        "PC Windows, Linux or ChromeOS",
+        "One USB 1.1, 2.0 or 3.0 port",
+        "No driver required"
+      ],
+      "Dimensions: 15.49 x 6.05 x 1.14 inches (39.34 x 15.37 x 2.9 cm)",
+      "Weight: 2.5 lbs (1.13 kg)"
+    ]
   },
   {
     "id": 8,

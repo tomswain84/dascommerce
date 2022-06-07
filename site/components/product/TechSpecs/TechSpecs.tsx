@@ -44,7 +44,7 @@ const TechSpecs: VFC<Props> = ({ product }) => {
                         </SpecItem>
                       )}
                       {Array.isArray(item) && (
-                        <ul className="list-unstyled mt-2">
+                        <ul className="list-unstyled my-2">
                           {item.map((subItem, subIndex) => (
                             <SpecItem key={subIndex}>
                               <span dangerouslySetInnerHTML={{ __html: subItem }}></span>

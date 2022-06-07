@@ -14,7 +14,7 @@ interface Props {
     breakoutSrc?: string,
   }
 }
-const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, currency }) => {
+const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, currency, isCherry }) => {
   return (
     <>
       <section className="bg-white section-pad">
@@ -27,6 +27,9 @@ const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, curre
                     <small>{heading}</small>
                     <br />{title}
                   </h1>
+                  {isCherry && (
+                    <img className="cherry-logo my-4 img-fluid" src="/images/cherry-logo.png" alt={heading}></img>
+                  )}
                   {hasPrice && (
                     <h6 className="mt-5">
                       Starting at:
