@@ -41,11 +41,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     if (pageProps.bodyClass) {
       document.body.className = pageProps.bodyClass
     }
+    if (pageProps.title) {
+      document.head.title = pageProps.title
+    }
   })
 
   return (
     <>
-      <Head />
+      <Head title={pageProps.title} />
       <Layout pageProps={pageProps}>
         <Header />
         <Component {...pageProps} />
