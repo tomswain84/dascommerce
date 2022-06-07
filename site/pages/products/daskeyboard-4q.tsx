@@ -54,7 +54,9 @@ const D4Q: VFC = () => {
       <AppletDashboard
         title="THE INFORMATION YOU NEED - ON YOUR KEYBOARD"
         description="The Das Keyboard 4Q is the smart RGB Cherry MX version of the iconic industry-standard Das Keyboard 4 Professional. It is the ultimate productivity tool that keeps programmers focused on writing software and operating at the highest level of concentration. No more unwanted interruptions. Instead of relying on snooze-able, momentary alerts from different devices, the Das Keyboard 4Q ambiently tracks the most important information directly on its RGB keys. Users can configure it for their needs. For example, if a website is down or you have been assigned a new task, or if the software build fails, the Das Keyboard 4Q will change color and let you know."
-        image="/images/product-images/product-details/4q/dk4q_intro.jpg"
+        image={{
+          src: "/images/product-images/product-details/4q/dk4q_intro.jpg"
+        }}
       />
 
       <ProductVideo
@@ -96,7 +98,7 @@ const D4Q: VFC = () => {
               <SwitchCherryBrown />
             </div>
             <div className="col-12 col-md-6 col-lg-4 mb-5 mb-md-0">
-              <ForceDiagram />
+              <ForceDiagram type="brown" />
             </div>
           </div>
         </div>

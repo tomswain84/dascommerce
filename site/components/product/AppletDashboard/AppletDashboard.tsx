@@ -4,7 +4,11 @@ import type { VFC } from "react"
 interface Props {
   title: string
   description: string
-  image: string
+  image: {
+    src: string
+    alt?: string
+    rounded?: boolean
+  }
 }
 const AppletDashboard: VFC<Props> = ({ title, description, image }) => {
   return (
@@ -20,7 +24,7 @@ const AppletDashboard: VFC<Props> = ({ title, description, image }) => {
             <p className="mt-3" dangerouslySetInnerHTML={{ __html: description }} />
           </div>
           <div className="col-12 col-xl-4 col-xxl-6">
-            <img className="img-fluid blend-plus-lighter" src={image} alt="Applet Dashboard" />
+            <img className={`img-fluid blend-plus-lighter ${image.rounded ? 'rounded' : ''}`} src={image.src} alt={image.alt || "Applet Dashboard"} />
           </div>
         </div>
       </div>

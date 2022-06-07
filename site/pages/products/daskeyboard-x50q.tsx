@@ -51,7 +51,9 @@ const X50Q: VFC = () => {
       <AppletDashboard
         title="Win at work and win in the endgame"
         description="A smart RGB keyboard for those that want to win at work, and at gaming. Q Software transforms the X50Q into an essential productivity tool that streamlines information gathering, keeping professionals focused and operating at the highest level of concentration. Instead of relying on alerts from different devices, the Das Keyboard X50Q displays them directly on its RGB keys. For example, if your website is down, you have been assigned a new task on Basecamp or Trello, or if your favorite Twitch user is online, the Das Keyboard X50Q will display a notification by changing the color of its keys. Built-in features include macros to play recorded keystroke sequences and multiple built-in RGB profiles."
-        image="/images/product-images/product-details/x50q/dkx50q_intro.png"
+        image={{
+          src: "/images/product-images/product-details/x50q/dkx50q_intro.png"
+        }}
       />
 
       <ProductVideo

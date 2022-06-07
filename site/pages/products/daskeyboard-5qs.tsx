@@ -54,7 +54,9 @@ const D5QS: VFC<{}> = () => {
           <br/> <br/>
           Compatible with Windows, Ubuntu, Linux Mint, and macOS mode is available.
         `}
-        image="/images/product-images/product-details/5qs/dk5q_intro.png"
+        image={{
+          src: "/images/product-images/product-details/5qs/dk5q_intro.png"
+        }}
       />
 
       <SpecificationList

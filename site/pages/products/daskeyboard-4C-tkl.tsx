@@ -1,24 +1,37 @@
+import type { VFC } from "react"
 import NKeyRollover from "@components/product/NKeyRollover"
-import ProductHeader from "@components/product/ProductHeader"
 import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 import Banner from "@components/section/Banner"
 import FootbarRuler from "@components/section/FootbarRuler"
 import ForceDiagram from "@components/section/ForceDiagram"
-import ProductFeature from "@components/section/ProductFeature"
 import ProductHero from "@components/section/ProductHero"
 import SwitchCherry from "@components/section/SwitchCherry"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
-import type { VFC } from "react"
+import PageTitle from "@components/core/PageTitle"
+import ProductApplets from "@components/section/ProductApplets"
+import AppletDashboard from "@components/product/AppletDashboard"
+
+export async function getStaticProps() {
+  return {
+    props: {
+      bodyId: '4c-tkl',
+      bodyClass: 'product-page keyboards',
+    },
+  }
+}
 
 const D4CTKL: VFC = () => {
   return (
     <>
-      <ProductHeader
+      <PageTitle
         title="DAS KEYBOARD 4C TKL"
-        price={139}
-        canBuy={true}
+        type="product"
+        product={{
+          price: 139,
+          canBuy: true
+        }}
       />
-      <hr />
+
       <ProductHero
         heading="MINIMAL FOOTPRINT"
         title="MAXIMUM POTENTIAL"
@@ -29,7 +42,22 @@ const D4CTKL: VFC = () => {
           src: '/images/product-images/product-details/4c-tkl/4c-tkl_side.jpg'
         }}
       />
-      <hr />
+
+      <AppletDashboard
+        title="ULTRA-MODERN, COMPACT DESIGN"
+        description={`
+          The 4C TKL features PBT keycaps, Cherry MX Brown switches, and a 2-port USB hub in a sleek tenkeyless (TKL) format. It's made of the highest-quality materials and has a solid construction you can feel. The Das Keyboard 4C TKL, helps maximize productivity while optimizing your desktop footprint. Featuring a sleek black anodized aluminum top panel, accented by charcoal grey PBT keycaps, with black sublimation legends, this TKL mechanical keyboard will have everyone envious.
+          <br/><br/>
+          Charcoal PBT keycaps for maximum durability are paired with Cherry MX Brown switches, giving your new mechanical keyboard life up to 50 million keystrokes. You'll enjoy the tactile experience you love from a mechanical keyboard, with just enough sound to satisfy you - and not annoy your coworkers!
+          <br/><br/>
+          Built with the same best-in-class materials you've come to expect from Das Keyboard, our latest model in TKL keyboard format includes a solid construction meant to streamline your work environment while maximizing your potential for speed.
+        `}
+        image={{
+          src: "/images/product-images/product-details/4c-tkl/daskeyboard-4C-tenkeyless-professional-rear-view.png",
+          rounded: true
+        }}
+      />
+
       <Banner
         content={{
           textAlign: "left",
