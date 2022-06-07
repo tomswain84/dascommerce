@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "@components/core/Link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { VFC } from "react"
 
