@@ -8,12 +8,10 @@ import FootbarRuler from "@components/section/FootbarRuler"
 import ForceDiagram from "@components/section/ForceDiagram"
 import ProductHeroBlack from "@components/section/ProductHeroBlack"
 import RelatedProducts from "@components/section/RelatedProducts"
-import SwitchCherry from "@components/section/SwitchCherry"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import PageTitle from "@components/core/PageTitle"
 import OversizedVolume from "@components/product/OversizedVolume"
-import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
-import SwitchCherryBlue from "@components/product/SwitchCherryBlue"
+import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
 
 export async function getStaticProps() {
   return {
@@ -67,7 +65,7 @@ const D4Professional: VFC = () => {
 
       <Banner
         sectionId="values"
-        className="dark-section pt-5"
+        className="pt-5"
         content={{
           title: `QUALITY <span class="text-red">YOU CAN FEEL</span>`,
           description: 'Das Keyboard 4 Professional mechanical keyboard is made of the highest-quality materials and robust construction you can feel. All of our keyboards are designed with high-performance, gold-plated mechanical key switches lasting up to 50 million keystrokes.',
@@ -84,18 +82,7 @@ const D4Professional: VFC = () => {
 
       <CherryMXSwitches />
 
-      <section className="bg-white section-pad">
-        <div className="container-boxed">
-          <div className="row">
-            <div className="col-12 col-sm-6">
-              <SwitchCherryBrown />
-            </div>
-            <div className="col-12 col-sm-6 mb-5 mb-sm-0">
-              <SwitchCherryBlue />
-            </div>
-          </div>
-        </div>
-      </section>
+      <SwitchCherryBoth />
 
       <ForceDiagram type="both" />
 
@@ -125,7 +112,7 @@ const D4Professional: VFC = () => {
 
       <Banner
         sectionId="everyDetail"
-        className="dark-section section-pad"
+        sectionPad
         content={{
           textAlign: "left",
           titlePadding: 'm-0',

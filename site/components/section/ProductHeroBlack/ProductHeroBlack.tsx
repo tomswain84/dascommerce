@@ -5,17 +5,19 @@ import type { VFC } from "react"
 interface Props {
   heading: string
   title: string
+  fill?: boolean
   isCherry: boolean
   image: {
     src: string
   }
 }
-const ProductHeroBlack: VFC<Props> = ({ heading, title, image, isCherry }) => {
+const ProductHeroBlack: VFC<Props> = ({ heading, title, image, isCherry, fill: _fill }) => {
+  const fill = _fill || false
   return (
     <section id="hero" className="bg-gray-darker text-white pb-sm-5 d-flex flex-column">
       <div className="container-boxed">
         <div className="row">
-          <div className="col-sm-6">
+          <div className={fill ? 'col-sm-12' : 'col-sm-6'}>
             <div className="row align-items-center">
               <div className="col">
                 <figure className="heading mt-lg-0">

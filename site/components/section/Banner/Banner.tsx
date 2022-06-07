@@ -24,6 +24,7 @@ interface BannerImage {
 }
 interface SectionBannerProps {
   sectionId?: string
+  sectionPad?: boolean
   image: BannerImage,
   content: {
     title: string,
@@ -42,7 +43,8 @@ export interface BannerProps extends SectionBannerProps {
   BannerButton: () => JSX.Element | null,
 }
 const SectionBanner: VFC<SectionBannerProps> = (props) => {
-  const { sectionId, image, className } = props
+  const { sectionId, sectionPad: _sectionPad, image, className } = props
+  const sectionPad = _sectionPad || false
   const { button, textAlign, background } = props.content
   let backgroundClass, textColorClass = 'text-black'
   switch (background) {
@@ -110,7 +112,7 @@ const SectionBanner: VFC<SectionBannerProps> = (props) => {
   }
 
   return (
-    <section id={sectionId} className={`${className || ''} ${backgroundClass}`}>
+    <section id={sectionId} className={`${className || ''} ${backgroundClass} ${sectionPad ? 'section-pad' : ''} ${background === 'dark' ? 'dark-section' : ''}`}>
       <BannerComponent />
     </section>
   )

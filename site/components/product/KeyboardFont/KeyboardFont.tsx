@@ -4,7 +4,7 @@ import type { VFC } from "react"
 const KeyboardFont: VFC = () => {
   return (
     <Banner
-      sectionId=""
+      sectionId="font"
       content={{
         textAlign: "left",
         background: "light",

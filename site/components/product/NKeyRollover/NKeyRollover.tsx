@@ -5,7 +5,7 @@ const NKeyRollover: VFC<{ supportMac?: boolean }> = ({ supportMac }) => {
   return (
     <Banner
       sectionId="nKeyRollover"
-      className="section-pad dark-section"
+      sectionPad
       content={{
         textAlign: "left",
         background: "dark",

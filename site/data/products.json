@@ -105,7 +105,31 @@
     "tags": ["supercharged", "minimalist", "aluminum", "pc"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
-    "series": "FOUR"
+    "series": "FOUR",
+    "specs": [
+      "Cherry MX mechanical key switches with gold contacts",
+      "Dedicated media control with oversized volume knob",
+      "Two-port USB 3.0 SuperSpeed hub - Up to 5Gb/s, 10x the speed of USB 2.0",
+      "Instant sleep button to save energy",
+      "Anodized aluminum top panel",
+      "Completely blank keyboard (no key cap inscriptions)",
+      "104-key US layout, 105-key for UK, NO, and DE layouts",
+      "Outside the US? <a href=\"http://www.daskeyboard.com/where-to-buy/\">Click here</a> for information on where to buy",
+      "Bumps on F and J keys (home keys)",
+      "Footbar to raise keyboard also functions as a ruler (you’ll thank us later)",
+      "Extra long 6.5 ft (201 cm) USB cable with single USB type-A connector",
+      "Dimensions: 18 x 6.8 x .80 inches (45.72 x 17.272 x 2.032 cm)",
+      "Elevated height: 1.2 inches (3.1 cm)",
+      "Weight: 2.9 lbs (1.3 kg)",
+      "NKRO over USB for faster gaming, programming, or anything that makes you a formidable opponent in work or play",
+      "Firmware updatable",
+      "System requirements:",
+      [
+        "PC Windows, Linux,or Mac",
+        "One USB 1.1., 2.0 or 3.0 port",
+        "No driver required"
+      ]
+    ]
   },
   {
     "id": 6,

@@ -1,8 +1,10 @@
 import BuiltToLastVideo from "@components/product/BuiltToLastVideo"
 import CherryMXSwitches from "@components/product/CherryMXSwitches"
 import NKeyRollover from "@components/product/NKeyRollover"
+import OversizedVolume from "@components/product/OversizedVolume"
 import ProductHeader from "@components/product/ProductHeader"
 import SwitchCherryBlue from "@components/product/SwitchCherryBlue"
+import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
 import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 import Banner from "@components/section/Banner"
 import FootbarRuler from "@components/section/FootbarRuler"
@@ -54,47 +56,16 @@ const D4ProfessionalForMac: VFC = () => {
           src: 'https://4eighty.com/sites/daskeyboard/images/img-home-values.png'
         }}
       />
-      <hr />
-      <BuiltToLastVideo />
-      <hr />
-      <CherryMXSwitches />
-      <hr />
-      <div className="row">
-        <div className="col-md-6">
-          <SwitchCherryBrown />
-        </div>
-        <div className="col-md-6">
-          <SwitchCherryBlue />
-        </div>
-      </div>
-      <hr />
-      <div className="row bg-gray-darker text-white py-5">
-        <div className="col-md-6">
-          <ForceDiagram />
-        </div>
-        <div className="col-md-6">
-          <ForceDiagram />
-        </div>
-      </div>
 
-      <Banner
-        sectionId=""
-        content={{
-          textAlign: "left",
-          background: "light",
-          title: `<span class="text-red">OVERSIZED VOLUME KNOB</span>`,
-          titleExtra: 'AND DEDICATED MEDIA CONTROLS',
-          description: `
-            With its large volume knob, Das Keyboard 4 for Mac allows users to quickly adjust volume while on a Skype call, in a Google hangout, or streaming online music. The Das Keyboard 4 for Mac also provides quick access to dedicated media controls such as mute, play, pause, next and previous track.
-            <br/><br/>
-            <strong>Energy-saving instant sleep button.</strong> Be kind to the earth by putting your computer to sleep with the quick-access instant sleep button. Not only will you save energy, but by putting your computer to sleep, you save time and can be up and running much faster than if you shut down and restart.
-          `
-        }}
-        image={{
-          position: 'left',
-          src: '/images/product-images/product-details/4-professional-for-mac/img-dk4-oversized_volume_knob.png'
-        }}
-      />
+      <BuiltToLastVideo />
+
+      <CherryMXSwitches />
+
+      <SwitchCherryBoth />
+
+      <ForceDiagram type="both" />
+
+      <OversizedVolume />
 
       <Banner
         sectionId=""
@@ -125,12 +96,11 @@ const D4ProfessionalForMac: VFC = () => {
           rounded: true
         }}
       />
-      <hr />
+      
       <FootbarRuler />
-      <hr />
+      
       <Banner
         content={{
-
           textAlign: "left",
           background: "dark",
           title: `EVERY DETAIL <span class="text-red">MATTERS</span>.`,
@@ -159,9 +129,9 @@ const D4ProfessionalForMac: VFC = () => {
           rounded: true
         }}
       />
-      
+
       <TechnicalSpecifications />
-      
+
       <RelatedProducts title="" series="FOUR" />
     </>
   )
