@@ -69,7 +69,7 @@ const D4Professional: VFC = () => {
         sectionId="values"
         className="dark-section pt-5"
         content={{
-          title: `QUALITY <span className="text-red">YOU CAN FEEL</span>`,
+          title: `QUALITY <span class="text-red">YOU CAN FEEL</span>`,
           description: 'Das Keyboard 4 Professional mechanical keyboard is made of the highest-quality materials and robust construction you can feel. All of our keyboards are designed with high-performance, gold-plated mechanical key switches lasting up to 50 million keystrokes.',
           background: "dark"
         }}
@@ -97,13 +97,16 @@ const D4Professional: VFC = () => {
         </div>
       </section>
 
+      <ForceDiagram type="both" />
+
       <OversizedVolume />
 
       <Banner
         sectionId="usbHub"
-        className="my-4"
+        className="my-5 py-4"
         content={{
           title: `USB 3.0 <span class="text-red">SUPERSPEED HUB</span>.`,
+          titlePadding: 'mb-0',
           textAlign: "left",
           description: 'Need to transfer videos to your workstation but don’t have time to wait all day for file transfers to complete? Don’t worry. Das Keyboard 4 has a blazing fast two-port USB 3.0 hub to transfer music, high resolution pictures and large videos at up to 5Gb per second. That’s 10 times faster than USB 2.0. It is backwards compatible with all USB 2.0/1.1 devices and hosts so previous peripheral investments are protected.'
         }}
@@ -121,11 +124,13 @@ const D4Professional: VFC = () => {
       <FootbarRuler />
 
       <Banner
-        sectionId=""
+        sectionId="everyDetail"
+        className="dark-section section-pad"
         content={{
           textAlign: "left",
+          titlePadding: 'm-0',
           background: "dark",
-          title: `EVERY DETAIL <span className="text-red">MATTERS</span>`,
+          title: `EVERY DETAIL <span class="text-red">MATTERS</span>`,
           description: `
             Featuring a stunning look, Das Keyboard 4 Professional has been completely redesigned with a sleek anodized aluminum top panel, a resonance-free bottom enclosure, a magnetically attached footbar, and a laser-engraved aluminum bottom label… all which make the design feel more badass and the typing feel more responsive.
             <br/><br/>
@@ -139,9 +144,15 @@ const D4Professional: VFC = () => {
         }}
       />
 
-      <TechnicalSpecifications />
+      <TechnicalSpecifications productSlug="daskeyboard-4-professional" />
 
-      <RelatedProducts title="4 Series" series="FOUR" />
+      <RelatedProducts
+        title="4 Series"
+        series="FOUR"
+        sectionId="seriesLineup"
+        className="bg-white text-center"
+        boxed
+      />
     </>
   )
 }

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { VFC } from "react"
 import BannerBottom from "./BannerBottom"
 import BannerLeft from "./BannerLeft"
+import BannerRight from "./BannerRight"
 
 interface BannerButton {
   label: string,
@@ -27,6 +28,7 @@ interface SectionBannerProps {
   content: {
     title: string,
     titleExtra?: string
+    titlePadding?: string
     description: string
     textAlign?: 'center' | 'left' | 'right',
     button?: string | BannerButton,
@@ -41,7 +43,7 @@ export interface BannerProps extends SectionBannerProps {
 }
 const SectionBanner: VFC<SectionBannerProps> = (props) => {
   const { sectionId, image, className } = props
-  const { title, titleExtra, button, description, textAlign, background } = props.content
+  const { button, textAlign, background } = props.content
   let backgroundClass, textColorClass = 'text-black'
   switch (background) {
     case 'dark':
@@ -89,7 +91,10 @@ const SectionBanner: VFC<SectionBannerProps> = (props) => {
   const bannerProps = {
     BannerButton,
     ...props,
-    textAlign: textAlign || 'center'
+    content: {
+      ...props.content,
+      textAlign: textAlign || 'center'
+    }
   }
   const BannerComponent = () => {
     switch (image.position) {
@@ -97,6 +102,8 @@ const SectionBanner: VFC<SectionBannerProps> = (props) => {
         return <BannerLeft {...bannerProps} />
       case 'bottom':
         return <BannerBottom {...bannerProps} />
+      case 'right':
+        return <BannerRight {...bannerProps} />
       default:
         return null
     }

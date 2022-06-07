@@ -3,7 +3,7 @@ import type { VFC } from "react"
 import filters from '@data/filters.json'
 import Link from "@components/core/Link"
 
-interface Product {
+export interface Product {
   id: number,
   name: string,
   slug: string,
@@ -14,7 +14,8 @@ interface Product {
   description: string,
   tags: string[],
   keystroke: string,
-  switch: string
+  switch: string,
+  specs?: string[]
 }
 
 const ProductCard: VFC<{ product: Product }> = ({ product }) => {

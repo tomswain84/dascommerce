@@ -1,16 +1,21 @@
 import ProductCard from "@components/product/ProductCard"
 import type { VFC } from "react"
 import allProducts from '@data/products.json'
+import { Product } from "@components/product/ProductCard/ProductCard"
 
 interface Props {
+  sectionId?: string
   title: string,
-  series: 'Q' | 'FOUR'
+  className?: string
+  series: 'Q' | 'FOUR',
+  boxed?: boolean
 }
-const RelatedProducts: VFC<Props> = ({ title, series }) => {
-  const products = allProducts.filter(p => p.series === series)
+const RelatedProducts: VFC<Props> = ({ sectionId, title, series, className, boxed: _boxed }) => {
+  const boxed = _boxed || false
+  const products = allProducts.filter(p => p.series === series) as Product[]
   return (
-    <section id="productLineup" className="bg-gray-lighter section-pad">
-      <div className="container">
+    <section id={sectionId || 'productLineup'} className={`section-pad ${className || 'bg-gray-lighter'}`}>
+      <div className={boxed ? 'container-boxed' : 'container'}>
         <div className="row">
           <div className="col">
             <figure className="heading m-0">

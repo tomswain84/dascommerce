@@ -4,7 +4,8 @@ import type { VFC } from "react"
 const NKeyRollover: VFC<{ supportMac?: boolean }> = ({ supportMac }) => {
   return (
     <Banner
-      sectionId=""
+      sectionId="nKeyRollover"
+      className="section-pad dark-section"
       content={{
         textAlign: "left",
         background: "dark",

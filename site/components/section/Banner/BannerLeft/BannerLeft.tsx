@@ -4,7 +4,7 @@ import type { VFC, FC } from "react"
 import { BannerProps } from '../Banner'
 
 const BannerLeft: VFC<BannerProps> = ({ containerPadding, image, content, noCol, BannerButton }) => {
-  const { title, titleExtra, textAlign, description } = content
+  const { title, titleExtra, titlePadding, textAlign, description } = content
   const NoColWrapper: FC<{ className: string }> = (props) => {
     if (noCol) {
       return (
@@ -21,7 +21,7 @@ const BannerLeft: VFC<BannerProps> = ({ containerPadding, image, content, noCol,
   }
   const ContentBlock = () => (
     <NoColWrapper className="col-md-6 order-md-2 d-md-flex align-items-end align-items-xxl-start">
-      <figure className={`heading text-${textAlign} mt-5 mt-md-3 pt-md-5`}>
+      <figure className={`heading text-${textAlign} ${titlePadding || 'mt-5 mt-md-3 pt-md-5'}`}>
         <figcaption>
           {titleExtra ? (
             <h2>
