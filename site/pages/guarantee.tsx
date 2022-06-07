@@ -11,7 +11,7 @@ export async function getStaticProps() {
   }
 }
 
-const AboutUs: VFC = () => {
+const Guarantee: VFC = () => {
   return (
     <main className="content-container">
       <section className="bg-white section-pad">
@@ -250,4 +250,4 @@ const AboutUs: VFC = () => {
     </main>
   )
 }
-export default AboutUs
+export default Guarantee
