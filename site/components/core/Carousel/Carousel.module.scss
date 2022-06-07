@@ -1,0 +1,21 @@
+.carousel {
+  & > :global(.carousel-slider) {
+    padding-bottom: 45px;
+    overflow: visible !important;
+  }
+
+  & :global(.control-dots .dot) {
+    background: gray !important;
+  }
+}
+.button {
+  position: absolute;
+  cursor: pointer;
+  bottom: 30px;
+}
+.next {
+  right: calc(50% - 15px);
+}
+.prev {
+  left: calc(50% - 15px);
+}

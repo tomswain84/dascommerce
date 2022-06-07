@@ -7,13 +7,13 @@ interface Props {
   type: 'product' | 'category' | 'page',
   product?: {
     price: number,
-    currency: '$' | string,
+    currency?: '$' | string,
     canBuy?: boolean,
     canDownload?: boolean,
     buyUrl?: string,
   }
 }
-const defaultProps: Props = {
+const defaultProps = {
   title: '',
   type: 'page',
   product: {
@@ -21,10 +21,13 @@ const defaultProps: Props = {
     currency: '$',
     canBuy: true,
     canDownload: false,
+    buyUrl: '',
   }
 }
-const PageTitle: VFC<Props> = (props = defaultProps) => {
+const PageTitle: VFC<Props> = (props) => {
   const { title, type, product } = props
+  let { price, currency, canBuy, canDownload, buyUrl } = product || defaultProps.product
+  if (!currency) currency = defaultProps.product?.currency
   const isProduct = type === 'product'
   const isCategory = type === 'category'
   return (
@@ -34,22 +37,24 @@ const PageTitle: VFC<Props> = (props = defaultProps) => {
           <div className="col text-center d-sm-flex align-items-center justify-content-between">
             <h1>
               {stripHTML(title, true)}
-              {isProduct && product && product.price && product.currency && (
-                <span className="price text-red small d-block d-md-inline">
-                  {product.currency}{product.price}
+              {isProduct && product && price && currency && (
+                <span className="price text-red small d-block d-md-inline ms-2">
+                  {currency}{price}
                 </span>
               )}
             </h1>
             {isProduct && product && (
               <div id="productCTA" className="mb-4 mb-sm-0 d-sm-flex align-items-center justify-content-end d-none">
-                {product.canBuy && (
-                  <a id="buyNow" className="btn btn-blue" href={product.buyUrl} title="Buy Now">Buy Now</a>
+                {canBuy && (
+                  <a id="buyNow" className="btn btn-blue" href={buyUrl} title="Buy Now">Buy Now</a>
                 )}
-                {product.canDownload && (
+                {canDownload && (
                   <a id="dlQsoftware" className="btn btn-outline-primary ms-3" href="https://www.daskeyboard.io/" target="_blank" title="Download Software" rel="noreferrer">
                     <span className="d-none d-lg-inline">Download</span>
                     Software
-                    <FontAwesomeIcon icon='download' className='ms-2' />
+                    <i>
+                      <FontAwesomeIcon icon='download' className='ms-2' />
+                    </i>
                   </a>
                 )}
               </div>

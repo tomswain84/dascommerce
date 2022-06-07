@@ -2,6 +2,7 @@
 import type { VFC } from "react"
 
 interface Props {
+  id?: string
   title: string
   description: string
   hasScreenBase?: boolean
@@ -14,40 +15,40 @@ interface Props {
     src: string
   }
 }
-const ProductScreen: VFC<Props> = ({ title, description, hasScreenBase, background, video, image }) => {
+const ProductScreen: VFC<Props> = ({ id, title, description, hasScreenBase, background, video, image }) => {
   let backgroundClass, textColorClass = 'text-black'
   switch (background) {
     case 'white':
       backgroundClass = 'bg-white'
       break
     case 'dark':
-      backgroundClass = 'bg-gray-darker'
+      backgroundClass = 'bg-gray-darker dark-section breakout-bottom'
       textColorClass = 'text-white'
       break
     case 'light':
-      backgroundClass = 'bg-gray-lighter'
+      backgroundClass = 'bg-gray-lighter pb-0'
       break
     default:
       break
   }
   return (
     <>
-      <section id="softwareVideo" className="section-pad bg-gray-lighter pb-0">
+      <section id={id || ''} className={`section-pad ${backgroundClass}`}>
         <div className="container-boxed">
           <div className="row">
             <div className="col-12">
               <figure className="heading text-center mb-5">
                 <figcaption>
                   <h2>
-                    <small>Limitless possibilities</small>
-                    <br />Configure RGB notifications with drag and drop applets
+                    <small>{title}</small>
+                    <br />{description}
                   </h2>
                 </figcaption>
               </figure>
             </div>
           </div>
           <div className="row">
-            <div className="col video-col">
+            <div className="col video-col text-center">
 
               {/* Mobile Only */}
 

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { VFC } from "react"
 import BannerBottom from "./BannerBottom"
 import BannerLeft from "./BannerLeft"
+import BannerRight from "./BannerRight"
 
 interface BannerButton {
   label: string,
@@ -18,18 +19,26 @@ interface BannerImage {
   width?: string | number
   height?: string | number,
   blend?: boolean
-  className?: string
+  className?: string,
+  stretch?: boolean,
+  fluid?: boolean
 }
 interface SectionBannerProps {
   sectionId?: string
+  sectionPad?: boolean
   image: BannerImage,
-  title: string,
-  titleExtra?: string
-  button?: string | BannerButton,
-  description: string
-  textAlign?: 'center' | 'left' | 'right',
-  background?: 'light' | 'dark'
+  content: {
+    title: string,
+    titleExtra?: string
+    titlePadding?: string
+    titleSmall?: boolean
+    description: string
+    textAlign?: 'center' | 'left' | 'right',
+    button?: string | BannerButton,
+    background?: 'light' | 'dark' | 'white'
+  }
   containerPadding?: number | string
+  containerBoxed?: boolean
   className?: string
   noCol?: boolean
 }
@@ -37,7 +46,9 @@ export interface BannerProps extends SectionBannerProps {
   BannerButton: () => JSX.Element | null,
 }
 const SectionBanner: VFC<SectionBannerProps> = (props) => {
-  const { sectionId, image, title, titleExtra, button, description, textAlign, background, className } = props
+  const { sectionId, sectionPad: _sectionPad, image, className, containerBoxed } = props
+  const sectionPad = _sectionPad || false
+  const { button, textAlign, titleSmall, background } = props.content
   let backgroundClass, textColorClass = 'text-black'
   switch (background) {
     case 'dark':
@@ -85,7 +96,16 @@ const SectionBanner: VFC<SectionBannerProps> = (props) => {
   const bannerProps = {
     BannerButton,
     ...props,
-    textAlign: textAlign || 'center'
+    containerBoxed: typeof containerBoxed === 'undefined' ? true : containerBoxed,
+    image: {
+      ...image,
+      fluid: typeof image.fluid === 'undefined' ? true : image.fluid
+    },
+    content: {
+      ...props.content,
+      textAlign: typeof textAlign === 'undefined' ? 'center' : textAlign,
+      titleSmall: typeof titleSmall === 'undefined' ? false : titleSmall
+    }
   }
   const BannerComponent = () => {
     switch (image.position) {
@@ -93,13 +113,15 @@ const SectionBanner: VFC<SectionBannerProps> = (props) => {
         return <BannerLeft {...bannerProps} />
       case 'bottom':
         return <BannerBottom {...bannerProps} />
+      case 'right':
+        return <BannerRight {...bannerProps} />
       default:
         return null
     }
   }
 
   return (
-    <section id={sectionId} className={`${className || ''} ${backgroundClass}`}>
+    <section id={sectionId} className={`${className || ''} ${backgroundClass} ${sectionPad ? 'section-pad' : ''} ${background === 'dark' ? 'dark-section' : ''}`}>
       <BannerComponent />
     </section>
   )

@@ -3,6 +3,7 @@ import type { VFC } from "react"
 
 interface Props {
   heading: string
+  background?: 'light' | 'white'
   extras: Array<{
     title: string
     description: string
@@ -11,20 +12,25 @@ interface Props {
     }
   }>
 }
-const ProductExtra: VFC<Props> = ({ heading, extras }) => {
+const ProductExtra: VFC<Props> = ({ heading, background, extras }) => {
+  const backgroundClass = background === 'white' ? 'bg-white' : 'bg-gray-lighter'
   return (
-    <div className="text-center">
-      <h2>{heading}</h2>
-      <div className="d-flex flex-column align-items-center">
-        {extras.map(({ title, description, image }, index) => (
-          <div key={index}>
-            <img className="img-fluid rounded" src={image.src} alt={title} />
-            <h4>{title}</h4>
-            <p>{description}</p>
+    <section className={`section-pad ${backgroundClass}`}>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 pb-5">
+            <h2 className="text-center">{heading}</h2>
           </div>
-        ))}
+          {extras.map((extra, index) => (
+            <div className="col-12 col-lg-6" key={index}>
+              <img className="img-fluid rounded border w-100" src={extra.image.src} alt={extra.title} />
+              <h3 className="text-red mt-4">{extra.title}</h3>
+              <p dangerouslySetInnerHTML={{ __html: extra.description }} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 export default ProductExtra

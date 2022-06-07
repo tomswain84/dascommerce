@@ -39,7 +39,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       document.body.id = pageProps.bodyId
     }
     if (pageProps.bodyClass) {
-      document.body.classList?.add(pageProps.bodyClass.split(' '))
+      document.body.className = pageProps.bodyClass
     }
   })
 

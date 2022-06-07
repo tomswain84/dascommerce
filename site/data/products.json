@@ -10,7 +10,8 @@
     "description": "A smart keyboard for professionals who also like gaming and winning. Fastest Gamma Zulu switches, gaming look and palm rest.",
     "tags": ["supercharged", "backlit", "smart-rgb", "aluminum", "pc"],
     "keystroke": "100M",
-    "switch": "GAMMA ZULU"
+    "switch": "GAMMA ZULU",
+    "series": "Q"
   },
   {
     "id": 2,
@@ -30,7 +31,8 @@
       "ubuntu"
     ],
     "keystroke": "100M",
-    "switch": "GAMMA ZULU"
+    "switch": "GAMMA ZULU",
+    "series": "Q"
   },
   {
     "id": 3,
@@ -50,7 +52,8 @@
       "ubuntu"
     ],
     "keystroke": "50M",
-    "switch": "CHERRY MX RGB"
+    "switch": "CHERRY MX RGB",
+    "series": "Q"
   },
   {
     "id": 4,
@@ -63,7 +66,37 @@
     "description": "An expression of refinement and a premium typing experience, the DasKeyboard 4 Professional features dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
     "tags": ["supercharged", "aluminum", "pc"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "series": "FOUR",
+    "specs": [
+      {
+        "title": "Product Information",
+        "items": [
+          "Cherry MX mechanical key switches with gold contacts",
+          "Dedicated media control with oversized volume knob",
+          "Two-port USB 3.0 SuperSpeed hub - Up to 5Gb/s, 10x the speed of USB 2.0 (Two-port USB 2.0 hub for Das Keyboard 4 root models)",
+          "Instant sleep button to save energy",
+          "Laser etched key inscriptions",
+          "Bumps on F and J keys (home keys)",
+          "104-key US layout, 105-key for UK, NO, and DE layouts",
+          "Outside the US? <a href=\"http://www.daskeyboard.com/where-to-buy/\">Click here</a> for information on where to buy",
+          "Footbar to raise keyboard also functions as a ruler (you’ll thank us later)",
+          "Extra long 6.5 ft (201 cm) USB cable with single USB type-A connector (Braided cable for Das Keyboard 4 root models)",
+          "Dimensions: 18 x 6.8 x .80 inches (45.72 x 17.272 x 2.032 cm)",
+          "Elevated height: 1.2 inches (3.1 cm)",
+          "Weight: 2.9 lbs (1.3 kg)",
+          "NKRO over USB for faster gaming, programming, or anything that makes you a formidable opponent in work or play",
+          "Anodized aluminum top panel",
+          "Firmware updatable",
+          "System requirements:",
+          [
+            "PC Windows, Linux",
+            "One USB 1.1., 2.0 or 3.0 port",
+            "No driver required"
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": 5,
@@ -76,7 +109,37 @@
     "description": "For the expert typist desiring ultimate sleekness, the stealthy DasKeyboard 4 Ultimate has blank keys, dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
     "tags": ["supercharged", "minimalist", "aluminum", "pc"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "series": "FOUR",
+    "specs": [
+      {
+        "title": "Product Information",
+        "items": [
+          "Cherry MX mechanical key switches with gold contacts",
+          "Dedicated media control with oversized volume knob",
+          "Two-port USB 3.0 SuperSpeed hub - Up to 5Gb/s, 10x the speed of USB 2.0",
+          "Instant sleep button to save energy",
+          "Anodized aluminum top panel",
+          "Completely blank keyboard (no key cap inscriptions)",
+          "104-key US layout, 105-key for UK, NO, and DE layouts",
+          "Outside the US? <a href=\"http://www.daskeyboard.com/where-to-buy/\">Click here</a> for information on where to buy",
+          "Bumps on F and J keys (home keys)",
+          "Footbar to raise keyboard also functions as a ruler (you’ll thank us later)",
+          "Extra long 6.5 ft (201 cm) USB cable with single USB type-A connector",
+          "Dimensions: 18 x 6.8 x .80 inches (45.72 x 17.272 x 2.032 cm)",
+          "Elevated height: 1.2 inches (3.1 cm)",
+          "Weight: 2.9 lbs (1.3 kg)",
+          "NKRO over USB for faster gaming, programming, or anything that makes you a formidable opponent in work or play",
+          "Firmware updatable",
+          "System requirements:",
+          [
+            "PC Windows, Linux,or Mac",
+            "One USB 1.1., 2.0 or 3.0 port",
+            "No driver required"
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": 6,
@@ -89,7 +152,36 @@
     "description": "Designed for Mac compatibility, this premium finish mechanical keyboard features dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
     "tags": ["supercharged", "aluminum", "mac"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "series": "FOUR",
+    "specs": [
+      {
+        "title": "Product Information",
+        "items": [
+          "Cherry MX mechanical key switches with gold contacts",
+          "Dedicated media controls with oversized volume knob",
+          "Two-port USB 3.0 SuperSpeed hub - Up to 5Gb/s, 10x the speed of USB 2.0",
+          "Mac OS specific key functions",
+          "Instant sleep button to save energy",
+          "UV hard coat-protected key caps to prevent fading",
+          "104-key US layout, 105-key DE layout",
+          "Outside the US? <a href=\"http://www.daskeyboard.com/where-to-buy/\">Click here</a>",
+          "Anodized aluminum top panel",
+          "Extra long 6.5 ft (201 cm) USB cable with single USB type-A connector",
+          "Dimensions: 18 x 6.8 x .80 inches (45.72 x 17.272 x 2.032 cm)",
+          "Elevated height: 1.2 inches (3.1 cm)",
+          "Weight: 2.9 lbs (1.3 kg)",
+          "NKRO over USB for faster typing and programming",
+          "Footbar to raise keyboard also functions as a ruler (you'll thank us later)",
+          "System requirements:",
+          [
+            "Designed for Mac OS X",
+            "One USB 1.1., 2.0 or 3.0 port",
+            "No driver required"
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": 7,
@@ -102,7 +194,35 @@
     "description": "Sleek tenkeyless design with PBT keycaps and Cherry MX Brown switches will help you type faster. Enjoy the pleasing ultra-modern design piece sitting at your workstation.",
     "tags": ["supercharged", "aluminum", "pc"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "specs": [
+      {
+        "title": "Product Information",
+        "items": [
+          "Cherry MX Brown mechanical key switches with gold contacts",
+          "PBT keycaps in charcoal grey and black sublimation",
+          "Factory-oiled large key switches",
+          "87-key tenkeyless mechanical keyboard design",
+          "Bumps on F and J keys (home keys)",
+          "NKRO over USB for faster gaming, programming, or anything that makes you a productivity ninja",
+          "Dedicated Windows key disable-control for better gaming",
+          "Media and special function keys",
+          "Anodized aluminum black top panel for sleek design and durability",
+          "Two-port USB 2.0 hub",
+          "Footbar to raise keyboard is also a functioning ruler (efficiency is our jam)",
+          "Extra long 6.5 ft (201 cm) USB cable with single USB type-A connector",
+          "Firmware updatable",
+          "System requirements:",
+          [
+            "PC Windows, Linux or ChromeOS",
+            "One USB 1.1, 2.0 or 3.0 port",
+            "No driver required"
+          ],
+          "Dimensions: 15.49 x 6.05 x 1.14 inches (39.34 x 15.37 x 2.9 cm)",
+          "Weight: 2.5 lbs (1.13 kg)"
+        ]
+      }
+    ]
   },
   {
     "id": 8,
@@ -115,7 +235,46 @@
     "description": "Need simple, high quality minimalist design? The Das Keyboard Prime 13, with its white LED backlighting and anodized aluminum top panel, is for you.",
     "tags": ["supercharged", "minimalist", "backlit", "aluminum", "pc"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "specs": [
+      {
+        "title": "FEATURES",
+        "items": [
+          "Minimalist design with anodized aluminum top panel",
+          "Cherry MX mechanical switches with crosspoint gold contacts",
+          "White LED backlighting",
+          "Full n-key rollover (NKRO)",
+          "USB pass-through",
+          "Extra long, 6.5 ft (201 cm) braided cable",
+          "Quick access media controls and sleep mode via function keys"
+        ]
+      },
+      {
+        "title": "GOOD TO KNOW INFORMATION",
+        "items": [
+          "Laser-etched keycaps with keycap puller",
+          "Cherry-style wide keycap stabilizers",
+          "Dimensions: 18.03 x 6.77 x 1.22 inches (45.80 x 17.20 x 3.11 cm)",
+          "Weight: 2.9 lbs (1.32 kg)",
+          "Designed in Austin, TX USA"
+        ]
+      },
+      {
+        "title": "SYSTEM REQUIREMENTS",
+        "items": [
+          "One USB port for keyboard connection",
+          "One USB port for USB pass-through",
+          "No software driver required",
+          "Compatible with Windows, macOS, and Linux operating Systems"
+        ]
+      },
+      {
+        "title": "COUNTRY LAYOUTS",
+        "items": [
+          "Available in 104-key US layout & 105-key for UK layout (NO, and DE layouts will be coming soon)"
+        ]
+      }
+    ]
   },
   {
     "id": 9,
@@ -128,7 +287,47 @@
     "description": "Need simple, high quality minimalist design? The Das Keyboard Prime 13, with its white LED backlighting and anodized aluminum top panel, is for you.",
     "tags": ["supercharged", "pc"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "specs": [
+      {
+        "title": "Product Information",
+        "items": [
+          "Cherry MX mechanical key switches with gold contacts",
+          "Laser-etched key cap inscriptions to prevent fading",
+          "Media controls",
+          "Full n-key rollover with an included PS2 adapter, and 6 keys with USB",
+          "Enhanced 104-key layout"
+        ]
+      },
+      {
+        "title": "TECHNICAL INFORMATION",
+        "items": [
+          "Glossy black upper enclosure with matching black USB cable – Darth Vader approved",
+          "Two-port USB hub 1.1 and 2.0 compatible",
+          "Blue LEDs",
+          "Extra long two-meter (6.6-foot) USB cable"
+        ]
+      },
+      {
+        "title": "EVEN MORE INFORMATION",
+        "items": [
+          "Dimensions: 18in x 6.5in x 1in (thickest portion, feet not extended, 1.5in w/ extended feet)",
+          "Weight: 1.36 kg (3 lbs)",
+          "Compatible with PS/2 and USB KVM switches.",
+          "Bumps on F and J keys (home keys)"
+        ]
+      },
+      {
+        "title": "SYSTEM REQUIREMENTS",
+        "items": [
+          "PC or Mac, Windows, Linux, or Mac OS X",
+          "2 USB ports or 1 USB port + 1 PS/2 port USB to PS/2 adapter (included)",
+          "Media controls are not available using a PS2 connection",
+          "No driver required",
+          "Mac users can swap the command/control /options keys to match the Mac keyboard layout using the Mac OS X keyboard control panel"
+        ]
+      }
+    ]
   },
   {
     "id": 10,
@@ -141,6 +340,57 @@
     "description": "Need a Model S designed for Mac compatibility? The Das Keyboard Model S Professional for Mac, featuring a two-port USB 2.0 Hi-Speed hub and glossy black top panel, is for you.",
     "tags": ["supercharged", "mac"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "specs": [
+      {
+        "title": "Product Information",
+        "items": [
+          "Cherry MX blue mechanical key switches with gold contacts (clicky tactile)",
+          "5-key rollover",
+          "Enhanced 104-key layout",
+          "Laser-etched key cap inscriptions to prevent fading"
+        ]
+      },
+      {
+        "title": "SYSTEM REQUIREMENTS",
+        "items": [
+          "PC or Mac, Windows, Linux, or Mac OS X",
+          "2 USB ports or 1 USB port + 1 PS/2 port",
+          "USB to PS/2 adapter (included)",
+          "Media controls are not available using a PS2 connection",
+          "No driver required"
+        ]
+      },
+      {
+        "title": "TECHNICAL INFORMATION",
+        "items": [
+          "Glossy black upper enclosure with matching black USB cable – Darth Vader approved",
+          "Two-port USB hub 1.1 and 2.0 compatible",
+          "Blue LEDs",
+          "Extra long two-meter (6.6-foot) USB cable"
+        ]
+      },
+      {
+        "title": "ENVIRONMENTAL DATA",
+        "items": [
+          "Operating temperature: 0°C to over 50°C",
+          "Operating humidity: 0% to 60%"
+        ]
+      },
+      {
+        "title": "ELECTRICAL DATA",
+        "items": [
+          "The USB hub has two ports and does not require an external power supply. It’s compatible with the 1.1 and 2.0 standards. Both ports can be active at the same time, but one can temporarily shut down if the current consumption is too high."
+        ]
+      },
+      {
+        "title": "EVEN MORE INFORMATION",
+        "items": [
+          "Dimensions: 18in x 6.5in x 1in (thickest portion, feet not extended, 1.5in w/ extended feet)",
+          "Weight: 1.36 kg (3 lbs)",
+          "Bumps on F and J keys (home keys)"
+        ]
+      }
+    ]
   }
 ]

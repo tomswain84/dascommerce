@@ -1,10 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+import Carousel from "@components/core/Carousel"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import type { FC, VFC } from "react"
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import { Carousel } from 'react-responsive-carousel'
-import s from './Reviews.module.scss'
+import type { VFC } from "react"
 
 const Reviews: VFC = () => {
   const editorialReviews = [
@@ -95,42 +93,10 @@ const Reviews: VFC = () => {
       focus: 'On the Das Keyboard Model S'
     },
   ]
-  const customCss = `
-    .carousel-slider {
-      overflow: visible !important;
-    }
-    .control-dots {
-      bottom: -30px !important;
-    }
-    .control-dots .dot {
-      background: gray !important;
-    }
-  `
 
   const ReviewCarousel: VFC<{ reviews: typeof editorialReviews }> = ({ reviews }) => (
     <Carousel
-      className={`row position-relative ${s.carousel}`}
-      autoPlay
-      showArrows={true}
-      showThumbs={false}
-      showStatus={false}
-      renderArrowNext={
-        (onClickHandler) => (
-          <div className={s.button + ' ' + s.next}>
-            <FontAwesomeIcon icon='chevron-right' size='lg' onClick={onClickHandler} />
-          </div>
-        )
-      }
-      renderArrowPrev={
-        (onClickHandler) => (
-          <div className={s.button + ' ' + s.prev}>
-            <FontAwesomeIcon icon='chevron-left' size='lg' onClick={onClickHandler} />
-          </div>
-        )
-      }
-      infiniteLoop
-      centerMode
-      centerSlidePercentage={33.33}
+      className='row position-relative'
     >
       {reviews.map((review, index) => (
         <div className="card" key={index}>
@@ -152,7 +118,6 @@ const Reviews: VFC = () => {
 
   return (
     <section id="reviews" className="section-pad bg-white">
-      <style type="text/css">{customCss}</style>
       <div className="container-boxed">
         <div className="row">
           <div className="col">

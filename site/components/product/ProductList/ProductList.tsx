@@ -6,20 +6,20 @@ import { useRouter } from "next/router"
 import PageTitle from "@components/core/PageTitle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "@components/core/Link"
+import { Product } from "../ProductCard/ProductCard"
 
 interface Props {
-  category: string
   title: string
 }
 
-const ProductList: VFC<Props> = ({ category, title }) => {
+const ProductList: VFC<Props> = ({ title }) => {
   const router = useRouter()
   if (!filters.length) return null
   const { filter } = router.query
   // find current filter
   const currentFilter = filters.find(f => f.filter === filter)
   // list products by current filter
-  const currentProducts = products.filter(p => !currentFilter || currentFilter.tag === 'all' || p.tags.includes(currentFilter.tag))
+  const currentProducts = products.filter(p => !currentFilter || currentFilter.tag === 'all' || p.tags.includes(currentFilter.tag)) as Product[]
   return (
     <>
       <PageTitle

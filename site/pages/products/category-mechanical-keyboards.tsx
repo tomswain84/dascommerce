@@ -12,7 +12,6 @@ export async function getStaticProps() {
 
 const Products: VFC = () => {
   return <ProductList
-    category="mechanical-keyboards"
     title={`<small>Mechanical</small><br />Keyboards`}
   />
 }

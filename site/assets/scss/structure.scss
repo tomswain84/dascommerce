@@ -41,6 +41,9 @@
 .text-red {
   color: var(--red) !important;
 }
+.text-blue {
+  color: var(--blue) !important;
+}
 .text-white {
   color: var(--white) !important;
 }
@@ -525,14 +528,14 @@ section#pageTitle h1 {
 .content-container ul li {
   font-size: 0.9rem;
 }
-.content-container ul li::before {
+/* .content-container ul li::before {
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   content: '\f192' !important;
   border: none;
   margin-right: 0.5rem;
   color: var(--red);
-}
+} */
 .content-container ul li:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
