@@ -15,6 +15,7 @@ const SpecItem: FC = ({ children }) => {
   )
 }
 const TechSpecs: VFC<Props> = ({ product }) => {
+  const totalBlocks = product.specs?.length || 1
   return (
     <div className="modal fade content-container" id="techSpecs" tabIndex={-1} aria-labelledby="techSpecs" aria-hidden="true">
       <div className="modal-dialog modal-lg">
@@ -34,27 +35,31 @@ const TechSpecs: VFC<Props> = ({ product }) => {
             </div>
             <div className="row">
               <div className="col">
-                <h3 className="text-red mb-2">Product Information</h3>
-                <ul className="list-unstyled">
-                  {product.specs && product.specs.map((item, index) => (
-                    <>
-                      {typeof item === 'string' && (
-                        <SpecItem key={index}>
-                          <span dangerouslySetInnerHTML={{ __html: item }}></span>
-                        </SpecItem>
-                      )}
-                      {Array.isArray(item) && (
-                        <ul className="list-unstyled my-2">
-                          {item.map((subItem, subIndex) => (
-                            <SpecItem key={subIndex}>
-                              <span dangerouslySetInnerHTML={{ __html: subItem }}></span>
+                {product.specs && product.specs.map((specs, index) => (
+                  <div key={index}>
+                    <h3 className="text-red mb-2">{specs.title}</h3>
+                    <ul className="list-unstyled">
+                      {specs.items.map((item, index) => (
+                        <>
+                          {typeof item === 'string' && (
+                            <SpecItem key={index}>
+                              <span dangerouslySetInnerHTML={{ __html: item }}></span>
                             </SpecItem>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  ))}
-                </ul>
+                          )}
+                          {Array.isArray(item) && (
+                            <ul className="list-unstyled my-2">
+                              {item.map((subItem, subIndex) => (
+                                <SpecItem key={subIndex}>
+                                  <span dangerouslySetInnerHTML={{ __html: subItem }}></span>
+                                </SpecItem>
+                              ))}
+                            </ul>
+                          )}
+                        </>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

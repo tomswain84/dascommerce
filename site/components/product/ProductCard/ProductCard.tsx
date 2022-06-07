@@ -15,7 +15,7 @@ export interface Product {
   tags: string[],
   keystroke: string,
   switch: string,
-  specs?: string[]
+  specs?: Array<{ title: string, items: string[] }>
 }
 
 const ProductCard: VFC<{ product: Product }> = ({ product }) => {

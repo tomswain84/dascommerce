@@ -20,7 +20,8 @@ interface BannerImage {
   height?: string | number,
   blend?: boolean
   className?: string,
-  stretch?: boolean
+  stretch?: boolean,
+  fluid?: boolean
 }
 interface SectionBannerProps {
   sectionId?: string
@@ -30,12 +31,14 @@ interface SectionBannerProps {
     title: string,
     titleExtra?: string
     titlePadding?: string
+    titleSmall?: boolean
     description: string
     textAlign?: 'center' | 'left' | 'right',
     button?: string | BannerButton,
     background?: 'light' | 'dark' | 'white'
   }
   containerPadding?: number | string
+  containerBoxed?: boolean
   className?: string
   noCol?: boolean
 }
@@ -43,9 +46,9 @@ export interface BannerProps extends SectionBannerProps {
   BannerButton: () => JSX.Element | null,
 }
 const SectionBanner: VFC<SectionBannerProps> = (props) => {
-  const { sectionId, sectionPad: _sectionPad, image, className } = props
+  const { sectionId, sectionPad: _sectionPad, image, className, containerBoxed } = props
   const sectionPad = _sectionPad || false
-  const { button, textAlign, background } = props.content
+  const { button, textAlign, titleSmall, background } = props.content
   let backgroundClass, textColorClass = 'text-black'
   switch (background) {
     case 'dark':
@@ -93,9 +96,15 @@ const SectionBanner: VFC<SectionBannerProps> = (props) => {
   const bannerProps = {
     BannerButton,
     ...props,
+    containerBoxed: typeof containerBoxed === 'undefined' ? true : containerBoxed,
+    image: {
+      ...image,
+      fluid: typeof image.fluid === 'undefined' ? true : image.fluid
+    },
     content: {
       ...props.content,
-      textAlign: textAlign || 'center'
+      textAlign: typeof textAlign === 'undefined' ? 'center' : textAlign,
+      titleSmall: typeof titleSmall === 'undefined' ? false : titleSmall
     }
   }
   const BannerComponent = () => {

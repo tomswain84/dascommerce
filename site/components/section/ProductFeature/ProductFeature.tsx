@@ -11,9 +11,13 @@ export interface ProductFeatureProps {
     alt?: string
     position: 'left' | 'right' | 'center'
   }
+  extras?: Array<{
+    title: string
+    description: string
+  }>
 }
 
-const ProductFeature: VFC<ProductFeatureProps> = ({ heading, title, description, descriptionHint, image }) => {
+const ProductFeature: VFC<ProductFeatureProps> = ({ heading, title, description, descriptionHint, image, extras }) => {
   const colClass = () => {
     switch (image.position) {
       case 'left':
@@ -44,6 +48,16 @@ const ProductFeature: VFC<ProductFeatureProps> = ({ heading, title, description,
           <p dangerouslySetInnerHTML={{ __html: description }} />
           {descriptionHint && (
             <p className="small text-gray-light">{descriptionHint}</p>
+          )}
+          {extras && (
+            <>
+              {extras.map((extra, index) => (
+                <>
+                  <h6 className="text-red mt-4">{extra.title}</h6>
+                  <p dangerouslySetInnerHTML={{ __html: extra.description }} />
+                </>
+              ))}
+            </>
           )}
         </div>
         {image.position !== 'center' && (
