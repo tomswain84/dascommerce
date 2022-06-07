@@ -1,7 +1,10 @@
 import NextHead from 'next/head'
 import { VFC } from 'react'
 
-const Head: VFC = () => {
+interface Props {
+  title: string
+}
+const Head: VFC<Props> = ({ title }) => {
   return (
     <NextHead>
       {/* Required meta tags */}
@@ -23,7 +26,7 @@ const Head: VFC = () => {
       {/* FontAwesome */}
       {/* <script src="https://kit.fontawesome.com/5ad74c9225.js" crossOrigin="anonymous"></script> */}
 
-      <title>Das Keyboard - The Utimate Mechanical Keyboard Experience for Badasses</title>
+      <title>{title || 'Das Keyboard - The Utimate Mechanical Keyboard Experience for Badasses'}</title>
     </NextHead>
   )
 }
