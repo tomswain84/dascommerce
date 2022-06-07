@@ -6,8 +6,8 @@ interface FeatureItemProps {
 }
 const FeatureItem: VFC<FeatureItemProps> = ({ text }) => {
   return (
-    <li>
-      <FontAwesomeIcon icon="dot-circle" className="me-2 text-red" />
+    <li className="position-relative ps-4">
+      <FontAwesomeIcon icon="dot-circle" className="me-2 text-red position-absolute start-0" />
       <span dangerouslySetInnerHTML={{ __html: text }} />
     </li>
   )
