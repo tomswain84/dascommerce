@@ -44,8 +44,8 @@ const CorporateSale: VFC = () => {
                           }}
                           onLoad={(event) => {
                             event.currentTarget.contentWindow?.postMessage({
-                              css: "mojoWidgetCss"
-                            })
+                              css: "mojoWidgetCss",
+                            }, "*")
                           }}
                         />
                       </div>
