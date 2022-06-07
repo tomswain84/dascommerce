@@ -16,7 +16,7 @@ const ProductVideo: VFC<Props> = ({ title, description, video }) => {
             <figure className="heading text-center mb-5">
               <figcaption>
                 <h2>
-                  <small>{title}</small>
+                  <small dangerouslySetInnerHTML={{ __html: title }} />
                   <br /><span className="animated-cursor cursor-dark">{description}</span>
                 </h2>
               </figcaption>

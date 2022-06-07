@@ -4,7 +4,6 @@ import CustomizeKeyboard from "@components/product/CustomizeKeyboard"
 import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure"
 import QMessagePreview from "@components/product/QMessagePreview"
 import AppletsCTA from "@components/section/AppletsCTA"
-import Banner from "@components/section/Banner"
 import ForceDiagram from "@components/section/ForceDiagram"
 import Materials from "@components/section/Materials"
 import ProductCompatibility from "@components/product/ProductCompatibility"
@@ -17,6 +16,7 @@ import PageTitle from "@components/core/PageTitle"
 import AppletDashboard from "@components/product/AppletDashboard"
 import SpecificationList from "@components/section/SpecificationList"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
+import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 
 export async function getStaticProps() {
   return {
@@ -93,7 +93,7 @@ const D4Q: VFC = () => {
         <div className="container-boxed">
           <div className="row align-items-center">
             <div className="col-12 col-md-6 col-lg-8 mb-5 mb-md-0">
-              <SwitchCherry />
+              <SwitchCherryBrown />
             </div>
             <div className="col-12 col-md-6 col-lg-4 mb-5 mb-md-0">
               <ForceDiagram />

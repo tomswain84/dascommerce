@@ -3,35 +3,47 @@ import { useRef, useState } from "react"
 import type { VFC } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const SwitchCherry: VFC<{}> = () => {
+interface Props {
+  type: 'brown' | 'blue'
+  label: string
+  description: string
+  image: {
+    src: string
+  }
+  button: {
+    play: string
+    pause: string
+  }
+}
+const SwitchCherry: VFC<Props> = ({ type, label, description, image, button }) => {
   const audio = useRef(undefined as unknown as HTMLAudioElement)
   const [playing, setPlaying] = useState(false)
   return (
     <>
       <div className="row align-items-center">
         <div className="col-12 col-sm-6 col-md-12 col-lg-4">
-          <img className="img-fluid mb-4 mb-lg-0" src="/images/img-switch_brown.png" alt="Cherry MX Brown Switch" />
+          <img className="img-fluid mb-4 mb-lg-0" src={image.src} alt={`Cherry MX ${type.toUpperCase()} Switch`} />
         </div>
         <div className="col-12 col-sm-6 col-md-12 col-lg-8">
           <figure className="heading">
             <figcaption>
-              <h2 className="m-0 p-0">Cherry MX <span className="text-red">Brown Switch</span>.</h2>
-              <p className="oswald">Tactile Experience</p>
+              <h2 className="m-0 p-0">Cherry MX <span className={`text-${type == 'blue' ? 'blue' : 'red'}`}>{type} Switch</span>.</h2>
+              <p className="oswald">{label}</p>
             </figcaption>
-            <p>The Cherry MX brown switches have a soft, tactile bump about halfway through the key press. The soft pressure point switch technology makes the mechanical keyboard less clicky while providing an awesome tactile experience.</p>
+            <p dangerouslySetInnerHTML={{ __html: description }} />
           </figure>
           <a className={`btn btn-outline-primary text-gray-dark ${playing ? 'playing' : ''}`} id="playButton">
             <span className="play" onClick={() => audio.current.play()}>
               <i>
                 <FontAwesomeIcon icon="play" className="me-2" />
               </i>
-              Play Soft Tactile Sound
+              {button.play}
             </span>
             <span className="pause me-2" onClick={() => audio.current.pause()}>
               <i>
                 <FontAwesomeIcon icon="pause" className="me-2" />
               </i>
-              Pause Soft Tactile Sound
+              {button.pause}
             </span>
           </a>
         </div>

@@ -42,7 +42,7 @@ const BannerLeft: VFC<BannerProps> = ({ title, titleExtra, textAlign, descriptio
         <img className="full-image position-absolute d-none d-xxl-inline" src={image.srcFull} alt={title} />
       )}
       <img
-        className={`img-fluid ${image.className || 'half-image'}`}
+        className={`img-fluid ${image.className || 'half-image'} ${image.rounded ? 'rounded' : ''}`}
         src={image.src} alt={stripHTML(title)}
       />
     </NoColWrapper >

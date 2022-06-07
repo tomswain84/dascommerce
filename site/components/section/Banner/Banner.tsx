@@ -18,7 +18,8 @@ interface BannerImage {
   width?: string | number
   height?: string | number,
   blend?: boolean
-  className?: string
+  className?: string,
+  stretch?: boolean
 }
 interface SectionBannerProps {
   sectionId?: string
@@ -28,7 +29,7 @@ interface SectionBannerProps {
   button?: string | BannerButton,
   description: string
   textAlign?: 'center' | 'left' | 'right',
-  background?: 'light' | 'dark'
+  background?: 'light' | 'dark' | 'white'
   containerPadding?: number | string
   className?: string
   noCol?: boolean
