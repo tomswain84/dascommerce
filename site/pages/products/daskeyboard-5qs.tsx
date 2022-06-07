@@ -94,6 +94,7 @@ const D5QS: VFC<{}> = () => {
       />
 
       <ProductVideo
+        theme="light"
         title='DAS KEYBOARD Q SOFWARE'
         description='MAKE YOUR KEYBOARD SMART'
         video={{

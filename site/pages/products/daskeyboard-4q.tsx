@@ -60,6 +60,7 @@ const D4Q: VFC = () => {
       />
 
       <ProductVideo
+        theme="light"
         title="DAS KEYBOARD Q SOFTWARE"
         description="MAKE YOUR KEYBOARD SMART"
         video={{
