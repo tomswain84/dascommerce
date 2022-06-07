@@ -24,12 +24,14 @@ const Home = () => {
 
       <SectionBanner
         sectionId="values"
-        title={`DAS KEYBOARD <span class="text-red">VALUES</span>`}
-        background="dark"
         containerPadding='pt-md-5 mt-xl-5'
         className="pt-5 dark-section"
-        description="We are a badass company that makes badass products for badass customers. We are quality obsessed and develop all our products with premium materials."
-        button="Read More"
+        content={{
+          title: `DAS KEYBOARD <span class="text-red">VALUES</span>`,
+          background: "dark",
+          description: "We are a badass company that makes badass products for badass customers. We are quality obsessed and develop all our products with premium materials.",
+          button: "Read More"
+        }}
         image={{
           position: 'left',
           src: '/images/img-home-values.png',
@@ -41,11 +43,13 @@ const Home = () => {
         sectionId="switches"
         className="pt-5 mt-5"
         containerPadding='pb-5 pt-xl-5 mt-sm-5'
-        title={`LONG LASTING, <span class="text-red">DURABLE SWITCHES</span>.`}
-        description="All of our keyboards are designed with high-performance, gold-plated mechanical key switches. Learn more about the different switches Das Keyboard offers."
-        button={{
-          variant: 'outline-primary',
-          label: "Learn More"
+        content={{
+          title: `LONG LASTING, <span class="text-red">DURABLE SWITCHES</span>.`,
+          description: "All of our keyboards are designed with high-performance, gold-plated mechanical key switches. Learn more about the different switches Das Keyboard offers.",
+          button: {
+            variant: 'outline-primary',
+            label: "Learn More"
+          }
         }}
         image={{
           position: 'bottom',
@@ -56,12 +60,14 @@ const Home = () => {
 
       <SectionBanner
         sectionId="font"
-        background="light"
-        textAlign="left"
-        className="section-pad"
+        sectionPad
+        content={{
+          background: "light",
+          textAlign: "left",
+          title: `A BRAND NEW <span class="text-red">KEYBOARD FONT</span>.`,
+          description: "Das Keyboard’s key cap font has been specially designed to provide ease of reading and harmonious view of the keyboard key caps. Das Keyboard’s font looks modern while keeping some of its lines from older, well established fonts. The overall result is sleek and easily readable while not drawing unnecessary attention."
+        }}
         noCol
-        title={`A BRAND NEW <span class="text-red">KEYBOARD FONT</span>.`}
-        description="Das Keyboard’s key cap font has been specially designed to provide ease of reading and harmonious view of the keyboard key caps. Das Keyboard’s font looks modern while keeping some of its lines from older, well established fonts. The overall result is sleek and easily readable while not drawing unnecessary attention."
         image={{
           position: 'left',
           src: '/images/product-images/product-details/4-professional/img_blueprint-D.png',
@@ -69,7 +75,6 @@ const Home = () => {
           height: 309,
           className: 'd-block mx-auto mb-4 mb-md-0 pe-md-5'
         }}
-
       />
 
       <Reviews />
