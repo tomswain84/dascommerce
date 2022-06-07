@@ -1,28 +1,38 @@
+import type { VFC } from "react"
 import BuiltToLastVideo from "@components/product/BuiltToLastVideo"
 import CherryMXSwitches from "@components/product/CherryMXSwitches"
 import NKeyRollover from "@components/product/NKeyRollover"
 import OversizedVolume from "@components/product/OversizedVolume"
-import ProductHeader from "@components/product/ProductHeader"
-import SwitchCherryBlue from "@components/product/SwitchCherryBlue"
 import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
-import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 import Banner from "@components/section/Banner"
 import FootbarRuler from "@components/section/FootbarRuler"
 import ForceDiagram from "@components/section/ForceDiagram"
 import ProductHeroBlack from "@components/section/ProductHeroBlack"
 import RelatedProducts from "@components/section/RelatedProducts"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
-import type { VFC } from "react"
+import PageTitle from "@components/core/PageTitle"
+
+export async function getStaticProps() {
+  return {
+    props: {
+      bodyId: '4-professional-for-mac',
+      bodyClass: 'product-page four-series',
+    },
+  }
+}
 
 const D4ProfessionalForMac: VFC = () => {
   return (
     <>
-      <ProductHeader
+      <PageTitle
         title="DAS KEYBOARD 4 PROFESSIONAL FOR MAC"
-        price={169}
-        canBuy
+        type="product"
+        product={{
+          price: 169,
+          canBuy: true
+        }}
       />
-      <hr />
+
       <ProductHeroBlack
         heading="ENHANCE"
         title="YOUR MAC"
@@ -31,8 +41,9 @@ const D4ProfessionalForMac: VFC = () => {
           src: '/images/product-images/product-details/4-professional-for-mac/dk4pro-mac_intro.png'
         }}
       />
-      <hr />
+
       <Banner
+        sectionPad
         content={{
           textAlign: 'center',
           title: `<span class="text-red">DAS KEYBOARD 4 PROFESSIONAL FOR MAC</span>`,
@@ -41,15 +52,20 @@ const D4ProfessionalForMac: VFC = () => {
         }}
         image={{
           position: 'bottom',
-          src: '/images/product-images/product-details/4-professional-for-mac/DK-4-pro-side-transparent.png'
+          src: '/images/product-images/product-details/4-professional-for-mac/DK-4-pro-side-transparent.png',
+          stretch: true
         }}
       />
-      <hr />
+
       <Banner
+        sectionId="values"
+        className="pt-5"
+        containerPadding="pt-md-5 mt-xl-5"
         content={{
           textAlign: 'center',
           title: `QUALITY <span class="text-red">YOU CAN FEEL</span>`,
-          description: 'Das Keyboard 4 Professional mechanical keyboard is made of the highest-quality materials and robust construction you can feel. All of our keyboards are designed with high-performance, gold-plated mechanical key switches lasting up to 50 million keystrokes.'
+          description: 'Das Keyboard 4 Professional mechanical keyboard is made of the highest-quality materials and robust construction you can feel. All of our keyboards are designed with high-performance, gold-plated mechanical key switches lasting up to 50 million keystrokes.',
+          background: 'dark'
         }}
         image={{
           position: 'left',
@@ -68,11 +84,13 @@ const D4ProfessionalForMac: VFC = () => {
       <OversizedVolume />
 
       <Banner
-        sectionId=""
+        sectionId="usbHub"
+        sectionPad
         content={{
           textAlign: "left",
+          titlePadding: 'm-0',
           title: `USB 3.0 <span class="text-red">SUPERSPEED HUB</span>.`,
-          description: 'Need to transfer videos to your workstation but don’t have time to wait all day for file transfers to complete? Don’t worry. Das Keyboard 4 for Mac has a blazing fast two-port USB 3.0 hub to transfer music, high resolution pictures and large videos at up to 5Gb per second. That’s 10 times faster than USB 2.0. It is backwards compatible with all USB 2.0/1.1 devices and hosts so previous peripheral investments are protected.'
+          description: '<br/>Need to transfer videos to your workstation but don’t have time to wait all day for file transfers to complete? Don’t worry. Das Keyboard 4 for Mac has a blazing fast two-port USB 3.0 hub to transfer music, high resolution pictures and large videos at up to 5Gb per second. That’s 10 times faster than USB 2.0. It is backwards compatible with all USB 2.0/1.1 devices and hosts so previous peripheral investments are protected.'
         }}
         image={{
           position: 'left',
@@ -84,11 +102,14 @@ const D4ProfessionalForMac: VFC = () => {
       <NKeyRollover />
 
       <Banner
+        sectionId="functionKeys"
+        sectionPad
         content={{
           textAlign: "left",
+          titlePadding: 'm-0',
           background: "light",
           title: `MAC OS SPECIFIC <span class="text-red">KEY FUNCTIONS</span>.`,
-          description: 'In addition to standard command and Alt/Option keys, Das Keyboard 4 Professional for Mac offers quick, convenient access to a number of other Mac specific key functions. The Das Keyboard 4 Professional for Mac makes it easy to toggle between screens, view your desktop along with other applications that you have open, and access your brightness controls all at the push of a button.'
+          description: '<br/>In addition to standard command and Alt/Option keys, Das Keyboard 4 Professional for Mac offers quick, convenient access to a number of other Mac specific key functions. The Das Keyboard 4 Professional for Mac makes it easy to toggle between screens, view your desktop along with other applications that you have open, and access your brightness controls all at the push of a button.'
         }}
         image={{
           position: 'left',
@@ -96,10 +117,11 @@ const D4ProfessionalForMac: VFC = () => {
           rounded: true
         }}
       />
-      
+
       <FootbarRuler />
-      
+
       <Banner
+        sectionId="everyDetail"
         content={{
           textAlign: "left",
           background: "dark",
@@ -116,8 +138,10 @@ const D4ProfessionalForMac: VFC = () => {
           rounded: true
         }}
       />
-      <hr />
+
       <Banner
+        sectionId="longCable"
+        sectionPad
         content={{
           textAlign: "left",
           title: `EXTRA LONG <span class="text-red">CABLE</span>.`,
@@ -130,9 +154,17 @@ const D4ProfessionalForMac: VFC = () => {
         }}
       />
 
-      <TechnicalSpecifications />
+      <TechnicalSpecifications
+        productSlug="daskeyboard-4-professional-for-mac"
+        userManual="https://docs.google.com/document/d/1CU2jnB3jaOifmPNesTwSE6phJu_D2K2CmjeQ3uGmMB8/edit"
+      />
 
-      <RelatedProducts title="" series="FOUR" />
+      <RelatedProducts
+        title="4 Series"
+        series="FOUR"
+        className="text-center"
+        boxed
+      />
     </>
   )
 }
