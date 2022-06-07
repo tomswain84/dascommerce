@@ -20,7 +20,7 @@ const CollectionCard: VFC<{ collection: Props }> = ({ collection }) => {
               <br />{name}
             </h1>
             <Link
-              href="/products/category-mechanical-keyboards?filter=${filter}"
+              href={`/products/category-mechanical-keyboards?filter=${filter}`}
               className="btn btn-outline-primary stretched-link"
             >
               <span>
