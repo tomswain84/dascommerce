@@ -37,13 +37,23 @@ const BannerLeft: VFC<BannerProps> = ({ containerPadding, image, content, noCol,
       </figure>
     </NoColWrapper>
   )
+
+  const blendClass = () => {
+    switch (image.blend) {
+      case true:
+        return content.background === 'dark' ? 'blend-plus-lighter' : 'blend-darken'
+      default:
+        return ''
+    }
+  }
+
   const ImageBlock = () => (
     <NoColWrapper className="col-md-6 order-md-1 d-md-flex align-items-center position-relative">
       {image.srcFull && (
-        <img className="full-image position-absolute d-none d-xxl-inline" src={image.srcFull} alt={title} />
+        <img className={`full-image position-absolute d-none d-xxl-inline ${blendClass()}`} src={image.srcFull} alt={title} />
       )}
       <img
-        className={`img-fluid ${image.className || 'half-image'} ${image.rounded ? 'rounded' : ''}`}
+        className={`img-fluid ${image.className || 'half-image'} ${image.rounded ? 'rounded' : ''} ${blendClass()}`}
         src={image.src} alt={stripHTML(title)}
       />
     </NoColWrapper >

@@ -287,7 +287,47 @@
     "description": "Need simple, high quality minimalist design? The Das Keyboard Prime 13, with its white LED backlighting and anodized aluminum top panel, is for you.",
     "tags": ["supercharged", "pc"],
     "keystroke": "50M",
-    "switch": "CHERRY MX"
+    "switch": "CHERRY MX",
+    "specs": [
+      {
+        "title": "Product Information",
+        "items": [
+          "Cherry MX mechanical key switches with gold contacts",
+          "Laser-etched key cap inscriptions to prevent fading",
+          "Media controls",
+          "Full n-key rollover with an included PS2 adapter, and 6 keys with USB",
+          "Enhanced 104-key layout"
+        ]
+      },
+      {
+        "title": "TECHNICAL INFORMATION",
+        "items": [
+          "Glossy black upper enclosure with matching black USB cable – Darth Vader approved",
+          "Two-port USB hub 1.1 and 2.0 compatible",
+          "Blue LEDs",
+          "Extra long two-meter (6.6-foot) USB cable"
+        ]
+      },
+      {
+        "title": "EVEN MORE INFORMATION",
+        "items": [
+          "Dimensions: 18in x 6.5in x 1in (thickest portion, feet not extended, 1.5in w/ extended feet)",
+          "Weight: 1.36 kg (3 lbs)",
+          "Compatible with PS/2 and USB KVM switches.",
+          "Bumps on F and J keys (home keys)"
+        ]
+      },
+      {
+        "title": "SYSTEM REQUIREMENTS",
+        "items": [
+          "PC or Mac, Windows, Linux, or Mac OS X",
+          "2 USB ports or 1 USB port + 1 PS/2 port USB to PS/2 adapter (included)",
+          "Media controls are not available using a PS2 connection",
+          "No driver required",
+          "Mac users can swap the command/control /options keys to match the Mac keyboard layout using the Mac OS X keyboard control panel"
+        ]
+      }
+    ]
   },
   {
     "id": 10,

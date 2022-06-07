@@ -11,6 +11,7 @@ import ProductHeroBlack from "@components/section/ProductHeroBlack"
 import RelatedProducts from "@components/section/RelatedProducts"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import PageTitle from "@components/core/PageTitle"
+import ProductVideo from "@components/section/ProductVideo"
 
 export async function getStaticProps() {
   return {
