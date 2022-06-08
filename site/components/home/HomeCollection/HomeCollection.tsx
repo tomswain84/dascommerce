@@ -53,7 +53,7 @@ const HomeCollection: VFC = () => {
               </figure>
             </div>
             <div className="col-12 d-flex py-4">
-              <Link className="btn btn-outline-primary text-gray-dark mx-auto" title="Shop All Keyboards" href="products/category-mechanical-keyboards?filter=all">
+              <Link className="btn btn-outline-primary text-gray-dark mx-auto" title="Shop All Keyboards" href="/products/category-mechanical-keyboards?filter=all">
                 Shop All Keyboards
                 <i>
                   <FontAwesomeIcon className="ms-2" icon='plus' />
