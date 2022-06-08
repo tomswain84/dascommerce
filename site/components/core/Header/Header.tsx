@@ -221,7 +221,7 @@ const Header: VFC = () => {
                       <Link className="nav-link" href="/blog">Blog</Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="/contact-us" target="_blank">Contact Us</a>
+                      <Link className="nav-link" href="/contact-us">Contact Us</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" href="/about-us">About Us</Link>
