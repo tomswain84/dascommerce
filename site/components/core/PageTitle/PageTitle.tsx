@@ -50,7 +50,7 @@ const PageTitle: VFC<Props> = (props) => {
                 )}
                 {canDownload && (
                   <a id="dlQsoftware" className="btn btn-outline-primary ms-3" href="https://www.daskeyboard.io/" target="_blank" title="Download Software" rel="noreferrer">
-                    <span className="d-none d-lg-inline">Download</span>
+                    <span className="d-none d-lg-inline me-1">Download</span>
                     Software
                     <i>
                       <FontAwesomeIcon icon='download' className='ms-2' />
