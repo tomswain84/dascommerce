@@ -3,7 +3,6 @@ import HomeCollection from "@components/home/HomeCollection";
 import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure";
 import SectionBanner from "@components/section/Banner";
 import Reviews from "@components/section/Reviews";
-import TextBlock from "@components/section/TextBlock";
 
 export async function getStaticProps() {
   return {
@@ -59,12 +58,7 @@ const Home = () => {
         }}
       />
 
-      <TextBlock
-        title={`A BRAND NEW <span class="text-red">KEYBOARD FONT</span>.`}
-        description="Das Keyboard’s key cap font has been specially designed to provide ease of reading and harmonious view of the keyboard key caps. Das Keyboard’s font looks modern while keeping some of its lines from older, well established fonts. The overall result is sleek and easily readable while not drawing unnecessary attention."
-      />
-
-      {/* <SectionBanner
+      <SectionBanner
         sectionId="font"
         sectionPad
         content={{
@@ -81,7 +75,7 @@ const Home = () => {
           height: 309,
           className: 'd-block mx-auto mb-4 mb-md-0 pe-md-5'
         }}
-      /> */}
+      />
 
       <Reviews />
     </>
