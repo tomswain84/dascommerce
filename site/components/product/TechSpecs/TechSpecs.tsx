@@ -1,5 +1,5 @@
 import type { VFC, FC } from "react"
-import { Product } from "@components/product/ProductCard/ProductCard"
+import { Product } from "@interfaces/product"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ListItem from "@components/core/ListItem"
 
