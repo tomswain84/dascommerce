@@ -2,21 +2,7 @@
 import type { VFC } from "react"
 import filters from '@data/filters.json'
 import Link from "@components/core/Link"
-
-export interface Product {
-  id: number,
-  name: string,
-  slug: string,
-  collection: string,
-  price: number,
-  currency: string | '$',
-  image: string,
-  description: string,
-  tags: string[],
-  keystroke: string,
-  switch: string,
-  specs?: Array<{ title: string, items: string[] }>
-}
+import type { Product } from "@interfaces/product"
 
 const ProductCard: VFC<{ product: Product }> = ({ product }) => {
   const tags = filters.filter(f => product.tags.includes(f.tag))
