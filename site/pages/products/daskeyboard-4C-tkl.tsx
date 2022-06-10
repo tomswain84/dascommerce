@@ -12,6 +12,7 @@ import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard 4C TKL',
       bodyId: '4c-tkl',
       bodyClass: 'product-page keyboards',
     },
@@ -25,6 +26,7 @@ const D4CTKL: VFC = () => {
         title="DAS KEYBOARD 4C TKL"
         type="product"
         product={{
+          slug: 'daskeyboard-4c-tkl',
           price: 139,
           canBuy: true
         }}

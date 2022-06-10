@@ -6,7 +6,7 @@ import { useRouter } from "next/router"
 import PageTitle from "@components/core/PageTitle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "@components/core/Link"
-import { Product } from "../ProductCard/ProductCard"
+import { Product } from "@interfaces/product"
 
 interface Props {
   title: string

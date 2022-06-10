@@ -17,6 +17,7 @@ import AppletDashboard from "@components/product/AppletDashboard"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard X50Q',
       bodyId: 'x50q',
       bodyClass: 'product-page keyboards q-series has-parent',
     },
@@ -30,6 +31,7 @@ const X50Q: VFC = () => {
         title="DAS KEYBOARD X50Q"
         type='product'
         product={{
+          slug: 'daskeyboard-x50q',
           price: 115,
           currency: '$',
           canBuy: true,

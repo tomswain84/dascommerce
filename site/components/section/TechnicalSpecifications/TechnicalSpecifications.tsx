@@ -2,7 +2,7 @@ import type { VFC } from "react"
 import TechSpecs from "@components/product/TechSpecs"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import products from "@data/products.json"
-import { Product } from "@components/product/ProductCard/ProductCard"
+import { Product } from "@interfaces/product"
 
 interface Props {
   userManual?: string

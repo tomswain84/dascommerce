@@ -16,6 +16,7 @@ import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard 4 Professional',
       bodyId: '4-professional',
       bodyClass: 'product-page four-series',
     },
@@ -29,6 +30,7 @@ const D4Professional: VFC = () => {
         title="DAS KEYBOARD 4 PROFESSIONAL"
         type="product"
         product={{
+          slug: 'daskeyboard-4-professional',
           price: 169,
           canBuy: true,
         }}

@@ -16,6 +16,7 @@ import OversizedVolume from "@components/product/OversizedVolume"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard 4 Ultimate',
       bodyId: '4-ultimate',
       bodyClass: 'product-page four-series',
     },
@@ -29,6 +30,7 @@ const D4Ultimate: VFC = () => {
         title="DAS KEYBOARD 4 ULTIMATE"
         type="product"
         product={{
+          slug: 'daskeyboard-4-ultimate',
           price: 169,
           canBuy: true
         }}

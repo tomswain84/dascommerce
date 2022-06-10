@@ -12,6 +12,7 @@ import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard Model S Pro',
       bodyId: 'model-s-pro',
       bodyClass: 'product-page',
     },
@@ -25,6 +26,7 @@ const ModelSPro: VFC = () => {
         title="DAS KEYBOARD MODEL S PRO"
         type="product"
         product={{
+          slug: "das-keyboard-model-s-pro",
           price: 119,
           canBuy: true
         }}

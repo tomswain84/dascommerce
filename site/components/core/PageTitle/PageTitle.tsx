@@ -1,16 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import stripHTML from '@lib/strip-html'
 import type { VFC } from 'react'
+import Link from '../Link'
 
 interface Props {
   title: string,
   type: 'product' | 'category' | 'page',
   product?: {
+    slug: string,
     price: number,
     currency?: '$' | string,
     canBuy?: boolean,
     canDownload?: boolean,
-    buyUrl?: string,
   }
 }
 const defaultProps = {
@@ -21,15 +22,16 @@ const defaultProps = {
     currency: '$',
     canBuy: true,
     canDownload: false,
-    buyUrl: '',
   }
 }
 const PageTitle: VFC<Props> = (props) => {
   const { title, type, product } = props
-  let { price, currency, canBuy, canDownload, buyUrl } = product || defaultProps.product
+  let { price, currency, canBuy, canDownload } = product || defaultProps.product
   if (!currency) currency = defaultProps.product?.currency
   const isProduct = type === 'product'
   const isCategory = type === 'category'
+  let buyUrl = ''
+  if (canBuy) buyUrl = `/products/commerce/${product?.slug}`
   return (
     <section id="pageTitle" className="bg-gray-darker text-white">
       <div className="container-boxed">
@@ -46,7 +48,7 @@ const PageTitle: VFC<Props> = (props) => {
             {isProduct && product && (
               <div id="productCTA" className="mb-4 mb-sm-0 d-sm-flex align-items-center justify-content-end d-none">
                 {canBuy && (
-                  <a id="buyNow" className="btn btn-blue" href={buyUrl} title="Buy Now">Buy Now</a>
+                  <Link id="buyNow" className="btn btn-blue" href={buyUrl} title="Buy Now">Buy Now</Link>
                 )}
                 {canDownload && (
                   <a id="dlQsoftware" className="btn btn-outline-primary ms-3" href="https://www.daskeyboard.io/" target="_blank" title="Download Software" rel="noreferrer">

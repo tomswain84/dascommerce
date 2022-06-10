@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "slug": "pbt-keycap-set-104-key-gray",
+    "name": "DAS KEYBOARD GRAY PBT 104 KEY KEYCAP SET",
+    "price": 45.0,
+    "currency": "$",
+    "category": "keycap-sets",
+    "image": "/images/product-images/cards/accessories/pbt-keycap-set-104-key-gray.jpg"
+  },
+  {
+    "id": 2,
+    "slug": "das-keyboard-blank-rgb-keycap-set-for-cherry-mx-switches-translucent",
+    "name": "BLANK 108 KEY CHERRY MX BLACK KEYCAP SET FOR UNLIT, RGB AND BACKLIT KEYBOARDS",
+    "price": 35.0,
+    "currency": "$",
+    "category": "keycap-sets",
+    "image": "/images/product-images/cards/accessories/das-keyboard-blank-rgb-keycap-set-for-cherry-mx-switches-translucent.jpg"
+  },
+  {
+    "id": 3,
+    "slug": "das-keyboard-modern-font-dvorak-rgb-keycap-set-for-gamma-zulu-switches-translucent",
+    "name": "DAS KEYBOARD MODERN FONT DVORAK RGB KEYCAP SET FOR GAMMA ZULU SWITCHES (TRANSLUCENT)",
+    "price": 35.0,
+    "currency": "$",
+    "category": "keycap-sets",
+    "image": "/images/product-images/cards/accessories/das-keyboard-modern-font-dvorak-rgb-keycap-set-for-gamma-zulu-switches-translucent.jpg"
+  },
+  {
+    "id": 4,
+    "slug": "das-keyboard-modern-font-english-rgb-keycap-set-for-gamma-zulu-switches-translucent",
+    "name": "DAS KEYBOARD MODERN FONT ENGLISH RGB KEYCAP SET FOR GAMMA ZULU SWITCHES (TRANSLUCENT)",
+    "price": 35.0,
+    "currency": "$",
+    "category": "keycap-sets",
+    "image": "/images/product-images/cards/accessories/das-keyboard-modern-font-english-rgb-keycap-set-for-gamma-zulu-switches-translucent.jpg"
+  },
+  {
+    "id": 5,
+    "slug": "das-keyboard-modern-font-english-rgb-keycap-set-for-gamma-zulu-switches-translucent",
+    "name": "DAS KEYBOARD GRAY PBT 104 KEY KEYCAP SET",
+    "price": 35.0,
+    "currency": "$",
+    "category": "keycap-sets",
+    "image": "/images/product-images/cards/accessories/das-keyboard-modern-font-english-rgb-keycap-set-for-gamma-zulu-switches-translucent.jpg"
+  },
+  {
+    "id": 6,
+    "slug": "das-keyboard-palm-rest-one",
+    "name": "PALM REST ONE",
+    "price": 29.0,
+    "currency": "$",
+    "category": "palm-rests",
+    "image": "/images/product-images/cards/accessories/das-keyboard-palm-rest-one.jpg"
+  },
+  {
+    "id": 7,
+    "slug": "das-keyboard-5qs-5q-replacement-palm-rest",
+    "name": "DAS KEYBOARD 5QS & 5Q REPLACEMENT PALM REST",
+    "price": 19.0,
+    "currency": "$",
+    "category": "palm-rests",
+    "image": "/images/product-images/cards/accessories/das-keyboard-5qs-5q-replacement-palm-rest.jpg"
+  },
+  {
+    "id": 8,
+    "slug": "key-cap-puller",
+    "name": "KEYCAP PULLER",
+    "price": 6.0,
+    "currency": "$",
+    "category": "keyboard-parts",
+    "image": "/images/product-images/cards/accessories/key-cap-puller.jpg"
+  },
+  {
+    "id": 9,
+    "slug": "das-keyboard-4-footbar-ruler-replacement",
+    "name": "DAS KEYBOARD 4 FOOTBAR RULER REPLACEMENT",
+    "price": 9.99,
+    "currency": "$",
+    "category": "keyboard-parts",
+    "image": "/images/product-images/cards/accessories/das-keyboard-4-footbar-ruler-replacement.jpg"
+  },
+  {
+    "id": 10,
+    "slug": "artisan-keycap-das-keyboard-limited-edition-escape-key",
+    "name": "DAS KEYBOARD LIMITED EDITION ESCAPE KEY ARTISAN KEYCAP",
+    "price": 59.0,
+    "currency": "$",
+    "category": "keyboard-parts",
+    "image": "/images/product-images/cards/accessories/artisan-keycap-das-keyboard-limited-edition-escape-key.jpg"
+  },
+  {
+    "id": 11,
+    "slug": "das-keyboard-triangle-mouse-pad",
+    "name": "WAREHOUSE CLEARANCE - DAS KEYBOARD TRIANGLE MOUSE PAD",
+    "price": 9.99,
+    "currency": "$",
+    "category": "mouse-pads",
+    "image": "/images/product-images/cards/accessories/das-keyboard-triangle-mouse-pad.jpg"
+  },
+  {
+    "id": 12,
+    "slug": "wasd-key-cap-set-without-inscriptions",
+    "name": "WAREHOUSE CLEARANCE - DAS KEYBOARD WASD BLANK KEYCAP SET FOR CHERRY MX SWITCHES WITH KEYCAP PULLER",
+    "price": 9.0,
+    "currency": "$",
+    "category": "warehouse-clearance",
+    "image": "/images/product-images/cards/accessories/wasd-key-cap-set-without-inscriptions.jpg"
+  },
+  {
+    "id": 13,
+    "slug": "das-keyboard-wasd-keycap-set-for-gamma-zulu-switches-with-keycap-puller",
+    "name": "WAREHOUSE CLEARANCE - DAS KEYBOARD WASD KEYCAP SET FOR GAMMA ZULU SWITCHES WITH KEYCAP PULLER",
+    "price": 6.0,
+    "currency": "$",
+    "category": "warehouse-clearance",
+    "image": "/images/product-images/cards/accessories/das-keyboard-wasd-keycap-set-for-gamma-zulu-switches-with-keycap-puller.jpg"
+  }
+]

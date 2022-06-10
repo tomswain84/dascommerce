@@ -12,6 +12,7 @@ import NKeyRollover from "@components/product/NKeyRollover"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard Model S Pro for Mac',
       bodyId: 'model-s-pro-mac',
       bodyClass: 'product-page',
     },
@@ -26,6 +27,7 @@ const ModelSProForMac: VFC<{}> = () => {
         title="DAS KEYBOARD MODEL S PRO FOR MAC"
         type="product"
         product={{
+          slug: "das-keyboard-model-s-pro-for-mac",
           price: 119,
           canBuy: true
         }}

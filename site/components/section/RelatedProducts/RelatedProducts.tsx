@@ -1,7 +1,7 @@
 import ProductCard from "@components/product/ProductCard"
 import type { VFC } from "react"
 import allProducts from '@data/products.json'
-import { Product } from "@components/product/ProductCard/ProductCard"
+import { Product } from "@interfaces/product"
 
 interface Props {
   sectionId?: string
