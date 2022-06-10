@@ -12,6 +12,7 @@ import NKeyRollover from "@components/product/NKeyRollover"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard Model S Pro for Mac',
       bodyId: 'model-s-pro-mac',
       bodyClass: 'product-page',
     },

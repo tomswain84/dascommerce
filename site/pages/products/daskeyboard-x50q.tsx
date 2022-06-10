@@ -17,6 +17,7 @@ import AppletDashboard from "@components/product/AppletDashboard"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard X50Q',
       bodyId: 'x50q',
       bodyClass: 'product-page keyboards q-series has-parent',
     },

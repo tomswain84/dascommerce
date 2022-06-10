@@ -16,6 +16,7 @@ import OversizedVolume from "@components/product/OversizedVolume"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard 4 Ultimate',
       bodyId: '4-ultimate',
       bodyClass: 'product-page four-series',
     },

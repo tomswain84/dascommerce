@@ -12,6 +12,7 @@ import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard 4C TKL',
       bodyId: '4c-tkl',
       bodyClass: 'product-page keyboards',
     },

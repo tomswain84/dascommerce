@@ -12,6 +12,7 @@ import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard Model S Pro',
       bodyId: 'model-s-pro',
       bodyClass: 'product-page',
     },

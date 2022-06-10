@@ -16,6 +16,7 @@ import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard 4 Professional',
       bodyId: '4-professional',
       bodyClass: 'product-page four-series',
     },

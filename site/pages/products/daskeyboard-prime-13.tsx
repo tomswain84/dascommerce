@@ -13,7 +13,8 @@ import AppletDashboard from "@components/product/AppletDashboard"
 export async function getStaticProps() {
   return {
     props: {
-      bodyId: '4c-tkl',
+      title: 'Das Keyboard Prime 13',
+      bodyId: 'prime-13',
       bodyClass: 'product-page keyboards',
     },
   }

@@ -21,6 +21,7 @@ import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard 4Q',
       bodyId: '4q',
       bodyClass: 'product-page keyboards q-series',
     },

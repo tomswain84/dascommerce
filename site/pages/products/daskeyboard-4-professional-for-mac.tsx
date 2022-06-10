@@ -16,6 +16,7 @@ import ProductVideo from "@components/section/ProductVideo"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard 4 Professional for Mac',
       bodyId: '4-professional-for-mac',
       bodyClass: 'product-page four-series',
     },

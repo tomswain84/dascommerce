@@ -17,6 +17,7 @@ import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard 5QS',
       bodyId: '5qs',
       bodyClass: 'product-page keyboards q-series',
     },
