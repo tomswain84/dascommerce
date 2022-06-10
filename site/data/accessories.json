@@ -64,7 +64,7 @@
   },
   {
     "id": 8,
-    "slug": "key-cap-puller.php",
+    "slug": "key-cap-puller",
     "name": "KEYCAP PULLER",
     "price": 6.0,
     "currency": "$",
@@ -73,7 +73,7 @@
   },
   {
     "id": 9,
-    "slug": "das-keyboard-4-footbar-ruler-replacement.php",
+    "slug": "das-keyboard-4-footbar-ruler-replacement",
     "name": "DAS KEYBOARD 4 FOOTBAR RULER REPLACEMENT",
     "price": 9.99,
     "currency": "$",
@@ -82,7 +82,7 @@
   },
   {
     "id": 10,
-    "slug": "artisan-keycap-das-keyboard-limited-edition-escape-key.php",
+    "slug": "artisan-keycap-das-keyboard-limited-edition-escape-key",
     "name": "DAS KEYBOARD LIMITED EDITION ESCAPE KEY ARTISAN KEYCAP",
     "price": 59.0,
     "currency": "$",
@@ -91,7 +91,7 @@
   },
   {
     "id": 11,
-    "slug": "das-keyboard-triangle-mouse-pad.php",
+    "slug": "das-keyboard-triangle-mouse-pad",
     "name": "WAREHOUSE CLEARANCE - DAS KEYBOARD TRIANGLE MOUSE PAD",
     "price": 9.99,
     "currency": "$",
@@ -100,7 +100,7 @@
   },
   {
     "id": 12,
-    "slug": "wasd-key-cap-set-without-inscriptions.php",
+    "slug": "wasd-key-cap-set-without-inscriptions",
     "name": "WAREHOUSE CLEARANCE - DAS KEYBOARD WASD BLANK KEYCAP SET FOR CHERRY MX SWITCHES WITH KEYCAP PULLER",
     "price": 9.0,
     "currency": "$",
@@ -109,7 +109,7 @@
   },
   {
     "id": 13,
-    "slug": "das-keyboard-wasd-keycap-set-for-gamma-zulu-switches-with-keycap-puller.php",
+    "slug": "das-keyboard-wasd-keycap-set-for-gamma-zulu-switches-with-keycap-puller",
     "name": "WAREHOUSE CLEARANCE - DAS KEYBOARD WASD KEYCAP SET FOR GAMMA ZULU SWITCHES WITH KEYCAP PULLER",
     "price": 6.0,
     "currency": "$",

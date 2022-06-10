@@ -26,11 +26,10 @@ export async function getStaticProps() {
   }
 }
 
-const AccessoryDetail: VFC = () => {
+const AccessoryCommerce: VFC = () => {
   const router = useRouter()
   const { slug } = router.query
   const accessory = accessories.find(item => item.slug === slug)
-  console.log(accessory, slug)
   if (!accessory) {
     return null
   }
@@ -44,4 +43,4 @@ const AccessoryDetail: VFC = () => {
     </div>
   )
 }
-export default AccessoryDetail
+export default AccessoryCommerce
