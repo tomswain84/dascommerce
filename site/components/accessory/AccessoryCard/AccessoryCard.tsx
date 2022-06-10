@@ -1,16 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "@components/core/Link"
 import type { VFC } from "react"
+import { Accessory } from "@interfaces/accessory"
 
-interface Accessory {
-  id: number
-  slug: string
-  name: string
-  price: number
-  currency: string
-  category: string
-  image: string
-}
 const AccessoryCard: VFC<{ accessory: Accessory }> = ({ accessory }) => {
   const buyUrl = `/products/commerce/accessories/${accessory.slug}`
   return (
