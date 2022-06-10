@@ -1,6 +1,6 @@
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 
-const Link: React.FC<NextLinkProps & { className?: string, title?: string, html?: string }> = ({ href, children, html, ...props }) => {
+const Link: React.FC<NextLinkProps & { className?: string, title?: string, html?: string, id?: string }> = ({ href, children, html, ...props }) => {
   return (
     <NextLink href={href} passHref>
       {html ? (
