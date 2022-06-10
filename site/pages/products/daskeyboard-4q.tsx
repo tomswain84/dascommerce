@@ -35,6 +35,7 @@ const D4Q: VFC = () => {
         title="DAS KEYBOARD 4Q"
         type="product"
         product={{
+          slug: 'daskeyboard-4q',
           price: 115,
           canBuy: true,
           canDownload: true

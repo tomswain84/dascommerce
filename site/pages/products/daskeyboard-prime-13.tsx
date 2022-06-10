@@ -27,6 +27,7 @@ const Prime13: VFC = () => {
         title="DAS KEYBOARD PRIME 13"
         type='product'
         product={{
+          slug: 'daskeyboard-prime-13',
           price: 129,
           canBuy: true
         }}

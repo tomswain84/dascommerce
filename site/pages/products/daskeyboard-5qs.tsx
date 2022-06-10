@@ -31,6 +31,7 @@ const D5QS: VFC<{}> = () => {
         title="DAS Keyboard 5QS"
         type="product"
         product={{
+          slug: 'daskeyboard-5qs',
           price: 199,
           canBuy: true,
           canDownload: true

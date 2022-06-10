@@ -27,6 +27,7 @@ const ModelSProForMac: VFC<{}> = () => {
         title="DAS KEYBOARD MODEL S PRO FOR MAC"
         type="product"
         product={{
+          slug: "das-keyboard-model-s-pro-for-mac",
           price: 119,
           canBuy: true
         }}

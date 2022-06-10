@@ -26,6 +26,7 @@ const ModelSPro: VFC = () => {
         title="DAS KEYBOARD MODEL S PRO"
         type="product"
         product={{
+          slug: "das-keyboard-model-s-pro",
           price: 119,
           canBuy: true
         }}

@@ -31,6 +31,7 @@ const X50Q: VFC = () => {
         title="DAS KEYBOARD X50Q"
         type='product'
         product={{
+          slug: 'daskeyboard-x50q',
           price: 115,
           currency: '$',
           canBuy: true,

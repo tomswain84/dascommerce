@@ -30,6 +30,7 @@ const D4Ultimate: VFC = () => {
         title="DAS KEYBOARD 4 ULTIMATE"
         type="product"
         product={{
+          slug: 'daskeyboard-4-ultimate',
           price: 169,
           canBuy: true
         }}

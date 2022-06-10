@@ -26,6 +26,7 @@ const D4CTKL: VFC = () => {
         title="DAS KEYBOARD 4C TKL"
         type="product"
         product={{
+          slug: 'daskeyboard-4c-tkl',
           price: 139,
           canBuy: true
         }}
