@@ -31,7 +31,7 @@ const ProductCard: VFC<{ product: Product }> = ({ product }) => {
             {tags.map(item => (
               <Link
                 key={item.tag}
-                href={`/products/category-mechanical-keyboards?filter=${item.filter}`}
+                href={`/products/category/mechanical-keyboards?filter=${item.filter}`}
                 className={`tag tag-${item.tag}`}
                 data-bs-toggle="tooltip"
                 title={item.name}
