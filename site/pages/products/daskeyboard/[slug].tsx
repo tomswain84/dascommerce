@@ -18,7 +18,7 @@ import Prime13 from "@components/daskeyboard/Prime13"
 import X50Q from "@components/daskeyboard/X50Q"
 
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
-  let product = products.find(product => product.slug === `daskeyboard-${params?.slug}`)
+  let product = products.find(product => product.slug === params?.slug)
   if (!product) {
     throw new Error(`Product with slug '${params!.slug}' not found`)
   }
@@ -72,7 +72,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async (params) => {
   const paths = products.map(product => ({
     params: {
-      slug: product.slug.replace('daskeyboard-', ''),
+      slug: product.slug,
     },
   }))
   return {

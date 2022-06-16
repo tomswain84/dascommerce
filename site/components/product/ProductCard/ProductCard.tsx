@@ -6,7 +6,7 @@ import type { Product } from "@interfaces/product"
 
 const ProductCard: VFC<{ product: Product }> = ({ product }) => {
   const tags = filters.filter(f => product.tags.includes(f.tag))
-  const productUrl = `/products/${product.slug}`
+  const productUrl = `/products/daskeyboard/${product.slug}`
   return (
     <div id="5QS" className="col filterDiv smart-rgb for-pc for-mac supercharged backlit aluminum ubuntu q-series">
       <figure className="card category-keyboards <?=$product_series?>">

@@ -2,7 +2,7 @@
   {
     "id": 11106154436,
     "image": "/images/product-images/cards/img-daskeyboard-x50q.jpeg",
-    "slug": "daskeyboard-x50q",
+    "slug": "x50q",
     "name": "X50Q",
     "collection": "DAS KEYBOARD",
     "price": 115,
@@ -17,7 +17,7 @@
   {
     "id": 6541476003923,
     "image": "/images/product-images/cards/img-daskeyboard-5qs.jpeg",
-    "slug": "daskeyboard-5qs",
+    "slug": "5qs",
     "name": "5QS",
     "collection": "DAS KEYBOARD",
     "price": 199,
@@ -39,7 +39,7 @@
   {
     "id": 1227766693932,
     "image": "/images/product-images/cards/img-daskeyboard-4q.jpeg",
-    "slug": "daskeyboard-4q",
+    "slug": "4q",
     "name": "4Q",
     "collection": "DAS KEYBOARD",
     "price": 115,
@@ -61,7 +61,7 @@
   {
     "id": 257988341,
     "image": "/images/product-images/cards/img-daskeyboard-4-professional.jpeg",
-    "slug": "daskeyboard-4-professional",
+    "slug": "4-professional",
     "name": "4 PROFESSIONAL",
     "collection": "DAS KEYBOARD",
     "price": 169,
@@ -104,7 +104,7 @@
   {
     "id": 258013029,
     "image": "/images/product-images/cards/img-daskeyboard-4-ultimate.jpeg",
-    "slug": "daskeyboard-4-ultimate",
+    "slug": "4-ultimate",
     "name": "4 ULTIMATE",
     "collection": "DAS KEYBOARD",
     "price": 169,
@@ -147,7 +147,7 @@
   {
     "id": 426799272,
     "image": "/images/product-images/cards/img-daskeyboard-4-professional-for-mac.jpeg",
-    "slug": "daskeyboard-4-professional-for-mac",
+    "slug": "4-professional-for-mac",
     "name": "4 PROFESSIONAL FOR MAC",
     "collection": "DAS KEYBOARD",
     "price": 169,
@@ -189,7 +189,7 @@
   {
     "id": 4482800189523,
     "image": "/images/product-images/cards/img-daskeyboard-4c-tkl.png",
-    "slug": "daskeyboard-4c-tkl",
+    "slug": "4c-tkl",
     "name": "4C TKL",
     "collection": "DAS KEYBOARD",
     "price": 139,
@@ -230,7 +230,7 @@
   {
     "id": 6265481092,
     "image": "/images/product-images/cards/img-daskeyboard-prime-13.jpeg",
-    "slug": "daskeyboard-prime-13",
+    "slug": "prime-13",
     "name": "PRIME 13",
     "collection": "DAS KEYBOARD",
     "price": 129,
@@ -282,7 +282,7 @@
   {
     "id": 146821250,
     "image": "/images/product-images/cards/img-daskeyboard-model-s-pro.jpeg",
-    "slug": "daskeyboard-model-s-pro",
+    "slug": "model-s-pro",
     "name": "MODEL S PROFESSIONAL",
     "collection": "DAS KEYBOARD",
     "price": 119,
@@ -335,7 +335,7 @@
   {
     "id": 142595683,
     "image": "/images/product-images/cards/img-daskeyboard-model-s-pro-mac.jpeg",
-    "slug": "daskeyboard-model-s-pro-for-mac",
+    "slug": "model-s-pro-for-mac",
     "name": "MODEL S PROFESSIONAL FOR MAC",
     "collection": "DAS KEYBOARD",
     "price": 119,
