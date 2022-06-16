@@ -39,7 +39,7 @@ const ProductList: VFC<Props> = ({ title }) => {
                   <li className="nav-item m-1" key={tag}>
                     <Link
                       className={`dropdown-item tag-${tag} ${filter === currentFilter?.filter ? 'active' : ''}`}
-                      href={`/products/category-mechanical-keyboards?filter=${filter}`}
+                      href={`/products/category/mechanical-keyboards?filter=${filter}`}
                     >
                       {name}
                     </Link>
@@ -66,7 +66,7 @@ const ProductList: VFC<Props> = ({ title }) => {
                         </h3>
                         <Link
                           className="btn btn-outline-primary text-gray-dark"
-                          href="/products/category-mechanical-keyboards?filter=all"
+                          href="/products/category/mechanical-keyboards?filter=all"
                           title="Clear Filter"
                         >
                           Clear Filter

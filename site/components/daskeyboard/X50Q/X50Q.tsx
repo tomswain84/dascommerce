@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import PageTitle from "@components/core/PageTitle"
+import type { VFC } from "react"
 import CustomizeKeyboard from "@components/product/CustomizeKeyboard"
 import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure"
 import QMessagePreview from "@components/product/QMessagePreview"
@@ -11,33 +11,11 @@ import ProductHero from "@components/section/ProductHero"
 import ProductPerformance from "@components/section/ProductPerformance"
 import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
-import type { VFC } from "react"
 import AppletDashboard from "@components/product/AppletDashboard"
-
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Das Keyboard X50Q',
-      bodyId: 'x50q',
-      bodyClass: 'product-page keyboards q-series has-parent',
-    },
-  }
-}
 
 const X50Q: VFC = () => {
   return (
     <>
-      <PageTitle
-        title="DAS KEYBOARD X50Q"
-        type='product'
-        product={{
-          slug: 'daskeyboard-x50q',
-          price: 115,
-          currency: '$',
-          canBuy: true,
-          canDownload: true,
-        }}
-      />
       <ProductHero
         heading="WORK & GAMING"
         title="RGB KEYBOARD"

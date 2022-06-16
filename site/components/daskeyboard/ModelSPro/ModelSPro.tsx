@@ -6,32 +6,11 @@ import ForceDiagram from "@components/section/ForceDiagram"
 import ProductHero from "@components/section/ProductHero"
 import ProductVideo from "@components/section/ProductVideo"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
-import PageTitle from "@components/core/PageTitle"
 import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
-
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Das Keyboard Model S Pro',
-      bodyId: 'model-s-pro',
-      bodyClass: 'product-page',
-    },
-  }
-}
 
 const ModelSPro: VFC = () => {
   return (
     <>
-      <PageTitle
-        title="DAS KEYBOARD MODEL S PRO"
-        type="product"
-        product={{
-          slug: "das-keyboard-model-s-pro",
-          price: 119,
-          canBuy: true
-        }}
-      />
-
       <ProductHero
         heading="HIGH PERFORMANCE"
         title="HIGH QUALITY."

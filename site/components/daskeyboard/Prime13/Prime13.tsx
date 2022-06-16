@@ -7,32 +7,11 @@ import ProductFaqs from "@components/section/ProductFaqs"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import ProductHero from "@components/section/ProductHero"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
-import PageTitle from "@components/core/PageTitle"
 import AppletDashboard from "@components/product/AppletDashboard"
-
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Das Keyboard Prime 13',
-      bodyId: 'prime-13',
-      bodyClass: 'product-page keyboards',
-    },
-  }
-}
 
 const Prime13: VFC = () => {
   return (
     <>
-      <PageTitle
-        title="DAS KEYBOARD PRIME 13"
-        type='product'
-        product={{
-          slug: 'daskeyboard-prime-13',
-          price: 129,
-          canBuy: true
-        }}
-      />
-
       <ProductHero
         heading="MINIMALIST DESIGN,"
         title="WHITE BACKLIST CHERRY MX"

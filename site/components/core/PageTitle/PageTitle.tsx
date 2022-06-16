@@ -1,15 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import stripHTML from '@lib/strip-html'
 import type { VFC } from 'react'
-import Link from '../Link'
+import { Product } from '@interfaces/product'
 
 interface Props {
   title: string,
   type: 'product' | 'category' | 'page',
-  product?: {
-    slug: string,
-    price: number,
-    currency?: '$' | string,
+  product?: Partial<Product> & {
     canBuy?: boolean,
     canDownload?: boolean,
   }
@@ -18,20 +15,18 @@ const defaultProps = {
   title: '',
   type: 'page',
   product: {
-    price: 0,
-    currency: '$',
     canBuy: true,
     canDownload: false,
   }
 }
 const PageTitle: VFC<Props> = (props) => {
   const { title, type, product } = props
-  let { price, currency, canBuy, canDownload } = product || defaultProps.product
-  if (!currency) currency = defaultProps.product?.currency
+  let { canBuy, canDownload } = product || defaultProps.product
   const isProduct = type === 'product'
   const isCategory = type === 'category'
   let buyUrl = ''
-  if (canBuy) buyUrl = `/products/commerce/${product?.slug}`
+  // if (canBuy) buyUrl = `/products/commerce/${product?.slug}`
+  if (canBuy) buyUrl = `https://shop.daskeyboard.com/cart/add?id=${props?.product?.variantId}`
   return (
     <section id="pageTitle" className="bg-gray-darker text-white">
       <div className="container-boxed">
@@ -39,16 +34,16 @@ const PageTitle: VFC<Props> = (props) => {
           <div className="col text-center d-sm-flex align-items-center justify-content-between">
             <h1>
               {stripHTML(title, true)}
-              {isProduct && product && price && currency && (
+              {isProduct && product && (
                 <span className="price text-red small d-block d-md-inline ms-2">
-                  {currency}{price}
+                  {product.currency}{product.price}
                 </span>
               )}
             </h1>
             {isProduct && product && (
               <div id="productCTA" className="mb-4 mb-sm-0 d-sm-flex align-items-center justify-content-end d-none">
                 {canBuy && (
-                  <Link id="buyNow" className="btn btn-blue" href={buyUrl} title="Buy Now">Buy Now</Link>
+                  <a id="buyNow" className="btn btn-blue" href={buyUrl} title="Buy Now" target="_blank" rel="noreferrer">Buy Now</a>
                 )}
                 {canDownload && (
                   <a id="dlQsoftware" className="btn btn-outline-primary ms-3" href="https://www.daskeyboard.io/" target="_blank" title="Download Software" rel="noreferrer">

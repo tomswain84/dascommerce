@@ -9,33 +9,12 @@ import ForceDiagram from "@components/section/ForceDiagram"
 import ProductHeroBlack from "@components/section/ProductHeroBlack"
 import RelatedProducts from "@components/section/RelatedProducts"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
-import PageTitle from "@components/core/PageTitle"
 import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
 import OversizedVolume from "@components/product/OversizedVolume"
-
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Das Keyboard 4 Ultimate',
-      bodyId: '4-ultimate',
-      bodyClass: 'product-page four-series',
-    },
-  }
-}
 
 const D4Ultimate: VFC = () => {
   return (
     <>
-      <PageTitle
-        title="DAS KEYBOARD 4 ULTIMATE"
-        type="product"
-        product={{
-          slug: 'daskeyboard-4-ultimate',
-          price: 169,
-          canBuy: true
-        }}
-      />
-
       <ProductHeroBlack
         heading="COMPLETELY BLANK"
         title="ONLY FOR THE BEST"

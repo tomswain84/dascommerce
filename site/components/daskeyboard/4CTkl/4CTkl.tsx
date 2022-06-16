@@ -5,33 +5,12 @@ import FootbarRuler from "@components/section/FootbarRuler"
 import ForceDiagram from "@components/section/ForceDiagram"
 import ProductHero from "@components/section/ProductHero"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
-import PageTitle from "@components/core/PageTitle"
 import AppletDashboard from "@components/product/AppletDashboard"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
-
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Das Keyboard 4C TKL',
-      bodyId: '4c-tkl',
-      bodyClass: 'product-page keyboards',
-    },
-  }
-}
 
 const D4CTKL: VFC = () => {
   return (
     <>
-      <PageTitle
-        title="DAS KEYBOARD 4C TKL"
-        type="product"
-        product={{
-          slug: 'daskeyboard-4c-tkl',
-          price: 139,
-          canBuy: true
-        }}
-      />
-
       <ProductHero
         heading="MINIMAL FOOTPRINT"
         title="MAXIMUM POTENTIAL"

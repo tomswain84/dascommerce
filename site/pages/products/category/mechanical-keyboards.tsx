@@ -10,10 +10,10 @@ export async function getStaticProps() {
   }
 }
 
-const Products: VFC = () => {
+const MechanicalKeyboards: VFC = () => {
   return <ProductList
     title={`<small>Mechanical</small><br />Keyboards`}
   />
 }
 
-export default Products
+export default MechanicalKeyboards

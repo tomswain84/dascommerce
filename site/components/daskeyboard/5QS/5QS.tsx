@@ -11,37 +11,14 @@ import ProductApplets from "@components/section/ProductApplets"
 import ProductHero from "@components/section/ProductHero"
 import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
-import SwitchCherry from "@components/section/SwitchCherry"
-import PageTitle from "@components/core/PageTitle"
 import AppletDashboard from "@components/product/AppletDashboard"
 import SpecificationList from "@components/section/SpecificationList"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Das Keyboard 4Q',
-      bodyId: '4q',
-      bodyClass: 'product-page keyboards q-series',
-    },
-  }
-}
-
 const D4Q: VFC = () => {
   return (
     <>
-      <PageTitle
-        title="DAS KEYBOARD 4Q"
-        type="product"
-        product={{
-          slug: 'daskeyboard-4q',
-          price: 115,
-          canBuy: true,
-          canDownload: true
-        }}
-      />
-
       <ProductHero
         heading="THE SMART RGB"
         title='MECHANICAL KEYBOARD'

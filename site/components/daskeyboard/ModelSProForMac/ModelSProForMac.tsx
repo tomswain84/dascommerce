@@ -4,35 +4,13 @@ import ProductVideo from "@components/section/ProductVideo"
 import Banner from "@components/section/Banner"
 import ForceDiagram from "@components/section/ForceDiagram"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
-import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
-import PageTitle from "@components/core/PageTitle"
 import SwitchCherryBlue from "@components/product/SwitchCherryBlue"
 import NKeyRollover from "@components/product/NKeyRollover"
-
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Das Keyboard Model S Pro for Mac',
-      bodyId: 'model-s-pro-mac',
-      bodyClass: 'product-page',
-    },
-  }
-}
 
 const ModelSProForMac: VFC<{}> = () => {
   // const product = products.find(p => p.slug === slug)
   return (
     <>
-      <PageTitle
-        title="DAS KEYBOARD MODEL S PRO FOR MAC"
-        type="product"
-        product={{
-          slug: "das-keyboard-model-s-pro-for-mac",
-          price: 119,
-          canBuy: true
-        }}
-      />
-
       <ProductHero
         className="pb-sm-5"
         heading="HIGH PERFORMANCE"
@@ -82,21 +60,7 @@ const ModelSProForMac: VFC<{}> = () => {
         </div>
       </section>
 
-      <Banner
-        sectionId="nKeyRollover"
-        sectionPad
-        content={{
-          background: 'dark',
-          textAlign: "left",
-          title: `5-KEY <span class="text-red">ROLLOVER</span>.`,
-          description: "Das Keyboard Model S for Mac allows 5-key rollover, i.e. 5 keys pressed simultaneously. Great for gamers and fast typist."
-        }}
-        image={{
-          position: 'right',
-          src: '/images/product-images/product-details/4-professional/img-n_key_rollover.png',
-          rounded: true
-        }}
-      />
+      <NKeyRollover />
 
       <Banner
         sectionId="typeFaster"

@@ -10,31 +10,10 @@ import ForceDiagram from "@components/section/ForceDiagram"
 import ProductHeroBlack from "@components/section/ProductHeroBlack"
 import RelatedProducts from "@components/section/RelatedProducts"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
-import PageTitle from "@components/core/PageTitle"
-
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Das Keyboard 4 Professional for Mac',
-      bodyId: '4-professional-for-mac',
-      bodyClass: 'product-page four-series',
-    },
-  }
-}
 
 const D4ProfessionalForMac: VFC = () => {
   return (
     <>
-      <PageTitle
-        title="DAS KEYBOARD 4 PROFESSIONAL FOR MAC"
-        type="product"
-        product={{
-          slug: "das-keyboard-4-professional-for-mac",
-          price: 169,
-          canBuy: true
-        }}
-      />
-
       <ProductHeroBlack
         heading="ENHANCE"
         title="YOUR MAC"
