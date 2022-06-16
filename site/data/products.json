@@ -1,6 +1,7 @@
 [
   {
     "id": 11106154436,
+    "handle": "das-keyboard-x50q-rgb-soft-tactile-smart-mechanical-gaming-keyboard",
     "image": "/images/product-images/cards/img-daskeyboard-x50q.jpeg",
     "slug": "x50q",
     "name": "X50Q",
@@ -16,6 +17,7 @@
   },
   {
     "id": 6541476003923,
+    "handle": "5qs-smart-rgb-mechanical-keyboard",
     "image": "/images/product-images/cards/img-daskeyboard-5qs.jpeg",
     "slug": "5qs",
     "name": "5QS",
@@ -38,6 +40,7 @@
   },
   {
     "id": 1227766693932,
+    "handle": "das-keyboard-4q",
     "image": "/images/product-images/cards/img-daskeyboard-4q.jpeg",
     "slug": "4q",
     "name": "4Q",
@@ -60,6 +63,7 @@
   },
   {
     "id": 257988341,
+    "handle": "das-keyboard-4-professional",
     "image": "/images/product-images/cards/img-daskeyboard-4-professional.jpeg",
     "slug": "4-professional",
     "name": "4 PROFESSIONAL",
@@ -103,6 +107,7 @@
   },
   {
     "id": 258013029,
+    "handle": "das-keyboard-4-ultimate",
     "image": "/images/product-images/cards/img-daskeyboard-4-ultimate.jpeg",
     "slug": "4-ultimate",
     "name": "4 ULTIMATE",
@@ -146,6 +151,7 @@
   },
   {
     "id": 426799272,
+    "handle": "das-keyboard-4-professional-for-mac",
     "image": "/images/product-images/cards/img-daskeyboard-4-professional-for-mac.jpeg",
     "slug": "4-professional-for-mac",
     "name": "4 PROFESSIONAL FOR MAC",
@@ -188,6 +194,7 @@
   },
   {
     "id": 4482800189523,
+    "handle": "das-keyboard-4c-tkl-mechanical-keyboard",
     "image": "/images/product-images/cards/img-daskeyboard-4c-tkl.png",
     "slug": "4c-tkl",
     "name": "4C TKL",
@@ -229,6 +236,7 @@
   },
   {
     "id": 6265481092,
+    "handle": "das-keyboard-prime-13",
     "image": "/images/product-images/cards/img-daskeyboard-prime-13.jpeg",
     "slug": "prime-13",
     "name": "PRIME 13",
@@ -281,6 +289,7 @@
   },
   {
     "id": 146821250,
+    "handle": "das-keyboard-professional-model-s",
     "image": "/images/product-images/cards/img-daskeyboard-model-s-pro.jpeg",
     "slug": "model-s-pro",
     "name": "MODEL S PROFESSIONAL",
@@ -334,6 +343,7 @@
   },
   {
     "id": 142595683,
+    "handle": "professional-for-mac",
     "image": "/images/product-images/cards/img-daskeyboard-model-s-pro-mac.jpeg",
     "slug": "model-s-pro-for-mac",
     "name": "MODEL S PROFESSIONAL FOR MAC",

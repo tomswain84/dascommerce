@@ -18,20 +18,22 @@ import Prime13 from "@components/daskeyboard/Prime13"
 import X50Q from "@components/daskeyboard/X50Q"
 
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
-  let product = products.find(product => product.slug === params?.slug)
+  let product = (products as Product[]).find(product => product.slug === params?.slug)
   if (!product) {
     throw new Error(`Product with slug '${params!.slug}' not found`)
   }
 
-  // load product from shopify to get latest price
-  const { products: productByIds } = await commerce.getAllProducts({
+  const { product: shopifyProduct } = await commerce.getProduct({
     variables: {
-      first: 1,
-      ids: [product.id.toString()],
+      slug: product.handle,
     }
   })
-  if (productByIds[0]) {
-    product.price = productByIds[0].price.value
+  if (shopifyProduct) {
+    const variantId = Buffer.from(shopifyProduct.variants[0].id.toString(), 'base64').toString('ascii').replace('gid://shopify/ProductVariant/', '')
+    if (variantId) {
+      product.variantId = parseInt(variantId)
+    }
+    product.price = shopifyProduct.price.value
   }
   // build bodyClass per slug
   let bodyClass = 'product-page';
@@ -131,8 +133,7 @@ const ProductDetail: VFC<Props> = ({ title, product }) => {
         title={title}
         type="product"
         product={{
-          slug: product.slug,
-          price: product.price,
+          ...product,
           canBuy: true,
           canDownload: product.software || false,
         }}

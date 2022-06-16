@@ -1,7 +1,9 @@
 export interface Product {
   id: number,
+  variantId?: number,
   name: string,
   slug: string,
+  handle: string,
   collection: string,
   price: number,
   currency: string,
