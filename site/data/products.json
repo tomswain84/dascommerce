@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 11106154436,
     "image": "/images/product-images/cards/img-daskeyboard-x50q.jpeg",
     "slug": "daskeyboard-x50q",
     "name": "X50Q",
@@ -11,10 +11,11 @@
     "tags": ["supercharged", "backlit", "smart-rgb", "aluminum", "pc"],
     "keystroke": "100M",
     "switch": "GAMMA ZULU",
-    "series": "Q"
+    "series": "Q",
+    "software": true
   },
   {
-    "id": 2,
+    "id": 6541476003923,
     "image": "/images/product-images/cards/img-daskeyboard-5qs.jpeg",
     "slug": "daskeyboard-5qs",
     "name": "5QS",
@@ -32,10 +33,11 @@
     ],
     "keystroke": "100M",
     "switch": "GAMMA ZULU",
-    "series": "Q"
+    "series": "Q",
+    "software": true
   },
   {
-    "id": 3,
+    "id": 1227766693932,
     "image": "/images/product-images/cards/img-daskeyboard-4q.jpeg",
     "slug": "daskeyboard-4q",
     "name": "4Q",
@@ -53,10 +55,11 @@
     ],
     "keystroke": "50M",
     "switch": "CHERRY MX RGB",
-    "series": "Q"
+    "series": "Q",
+    "software": true
   },
   {
-    "id": 4,
+    "id": 257988341,
     "image": "/images/product-images/cards/img-daskeyboard-4-professional.jpeg",
     "slug": "daskeyboard-4-professional",
     "name": "4 PROFESSIONAL",
@@ -99,7 +102,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 258013029,
     "image": "/images/product-images/cards/img-daskeyboard-4-ultimate.jpeg",
     "slug": "daskeyboard-4-ultimate",
     "name": "4 ULTIMATE",
@@ -142,7 +145,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 426799272,
     "image": "/images/product-images/cards/img-daskeyboard-4-professional-for-mac.jpeg",
     "slug": "daskeyboard-4-professional-for-mac",
     "name": "4 PROFESSIONAL FOR MAC",
@@ -184,9 +187,9 @@
     ]
   },
   {
-    "id": 7,
+    "id": 4482800189523,
     "image": "/images/product-images/cards/img-daskeyboard-4c-tkl.png",
-    "slug": "daskeyboard-4C-tkl",
+    "slug": "daskeyboard-4c-tkl",
     "name": "4C TKL",
     "collection": "DAS KEYBOARD",
     "price": 139,
@@ -225,7 +228,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 6265481092,
     "image": "/images/product-images/cards/img-daskeyboard-prime-13.jpeg",
     "slug": "daskeyboard-prime-13",
     "name": "PRIME 13",
@@ -277,7 +280,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": 146821250,
     "image": "/images/product-images/cards/img-daskeyboard-model-s-pro.jpeg",
     "slug": "daskeyboard-model-s-pro",
     "name": "MODEL S PROFESSIONAL",
@@ -330,7 +333,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 142595683,
     "image": "/images/product-images/cards/img-daskeyboard-model-s-pro-mac.jpeg",
     "slug": "daskeyboard-model-s-pro-for-mac",
     "name": "MODEL S PROFESSIONAL FOR MAC",

@@ -10,5 +10,6 @@ export interface Product {
   tags: string[],
   keystroke: string,
   switch: string,
-  specs?: Array<{ title: string, items: string[] }>
+  specs?: Array<{ title: string, items: string[] }>,
+  software?: boolean
 }
