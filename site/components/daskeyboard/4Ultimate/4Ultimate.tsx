@@ -27,6 +27,7 @@ const D4Ultimate: VFC = () => {
 
       <Banner
         sectionPad
+        containerPadding="pt-xl-5 mt-sm-5"
         content={{
           title: `<span>DAS KEYBOARD 4 ULTIMATE</span>`,
           titleExtra: 'AN EXPERIENCE LIKE NO OTHER',

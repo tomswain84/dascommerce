@@ -31,7 +31,7 @@ const ProductCompatibility: VFC<Props> = (props) => {
               {compatible.mac && (
                 <div className="col">
                   <img className="img-fluid" src="/images/compatibility-mac.png" alt="Compatible with Mac OS" />
-                  <h6 className="mt-3">Mac OS</h6>
+                  <h6 className="mt-3">macOS Mode</h6>
                 </div>
               )}
               {compatible.windows && (
@@ -43,7 +43,7 @@ const ProductCompatibility: VFC<Props> = (props) => {
               {compatible.linux && (
                 <div className="col">
                   <img className="img-fluid" src="/images/compatibility-linux.png" alt="Compatible with Linux" />
-                  <h6 className="mt-3">Linux</h6>
+                  <h6 className="mt-3">Ubuntu</h6>
                 </div>
               )}
             </div>

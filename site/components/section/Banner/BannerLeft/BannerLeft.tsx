@@ -53,7 +53,7 @@ const BannerLeft: VFC<BannerProps> = ({ containerPadding, image, content, noCol,
         <img className={`full-image position-absolute d-none d-xxl-inline ${blendClass()}`} src={image.srcFull} alt={title} />
       )}
       <img
-        className={`img-fluid ${image.className || 'half-image'} ${image.rounded ? 'rounded' : ''} ${blendClass()}`}
+        className={`img-fluid ${image.className || (image.srcFull ? 'half-image' : '')} ${image.rounded ? 'rounded' : ''} ${blendClass()}`}
         src={image.src} alt={stripHTML(title)}
       />
     </NoColWrapper >

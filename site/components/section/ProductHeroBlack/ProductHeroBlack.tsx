@@ -9,6 +9,7 @@ interface Props {
   isCherry: boolean
   image: {
     src: string
+    padding?: string
   }
 }
 const ProductHeroBlack: VFC<Props> = ({ heading, title, image, isCherry, fill: _fill }) => {
@@ -39,9 +40,9 @@ const ProductHeroBlack: VFC<Props> = ({ heading, title, image, isCherry, fill: _
           </div>
         </div>
       </div>
-      <div className="container-fluid home-hero-image p-0">
+      <div className={`container-fluid home-hero-image py-0 ${image.padding || 'px-0'}`}>
         <div className="row g-0">
-          <img className="intro img-fluid" src={image.src} alt={heading} />
+          <img className="intro img-fluid" src={image.src} alt={heading} style={{ maxWidth: 'fit-content' }} />
         </div>
       </div>
     </section>

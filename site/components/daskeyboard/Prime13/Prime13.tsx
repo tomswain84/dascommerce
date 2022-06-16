@@ -14,7 +14,7 @@ const Prime13: VFC = () => {
     <>
       <ProductHero
         heading="MINIMALIST DESIGN,"
-        title="WHITE BACKLIST CHERRY MX"
+        title="WHITE BACKLIT CHERRY MX"
         hasPrice={true}
         price={129}
         isCherry={false}

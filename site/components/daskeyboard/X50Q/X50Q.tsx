@@ -71,7 +71,11 @@ const X50Q: VFC = () => {
         </div>
       </section>
 
-      <ProductPerformance />
+      <ProductPerformance
+        image={{
+          src: '/images/product-images/product-details/x50q/x50q-performance-meet-design.jpeg'
+        }}
+      />
 
       <ProductFeatureGroup
         rows={[

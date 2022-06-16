@@ -43,7 +43,8 @@ const ModelSProForMac: VFC<{}> = () => {
         }}
         image={{
           position: 'left',
-          src: '/images/product-images/product-details/model-s-pro-mac/model-s-professional-for-mac-front-view.jpg'
+          src: '/images/product-images/product-details/model-s-pro-mac/model-s-professional-for-mac-front-view.jpg',
+          blend: true
         }}
       />
 
