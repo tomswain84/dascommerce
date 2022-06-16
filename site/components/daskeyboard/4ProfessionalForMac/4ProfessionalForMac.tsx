@@ -19,12 +19,14 @@ const D4ProfessionalForMac: VFC = () => {
         title="YOUR MAC"
         isCherry={true}
         image={{
-          src: '/images/product-images/product-details/4-professional-for-mac/dk4pro-mac_intro.png'
+          src: '/images/product-images/product-details/4-professional-for-mac/dk4pro-mac_intro.png',
+          padding: 'px-5'
         }}
       />
 
       <Banner
         sectionPad
+        containerPadding="pt-xl-5 mt-sm-5"
         content={{
           textAlign: 'center',
           title: `<span class="text-red">DAS KEYBOARD 4 PROFESSIONAL FOR MAC</span>`,
@@ -40,6 +42,7 @@ const D4ProfessionalForMac: VFC = () => {
 
       <Banner
         sectionId="values"
+        sectionPad
         className="pt-5"
         containerPadding="pt-md-5 mt-xl-5"
         content={{
@@ -50,7 +53,7 @@ const D4ProfessionalForMac: VFC = () => {
         }}
         image={{
           position: 'left',
-          src: 'https://4eighty.com/sites/daskeyboard/images/img-home-values.png'
+          src: '/images/product-images/product-details/4-professional-for-mac/dk4-pro-mac-quality.png',
         }}
       />
 

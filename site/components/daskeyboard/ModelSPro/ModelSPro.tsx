@@ -34,7 +34,8 @@ const ModelSPro: VFC = () => {
         image={{
           position: 'left',
           src: '/images/product-images/product-details/model-s-pro/img-dkms_quality.jpg',
-          blend: true
+          srcFull: '/images/product-images/product-details/model-s-pro/img-dkms_quality-full.jpg',
+          blend: true,
         }}
       />
 

@@ -16,7 +16,7 @@ import SpecificationList from "@components/section/SpecificationList"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 
-const D4Q: VFC = () => {
+const D5QS: VFC = () => {
   return (
     <>
       <ProductHero
@@ -246,4 +246,4 @@ const D4Q: VFC = () => {
     </>
   )
 }
-export default D4Q
+export default D5QS

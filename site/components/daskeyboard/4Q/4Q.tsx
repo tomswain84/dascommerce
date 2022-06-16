@@ -29,17 +29,6 @@ export async function getStaticProps() {
 const D4Q: VFC = () => {
   return (
     <>
-      {/* <PageTitle
-        title="DAS KEYBOARD 4Q"
-        type="product"
-        product={{
-          slug: 'daskeyboard-4q',
-          price: 115,
-          canBuy: true,
-          canDownload: true
-        }}
-      /> */}
-
       <ProductHero
         heading="THE SMART RGB"
         title='MECHANICAL KEYBOARD'
@@ -84,9 +73,9 @@ const D4Q: VFC = () => {
           alt: '4Q Compatibility'
         }}
         compatible={{
-          mac: true,
+          mac: false,
           windows: true,
-          linux: false
+          linux: true
         }}
       />
 

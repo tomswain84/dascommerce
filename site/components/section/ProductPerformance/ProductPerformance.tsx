@@ -1,13 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import type { VFC } from "react"
 
-const ProductPerformance: VFC<{}> = () => {
+interface Props {
+  image: {
+    src: string
+    alt?: string
+  }
+}
+const ProductPerformance: VFC<Props> = ({ image }) => {
   return (
     <section className="bg-white section-pad">
       <div className="container-boxed">
         <div className="row align-items-center justify-content-between">
           <div className="col-md p-5">
-            <img className="img-fluid" src="/images/product-images/product-details/x50q/X50_3_angle_right.jpg" alt="Keyboard Right Angle" />
+            <img className="img-fluid" src={image.src} alt={image.alt || 'Keyboard Right Angle'} />
           </div>
           <div className="col-md">
             <h2 className="text-red">Performance Meets Design</h2>
