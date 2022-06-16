@@ -6,7 +6,7 @@ import { Product } from '@interfaces/product'
 interface Props {
   title: string,
   type: 'product' | 'category' | 'page',
-  product?: Product & {
+  product?: Partial<Product> & {
     canBuy?: boolean,
     canDownload?: boolean,
   }
