@@ -7,27 +7,29 @@ import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
 import Banner from "@components/section/Banner"
 import FootbarRuler from "@components/section/FootbarRuler"
 import ForceDiagram from "@components/section/ForceDiagram"
-import ProductHeroBlack from "@components/section/ProductHeroBlack"
 import RelatedProducts from "@components/section/RelatedProducts"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
+import ProductHero from "@components/section/ProductHero"
 
 const D4ProfessionalForMac: VFC = () => {
   return (
     <>
-      <ProductHeroBlack
+      <ProductHero
         heading="ENHANCE"
         title="YOUR MAC"
-        isCherry={true}
+        hasPrice
+        price={169}
+        isCherry
+        fill
         image={{
           src: '/images/product-images/product-details/4-professional-for-mac/dk4pro-mac_intro.png',
-          padding: 'px-5'
         }}
       />
 
       <Banner
         sectionPad
-        containerPadding="pt-xl-5 mt-sm-5"
         content={{
+          background: 'light',
           textAlign: 'center',
           title: `<span class="text-red">DAS KEYBOARD 4 PROFESSIONAL FOR MAC</span>`,
           titleExtra: `AN EXPERIENCE LIKE NO OTHER`,
