@@ -72,8 +72,15 @@ const X50Q: VFC = () => {
       </section>
 
       <ProductPerformance
+        title="Performance Meets Design"
+        description="Whether on your desk at work or at home, the X50Q looks stunning and delivers fast precision keystrokes that help you get the job done."
         image={{
           src: '/images/product-images/product-details/x50q/x50q-performance-meet-design.jpeg'
+        }}
+        features={{
+          gamma: true,
+          RGB: true,
+          aluminum: true
         }}
       />
 

@@ -15,6 +15,7 @@ import AppletDashboard from "@components/product/AppletDashboard"
 import SpecificationList from "@components/section/SpecificationList"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
+import ProductPerformance from "@components/section/ProductPerformance"
 
 const D5QS: VFC = () => {
   return (
@@ -26,16 +27,54 @@ const D5QS: VFC = () => {
         price={115}
         isCherry={false}
         image={{
-          src: '/images/product-images/product-details/4q/4q_side.jpg'
+          src: '/images/product-images/product-details/5qs/5qs_side.jpg',
+          breakoutSrc: '/images/product-images/product-details/5qs/5qs_side-m.jpg',
         }}
       />
 
       <AppletDashboard
         title="THE INFORMATION YOU NEED - ON YOUR KEYBOARD"
-        description="The Das Keyboard 4Q is the smart RGB Cherry MX version of the iconic industry-standard Das Keyboard 4 Professional. It is the ultimate productivity tool that keeps programmers focused on writing software and operating at the highest level of concentration. No more unwanted interruptions. Instead of relying on snooze-able, momentary alerts from different devices, the Das Keyboard 4Q ambiently tracks the most important information directly on its RGB keys. Users can configure it for their needs. For example, if a website is down or you have been assigned a new task, or if the software build fails, the Das Keyboard 4Q will change color and let you know."
+        description={`
+          The Das Keyboard 5QS is the second generation of the 5Q keyboard, the smart RGB mechanical keyboard that helps boost productivity by displaying information (e.g. weather, stock quotes, project progress, CPU usage, etc..) in color on the keyboard’s keys. Smart RGB mechanical keyboard with macros to play recorded keystroke sequences and multiple built-in RGB profiles. Built-in features include macros to play recorded keystroke sequences, multiple built-in RGB profiles and effects, and an RGB profile editor.
+          <br/><br/>
+          Compatible with Windows, Ubuntu, Linux Mint, and macOS mode is available.
+        `}
         image={{
-          src: "/images/product-images/product-details/4q/dk4q_intro.jpg"
+          src: "/images/product-images/product-details/5qs/dk5q_intro.png"
         }}
+      />
+
+      <SpecificationList
+        id="keyFeatures"
+        background="dark"
+        rows={[
+          {
+            type: 'heading',
+            heading: 'Key Features'
+          },
+          {
+            type: 'feature',
+            columns: [
+              [
+                {
+                  type: 'list',
+                  items: [
+                    "Das Keyboard Q technology built-in to enable smart RGB notifications",
+                    "Ultra-bright RGB lighting",
+                    "A built-in RGB profile editor with pre-configured profiles",
+                    "A built-in macro editor to replay recorded keystrokes",
+                    "Gaming mode with full-NKRO",
+                    "100M cycle mechanical key switches",
+                    "Detachable palm rest",
+                    "Q volume knob changes volume & previews notifications",
+                    "Anodized aluminum top panel",
+                    "Windows & Ubuntu support. Built-in Mac mode.",
+                  ]
+                }
+              ]
+            ]
+          }
+        ]}
       />
 
       <ProductVideo
@@ -59,19 +98,32 @@ const D5QS: VFC = () => {
 
       <ProductCompatibility
         image={{
-          src: '/images/product-images/product-details/4q/4q_compatibility.jpg',
-          alt: '4Q Compatibility'
+          src: '/images/product-images/product-details/5qs/DK5Q_Qbutton_view.jpg',
+          alt: 'DK5QS Q Button View'
         }}
         compatible={{
           mac: true,
           windows: true,
-          linux: false
+          linux: true
         }}
       />
 
-      <Materials />
+      <ProductPerformance
+        title="THE KEYBOARD OF SUPERLATIVES"
+        description="The most advanced electronics"
+        image={{
+          src: '/images/product-images/product-details/5qs/commerce-image.jpg'
+        }}
+        features={{
+          gamma: true,
+          RGB: true,
+          API: true
+        }}
+      />
 
-      <section className="bg-white section-pad">
+      {/* <Materials /> */}
+
+      {/* <section className="bg-white section-pad">
         <div className="container-boxed">
           <div className="row align-items-center">
             <div className="col-12 col-md-6 col-lg-8 mb-5 mb-md-0">
@@ -82,48 +134,50 @@ const D5QS: VFC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <ProductFeatureGroup
         rows={[
           {
+            type: 'heading',
+            heading: 'INTENSE RGB COLORS IN BROAD DAYLIGHT'
+          },
+          {
             type: 'content',
-            title: 'DURABLE ALUMINUM PANEL',
-            heading: 'BUILT TO LAST FOR YEARS',
-            description: 'Das Keyboard 4Q sports an anodized black aluminum top panel. Made with first-class electronics this top panel will be serving you for years to come.',
+            heading: '2X BRIGHTER: RGB+',
+            title: 'BRILLIANT COLORS THAT ARE NOT WASHED OUT',
+            description: 'Due to its enhanced brightness mode(*) and its modern switch design, the 5QS delivers intense colors that are not washed out by daylight - a problem that most RGB keyboards suffer from.',
             image: {
               position: 'left',
-              src: '/images/product-images/product-details/4q/dk4q-aluminum-top-panel.png',
+              src: '/images/gama-zulu-color-switch.jpg',
             }
           },
           {
-            type: 'content',
-            title: 'KEEP YOUR GAMING SPACE CLEAN',
-            heading: 'EXTRA LONG BRAIDED CABLE',
-            description: 'The 4Q sports a 2-meter (6.5ft) braided USB cable that goes through desk grommets to keep the desk clean.',
-            image: {
-              position: 'center',
-              src: '/images/product-images/product-details/4q/long-dog-with-long-cable.png',
-            }
+            type: 'switch'
+          },
+          {
+            type: 'heading',
+            heading: 'PREMIUM MATERIALS THROUGHOUT',
+            description: 'For a luxurious typing experience'
           },
           {
             type: 'content',
-            title: 'USB CONVENIENCE AT YOUR FINGERTIPS',
-            heading: 'TWO-PORT USB HUB',
-            description: 'Das Keyboard 4Q has a convenient two-port USB Hub for transferring files and connecting devices. No more reaching to the back of your computer.',
+            heading: 'ALUMINUM TOP',
+            title: 'BUILT TO LAST',
+            description: 'Das Keyboard 5QS sports an anodized black aluminum top panel. Made with first-class electronics this top panel will be serving you for years to come.',
             image: {
               position: 'left',
-              src: '/images/product-images/product-details/4q/dk4q-usb-ports.jpg',
+              src: '/images/product-images/product-details/5qs/aluminum-top.jpg',
             }
           },
           {
             type: 'content',
-            title: 'QUICK ACCESS FOR AUDIO PLAYBACK AND VOLUME',
-            heading: 'DEDICATED MEDIA CONTROLS',
-            description: 'Direct controls to quickly set sound level, play or pause songs, and adjust volume while gaming or working.',
+            heading: 'DETACHABLE WRIST REST',
+            title: 'COMFORTABLE TYPING',
+            description: 'Das Keyboard 5QS features a detachable wrist rest that’s attached magnetically and helps typists rest their palms comfortably.',
             image: {
               position: 'right',
-              src: '/images/product-images/product-details/4q/dk4q-media-controls.jpg',
+              src: '/images/product-images/product-details/5qs/das-keyboard-5q-wristpad.jpg',
             }
           },
         ]}
@@ -145,23 +199,21 @@ const D5QS: VFC = () => {
                   type: 'list',
                   title: 'PRODUCT INFORMATION',
                   items: [
-                    'Lasered keycaps US, and ABS lased ROW',
-                    'Extra long 6.5ft (201cm) USB cable with single type A USB connector',
-                    'NKRO over USB for faster gaming, programming, or anything that makes you a formidable opponent in work or play',
-                    'Two-port USB 2.0 hub',
-                    'Anodized aluminum top panel',
-                    'Firmware updatable',
-                    'Cherry MX RGB electronics',
-                    'Footbar to raise keyboard also functions as a ruler (you’ll thank us later)',
+                    "Double shot keycaps US, and ABS lasered ROW",
+                    "Extra long 6.5ft (201cm) USB cable with single type A USB connector",
+                    "NKRO over USB for faster gaming, programming, or anything that makes you a formidable opponent in work or play",
+                    "Anodized aluminum top panel",
+                    "Firmware updatable",
+                    "RGB+ electronics",
                   ]
                 },
                 {
                   type: 'list',
                   title: 'SYSTEM REQUIREMENTS',
                   items: [
-                    'Windows 10 or Ubuntu',
-                    'One 2.0 USB port (Optional 3.0 USB port for Enhanced Brightness Mode), Optional 2nd 2.0 USB port hub',
-                    'Internet connection for software and cloud features',
+                    "Windows, macOS, or Ubuntu0",
+                    "One 2.0 USB port",
+                    "Internet connection for software and smart keyboard features",
                   ]
                 },
                 {
@@ -175,16 +227,15 @@ const D5QS: VFC = () => {
                   type: 'list',
                   title: 'PACKAGE CONTENT',
                   items: [
-                    'Das Keyboard 4Q',
-                    'Footbar ruler',
-                    'Getting started guide',
+                    "Das Keyboard 5QS",
+                    "Detachable wrist rest",
                   ]
                 },
                 {
                   type: 'button',
                   title: 'USER MANUAL',
                   button: {
-                    text: 'View the 4Q User Manual',
+                    text: 'View the 5QS User Manual',
                     href: 'https://docs.google.com/document/d/113RqlXeGU22Wx8xhvaGl6w--tYiXIrimflQeGH7x9EQ/edit',
                   }
                 }
@@ -194,35 +245,33 @@ const D5QS: VFC = () => {
                   type: 'list',
                   title: 'PHYSICAL SPECIFICATIONS',
                   items: [
-                    '<strong>Height</strong>: 0.80 in (2 cm)',
-                    '<strong>Width</strong>: 6.8 in (17.3 cm)',
-                    '<strong>Length</strong>: 18 in (45.7 cm)',
-                    '<strong>Weight</strong>: 2.9 lbs (1.3 kg)',
-                    '<strong>Cable</strong>: 6.5 ft (2m)',
+                    "<strong>Height</strong>: 1.42 in (3.6 cm)",
+                    "<strong>Width</strong>: 6 in (15.2 cm)",
+                    "<strong>Length</strong>: 18 in (45.7 cm)",
+                    "<strong>Weight</strong>: 3.3 lbs (1.44 kg)",
+                    "<strong>Cable</strong>: 6.5 ft (2m)",
                   ]
                 },
                 {
                   type: 'list',
                   title: 'CHERRY MX RGB SWITCHES',
                   items: [
-                    '<strong>Gold Cross Point Contacts</strong>: 2',
-                    '<strong>Lifetime</strong>: 50 million actuations',
-                    '<strong>Total Travel Distance</strong>: 4mm',
-                    '<strong>Pre-travel Distance</strong>: 2mm',
-                    '<strong>Cherry MX Brown',
-                    '<strong>Feel</strong>: Soft tactile',
-                    '<strong>Actuation force</strong>: 45g',
-                    '<strong>Tactile Force</strong>: 55g',
+                    "<strong>Feel</strong> tactile",
+                    "<strong>Gold Cross Point Contacts</strong>: 2",
+                    "<strong>Durability</strong>: million actuations",
+                    "<strong>Actuation distance</strong>: 0.06 in (1.5 mm)",
+                    "<strong>Actuation force</strong>: 1.6 oz (45 g)",
+                    "<strong>Total travel distance</strong>: 0.14 in (3.5 mm)",
                   ]
                 },
                 {
                   type: 'list',
                   title: 'AVAILABLE LAYOUTS',
                   items: [
-                    '104 US',
-                    '105 UK',
-                    '105 DE',
-                    '105 NO',
+                    "104 US",
+                    "105 UK",
+                    "105 DE",
+                    "105 NO",
                   ]
                 },
                 {
@@ -230,11 +279,29 @@ const D5QS: VFC = () => {
                   title: 'SOFTWARE',
                   button: {
                     text: 'Download DAS Keyboard Q Software',
-                    href: 'https://www.daskeyboard.io/'
+                    href: 'https://www.daskeyboard.io/',
+                    description: 'Additional language keycaps are available as an add-on. (See accessories below.)'
                   }
                 }
               ]
             ]
+          },
+          {
+            type: 'heading',
+            heading: 'ACCESSORIES'
+          },
+          {
+            type: 'feature',
+            columns: [[
+              {
+                type: 'list',
+                items: [
+                  "Translucent Keycaps, Blank, No Inscriptions",
+                  "Translucent Keycaps, Modern Font",
+                  "Translucent Keycaps, Modern Font, Dvorak",
+                ]
+              }
+            ]]
           }
         ]}
       />

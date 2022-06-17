@@ -49,7 +49,7 @@ interface FeatureListProps {
   background: 'dark' | 'darker'
   rows: Array<HeadingRow | FeatureRow>
 }
-const FeatureList: VFC<FeatureListProps> = ({ id: sectionId, background, rows }) => {
+const SpecificationList: VFC<FeatureListProps> = ({ id: sectionId, background, rows }) => {
   return (
     <section id={sectionId} className={`content-container dark-section section-pad bg-gray-${background}`}>
       <div id="contentContainer" className="container-boxed">
@@ -77,4 +77,4 @@ const FeatureList: VFC<FeatureListProps> = ({ id: sectionId, background, rows })
     </section>
   )
 }
-export default FeatureList
+export default SpecificationList
