@@ -19,7 +19,12 @@ const ProductList: VFC<Props> = ({ title }) => {
   // find current filter
   const currentFilter = filters.find(f => f.filter === filter)
   // list products by current filter
-  const currentProducts = products.filter(p => !currentFilter || currentFilter.tag === 'all' || p.tags.includes(currentFilter.tag)) as Product[]
+  const currentProducts = products.filter(p => {
+    if (filter === 'bestsellers') {
+      return p.tags.includes('bestsellers')
+    }
+    return !currentFilter || currentFilter.tag === 'all' || p.tags.includes(currentFilter.tag)
+  }) as Product[]
   return (
     <>
       <PageTitle
@@ -58,7 +63,7 @@ const ProductList: VFC<Props> = ({ title }) => {
                 <figure className="heading mt-0">
                   <figcaption>
                     <h1 dangerouslySetInnerHTML={{ __html: title }} />
-                    {currentFilter?.filter !== 'all' && (
+                    {currentFilter && currentFilter.filter !== 'all' && (
                       <div className="filter-text d-flex align-items-center justify-content-between">
                         <h3 className={`my-3 ${currentFilter?.tag || ''}`} >
                           <span className="text-red">Filter: </span>
