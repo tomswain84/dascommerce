@@ -31,7 +31,8 @@
       "smart-rgb",
       "aluminum",
       "pc",
-      "ubuntu"
+      "ubuntu",
+      "bestsellers"
     ],
     "keystroke": "100M",
     "switch": "GAMMA ZULU",
@@ -71,7 +72,7 @@
     "price": 169,
     "currency": "$",
     "description": "An expression of refinement and a premium typing experience, the DasKeyboard 4 Professional features dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
-    "tags": ["supercharged", "aluminum", "pc"],
+    "tags": ["supercharged", "aluminum", "pc", "linux", "bestsellers"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
     "series": "FOUR",
@@ -115,7 +116,7 @@
     "price": 169,
     "currency": "$",
     "description": "For the expert typist desiring ultimate sleekness, the stealthy DasKeyboard 4 Ultimate has blank keys, dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
-    "tags": ["supercharged", "minimalist", "aluminum", "pc"],
+    "tags": ["supercharged", "minimalist", "aluminum", "pc", "linux"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
     "series": "FOUR",
@@ -202,7 +203,7 @@
     "price": 139,
     "currency": "$",
     "description": "Sleek tenkeyless design with PBT keycaps and Cherry MX Brown switches will help you type faster. Enjoy the pleasing ultra-modern design piece sitting at your workstation.",
-    "tags": ["supercharged", "aluminum", "pc"],
+    "tags": ["supercharged", "aluminum", "pc", "linux"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
     "specs": [
@@ -244,7 +245,14 @@
     "price": 129,
     "currency": "$",
     "description": "Need simple, high quality minimalist design? The Das Keyboard Prime 13, with its white LED backlighting and anodized aluminum top panel, is for you.",
-    "tags": ["supercharged", "minimalist", "backlit", "aluminum", "pc"],
+    "tags": [
+      "supercharged",
+      "minimalist",
+      "backlit",
+      "aluminum",
+      "pc",
+      "linux"
+    ],
     "keystroke": "50M",
     "switch": "CHERRY MX",
     "specs": [
@@ -297,7 +305,7 @@
     "price": 119,
     "currency": "$",
     "description": "Need simple, high quality minimalist design? The Das Keyboard Prime 13, with its white LED backlighting and anodized aluminum top panel, is for you.",
-    "tags": ["supercharged", "pc"],
+    "tags": ["supercharged", "pc", "linux"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
     "specs": [
@@ -351,7 +359,7 @@
     "price": 119,
     "currency": "$",
     "description": "Need a Model S designed for Mac compatibility? The Das Keyboard Model S Professional for Mac, featuring a two-port USB 2.0 Hi-Speed hub and glossy black top panel, is for you.",
-    "tags": ["supercharged", "mac"],
+    "tags": ["supercharged", "mac", "bestsellers"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
     "specs": [
