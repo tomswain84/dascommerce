@@ -31,17 +31,18 @@ const Menu: VFC = () => {
             <FontAwesomeIcon icon='chevron-down' className='ps-2 text-red' width={9} />
           </a>
           <div className="dropdown-menu dropdown-menu-end" aria-labelledby="accessories">
-            <a className="dropdown-item" href="/products/category/accessories#palmRests">Palm Rests</a>
             <a className="dropdown-item" href="/products/category/accessories#keycapSets">Keycap Sets</a>
-            <a className="dropdown-item" href="/products/category/accessories#parts">Parts</a>
-            <a className="dropdown-item" href="/products/category/accessories#mousePads">Mouse Pads</a>
+            <a className="dropdown-item" href="/products/category/accessories#palmRests">Palm Rests</a>
+            <a className="dropdown-item" href="/products/category/accessories#parts">Keyboard Parts</a>
+            {/* <a className="dropdown-item" href="/products/category/accessories#mousePads">Mouse Pads</a> */}
+            <hr />
+            <a className="dropdown-item" href="/products/category/accessories">Das Swag</a>
+            <a className="dropdown-item" href="/products/category/accessories#warehouseClearance">Warehouse Clearance</a>
             <hr />
             <a className="dropdown-item view-all py-3 d-flex align-items-center justify-content-between" href="/products/category/accessories">
               All Accessories
               <FontAwesomeIcon className='text-red' icon='plus' />
             </a>
-            <hr />
-            <a className="dropdown-item" href="/products/category-swag">Das Swag</a>
           </div>
         </li>
         <li id="navTechnology" className="nav-item dropdown">
