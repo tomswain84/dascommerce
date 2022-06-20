@@ -11,13 +11,13 @@ const Menu: VFC = () => {
             <FontAwesomeIcon icon='chevron-down' className='ps-2 text-red' width={9} />
           </a>
           <div className="dropdown-menu dropdown-menu-end" aria-labelledby="keyboards">
+            <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=bestsellers">Best Sellers</a>
             <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=backlit">Backlit</a>
             <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=smartrgb">Smart RGB</a>
             <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=forpc">For PC</a>
             <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=formac">For Mac</a>
             <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=linux">For Linux</a>
             <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=refurbished">Refurbished</a>
-            <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=bestsellers">Best Sellers</a>
             <hr />
             <a className="dropdown-item bg-gr view-all py-3 d-flex align-items-center justify-content-between" href="/products/category/mechanical-keyboards?filter=all">
               View All
