@@ -35,12 +35,12 @@ const PrivacyPolicy: VFC = () => {
                 <h3 className="sidebar-title mt-5">2. Legality of processing</h3>
                 <p>The processing of personal data (see Article 4 (2) of the GDPR) is lawful if one of the following conditions applies:</p>
                 <ul className="list-unstyled">
-                  <ListItem>The data subject has given his consent to the processing of the personal data concerning him for one or more specific purposes;</ListItem>
-                  <ListItem>The processing is necessary for the performance of a contract to which the data subject is a party or for the performance of pre-contractual measures which are carried out at the request of the data subject;</ListItem>
-                  <ListItem>The processing is necessary to fulfill a legal obligation to which the controller is subject;</ListItem>
-                  <ListItem>The processing is necessary to protect the vital interests of the data subject or any other natural person;</ListItem>
-                  <ListItem>The processing is necessary for the performance of a task which is in the public interest or in the exercise of public authority delegated to the controller;</ListItem>
-                  <ListItem>Processing is necessary to safeguard the legitimate interests of the controller or a third party, unless the interests or fundamental rights and freedoms of the data subject requiring personal data protection prevail, in particular where the data subject is a child.</ListItem>
+                  <ListItem increaseLineHeight>The data subject has given his consent to the processing of the personal data concerning him for one or more specific purposes;</ListItem>
+                  <ListItem increaseLineHeight>The processing is necessary for the performance of a contract to which the data subject is a party or for the performance of pre-contractual measures which are carried out at the request of the data subject;</ListItem>
+                  <ListItem increaseLineHeight>The processing is necessary to fulfill a legal obligation to which the controller is subject;</ListItem>
+                  <ListItem increaseLineHeight>The processing is necessary to protect the vital interests of the data subject or any other natural person;</ListItem>
+                  <ListItem increaseLineHeight>The processing is necessary for the performance of a task which is in the public interest or in the exercise of public authority delegated to the controller;</ListItem>
+                  <ListItem increaseLineHeight>Processing is necessary to safeguard the legitimate interests of the controller or a third party, unless the interests or fundamental rights and freedoms of the data subject requiring personal data protection prevail, in particular where the data subject is a child.</ListItem>
                 </ul>
 
                 <h3 className="sidebar-title mt-5">3. Responsible / Representation</h3>
