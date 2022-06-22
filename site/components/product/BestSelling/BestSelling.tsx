@@ -3,6 +3,7 @@ import type { VFC } from "react"
 import products from '@data/products.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import s from './BestSelling.module.scss'
+import Link from "@components/core/Link"
 
 interface Props {
 
@@ -15,11 +16,15 @@ const BestSelling: VFC<Props> = () => {
       <div className="d-flex flex-column px-3">
         {bestSellingProducts.map(prod => (
           <div key={prod.id} className='d-flex align-items-center'>
-            <div>
+            <Link href={`/products/daskeyboard/${prod.slug}`}>
               <img src={prod.image} alt={prod.name} className={s.thumb} />
-            </div>
+            </Link>
             <div className="d-flex flex-column ms-3">
-              <h4 className="fw-normal fs-6 text-capitalize">Das Keyboard {prod.name.toLowerCase()}</h4>
+              <h4 className="fw-normal fs-6 text-capitalize">
+                <Link href={`/products/daskeyboard/${prod.slug}`} className='text-black'>
+                  Das Keyboard {prod.name.toLowerCase()}
+                </Link>
+              </h4>
               <div className="d-flex">
                 {[1, 2, 3, 4, 5].map(i => (
                   <FontAwesomeIcon key={i} icon='star' className="text-red" size="sm" />
