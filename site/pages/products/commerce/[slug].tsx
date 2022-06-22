@@ -99,7 +99,8 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
   }, [quantity])
 
   const [selectedType, setSelectedType] = useState(product.variants ? product.variants[0].id : null)
-  const variantPrice = product?.variants?.find(v => v.id === selectedType)?.listPrice || 0
+  const variantPrice = product?.variants?.find(v => v.id === selectedType)?.listPrice || product.price
+  const hasSwitchType = product.variants && product.variants.find(variant => !!variant.options.find(opt => opt.displayName === 'switch type'))
 
   return (
     <>
@@ -178,34 +179,36 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
 
                   {/* <img className="img-fluid my-4" src="/images/temp-klarma.png" alt="Temp Klarma" /> */}
 
-                  <div className="option-switches my-5">
-                    <h3 className="sidebar-title">Select Switch Type</h3>
-                    {product.variants && product.variants.map(variant => (
-                      <div key={variant.id} className="form-check my-3 ps-0">
-                        <input
-                          className="form-check-input visually-hidden"
-                          type="radio" name="flexRadioDefault"
-                          id={`switch-${variant.id}`}
-                          checked={selectedType === variant.id}
-                          onChange={() => setSelectedType(variant.id)}
-                        />
-                        <label className="switch-select form-check-label d-flex align-items-center" htmlFor={`switch-${variant.id}`}>
-                          {/* <img className="select-image me-3" src={''} alt={variant.name} /> */}
-                          <span className="label-wrap">
-                            <span className="oswald">{variant.name.split('-')[0].trim()}</span>
-                            {variant.name.includes('-') && (
-                              <>
-                                <span className="mx-1">-</span>
-                                <small>{variant.name.split('-')[1].trim()}</small>
-                              </>
-                            )}
-                          </span>
-                        </label>
-                      </div>
-                    ))}
-                  </div>
+                  {hasSwitchType && (
+                    <div className="option-switches mt-5">
+                      <h3 className="sidebar-title">Select Switch Type</h3>
+                      {product.variants && product.variants.map(variant => (
+                        <div key={variant.id} className="form-check my-3 ps-0">
+                          <input
+                            className="form-check-input visually-hidden"
+                            type="radio" name="flexRadioDefault"
+                            id={`switch-${variant.id}`}
+                            checked={selectedType === variant.id}
+                            onChange={() => setSelectedType(variant.id)}
+                          />
+                          <label className="switch-select form-check-label d-flex align-items-center" htmlFor={`switch-${variant.id}`}>
+                            {/* <img className="select-image me-3" src={''} alt={variant.name} /> */}
+                            <span className="label-wrap">
+                              <span className="oswald">{variant.name.split('-')[0].trim()}</span>
+                              {variant.name.includes('-') && (
+                                <>
+                                  <span className="mx-1">-</span>
+                                  <small>{variant.name.split('-')[1].trim()}</small>
+                                </>
+                              )}
+                            </span>
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
-                  <div className="cartCTA">
+                  <div className="cartCTA mt-5">
                     <h3 className="sidebar-title">
                       Order Total:
                       <span className="text-red ms-2">{product.currency}{variantPrice * quantity}</span>
