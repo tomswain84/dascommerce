@@ -1,15 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-import type { VFC } from "react"
+import { useEffect, useState, VFC } from "react"
 import { Product } from "@interfaces/product"
 import s from './FrequentlyBoughtTogether.module.scss'
 import accessories from '@data/accessories.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Accessory } from "@interfaces/accessory"
 
 interface Props {
   product: Product
 }
 const FrequentlyBoughtTogether: VFC<Props> = ({ product }) => {
-  const suggestions = [...accessories].sort(() => 0.5 - Math.random()).slice(0, 2);
+  const [suggestions, setSuggestions] = useState<Accessory[]>([])
+  useEffect(() => {
+    setSuggestions([...accessories].sort(() => 0.5 - Math.random()).slice(0, 2))
+  }, [])
   return (
     <>
       <h3 className="sidebar-title">Frequently Bought Together</h3>

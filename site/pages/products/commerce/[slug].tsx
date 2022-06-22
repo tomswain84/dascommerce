@@ -2,7 +2,7 @@
 import { useCallback, useState, VFC } from "react"
 import { useRouter } from "next/router"
 import products from '@data/products.json'
-import { GetStaticPaths, GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next"
 import { Product } from "@interfaces/product"
 import stripHTML from "@lib/strip-html"
 import PageTitle from "@components/core/PageTitle"
@@ -10,6 +10,8 @@ import Link from "@components/core/Link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import BestSelling from "@components/product/BestSelling"
 import FrequentlyBoughtTogether from "@components/product/FrequentlyBoughtTogether"
+import commerce from "@lib/api/commerce"
+import { ProductTypes } from "@commerce/types/product"
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   const paths = products.map(product => ({
@@ -23,38 +25,68 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   }
 }
 
-export async function getStaticProps(context: { params: { slug: string } }) {
-  const product = products.find(product => product.slug === context.params.slug)
+interface ProductWithVariants extends Product {
+  variants?: Array<ProductTypes['product']['variants'][0] & {
+    name: string
+    listPrice: number
+  }>
+}
+
+export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
+  let product = (products as ProductWithVariants[]).find(product => product.slug === params?.slug)
+  if (!product) {
+    throw new Error(`Product with slug '${params!.slug}' not found`)
+  }
+  const { product: shopifyProduct } = await commerce.getProduct({
+    variables: {
+      slug: product.handle,
+    }
+  })
+  if (shopifyProduct) {
+    const variantId = Buffer.from(shopifyProduct.variants[0].id.toString(), 'base64').toString('ascii').replace('gid://shopify/ProductVariant/', '')
+    if (variantId) {
+      product.variantId = parseInt(variantId)
+    }
+    product.price = shopifyProduct.price.value
+    product.variants = (shopifyProduct as unknown as ProductWithVariants).variants
+  }
   return {
     props: {
       title: `Das Keyboard ${product?.name}`,
       bodyId: product?.name?.toLowerCase(),
-      bodyClass: `commerce keyboards ${product?.series?.toLowerCase()}-series`,
+      bodyClass: `commerce keyboards`,
+      product
     },
   }
 }
 
-const ProductCommerce: VFC = () => {
-  const switchTypes = [
-    {
-      name: "Clicky",
-      label: 'Cherry MX Blue',
-      value: 'clicky',
-      image: '/images/commerce_options-switch_type-clicky.png'
-    },
-    {
-      name: 'Soft Tactile',
-      label: 'Cherry MX Brown',
-      value: 'tactile',
-      image: '/images/commerce_options-switch_type-soft_tactile.png'
-    },
-    {
-      name: 'Smooth Linear',
-      label: 'Cherry MX Red',
-      value: 'linear',
-      image: '/images/commerce_options-switch_type-smooth_linear.png'
-    }
-  ]
+interface Props {
+  title: string
+  bodyId: string
+  bodyClass: string
+  product: ProductWithVariants
+}
+const ProductCommerce: VFC<Props> = ({ product }) => {
+  // const switchTypes = [
+  //   {
+  //     name: "Clicky",
+  //     label: 'Cherry MX Blue',
+  //     value: 'clicky',
+  //     image: '/images/commerce_options-switch_type-clicky.png'
+  //   },
+  //   {
+  //     name: 'Soft Tactile',
+  //     label: 'Cherry MX Brown',
+  //     value: 'tactile',
+  //     image: '/images/commerce_options-switch_type-soft_tactile.png'
+  //   },
+  //   {
+  //     name: 'Smooth Linear',
+  //     label: 'Cherry MX Red',
+  //     value: 'linear',
+  //     image: '/images/commerce_options-switch_type-smooth_linear.png'
+  //   }
+  // ]
 
   const [quantity, setQuantity] = useState(1)
   const incrQuantity = useCallback(() => {
@@ -66,13 +98,9 @@ const ProductCommerce: VFC = () => {
     }
   }, [quantity])
 
-  const [selectedType, setSelectedType] = useState(switchTypes[0].value)
-  const router = useRouter()
-  const { slug } = router.query
-  const product = products.find(item => item.slug === slug) as Product
-  if (!product) {
-    return null
-  }
+  const [selectedType, setSelectedType] = useState(product.variants ? product.variants[0].id : null)
+  const variantPrice = product?.variants?.find(v => v.id === selectedType)?.listPrice || 0
+
   return (
     <>
       <PageTitle
@@ -90,7 +118,7 @@ const ProductCommerce: VFC = () => {
           <div className="container-boxed">
             <div className="row">
               <div id="contentContainer" className="col-md-6 col-lg-8 pb-5 pb-md-0">
-                <div className="row mb-5">
+                <div className="row">
                   <div className="col text-center text-md-start">
                     <Link className="btn btn-outline-primary text-gray-dark ms-md-2" href={`/products/daskeyboard/${product.slug}`} title="Back to Product Details">
                       <i><FontAwesomeIcon icon="backward-step" className="me-2" /></i>
@@ -98,7 +126,15 @@ const ProductCommerce: VFC = () => {
                     </Link>
                   </div>
                 </div>
-                <img className="img-fluid" src={product.image} alt={stripHTML(product.name)} />
+                <img
+                  src={product.image} alt={stripHTML(product.name)}
+                  style={{
+                    width: '100%',
+                    height: 500,
+                    objectFit: 'cover',
+                    objectPosition: 'right'
+                  }}
+                />
               </div>
               <div id="sidebar" className="col-md-6 col-lg-4">
                 <div className="sidebar-content">
@@ -144,20 +180,25 @@ const ProductCommerce: VFC = () => {
 
                   <div className="option-switches my-5">
                     <h3 className="sidebar-title">Select Switch Type</h3>
-                    {switchTypes.map(type => (
-                      <div key={type.value} className="form-check my-3 ps-0">
+                    {product.variants && product.variants.map(variant => (
+                      <div key={variant.id} className="form-check my-3 ps-0">
                         <input
                           className="form-check-input visually-hidden"
                           type="radio" name="flexRadioDefault"
-                          id={`switch-${type.value}`}
-                          checked={selectedType === type.value}
-                          onChange={() => setSelectedType(type.value)}
+                          id={`switch-${variant.id}`}
+                          checked={selectedType === variant.id}
+                          onChange={() => setSelectedType(variant.id)}
                         />
-                        <label className="switch-select form-check-label d-flex align-items-center" htmlFor={`switch-${type.value}`}>
-                          <img className="select-image me-3" src={type.image} alt={type.name} />
+                        <label className="switch-select form-check-label d-flex align-items-center" htmlFor={`switch-${variant.id}`}>
+                          {/* <img className="select-image me-3" src={''} alt={variant.name} /> */}
                           <span className="label-wrap">
-                            <span className="oswald me-2">{type.name}</span>
-                            <small>{type.label}</small>
+                            <span className="oswald">{variant.name.split('-')[0].trim()}</span>
+                            {variant.name.includes('-') && (
+                              <>
+                                <span className="mx-1">-</span>
+                                <small>{variant.name.split('-')[1].trim()}</small>
+                              </>
+                            )}
                           </span>
                         </label>
                       </div>
@@ -167,7 +208,7 @@ const ProductCommerce: VFC = () => {
                   <div className="cartCTA">
                     <h3 className="sidebar-title">
                       Order Total:
-                      <span className="text-red ms-2">{product.currency}{product.price * quantity}</span>
+                      <span className="text-red ms-2">{product.currency}{variantPrice * quantity}</span>
                     </h3>
                     <div className="d-flex">
                       <div className="d-flex bg-black text-white px-3 py-2 rounded-1 fs-sm fw-bold align-items-center" role='button'>
