@@ -12,6 +12,7 @@ import BestSelling from "@components/product/BestSelling"
 import FrequentlyBoughtTogether from "@components/product/FrequentlyBoughtTogether"
 import commerce from "@lib/api/commerce"
 import { ProductTypes } from "@commerce/types/product"
+import { convertProductVariantId } from "@lib/convert-ids"
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   const paths = products.map(product => ({
@@ -43,10 +44,6 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
     }
   })
   if (shopifyProduct) {
-    const variantId = Buffer.from(shopifyProduct.variants[0].id.toString(), 'base64').toString('ascii').replace('gid://shopify/ProductVariant/', '')
-    if (variantId) {
-      product.variantId = parseInt(variantId)
-    }
     product.price = shopifyProduct.price.value
     product.variants = (shopifyProduct as unknown as ProductWithVariants).variants
   }
@@ -98,9 +95,12 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
     }
   }, [quantity])
 
-  const [selectedType, setSelectedType] = useState(product.variants ? product.variants[0].id : null)
-  const variantPrice = product?.variants?.find(v => v.id === selectedType)?.listPrice || product.price
+  const [selectedVariant, setSelectedVariant] = useState(product.variants ? product.variants[0] : null)
+  const variantPrice = selectedVariant?.listPrice || product.price
   const hasSwitchType = product.variants && product.variants.find(variant => !!variant.options.find(opt => opt.displayName === 'switch type'))
+
+  const selectedVariantId = selectedVariant ? convertProductVariantId(selectedVariant.id) : ''
+  const atcLink = `https://shop.daskeyboard.com/cart/add?id=${selectedVariantId}&quantity=${quantity}`
 
   return (
     <>
@@ -188,8 +188,8 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
                             className="form-check-input visually-hidden"
                             type="radio" name="flexRadioDefault"
                             id={`switch-${variant.id}`}
-                            checked={selectedType === variant.id}
-                            onChange={() => setSelectedType(variant.id)}
+                            checked={!!selectedVariant && selectedVariant.id === variant.id}
+                            onChange={() => setSelectedVariant(variant)}
                           />
                           <label className="switch-select form-check-label d-flex align-items-center" htmlFor={`switch-${variant.id}`}>
                             {/* <img className="select-image me-3" src={''} alt={variant.name} /> */}
@@ -219,10 +219,14 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
                         <span className="mx-3 user-select-none">{quantity}</span>
                         <FontAwesomeIcon icon='step-forward' onClick={incrQuantity} />
                       </div>
-                      <button className="btn btn-blue rounded-2 ms-2 w-100">
+                      <a
+                        className="btn btn-blue rounded-2 ms-2 w-100"
+                        href={atcLink}
+                        target='_self' rel='noreferrer'
+                      >
                         Add To Cart
                         <FontAwesomeIcon icon='cart-arrow-down' className="ms-2" />
-                      </button>
+                      </a>
                     </div>
                   </div>
 
