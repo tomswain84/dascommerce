@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import stripHTML from '@lib/strip-html'
 import type { VFC } from 'react'
 import { Product } from '@interfaces/product'
+import Link from '../Link'
 
 interface Props {
   title: string,
@@ -9,7 +10,8 @@ interface Props {
   product?: Partial<Product> & {
     canBuy?: boolean,
     canDownload?: boolean,
-  }
+  },
+  showStartingAt?: boolean
 }
 const defaultProps = {
   title: '',
@@ -17,33 +19,40 @@ const defaultProps = {
   product: {
     canBuy: true,
     canDownload: false,
-  }
+  },
+  showStartingAt: false,
 }
 const PageTitle: VFC<Props> = (props) => {
-  const { title, type, product } = props
+  const { title, type, product, showStartingAt } = props
   let { canBuy, canDownload } = product || defaultProps.product
   const isProduct = type === 'product'
   const isCategory = type === 'category'
   let buyUrl = ''
-  // if (canBuy) buyUrl = `/products/commerce/${product?.slug}`
-  if (canBuy) buyUrl = `https://shop.daskeyboard.com/cart/add?id=${props?.product?.variantId}`
+  if (canBuy) buyUrl = `/products/commerce/${product?.slug}`
+  // if (canBuy) buyUrl = `https://shop.daskeyboard.com/cart/add?id=${props?.product?.variantId}`
   return (
     <section id="pageTitle" className="bg-gray-darker text-white">
       <div className="container-boxed">
         <div className="row">
           <div className="col text-center d-sm-flex align-items-center justify-content-between">
-            <h1>
-              {stripHTML(title, true)}
-              {isProduct && product && (
-                <span className="price text-red small d-block d-md-inline ms-2">
-                  {product.currency}{product.price}
-                </span>
+            <div>
+              <h1 className={showStartingAt ? 'text-red' : 'text-white'}>
+                {stripHTML(title, true)}
+                {isProduct && product && (
+                  <span className="price text-red small d-block d-md-inline ms-2">
+                    {product.currency}{product.price}
+                  </span>
+                )}
+              </h1>
+              {isProduct && product && showStartingAt && (
+                <h4 className='text-start fs-6 mt-n3 mb-4'>STARTING AT {product.currency}{product.price}</h4>
               )}
-            </h1>
+            </div>
             {isProduct && product && (
               <div id="productCTA" className="mb-4 mb-sm-0 d-sm-flex align-items-center justify-content-end d-none">
                 {canBuy && (
-                  <a id="buyNow" className="btn btn-blue" href={buyUrl} title="Buy Now" target="_blank" rel="noreferrer">Buy Now</a>
+                  // <a id="buyNow" className="btn btn-blue" href={buyUrl} title="Buy Now" target="_blank" rel="noreferrer">Buy Now</a>
+                  <Link href={buyUrl} title="Buy Now" className='btn btn-blue'>Buy Now</Link>
                 )}
                 {canDownload && (
                   <a id="dlQsoftware" className="btn btn-outline-primary ms-3" href="https://www.daskeyboard.io/" target="_blank" title="Download Software" rel="noreferrer">
