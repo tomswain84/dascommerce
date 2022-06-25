@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { useCallback, useState, VFC } from "react"
-import { useRouter } from "next/router"
 import products from '@data/products.json'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next"
 import { Product } from "@interfaces/product"
