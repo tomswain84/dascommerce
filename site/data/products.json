@@ -13,7 +13,35 @@
     "keystroke": "100M",
     "switch": "GAMMA ZULU",
     "series": "Q",
-    "software": true
+    "software": true,
+    "compare": {
+      "title": "Das Keyboard X50Q",
+      "category": "Professional & gaming",
+      "switchType": "Mechanical",
+      "switchBrand": "Gamma Zulu (Omron)",
+      "qSmartButton": true,
+      "LEDBacklighting": "RGB+",
+      "keyboardSize": "Full size",
+      "builtinUSBHub": "None",
+      "mediaControls": "dedicated controls w/ Q smart button",
+      "aluminumTopPanel": true,
+      "wristRest": "Plastic",
+      "keyDetection": "< 20ms",
+      "NKRO": true,
+      "cableType": "Braided",
+      "switchLifecycle": "100 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": true,
+      "keyCapType": "Laser-etched",
+      "feetType": "Collapsible Feet",
+      "windowsKeyDisableControl": true,
+      "cableLength": "6.5 ft (2 m)",
+      "macOSSpecificKeyFunctions": false,
+      "OSCompatibility": "Windows",
+      "dimensions": "18 x 6.63 (9.3 w/ wrist rest) x 1.28 inches (45.72 x 16.84 (23.62 w/ wrist rest) x 3.25 cm)",
+      "weight": "2.99 lbs (1.36 kg) - 3.32 lbs (1.51 kg) with wrist rest",
+      "interchangeableTopPanels": true
+    }
   },
   {
     "id": 6541476003923,
@@ -37,7 +65,35 @@
     "keystroke": "100M",
     "switch": "GAMMA ZULU",
     "series": "Q",
-    "software": true
+    "software": true,
+    "compare": {
+      "title": "Das Keyboard 5QS",
+      "category": "Professional",
+      "switchType": "Mechanical",
+      "switchBrand": "Gamma Zulu (Omron)",
+      "qSmartButton": true,
+      "LEDBacklighting": "RGB+",
+      "keyboardSize": "Full size",
+      "builtinUSBHub": "None",
+      "mediaControls": "Dedicated controls w/ Q smart button",
+      "aluminumTopPanel": true,
+      "wristRest": "Detachable",
+      "keyDetection": "< 1ms",
+      "NKRO": true,
+      "cableType": "Braided",
+      "switchLifecycle": "100 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": true,
+      "keyCapType": "Double Shot - US only",
+      "feetType": "Collapsible feet",
+      "windowsKeyDisableControl": true,
+      "cableLength": "6.5 ft (2 m)",
+      "macOSSpecificKeyFunctions": false,
+      "OSCompatibility": "Windows, macOS, Ubuntu",
+      "dimensions": "18 x 6 (8.9 w/ wrist rest) x 1.42 inches (45.72 x 15.24 (22.60 w/ wrist rest) x 3.60 cm)",
+      "weight": "2.89 lbs (1.31 kg) - 3.32 lbs (1.51 kg) with wrist rest",
+      "interchangeableTopPanels": false
+    }
   },
   {
     "id": 1227766693932,
@@ -60,7 +116,35 @@
     "keystroke": "50M",
     "switch": "CHERRY MX RGB",
     "series": "Q",
-    "software": true
+    "software": true,
+    "compare": {
+      "title": "Das Keyboard 4Q",
+      "category": "Professional",
+      "switchType": "Mechanical",
+      "switchBrand": "Cherry MX RGB Brown",
+      "qSmartButton": true,
+      "LEDBacklighting": "RGB",
+      "keyboardSize": "Full size",
+      "builtinUSBHub": "2 ports, USB 2.0 Hi-Speed hub",
+      "mediaControls": "Dedicated media controls",
+      "aluminumTopPanel": true,
+      "wristRest": "",
+      "keyDetection": "< 20ms",
+      "NKRO": true,
+      "cableType": "Braided",
+      "switchLifecycle": "50 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": true,
+      "keyCapType": "Laser-etched",
+      "feetType": "Footbar ruler",
+      "windowsKeyDisableControl": false,
+      "cableLength": "6.5 ft (2 m)",
+      "macOSSpecificKeyFunctions": false,
+      "OSCompatibility": "Windows, Linux",
+      "dimensions": "18.00 x 6.80 x 0.80 inches (45.72 x 17.27 x 2.03 cm)",
+      "weight": "2.90 lbs (1.32 kg)",
+      "interchangeableTopPanels": false
+    }
   },
   {
     "id": 257988341,
@@ -104,7 +188,35 @@
           ]
         ]
       }
-    ]
+    ],
+    "compare": {
+      "title": "Das Keyboard 4 Professional",
+      "category": "Professional",
+      "switchType": "Mechanical",
+      "switchBrand": "Cherry MX blue and brown",
+      "qSmartButton": false,
+      "LEDBacklighting": "",
+      "keyboardSize": "Full size",
+      "builtinUSBHub": "2 ports, USB 3.0 SuperSpeed hub",
+      "mediaControls": "Dedicated media controls",
+      "aluminumTopPanel": true,
+      "wristRest": "",
+      "keyDetection": "< 20ms",
+      "NKRO": true,
+      "cableType": "ABS",
+      "switchLifecycle": "50 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": true,
+      "keyCapType": "Laser-etched",
+      "feetType": "Footbar ruler",
+      "windowsKeyDisableControl": false,
+      "cableLength": "6.5 ft (2 m)",
+      "macOSSpecificKeyFunctions": false,
+      "OSCompatibility": "Windows, Linux",
+      "dimensions": "18.00 x 6.80 x 0.80 inches (45.72 x 17.27 x 2.03 cm)",
+      "weight": "2.90 lbs (1.32 kg)",
+      "interchangeableTopPanels": false
+    }
   },
   {
     "id": 258013029,
@@ -148,7 +260,35 @@
           ]
         ]
       }
-    ]
+    ],
+    "compare": {
+      "title": "Das Keyboard 4 Ultimate",
+      "category": "Professional",
+      "switchType": "Mechanical",
+      "switchBrand": "Cherry MX blue and brown",
+      "qSmartButton": false,
+      "LEDBacklighting": "",
+      "keyboardSize": "Full size",
+      "builtinUSBHub": "2 ports, USB 3.0 SuperSpeed hub",
+      "mediaControls": "Dedicated media controls",
+      "aluminumTopPanel": true,
+      "wristRest": "",
+      "keyDetection": "< 20ms",
+      "NKRO": true,
+      "cableType": "ABS",
+      "switchLifecycle": "50 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": true,
+      "keyCapType": "Laser-etched",
+      "feetType": "Footbar ruler",
+      "windowsKeyDisableControl": false,
+      "cableLength": "6.5 ft (2 m)",
+      "macOSSpecificKeyFunctions": false,
+      "OSCompatibility": "Windows, Linux",
+      "dimensions": "18.00 x 6.80 x 0.80 inches (45.72 x 17.27 x 2.03 cm)",
+      "weight": "2.90 lbs (1.32 kg)",
+      "interchangeableTopPanels": false
+    }
   },
   {
     "id": 426799272,
@@ -191,7 +331,35 @@
           ]
         ]
       }
-    ]
+    ],
+    "compare": {
+      "title": "Das Keyboard 4 Professional for Mac",
+      "category": "Professional",
+      "switchType": "Mechanical",
+      "switchBrand": "Cherry MX blue and brown",
+      "qSmartButton": false,
+      "LEDBacklighting": "",
+      "keyboardSize": "Full size",
+      "builtinUSBHub": "2 ports, USB 3.0 SuperSpeed hub",
+      "mediaControls": "Dedicated media controls",
+      "aluminumTopPanel": true,
+      "wristRest": "",
+      "keyDetection": "< 20ms",
+      "NKRO": true,
+      "cableType": "ABS",
+      "switchLifecycle": "50 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": true,
+      "keyCapType": "Laser-etched",
+      "feetType": "Footbar ruler",
+      "windowsKeyDisableControl": false,
+      "cableLength": "6.5 ft (2 m)",
+      "macOSSpecificKeyFunctions": false,
+      "OSCompatibility": "Windows, Linux",
+      "dimensions": "18.00 x 6.80 x 0.80 inches (45.72 x 17.27 x 2.03 cm)",
+      "weight": "2.90 lbs (1.32 kg)",
+      "interchangeableTopPanels": false
+    }
   },
   {
     "id": 4482800189523,
@@ -233,7 +401,35 @@
           "Weight: 2.5 lbs (1.13 kg)"
         ]
       }
-    ]
+    ],
+    "compare": {
+      "title": "Das Keyboard 4C Tenkeyless Professional",
+      "category": "Professional",
+      "switchType": "Mechanical",
+      "switchBrand": "Cherry MX Brown",
+      "qSmartButton": false,
+      "LEDBacklighting": "",
+      "keyboardSize": "Tenkeyless",
+      "builtinUSBHub": "2 ports, USB Hi-Speed 2.0 hub",
+      "mediaControls": "via Fn key",
+      "aluminumTopPanel": true,
+      "wristRest": "",
+      "keyDetection": "< 20ms",
+      "NKRO": true,
+      "cableType": "ABS",
+      "switchLifecycle": "50 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": false,
+      "keyCapType": "Charcoal PBT",
+      "feetType": "Footbar ruler",
+      "windowsKeyDisableControl": true,
+      "cableLength": "6.5 ft (2 m)",
+      "macOSSpecificKeyFunctions": false,
+      "OSCompatibility": "Windows, Linux, macOS",
+      "dimensions": "15.49 x 6.05 x 1.14 inches (39.34 x 15.37 x 2.9 cm)",
+      "weight": "2.5 lbs (1.13 kg)",
+      "interchangeableTopPanels": false
+    }
   },
   {
     "id": 6265481092,
@@ -293,7 +489,35 @@
           "Available in 104-key US layout & 105-key for UK layout (NO, and DE layouts will be coming soon)"
         ]
       }
-    ]
+    ],
+    "compare": {
+      "title": "Prime 13",
+      "category": "Professional",
+      "switchType": "Mechanical",
+      "switchBrand": "Cherry MX Brown",
+      "qSmartButton": false,
+      "LEDBacklighting": "White",
+      "keyboardSize": "Full size",
+      "builtinUSBHub": "One USB 2.0 pass-through",
+      "mediaControls": "via Fn key",
+      "aluminumTopPanel": true,
+      "wristRest": "",
+      "keyDetection": "< 20ms",
+      "NKRO": true,
+      "cableType": "Braided",
+      "switchLifecycle": "50 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": false,
+      "keyCapType": "Laser-etched",
+      "feetType": "Collapsible feet",
+      "windowsKeyDisableControl": false,
+      "cableLength": "6.5 ft (2 m)",
+      "macOSSpecificKeyFunctions": false,
+      "OSCompatibility": "Windows, Linux",
+      "dimensions": "18.03 x 6.77 x 1.22 inches (45.80 x 17.20 x 3.11 cm)",
+      "weight": "2.90 lbs (1.32 kg)",
+      "interchangeableTopPanels": false
+    }
   },
   {
     "id": 146821250,
@@ -347,7 +571,35 @@
           "Mac users can swap the command/control /options keys to match the Mac keyboard layout using the Mac OS X keyboard control panel"
         ]
       }
-    ]
+    ],
+    "compare": {
+      "title": "Model S Professional",
+      "category": "Professional",
+      "switchType": "Mechanical",
+      "switchBrand": "Cherry MX blue and brown",
+      "qSmartButton": false,
+      "LEDBacklighting": "",
+      "keyboardSize": "Full size",
+      "builtinUSBHub": "2 ports, USB Hi-Speed 2.0 hub",
+      "mediaControls": "via Fn key",
+      "aluminumTopPanel": false,
+      "wristRest": "",
+      "keyDetection": "< 20ms",
+      "NKRO": true,
+      "cableType": "ABS",
+      "switchLifecycle": "50 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": false,
+      "keyCapType": "Laser-etched",
+      "feetType": "Collapsible feet",
+      "windowsKeyDisableControl": false,
+      "cableLength": "6.6 ft (2 m)",
+      "macOSSpecificKeyFunctions": false,
+      "OSCompatibility": "Windows, Linux",
+      "dimensions": "18.00 x 6.50 x 1.00 inches (45.72 x 16.51 x 2.54 cm)",
+      "weight": "3.00 lbs (1.36 kg)",
+      "interchangeableTopPanels": false
+    }
   },
   {
     "id": 142595683,
@@ -412,6 +664,34 @@
           "Bumps on F and J keys (home keys)"
         ]
       }
-    ]
+    ],
+    "compare": {
+      "title": "Model S Professional For Mac",
+      "category": "Professional",
+      "switchType": "Mechanical",
+      "switchBrand": "Cherry MX blue",
+      "qSmartButton": false,
+      "LEDBacklighting": "",
+      "keyboardSize": "Full size",
+      "builtinUSBHub": "2 ports, USB Hi-Speed 2.0 hub",
+      "mediaControls": "via Fn key",
+      "aluminumTopPanel": false,
+      "wristRest": "",
+      "keyDetection": "< 20ms",
+      "NKRO": false,
+      "cableType": "ABS",
+      "switchLifecycle": "50 million",
+      "contactType": "Gold plated single cross-point",
+      "volumeKnob": false,
+      "keyCapType": "Laser-etched",
+      "feetType": "Collapsible feet",
+      "windowsKeyDisableControl": false,
+      "cableLength": "6.6 ft (2 m)",
+      "macOSSpecificKeyFunctions": true,
+      "OSCompatibility": "macOS",
+      "dimensions": "18.00 x 6.50 x 1.00 inches (45.72 x 16.51 x 2.54 cm)",
+      "weight": "3.00 lbs (1.36 kg)",
+      "interchangeableTopPanels": false
+    }
   }
 ]
