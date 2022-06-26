@@ -1,4 +1,5 @@
 // import AppletDashboard from "@components/product/AppletDashboard"
+import PageTitle from "@components/core/PageTitle"
 import CustomizeKeyboard from "@components/product/CustomizeKeyboard"
 import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure"
 import ProductCompatibility from "@components/product/ProductCompatibility"
@@ -10,9 +11,24 @@ import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
 import { VFC } from "react"
 
+const pageTitle = 'Das Keyboard Q software'
+export async function getStaticProps() {
+  return {
+    props: {
+      title: pageTitle,
+      bodyId: 'q-software',
+      bodyClass: 'single-content',
+    },
+  }
+}
+
 const QSoftware: VFC = () => {
   return (
     <>
+      <PageTitle
+        title={pageTitle}
+        type='page'
+      />
       {/* <AppletDashboard
         title="THE INFORMATION YOU NEED - ON YOUR KEYBOARD"
         description={`

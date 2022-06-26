@@ -1,8 +1,20 @@
+import PageTitle from "@components/core/PageTitle"
 import Banner from "@components/section/Banner"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
 import type { VFC } from "react"
+
+const pageTitle = 'Das Keyboard - Mechanical switches Gamma Zulu'
+export async function getStaticProps() {
+  return {
+    props: {
+      title: pageTitle,
+      bodyId: 'gamma-zulu-switch',
+      bodyClass: 'single-content',
+    },
+  }
+}
 
 const GammaZuluSwitch: VFC = () => {
   const specTable = (
@@ -127,6 +139,10 @@ const GammaZuluSwitch: VFC = () => {
 
   return (
     <>
+      <PageTitle
+        title={pageTitle}
+        type='page'
+      />
       <Banner
         sectionPad
         content={{
