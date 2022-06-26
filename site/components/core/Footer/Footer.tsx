@@ -49,7 +49,8 @@ const Footer: VFC = () => {
     },
     {
       title: 'Mechanical Keyboard Guide',
-      href: '/mechanical-keyboard-guide'
+      href: 'https://www.daskeyboard.com/blog/mechanical-keyboard-guide/',
+      blank: true
     }
   ]
   const column2Links: FooterLink[] = [
@@ -134,7 +135,7 @@ const Footer: VFC = () => {
           <div className="row">
             <div className="col-sm-6 col-md-4 col-lg-5 col-xl-6 py-5 pe-lg-5">
               <h3>What Makes a Mechanical Keyboard Awesome?</h3>
-              <p>A mechanical keyboard is a high-performance keyboard with tactile and audio feedback so accurate it allows you to execute every keystroke with lightning-fast precision. Because of the durability and construction of the switches, mechanical keyboards are built to last far longer than standard keyboards. Read our <a className="fw-bolder" href="/mechanical-keyboard-guide" title="Mechanical Keyboard Guide">mechanical keyboard guide</a> to learn more about what makes a mechanical keyboard awesome. Your fingers will be thanking you.</p>
+              <p>A mechanical keyboard is a high-performance keyboard with tactile and audio feedback so accurate it allows you to execute every keystroke with lightning-fast precision. Because of the durability and construction of the switches, mechanical keyboards are built to last far longer than standard keyboards. Read our <a className="fw-bolder" href="https://www.daskeyboard.com/blog/mechanical-keyboard-guide/" rel='noreferrer' title="Mechanical Keyboard Guide">mechanical keyboard guide</a> to learn more about what makes a mechanical keyboard awesome. Your fingers will be thanking you.</p>
 
               <h3 className="mt-sm-5">Sign Up For Our Newsletter</h3>
               <form id="newsletterForm" className="row align-items-center">
