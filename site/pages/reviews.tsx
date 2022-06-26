@@ -6,7 +6,7 @@ import PageTitle from "@components/core/PageTitle"
 export async function getStaticProps() {
   return {
     props: {
-      title: "Reviews",
+      title: "Das Keyboard Mechanical Keyboard - Reviews from Professional",
       bodyId: 'reviews',
       bodyClass: 'single-content',
     },
@@ -17,11 +17,16 @@ const Reviews: VFC = () => {
   return (
     <>
       <PageTitle
-        title="Reviews"
+        title="Professional reviews"
         type='page'
       />
+      <div className="container my-5">
+        <div className="row text-center">
+          <h5>Tested and reviewed by tech professionals and tech magazines. See what reviewers had to say about our products.</h5>
+        </div>
+      </div>
       <main className="content-container mx-auto" style={{ maxWidth: 800 }}>
-        <section className="bg-white section-pad">
+        <section className="bg-white">
           <div className="container">
             <div className="flex flex-column">
               {allReviews.map((review, index) => (
