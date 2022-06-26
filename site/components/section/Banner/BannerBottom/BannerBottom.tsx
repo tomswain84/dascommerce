@@ -33,7 +33,7 @@ const BannerBottom: VFC<BannerProps> = ({ content, image, containerPadding, cont
       </div>
       <div className={`${image.fluid ? 'container-fluid' : 'container'} ${background === 'dark' ? 'bg-gray-darker' : (image.stretch ? 'p-0' : '')}`}>
         {!image.fluid ? (
-          <img className={`img-fluid ${blendClass}`} src={image.src} alt={stripHTML(title)} />
+          <img className={`img-fluid ${blendClass} ${image.rounded ? 'rounded' : ''}`} src={image.src} alt={stripHTML(title)} />
         ) : (
           <>
             {image.stretch === true ? (
@@ -45,7 +45,7 @@ const BannerBottom: VFC<BannerProps> = ({ content, image, containerPadding, cont
             ) : (
               <div className="row">
                 <div className="col-sm-8 offset-sm-2">
-                  <img className={`d-block mx-auto mb-4 mb-md-5 mw-100 ${blendClass}`} src={image.src} alt={stripHTML(title)} />
+                  <img className={`d-block mx-auto mb-4 mb-md-5 mw-100 ${blendClass} ${image.rounded ? 'rounded' : ''}`} src={image.src} alt={stripHTML(title)} />
                 </div>
               </div>
             )}
