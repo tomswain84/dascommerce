@@ -7,6 +7,10 @@ export interface Product {
   handle: string,
   collection: string,
   price: number,
+  refurbished: {
+    price: number,
+    handle: string,
+  }
   currency: string,
   image: string,
   description: string,
