@@ -69,6 +69,10 @@ const FrequentlyBoughtTogether: VFC<Props> = ({ product }) => {
     })
   }, [product.shopifyId])
 
+  if (!suggestions.length) {
+    return null
+  }
+
   const suggestionQuery = suggestions.map(item => `${item.variantId}:1`).join(',')
   const atcLink = `https://shop.daskeyboard.com/cart/${product.variantId}:1,${suggestionQuery}`
 

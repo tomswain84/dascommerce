@@ -4,12 +4,30 @@ import filters from '@data/filters.json'
 import Link from "@components/core/Link"
 import type { Product } from "@interfaces/product"
 
-const ProductCard: VFC<{ product: Product }> = ({ product }) => {
+interface Props {
+  product: Product
+  isRefurbised?: boolean
+}
+const ProductCard: VFC<Props> = ({ product, isRefurbised }) => {
   const tags = filters.filter(f => product.tags.includes(f.tag))
-  const productUrl = `/products/daskeyboard/${product.slug}`
+  const productUrl = `/products/daskeyboard/${isRefurbised ? 'refurbished-' : ''}${product.slug}`
   return (
-    <div id="5QS" className="col filterDiv smart-rgb for-pc for-mac supercharged backlit aluminum ubuntu q-series">
-      <figure className="card category-keyboards <?=$product_series?>">
+    <div id={product.slug} className="col filterDiv smart-rgb for-pc for-mac supercharged backlit aluminum ubuntu q-series">
+      <figure className="card category-keyboards position-relative">
+        {isRefurbised && (
+          <div
+            className="position-absolute bg-red text-white rounded-pill"
+            style={{
+              top: 10,
+              right: 10,
+              whiteSpace: 'nowrap',
+              fontSize: '0.8rem',
+              padding: '1rem 0.5rem',        
+            }}
+          >
+            -{Math.round(100 - (product.refurbished.price / product.price) * 100)}%
+          </div>
+        )}
         <Link className="btn" href={productUrl} title="Product Details">
           <img src={product.image} className="img-fluid card-img-top" alt={product.name} />
         </Link>
@@ -17,14 +35,23 @@ const ProductCard: VFC<{ product: Product }> = ({ product }) => {
           <figcaption>
             <h2>
               <small>Das Keyboard</small>
-              <br />{product.name}
+              <br />
+              {product.name}
+              {isRefurbised && <span className="ms-1">(Certified Refurbished)</span>}
             </h2>
           </figcaption>
         </figure>
         <figcaption className="card-body d-flex flex-column">
           <h5 className="price">
             Starting at
-            <span className="text-red ms-2">{product.currency}{product.price}</span>
+            {isRefurbised && product.refurbished.price ? (
+              <div className="mt-2">
+                <span className="text-black text-decoration-line-through">{product.currency}{product.price}</span>
+                <span className="text-red ms-2 fs-5">{product.currency}{product.refurbished.price}</span>
+              </div>
+            ) : (
+              <span className="text-red ms-2">{product.currency}{product.price}</span>
+            )}
           </h5>
           <p className="desc">{product.description}</p>
           <div className="tags">

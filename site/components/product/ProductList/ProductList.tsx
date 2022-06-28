@@ -1,6 +1,5 @@
 import { VFC } from "react"
 import ProductCard from "@components/product/ProductCard"
-import products from '@data/products.json'
 import filters from '@data/filters.json'
 import { useRouter } from "next/router"
 import PageTitle from "@components/core/PageTitle"
@@ -10,9 +9,11 @@ import { Product } from "@interfaces/product"
 
 interface Props {
   title: string
+  products: Product[]
+  isRefurbised?: boolean
 }
 
-const ProductList: VFC<Props> = ({ title }) => {
+const ProductList: VFC<Props> = ({ title, products, isRefurbised }) => {
   const router = useRouter()
   if (!filters.length) return null
   const { filter } = router.query
@@ -24,7 +25,7 @@ const ProductList: VFC<Props> = ({ title }) => {
       return p.tags.includes('bestsellers')
     }
     return !currentFilter || currentFilter.tag === 'all' || p.tags.includes(currentFilter.tag)
-  }) as Product[]
+  })
   return (
     <>
       <PageTitle
@@ -80,14 +81,22 @@ const ProductList: VFC<Props> = ({ title }) => {
                       </div>
                     )}
                   </figcaption>
-                  <p className="mt-3">Das Keyboard uses premium materials and award-winning technology to deliver an unmatched typing experience. Every new mechanical keyboard comes with free shipping inside the continental US, a 30-day money back guarantee and a 1-year limited warranty.</p>
+                  {isRefurbised ? (
+                    <p className="mt-3 bg-warning fw-semibold px-2 py-1 small">
+                      All Certified Refurbished orders are non-refundable. Certified Refurbished products are pre-owned, certified to be free of defects, and come with a 30-day limited hardware warranty. If the product is defective or does not work, a replacement will be sent. Please refer to our guarantee page at <Link href='/guarantee'>www.daskeyboard.com/guarantee</Link>
+                    </p>
+                  ) : (
+                    <p className="mt-3">
+                      Das Keyboard uses premium materials and award-winning technology to deliver an unmatched typing experience. Every new mechanical keyboard comes with free shipping inside the continental US, a 30-day money back guarantee and a 1-year limited warranty.
+                    </p>
+                  )}
                 </figure>
               </div>
             </div>
             <div className="product-cards row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 gy-4">
               {/* product list */}
               {currentProducts.map((product, index) => (
-                <ProductCard key={index} product={product} />
+                <ProductCard key={index} product={product} isRefurbised={isRefurbised} />
               ))}
             </div>
           </div>

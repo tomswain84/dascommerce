@@ -19,7 +19,7 @@ import X50Q from "@components/daskeyboard/X50Q"
 import { convertProductVariantId } from "@lib/convert-ids"
 
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
-  let product = (products as Product[]).find(product => product.slug === params?.slug)
+  let product = (products as Product[]).find(product => product.slug === params?.slug || product.slug === params?.slug?.replace(/^refurbished-/, ''))
   if (!product) {
     throw new Error(`Product with slug '${params!.slug}' not found`)
   }
@@ -73,11 +73,19 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
 }
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async (params) => {
-  const paths = products.map(product => ({
-    params: {
-      slug: product.slug,
-    },
-  }))
+  const paths: Array<{ params: { slug: string } }> = []
+  products.forEach(product => {
+    paths.push({
+      params: {
+        slug: product.slug,
+      }
+    })
+    paths.push({
+      params: {
+        slug: `refurbished-${product.slug}`,
+      }
+    })
+  })
   return {
     paths,
     fallback: false,
@@ -94,7 +102,12 @@ const ProductDetail: VFC<Props> = ({ title, product }) => {
   const router = useRouter()
 
   let ProductComponent: VFC = () => null
-  switch (router.query.slug) {
+  let slug = router.query.slug
+  const isRefurbished = !!slug && typeof slug === 'string' && /^refurbished-/g.test(slug)
+  if (isRefurbished) {
+    slug = (slug as string).replace(/^refurbished-/g, '')
+  }
+  switch (slug) {
     case '4q':
       ProductComponent = D4Q
       break;
@@ -138,6 +151,7 @@ const ProductDetail: VFC<Props> = ({ title, product }) => {
           canBuy: true,
           canDownload: product.software || false,
         }}
+        isRefurbished={isRefurbished}
       />
 
       <ProductComponent />

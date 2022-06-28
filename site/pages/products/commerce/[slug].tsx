@@ -14,11 +14,19 @@ import { ProductTypes } from "@commerce/types/product"
 import { convertProductId, convertProductVariantId } from "@lib/convert-ids"
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-  const paths = products.map(product => ({
-    params: {
-      slug: product.slug,
-    },
-  }))
+  const paths: Array<{ params: { slug: string } }> = []
+  products.forEach(product => {
+    paths.push({
+      params: {
+        slug: product.slug,
+      }
+    })
+    paths.push({
+      params: {
+        slug: `refurbished-${product.slug}`,
+      }
+    })
+  })
   return {
     paths,
     fallback: false,
@@ -28,22 +36,28 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
 interface ProductWithVariants extends Product {
   variants?: Array<ProductTypes['product']['variants'][0] & {
     name: string
-    listPrice: number
+    price: number
   }>
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
-  let product = (products as ProductWithVariants[]).find(product => product.slug === params?.slug)
+  let product = (products as ProductWithVariants[]).find(product => product.slug === params?.slug || product.slug === params?.slug?.replace(/^refurbished-/, ''))
   if (!product) {
     throw new Error(`Product with slug '${params!.slug}' not found`)
   }
+  const isRefurbished = !!params?.slug && typeof params.slug === 'string' && /^refurbished-/g.test(params.slug)
   const { product: shopifyProduct } = await commerce.getProduct({
     variables: {
-      slug: product.handle,
+      slug: isRefurbished ? product.refurbished.handle : product.handle,
     }
   })
   if (shopifyProduct) {
-    product.price = shopifyProduct.price.value
+    if (isRefurbished) {
+      product.refurbished.price = shopifyProduct.price.value
+    }
+    else {
+      product.price = shopifyProduct.price.value
+    }
     product.variants = (shopifyProduct as unknown as ProductWithVariants).variants
     product.variantId = parseInt(convertProductVariantId(shopifyProduct.variants[0].id))
     const shopifyId = convertProductId(shopifyProduct.id)
@@ -56,7 +70,8 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
       title: `Das Keyboard ${product?.name}`,
       bodyId: product?.name?.toLowerCase(),
       bodyClass: `commerce keyboards`,
-      product
+      product,
+      isRefurbished,
     },
   }
 }
@@ -65,9 +80,10 @@ interface Props {
   title: string
   bodyId: string
   bodyClass: string
-  product: ProductWithVariants
+  product: ProductWithVariants,
+  isRefurbished: boolean
 }
-const ProductCommerce: VFC<Props> = ({ product }) => {
+const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
   const [quantity, setQuantity] = useState(1)
   const incrQuantity = useCallback(() => {
     setQuantity(quantity + 1)
@@ -79,7 +95,7 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
   }, [quantity])
 
   const [selectedVariant, setSelectedVariant] = useState(product.variants ? product.variants[0] : null)
-  const variantPrice = selectedVariant?.listPrice || product.price
+  const variantPrice = selectedVariant?.price || product.price
   const hasSwitchType = product.variants && product.variants.find(variant => !!variant.options.find(opt => opt.displayName === 'switch type'))
 
   const selectedVariantId = selectedVariant ? convertProductVariantId(selectedVariant.id) : ''
@@ -93,9 +109,11 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
         product={{
           slug: product.slug,
           price: product.price,
+          refurbished: product.refurbished,
           currency: product.currency,
         }}
         showStartingAt
+        isRefurbished={isRefurbished}
       />
       <main className="content-wrap">
         <section className="bg-white section-pad">
@@ -122,7 +140,10 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
               </div>
               <div id="sidebar" className="col-md-6 col-lg-4">
                 <div className="sidebar-content">
-                  <h2>Das Keyboard {product.name}</h2>
+                  <h2>
+                    Das Keyboard {product.name} &nbsp;
+                    {isRefurbished && (<>(Certified Refurbished)</>)}
+                  </h2>
                   <div className="mt-1 mb-4">
                     <span className="star-rating text-red small">
                       <FontAwesomeIcon icon='star' size='sm' />
@@ -130,7 +151,7 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
                       <FontAwesomeIcon icon='star' size='sm' />
                       <FontAwesomeIcon icon='star' size='sm' />
                       <FontAwesomeIcon icon='star' size='sm' />
-                      <span className="text-gray-dark ms-2 small">101 Reviews</span>
+                      <span className="text-gray-dark ms-2 small">{Math.ceil(Math.random() * 100)} Reviews</span>
                     </span>
                   </div>
 
@@ -184,6 +205,7 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
                                   <small>{variant.name.split('-')[1].trim()}</small>
                                 </>
                               )}
+                              <strong className="ms-auto">{variant.price}</strong>
                             </span>
                           </label>
                         </div>
@@ -194,7 +216,7 @@ const ProductCommerce: VFC<Props> = ({ product }) => {
                   <div className="cartCTA mt-5">
                     <h3 className="sidebar-title">
                       Order Total:
-                      <span className="text-red ms-2">{product.currency}{variantPrice * quantity}</span>
+                      <span className="text-red ms-2">{product.currency}{(variantPrice * quantity).toFixed(2)}</span>
                     </h3>
                     <div className="d-flex">
                       <div className="d-flex bg-black text-white px-3 py-2 rounded-1 fs-sm fw-bold align-items-center" role='button'>

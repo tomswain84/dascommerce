@@ -6,18 +6,19 @@ import { Product } from "@interfaces/product"
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Mechanical Keyboards',
+      title: 'Certified Refurbished Mechanical Keyboards',
       bodyId: 'mechanicalKeyboards',
       bodyClass: 'product-listing keyboards has-parent',
     },
   }
 }
 
-const MechanicalKeyboards: VFC = () => {
+const RefurbishedMechanicalKeyboards: VFC = () => {
   return <ProductList
-    title={`<small>Mechanical</small><br />Keyboards`}
+    title={`<small>Certified Refurbished</small><br />Mechanical Keyboards`}
     products={products as Product[]}
+    isRefurbised
   />
 }
 
-export default MechanicalKeyboards
+export default RefurbishedMechanicalKeyboards

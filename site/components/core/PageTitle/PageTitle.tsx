@@ -11,7 +11,8 @@ interface Props {
     canBuy?: boolean,
     canDownload?: boolean,
   },
-  showStartingAt?: boolean
+  showStartingAt?: boolean,
+  isRefurbished?: boolean,
 }
 const defaultProps = {
   title: '',
@@ -21,31 +22,59 @@ const defaultProps = {
     canDownload: false,
   },
   showStartingAt: false,
+  isRefurbished: false
 }
 const PageTitle: VFC<Props> = (props) => {
   const { title, type, product, showStartingAt } = props
   let { canBuy, canDownload } = product || defaultProps.product
+  const isRefurbished = props.isRefurbished || defaultProps.isRefurbished
   const isProduct = type === 'product'
   const isCategory = type === 'category'
   let buyUrl = ''
-  if (canBuy) buyUrl = `/products/commerce/${product?.slug}`
+  if (canBuy) buyUrl = `/products/commerce/${isRefurbished ? 'refurbished-' : ''}${product?.slug}`
   // if (canBuy) buyUrl = `https://shop.daskeyboard.com/cart/add?id=${props?.product?.variantId}`
   return (
     <section id="pageTitle" className="bg-gray-darker text-white">
       <div className="container-boxed">
         <div className="row">
           <div className="col text-center d-sm-flex align-items-center justify-content-between">
-            <div>
+            <div className='text-start'>
               <h1 className={showStartingAt ? 'text-red' : 'text-white'}>
                 {stripHTML(title, true)}
                 {isProduct && product && (
-                  <span className="price text-red small d-block d-md-inline ms-2">
-                    {product.currency}{product.price}
-                  </span>
+                  <>
+                    {isRefurbished ? (
+                      <>
+                        <span className="price text-secondary text-decoration-line-through small d-block d-md-inline ms-4">
+                          {product.currency}{product.price}
+                        </span>
+                        <span className="price text-red small d-block d-md-inline ms-2">
+                          {product.currency}{product.refurbished?.price}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="price text-red small d-block d-md-inline ms-2">
+                        {product.currency}{product.price}
+                      </span>
+                    )}
+                  </>
+                )}
+                {isRefurbished && (
+                  <p className='mb-0'>(Certified Refurbished)</p>
                 )}
               </h1>
               {isProduct && product && showStartingAt && (
-                <h4 className='text-start fs-6 mt-n3 mb-4'>STARTING AT {product.currency}{product.price}</h4>
+                <h4 className='fs-6 mt-n3 mb-4'>
+                  STARTING AT
+                  {isRefurbished ? (
+                    <>
+                      <span className="text-secondary text-decoration-line-through ms-2">{product.currency}{product.price}</span>
+                      <span className="text-white ms-1">{product.currency}{product.refurbished?.price}</span>
+                    </>
+                  ) : (
+                    <>{product.currency}{product.price}</>
+                  )}
+                </h4>
               )}
             </div>
             {isProduct && product && (
