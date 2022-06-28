@@ -26,7 +26,7 @@ const ProductVideo: VFC<Props> = ({ theme, sectionId, title, description, classN
                   <figcaption>
                     <h2>
                       <small dangerouslySetInnerHTML={{ __html: title }} />
-                      <br /><span className="animated-cursor cursor-dark">{description}</span>
+                      <br /><span className="animated-cursor cursor-dark" dangerouslySetInnerHTML={{ __html: description }} />
                     </h2>
                   </figcaption>
                 </figure>
@@ -63,7 +63,7 @@ const ProductVideo: VFC<Props> = ({ theme, sectionId, title, description, classN
             <div className="row">
               <div className="col-sm-8 offset-sm-2">
                 <div className="ratio ratio-16x9 d-block mx-auto mb-4 mb-md-5 mw-100">
-                  <iframe src={video.src} title="YouTube video" allowFullScreen />
+                  <iframe src={video.src} title={title} allowFullScreen />
                 </div>
               </div>
             </div>

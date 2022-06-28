@@ -126,25 +126,25 @@ body.q-series img.section-featured {
   width: 768px;
   border-radius: 1.75vw;
 }
-body.product-page a#playButton,
-body.product-page a#playButton1 {
+a#playButton,
+a#playButton1 {
   padding: 0;
 }
-body.product-page a#playButton span,
-body.product-page a#playButton1 span {
+a#playButton span,
+a#playButton1 span {
   padding: 0.6rem 1.4rem;
   line-height: 2.5;
 }
-body.product-page a#playButton span.pause,
-body.product-page a#playButton1 span.pause {
+a#playButton span.pause,
+a#playButton1 span.pause {
   display: none;
 }
-body.product-page a#playButton.playing span.pause,
-body.product-page a#playButton1.play span.pause {
+a#playButton.playing span.pause,
+a#playButton1.play span.pause {
   display: initial;
 }
-body.product-page a#playButton.playing span.play,
-body.product-page a#playButton1.play span.play {
+a#playButton.playing span.play,
+a#playButton1.play span.play {
   display: none;
 }
 body.product-page section#video div.ratio {

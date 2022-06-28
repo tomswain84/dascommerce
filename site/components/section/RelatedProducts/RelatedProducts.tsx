@@ -9,10 +9,11 @@ interface Props {
   className?: string
   series: 'Q' | 'FOUR',
   boxed?: boolean
+  switch?: "GAMMA ZULU" | "CHERRY MX RGB" | "CHERRY MX" | 'ALL'
 }
-const RelatedProducts: VFC<Props> = ({ sectionId, title, series, className, boxed: _boxed }) => {
+const RelatedProducts: VFC<Props> = ({ sectionId, title, series, className, boxed: _boxed, switch: _switch }) => {
   const boxed = _boxed || false
-  const products = allProducts.filter(p => p.series === series) as Product[]
+  const products = allProducts.filter(p => p.series === series && (typeof _switch === 'undefined' || p.switch === _switch)) as Product[]
   return (
     <section id={sectionId || 'productLineup'} className={`section-pad ${className || 'bg-gray-lighter'}`}>
       <div className={boxed ? 'container-boxed' : 'container'}>

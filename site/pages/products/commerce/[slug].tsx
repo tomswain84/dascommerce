@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useCallback, useState, VFC } from "react"
-import { useRouter } from "next/router"
+import { useCallback, useEffect, useState, VFC } from "react"
 import products from '@data/products.json'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next"
 import { Product } from "@interfaces/product"
@@ -12,7 +11,7 @@ import BestSelling from "@components/product/BestSelling"
 import FrequentlyBoughtTogether from "@components/product/FrequentlyBoughtTogether"
 import commerce from "@lib/api/commerce"
 import { ProductTypes } from "@commerce/types/product"
-import { convertProductVariantId } from "@lib/convert-ids"
+import { convertProductId, convertProductVariantId } from "@lib/convert-ids"
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   const paths = products.map(product => ({
@@ -46,6 +45,11 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   if (shopifyProduct) {
     product.price = shopifyProduct.price.value
     product.variants = (shopifyProduct as unknown as ProductWithVariants).variants
+    product.variantId = parseInt(convertProductVariantId(shopifyProduct.variants[0].id))
+    const shopifyId = convertProductId(shopifyProduct.id)
+    if (shopifyId) {
+      product.shopifyId = parseInt(shopifyId)
+    }
   }
   return {
     props: {
@@ -64,27 +68,6 @@ interface Props {
   product: ProductWithVariants
 }
 const ProductCommerce: VFC<Props> = ({ product }) => {
-  // const switchTypes = [
-  //   {
-  //     name: "Clicky",
-  //     label: 'Cherry MX Blue',
-  //     value: 'clicky',
-  //     image: '/images/commerce_options-switch_type-clicky.png'
-  //   },
-  //   {
-  //     name: 'Soft Tactile',
-  //     label: 'Cherry MX Brown',
-  //     value: 'tactile',
-  //     image: '/images/commerce_options-switch_type-soft_tactile.png'
-  //   },
-  //   {
-  //     name: 'Smooth Linear',
-  //     label: 'Cherry MX Red',
-  //     value: 'linear',
-  //     image: '/images/commerce_options-switch_type-smooth_linear.png'
-  //   }
-  // ]
-
   const [quantity, setQuantity] = useState(1)
   const incrQuantity = useCallback(() => {
     setQuantity(quantity + 1)

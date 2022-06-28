@@ -1,6 +1,7 @@
 export interface Product {
   id: number,
   variantId?: number,
+  shopifyId?: number,
   name: string,
   slug: string,
   handle: string,

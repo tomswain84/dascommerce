@@ -6,6 +6,7 @@ export interface ProductFeatureProps {
   title: string
   description: string
   descriptionHint?: string
+  extraElement?: JSX.Element
   image: {
     src: string
     alt?: string
@@ -17,7 +18,7 @@ export interface ProductFeatureProps {
   }>
 }
 
-const ProductFeature: VFC<ProductFeatureProps> = ({ heading, title, description, descriptionHint, image, extras }) => {
+const ProductFeature: VFC<ProductFeatureProps> = ({ heading, title, description, descriptionHint, extraElement, image, extras }) => {
   const colClass = () => {
     switch (image.position) {
       case 'left':
@@ -59,6 +60,7 @@ const ProductFeature: VFC<ProductFeatureProps> = ({ heading, title, description,
               ))}
             </>
           )}
+          {extraElement && extraElement}
         </div>
         {image.position !== 'center' && (
           <div className="col-md text-center">
