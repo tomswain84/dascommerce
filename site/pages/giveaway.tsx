@@ -35,7 +35,7 @@ const Giveaway: VFC<{}> = () => {
                 <p>After signup, check your email and whitelist Das Keyboard.</p>
                 <p className="mb-5">Extra entries can be earned by following us on the social media channels below. Check back on this page for the name of each monthly winner.</p>
 
-                <a className="e-widget no-button generic-loader" href="https://gleam.io/BV5TB/may-2022-das-keyboard-monthly-giveaway" rel="nofollow">May 2022 Das Keyboard Monthly Giveaway</a>
+                <a className="e-widget no-button generic-loader" href="https://gleam.io/sMrvH/july-2022-das-keyboard-monthly-giveaway" rel="nofollow">July 2022 Das Keyboard Monthly Giveaway</a>
               </div>
             </div>
           </div>
