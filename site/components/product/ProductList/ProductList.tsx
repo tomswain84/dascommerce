@@ -45,7 +45,7 @@ const ProductList: VFC<Props> = ({ title, products, isRefurbised }) => {
                   <li className="nav-item m-1" key={tag}>
                     <Link
                       className={`dropdown-item tag-${tag} ${filter === currentFilter?.filter ? 'active' : ''}`}
-                      href={`/products/category/mechanical-keyboards?filter=${filter}`}
+                      href={`/products/category/${isRefurbised ? 'refurbished-' : ''}mechanical-keyboards?filter=${filter}`}
                     >
                       {name}
                     </Link>
@@ -72,7 +72,7 @@ const ProductList: VFC<Props> = ({ title, products, isRefurbised }) => {
                         </h3>
                         <Link
                           className="btn btn-outline-primary text-gray-dark"
-                          href="/products/category/mechanical-keyboards?filter=all"
+                          href={`/products/category/${isRefurbised ? 'refurbished-' : ''}mechanical-keyboards?filter=all`}
                           title="Clear Filter"
                         >
                           Clear Filter
