@@ -51,50 +51,92 @@ const Reviews: VFC = () => {
   ]
   const customerReviews = [
     {
-      copy: `The tactile responsiveness when I push a key is so satisfying. It’s silly but it also makes me feel productive, each keystroke an audio reminder that I’m one step closer to my goal.`,
-      icon: 'images/reviews-icon-ny_times.png',
-      name: 'Daisuke Wakabayashi',
-      company: 'NY Times',
-      focus: 'On the Das Keyboard Model S'
+      copy: `My 3rd Das Keyboard. I love these keyboards. My oldest one that's 8 years old still works like it did on day 1. I would never buy all these "gamer" keyboards before a Das. Works great for work and gaming.`,
+      icon: null,
+      name: 'John T.',
+      company: 'Jun 01, 2022',
+      focus: 'ON THE DAS KEYBOARD X50Q'
     },
     {
-      copy: `The tactile responsiveness when I push a key is so satisfying. It’s silly but it also makes me feel productive, each keystroke an audio reminder that I’m one step closer to my goal.`,
-      icon: 'images/reviews-icon-ny_times.png',
-      name: 'Daisuke Wakabayashi',
-      company: 'NY Times',
-      focus: 'On the Das Keyboard Model S'
+      copy: `Clicky and amazing. Everyone in my office hates me. But I don't care. I love it.`,
+      icon: null,
+      name: 'Timothy M.',
+      company: 'Jun 01, 2022',
+      focus: 'ON THE DAS KEYBOARD 4 PROFESSIONAL FOR MAC'
     },
     {
-      copy: `The tactile responsiveness when I push a key is so satisfying. It’s silly but it also makes me feel productive, each keystroke an audio reminder that I’m one step closer to my goal.`,
-      icon: 'images/reviews-icon-ny_times.png',
-      name: 'Daisuke Wakabayashi',
-      company: 'NY Times',
-      focus: 'On the Das Keyboard Model S'
+      copy: `Best keyboard available. if you want the best feel and touch of a real keyboard this is the best one I've found. The addition USB ports are helpful but the touch and feel of these keyboards is second to none. I bought them for the office and home.`,
+      icon: null,
+      name: 'Emmett B.',
+      company: 'Jun 01, 2022',
+      focus: 'ON THE DAS KEYBOARD 4 PROFESSIONAL'
     },
     {
-      copy: `The tactile responsiveness when I push a key is so satisfying. It’s silly but it also makes me feel productive, each keystroke an audio reminder that I’m one step closer to my goal.`,
-      icon: 'images/reviews-icon-ny_times.png',
-      name: 'Daisuke Wakabayashi',
-      company: 'NY Times',
-      focus: 'On the Das Keyboard Model S'
+      copy: `Great quality. Absolutely worth the money. It improved my typing speed, accuracy, and enjoyment.`,
+      icon: null,
+      name: 'Josiah P.',
+      company: 'Jun 01, 2022',
+      focus: 'ON THE DAS KEYBOARD 4 ROOT'
     },
     {
-      copy: `The tactile responsiveness when I push a key is so satisfying. It’s silly but it also makes me feel productive, each keystroke an audio reminder that I’m one step closer to my goal.`,
-      icon: 'images/reviews-icon-ny_times.png',
-      name: 'Daisuke Wakabayashi',
-      company: 'NY Times',
-      focus: 'On the Das Keyboard Model S'
+      copy: `Superior Product. I love the touch of this quality switching keyboard.`,
+      icon: null,
+      name: 'William L.',
+      company: 'Jun 01, 2022',
+      focus: 'ON THE DAS KEYBOARD MODEL S'
     },
     {
-      copy: `The tactile responsiveness when I push a key is so satisfying. It’s silly but it also makes me feel productive, each keystroke an audio reminder that I’m one step closer to my goal.`,
-      icon: 'images/reviews-icon-ny_times.png',
-      name: 'Daisuke Wakabayashi',
-      company: 'NY Times',
-      focus: 'On the Das Keyboard Model S'
+      copy: `Really love it. I have used an incredibly wide asst of keyboards and this is amongst the best. The feel of typing on it is so satisfying and seems to be extremely well built. I have been using it about 6 weeks and is perfect so far.`,
+      icon: null,
+      name: 'Jonathan O.',
+      company: 'May 03, 2022',
+      focus: 'ON THE DAS KEYBOARD X50Q'
+    },
+    {
+      copy: `Love the feel. I really like the aluminum plate, the keys feel great, and it looks great on my desk!`,
+      icon: null,
+      name: 'Scott F.',
+      company: 'May 03, 2022',
+      focus: 'ON THE DAS KEYBOARD 4C TKL'
+    },
+    {
+      copy: `Better than Apple, less money. We have two of these in our family and we find them to be more responsive and reliable than Apple’s keyboards and they cost less.`,
+      icon: null,
+      name: 'Jim P.',
+      company: 'Apr 02, 2022',
+      focus: 'ON THE DAS KEYBOARD MODEL S FOR MAC'
+    },
+    {
+      copy: `My wife loves it! This was our first mechanical keyboard. I got it for my wife for her work-from-home PC. She loves it!`,
+      icon: null,
+      name: 'Steven K.',
+      company: 'Feb 03, 2022',
+      focus: 'ON THE DAS KEYBOARD 4Q'
+    },
+    {
+      copy: `Exceptional all these years. Been using Ultimates at home and work since I first saw them on The Awesomer back in late 2008. Absolutely wonderful keyboards with zero issues out of the box, wonderful performance and lifespan.`,
+      icon: null,
+      name: 'Brendan O.',
+      company: 'Feb 02, 2022',
+      focus: 'ON THE DAS KEYBOARD ULTIMATE'
+    },
+    {
+      copy: `Nothing Beats a Das Keyboard. I have a Model S Professional that is about 10 years old now which has become my work keyboard. I needed a new keyboard for my home PC and tried a couple of different brands out but none of them had the same build quality or level of reliability that I had come to expect. Das boards are by far the most durable I've ever used and will likely be the only brand I buy moving forward`,
+      icon: null,
+      name: 'Bill K.',
+      company: 'Jan 03, 2022',
+      focus: 'ON THE DAS KEYBOARD 5QS'
     },
   ]
 
-  const ReviewCarousel: VFC<{ reviews: typeof editorialReviews }> = ({ reviews }) => (
+  type Review = {
+    copy: string
+    icon: string | null
+    name: string
+    company: string
+    focus: string
+  }
+  const ReviewCarousel: VFC<{ reviews: Review[] }> = ({ reviews }) => (
     <Carousel
       className='row position-relative'
     >
@@ -104,7 +146,13 @@ const Reviews: VFC = () => {
             <p className="review-copy">{review.copy}</p>
           </div>
           <figure className="card-body">
-            <img className="review-icon" src={review.icon} />
+            {review.icon ? (
+              <img className="review-icon" src={review.icon} />
+            ) : (
+              <div className="review-icon text-icon">
+                {review.name.split(' ').map(s => s.charAt(0).toUpperCase())}
+              </div>
+            )}
             <figcaption>
               <h5 className="card-title review-name">{review.name}</h5>
               <p className="review-company">{review.company}</p>
