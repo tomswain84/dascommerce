@@ -21,7 +21,7 @@ const FiveMetaHacks: VFC = () => {
       />
       <main className="content-container">
         <section className="bg-white section-pad">
-          <div className="container">
+          <div className="container" style={{ maxWidth: 666 }}>
             <div className="row">
               <div id="contentContainer" className="col">
                 <img src="/images/pages/5-meta-hacks-wide.png" alt="5 meta hacks" className="img-fluid" />
@@ -38,7 +38,7 @@ const FiveMetaHacks: VFC = () => {
                   className="form-group mb-4"
                 >
                   <div className="row">
-                    <div className="col-lg-4 col-md-6 col-xs-12">
+                    <div className="col-xs-12 col-sm-10">
                       <div className="input-group input-group-lg">
                         <input type="email" name="EMAIL" className="form-control input-lg" placeholder="myemail@example.com" />
                         <button type="submit" name="subscribe" className="btn btn-primary">Sign Up</button>
