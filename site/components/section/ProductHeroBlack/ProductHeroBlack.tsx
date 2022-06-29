@@ -33,7 +33,7 @@ const ProductHeroBlack: VFC<Props> = ({ heading, title, image, isCherry, fill: _
               </div>
               {isCherry && (
                 <div className="col">
-                  <img className="cherry-logo img-fluid" src="/images/cherry-logo.png" />
+                  <img className="cherry-logo img-fluid" width={150} src="/images/cherry-logo.png" />
                 </div>
               )}
             </div>
