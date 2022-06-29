@@ -82,8 +82,8 @@ const ProductList: VFC<Props> = ({ title, products, isRefurbised }) => {
                     )}
                   </figcaption>
                   {isRefurbised ? (
-                    <p className="mt-3 bg-warning fw-semibold px-2 py-1 small">
-                      All Certified Refurbished orders are non-refundable. Certified Refurbished products are pre-owned, certified to be free of defects, and come with a 30-day limited hardware warranty. If the product is defective or does not work, a replacement will be sent. Please refer to our guarantee page at <Link href='/guarantee'>www.daskeyboard.com/guarantee</Link>
+                    <p className="alert alert-warning mt-3 fw-bold small fst-italic">
+                      All Certified Refurbished orders are non-refundable. Certified Refurbished products are pre-owned, certified to be free of defects, and come with a 30-day limited hardware warranty. If the product is defective or does not work, a replacement will be sent. Please refer to our guarantee page at <Link href='/guarantee' className="text-black">www.daskeyboard.com/guarantee</Link>
                     </p>
                   ) : (
                     <p className="mt-3">
