@@ -119,7 +119,7 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
         <section className="bg-white section-pad">
           <div className="container-boxed">
             <div className="row">
-              <div id="contentContainer" className="col-md-6 col-lg-8 pb-5 pb-md-0">
+              <div id="contentContainer" className="col-md-6 col-lg-8 pb-md-0">
                 <div className="row">
                   <div className="col text-center text-md-start">
                     <Link className="btn btn-outline-primary text-gray-dark ms-md-2" href={`/products/daskeyboard/${product.slug}`} title="Back to Product Details">
@@ -137,6 +137,11 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
                     objectPosition: 'right'
                   }}
                 />
+                {isRefurbished && (
+                  <p className="alert alert-warning mt-3 fw-bold small fst-italic">
+                    All Certified Refurbished orders are non-refundable. Certified Refurbished products are pre-owned, certified to be free of defects, and come with a 30-day limited hardware warranty. If the product is defective or does not work, a replacement will be sent. Please refer to our guarantee page at <Link href='/guarantee' className="text-black">www.daskeyboard.com/guarantee</Link>
+                  </p>
+                )}
               </div>
               <div id="sidebar" className="col-md-6 col-lg-4">
                 <div className="sidebar-content">
