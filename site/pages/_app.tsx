@@ -17,6 +17,7 @@ library.add(fab, fas);
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { useRouter } from 'next/router';
+import ScrollToTop from '@components/core/ScrollToTop/ScrollToTop';
 
 const Noop: FC = ({ children }) => <>{children}</>
 
@@ -78,6 +79,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <hr />
         <Footer />
+        <ScrollToTop />
       </Layout>
     </>
   )
