@@ -45,7 +45,8 @@ const Footer: VFC = () => {
     },
     {
       title: `Do not sell my personal info<span class="d-md-none d-lg-inline">rmation</span>`,
-      href: '/ccpa-opt-out'
+      href: 'https://shop.daskeyboard.com/pages/ccpa-opt-out',
+      blank: true
     },
     {
       title: 'Mechanical Keyboard Guide',
