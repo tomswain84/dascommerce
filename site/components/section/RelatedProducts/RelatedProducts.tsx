@@ -29,7 +29,7 @@ const RelatedProducts: VFC<Props> = ({ sectionId, title, series, className, boxe
             </figure>
           </div>
         </div>
-        <div className="product-cards row row-cols-1 row-cols-sm-3 row-cols-lg-3 gy-4">
+        <div className="product-cards row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-4">
           {/* <?php include '../parts/part-category-keyboards-grid.php'; ?> */}
           {products.map(product => (
             <ProductCard key={product.id} product={product} />

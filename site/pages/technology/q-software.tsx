@@ -17,7 +17,7 @@ export async function getStaticProps() {
     props: {
       title: pageTitle,
       bodyId: 'q-software',
-      bodyClass: 'single-content',
+      bodyClass: 'product-page keyboards q-series',
     },
   }
 }

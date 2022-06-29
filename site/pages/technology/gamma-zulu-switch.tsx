@@ -11,7 +11,7 @@ export async function getStaticProps() {
     props: {
       title: pageTitle,
       bodyId: 'gamma-zulu-switch',
-      bodyClass: 'single-content',
+      bodyClass: 'product-page keyboards q-series',
     },
   }
 }
@@ -215,7 +215,7 @@ const GammaZuluSwitch: VFC = () => {
         title="Q Series"
         series="Q"
         switch="GAMMA ZULU"
-        className="text-center justify-content-center"
+        className="text-center bg-gray-lighter"
       />
     </>
   )
