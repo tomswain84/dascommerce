@@ -8,15 +8,16 @@ import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import ProductHero from "@components/section/ProductHero"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import AppletDashboard from "@components/product/AppletDashboard"
+import { Product } from "@interfaces/product"
 
-const Prime13: VFC = () => {
+const Prime13: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
   return (
     <>
       <ProductHero
         heading="MINIMALIST DESIGN,"
         title="WHITE BACKLIT CHERRY MX"
         hasPrice={true}
-        price={129}
+        price={isRefurbished ? product.refurbished.price : product.price}
         isCherry={false}
         image={{
           src: '/images/product-images/product-details/prime-13/prime13-mechanical-keyboard-angled-side-view.jpg'

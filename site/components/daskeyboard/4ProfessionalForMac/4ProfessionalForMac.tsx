@@ -10,15 +10,16 @@ import ForceDiagram from "@components/section/ForceDiagram"
 import RelatedProducts from "@components/section/RelatedProducts"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import ProductHero from "@components/section/ProductHero"
+import { Product } from "@interfaces/product"
 
-const D4ProfessionalForMac: VFC = () => {
+const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
   return (
     <>
       <ProductHero
         heading="ENHANCE"
         title="YOUR MAC"
         hasPrice
-        price={169}
+        price={isRefurbished ? product.refurbished.price : product.price}
         isCherry
         fill
         image={{

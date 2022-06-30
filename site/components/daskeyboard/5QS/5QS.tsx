@@ -4,8 +4,6 @@ import CustomizeKeyboard from "@components/product/CustomizeKeyboard"
 import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure"
 import QMessagePreview from "@components/product/QMessagePreview"
 import AppletsCTA from "@components/section/AppletsCTA"
-import ForceDiagram from "@components/section/ForceDiagram"
-import Materials from "@components/section/Materials"
 import ProductCompatibility from "@components/product/ProductCompatibility"
 import ProductApplets from "@components/section/ProductApplets"
 import ProductHero from "@components/section/ProductHero"
@@ -14,17 +12,17 @@ import RelatedProducts from "@components/section/RelatedProducts"
 import AppletDashboard from "@components/product/AppletDashboard"
 import SpecificationList from "@components/section/SpecificationList"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
-import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 import ProductPerformance from "@components/section/ProductPerformance"
+import { Product } from "@interfaces/product"
 
-const D5QS: VFC = () => {
+const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
   return (
     <>
       <ProductHero
         heading="THE SMART RGB"
         title='MECHANICAL KEYBOARD'
         hasPrice
-        price={115}
+        price={isRefurbished ? product.refurbished.price : product.price}
         isCherry={false}
         image={{
           src: '/images/product-images/product-details/5qs/5qs_side.jpg',

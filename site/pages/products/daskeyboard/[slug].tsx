@@ -24,9 +24,10 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
     throw new Error(`Product with slug '${params!.slug}' not found`)
   }
 
+  const isRefurbished = !!params?.slug && typeof params.slug === 'string' && /^refurbished-/g.test(params.slug)
   const { product: shopifyProduct } = await commerce.getProduct({
     variables: {
-      slug: product.handle,
+      slug: isRefurbished ? product.refurbished.handle : product.handle,
     }
   })
   if (shopifyProduct) {
@@ -34,7 +35,12 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
     if (variantId) {
       product.variantId = parseInt(variantId)
     }
-    product.price = shopifyProduct.price.value
+    if (isRefurbished) {
+      product.refurbished.price = shopifyProduct.price.value
+    }
+    else {
+      product.price = shopifyProduct.price.value
+    }
   }
   // build bodyClass per slug
   let bodyClass = 'product-page';
@@ -101,7 +107,7 @@ interface Props {
 const ProductDetail: VFC<Props> = ({ title, product }) => {
   const router = useRouter()
 
-  let ProductComponent: VFC = () => null
+  let ProductComponent: VFC<{ product: typeof product, isRefurbished: boolean }> = () => null
   let slug = router.query.slug
   const isRefurbished = !!slug && typeof slug === 'string' && /^refurbished-/g.test(slug)
   if (isRefurbished) {
@@ -154,7 +160,7 @@ const ProductDetail: VFC<Props> = ({ title, product }) => {
         isRefurbished={isRefurbished}
       />
 
-      <ProductComponent />
+      <ProductComponent product={product} isRefurbished={isRefurbished} />
     </>
   )
 }

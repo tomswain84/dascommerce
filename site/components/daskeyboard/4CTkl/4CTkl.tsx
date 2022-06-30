@@ -7,8 +7,9 @@ import ProductHero from "@components/section/ProductHero"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import AppletDashboard from "@components/product/AppletDashboard"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
+import { Product } from "@interfaces/product"
 
-const D4CTKL: VFC = () => {
+const D4CTKL: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
   return (
     <>
       <ProductHero
@@ -16,7 +17,7 @@ const D4CTKL: VFC = () => {
         title="MAXIMUM POTENTIAL"
         isCherry={true}
         hasPrice={true}
-        price={139}
+        price={isRefurbished ? product.refurbished.price : product.price}
         image={{
           src: '/images/product-images/product-details/4c-tkl/4c-tkl_side.jpg'
         }}
