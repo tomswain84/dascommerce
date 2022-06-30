@@ -30,7 +30,11 @@ const Home = () => {
           title: `DAS KEYBOARD <span class="text-red">VALUES</span>`,
           background: "dark",
           description: "We are a badass company that makes badass products for badass customers. We are quality obsessed and develop all our products with premium materials.",
-          button: "Read More"
+          button: {
+            variant: 'primary',
+            label: "Read More",
+            href: '/values'
+          }
         }}
         image={{
           position: 'left',
