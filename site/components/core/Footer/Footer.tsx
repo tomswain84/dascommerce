@@ -17,7 +17,7 @@ const Footer: VFC = () => {
     },
     {
       title: '*Shipping',
-      href: '/about-us',
+      href: '/shipping',
     },
     {
       title: '**Guarantee',
