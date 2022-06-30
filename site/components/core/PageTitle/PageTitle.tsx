@@ -72,7 +72,7 @@ const PageTitle: VFC<Props> = (props) => {
                       <span className="text-white ms-1">{product.currency}{product.refurbished?.price}</span>
                     </>
                   ) : (
-                    <>{product.currency}{product.price}</>
+                    <span className="ms-1">{product.currency}{product.price}</span>
                   )}
                 </h4>
               )}

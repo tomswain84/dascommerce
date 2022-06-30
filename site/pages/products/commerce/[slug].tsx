@@ -95,7 +95,7 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
   }, [quantity])
 
   const [selectedVariant, setSelectedVariant] = useState(product.variants ? product.variants[0] : null)
-  const variantPrice = selectedVariant?.price || product.price
+  const variantPrice = selectedVariant?.price || (isRefurbished ? product.refurbished.price : product.price)
   const hasSwitchType = product.variants && product.variants.find(variant => !!variant.options.find(opt => opt.displayName === 'switch type'))
 
   const selectedVariantId = selectedVariant ? convertProductVariantId(selectedVariant.id) : ''

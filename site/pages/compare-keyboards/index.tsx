@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { ChangeEventHandler, useState, VFC } from "react"
+import { ChangeEventHandler, CSSProperties, useState, VFC } from "react"
 import PageTitle from "@components/core/PageTitle"
 import allProducts from '@data/products.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -8,7 +8,7 @@ import Link from "@components/core/Link"
 const ProductSelect: VFC<{ selected: number, onChange: ChangeEventHandler<HTMLSelectElement> }> = ({ selected, onChange }) => {
   return (
     <select name="mySelect" id="mySelect" className="form-select custom-select" value={selected} onChange={onChange}>
-      <option label="Select keyboard" value={0} selected>Select keyboard</option>
+      <option label="Select keyboard" value={0}>Select keyboard</option>
       {allProducts.map(product => (
         <option key={product.id} label={product.compare.title} value={product.id}>{product.compare.title}</option>
       ))}
@@ -26,7 +26,11 @@ const CompareKeyboards: VFC = () => {
   const [keyboard3, setKeyboard3] = useState<number>(0)
   const selectedKeyboard3 = allProducts.find(prod => prod.id === keyboard3)
 
-
+  const productImageClass = 'img-fluid blend-darken w-100'
+  const productImageStyle = {
+    height: 150,
+    objectFit: 'contain',
+  } as CSSProperties
   return (
     <>
       <style type="text/css">
@@ -59,8 +63,8 @@ const CompareKeyboards: VFC = () => {
                 <img
                   src={selectedKeyboard1?.image || '/images/compare-keyboards/empty.png'}
                   alt={selectedKeyboard1?.name}
-                  className="img-fluid blend-darken w-100"
-                  style={{ height: 150 }}
+                  className={productImageClass}
+                  style={productImageStyle}
                 />
                 <ProductSelect
                   selected={keyboard1}
@@ -71,8 +75,8 @@ const CompareKeyboards: VFC = () => {
                 <img
                   src={selectedKeyboard2?.image || '/images/compare-keyboards/empty.png'}
                   alt={selectedKeyboard2?.name}
-                  className="img-fluid blend-darken w-100"
-                  style={{ height: 150 }}
+                  className={productImageClass}
+                  style={productImageStyle}
                 />
                 <ProductSelect
                   selected={keyboard2}
@@ -83,8 +87,8 @@ const CompareKeyboards: VFC = () => {
                 <img
                   src={selectedKeyboard3?.image || '/images/compare-keyboards/empty.png'}
                   alt={selectedKeyboard3?.name}
-                  className="img-fluid blend-darken w-100"
-                  style={{ height: 150 }}
+                  className={productImageClass}
+                  style={productImageStyle}
                 />
                 <ProductSelect
                   selected={keyboard3}

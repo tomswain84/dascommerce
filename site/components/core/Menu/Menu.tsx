@@ -17,7 +17,7 @@ const Menu: VFC = () => {
             <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=forpc">For PC</a>
             <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=formac">For Mac</a>
             <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=linux">For Linux</a>
-            <a className="dropdown-item" href="/products/category/mechanical-keyboards?filter=refurbished">Refurbished</a>
+            <a className="dropdown-item" href="/products/category/refurbished-mechanical-keyboards">Refurbished</a>
             <hr />
             <a className="dropdown-item bg-gr view-all py-3 d-flex align-items-center justify-content-between" href="/products/category/mechanical-keyboards?filter=all">
               View All

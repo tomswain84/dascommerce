@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "@components/core/Link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { VFC } from "react"
 import BannerBottom from "./BannerBottom"
@@ -84,10 +85,10 @@ const SectionBanner: VFC<SectionBannerProps> = (props) => {
           break
       }
       return (
-        <a className={buttonClass} href={renderingButton.href || '#'} title={renderingButton.label}>
+        <Link className={buttonClass} href={renderingButton.href || '#'} title={renderingButton.label}>
           {renderingButton.label}
           <FontAwesomeIcon icon='caret-right' className={`ms-2 ${renderingButton.variant === 'outline-primary' ? 'text-red' : ''}`} />
-        </a>
+        </Link>
       )
     }
     return null

@@ -36,7 +36,7 @@ const Header: VFC = () => {
                         <p className="text-white">All orders over $59 qualify for our Free Shipping offer within the continental United States. Keyboards are shipped via UPS Ground, and accessories and swag may be shipped via USPS. Once your cart meets this minimum amount, the Free Shipping option is automatically available during checkout. Other expedited shipping options will also be available at an additional charge.</p>
                       </div>
                       <div className="modal-footer bg-gray-dark border-top">
-                        <Link href="/about-us" className="btn btn-primary">Learn More</Link>
+                        <Link href="/shipping" className="btn btn-primary">Learn More</Link>
                       </div>
                     </div>
                   </div>
@@ -198,13 +198,13 @@ const Header: VFC = () => {
                       <a className="nav-link" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" rel="noreferrer">Support</a>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/blog">Blog</Link>
+                      <a className="nav-link" href="https://www.daskeyboard.com/blog">Blog</a>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" href="/contact-us">Contact Us</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/about-us">About Us</Link>
+                      <Link className="nav-link" href="/values">About Us</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" href="#">Wishlist</Link>
@@ -218,13 +218,13 @@ const Header: VFC = () => {
                       <a className="nav-link" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" rel="noreferrer">Support</a>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/blog">Blog</Link>
+                      <a className="nav-link" href="https://www.daskeyboard.com/blog">Blog</a>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" href="/contact-us">Contact Us</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/about-us">About Us</Link>
+                      <Link className="nav-link" href="/values">About Us</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" href="#">Wishlist</Link>

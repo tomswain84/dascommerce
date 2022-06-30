@@ -2,6 +2,7 @@
   "extends": ["next", "prettier"],
   "rules": {
     "react/no-unescaped-entities": "off",
-    "@next/next/no-script-in-document": "off"
+    "@next/next/no-script-in-document": "off",
+    "@next/next/no-img-element": "off"
   }
 }

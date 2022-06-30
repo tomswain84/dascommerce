@@ -30,7 +30,11 @@ const Home = () => {
           title: `DAS KEYBOARD <span class="text-red">VALUES</span>`,
           background: "dark",
           description: "We are a badass company that makes badass products for badass customers. We are quality obsessed and develop all our products with premium materials.",
-          button: "Read More"
+          button: {
+            variant: 'primary',
+            label: "Read More",
+            href: '/values'
+          }
         }}
         image={{
           position: 'left',
@@ -48,13 +52,14 @@ const Home = () => {
           description: "All of our keyboards are designed with high-performance, gold-plated mechanical key switches. Learn more about the different switches Das Keyboard offers.",
           button: {
             variant: 'outline-primary',
-            label: "Learn More"
+            label: "Learn More",
+            href: '/technology/q-software/'
           }
         }}
         image={{
           position: 'bottom',
           src: '/images/img-home-switches.png',
-          rounded: true
+          rounded: true,
         }}
       />
 

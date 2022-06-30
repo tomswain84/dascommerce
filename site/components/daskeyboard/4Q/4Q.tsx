@@ -15,6 +15,7 @@ import AppletDashboard from "@components/product/AppletDashboard"
 import SpecificationList from "@components/section/SpecificationList"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
+import { Product } from "@interfaces/product"
 
 export async function getStaticProps() {
   return {
@@ -26,14 +27,14 @@ export async function getStaticProps() {
   }
 }
 
-const D4Q: VFC = () => {
+const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
   return (
     <>
       <ProductHero
         heading="THE SMART RGB"
         title='MECHANICAL KEYBOARD'
         hasPrice
-        price={115}
+        price={isRefurbished ? product.refurbished.price : product.price}
         isCherry={false}
         image={{
           src: '/images/product-images/product-details/4q/4q_side.jpg'

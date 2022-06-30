@@ -17,6 +17,8 @@ const ScrollToTop: VFC = () => {
         right: 20,
         position: 'fixed',
         zIndex: 9999,
+        border: '1px solid #00000010',
+        boxShadow: '1px 1px 5px #00000010',
         backgroundColor: '#ffffff90',
         borderRadius: '50%',
         width: 50,

@@ -12,15 +12,16 @@ import ProductPerformance from "@components/section/ProductPerformance"
 import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
 import AppletDashboard from "@components/product/AppletDashboard"
+import { Product } from "@interfaces/product"
 
-const X50Q: VFC = () => {
+const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
   return (
     <>
       <ProductHero
         heading="WORK & GAMING"
         title="RGB KEYBOARD"
         hasPrice
-        price={115}
+        price={isRefurbished ? product.refurbished.price : product.price}
         isCherry={false}
         image={{
           src: '/images/product-images/product-details/x50q/X50_4_side.jpg',
