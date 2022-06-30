@@ -198,7 +198,7 @@ const Header: VFC = () => {
                       <a className="nav-link" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" rel="noreferrer">Support</a>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/blog">Blog</Link>
+                      <a className="nav-link" href="https://www.daskeyboard.com/blog">Blog</a>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" href="/contact-us">Contact Us</Link>
@@ -218,7 +218,7 @@ const Header: VFC = () => {
                       <a className="nav-link" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" rel="noreferrer">Support</a>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/blog">Blog</Link>
+                      <a className="nav-link" href="https://www.daskeyboard.com/blog">Blog</a>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" href="/contact-us">Contact Us</Link>
