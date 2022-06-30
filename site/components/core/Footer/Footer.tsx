@@ -159,7 +159,7 @@ const Footer: VFC = () => {
                     {column1Links.map(FooterLink)}
                   </ul>
                 </div>
-                <div className="col">
+                <div className="col mt-md-3 pt-md-2">
                   <a className="btn btn-outline-primary mb-4" href="/guarantee" title="Das Keyboard Warranty">
                     Das Keyboard Warranty
                     <FontAwesomeIcon icon='gear' className='ms-2' />
