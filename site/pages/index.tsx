@@ -48,13 +48,14 @@ const Home = () => {
           description: "All of our keyboards are designed with high-performance, gold-plated mechanical key switches. Learn more about the different switches Das Keyboard offers.",
           button: {
             variant: 'outline-primary',
-            label: "Learn More"
+            label: "Learn More",
+            href: '/technology/q-software/'
           }
         }}
         image={{
           position: 'bottom',
           src: '/images/img-home-switches.png',
-          rounded: true
+          rounded: true,
         }}
       />
 
