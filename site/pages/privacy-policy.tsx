@@ -131,7 +131,7 @@ const PrivacyPolicy: VFC = () => {
                 <p>The privacy policy of MailChimp can be found here: <a href="https://mailchimp.com/legal/privacy" target="_blank" rel="noreferrer">https://mailchimp.com/legal/privacy</a></p>
 
                 <h3 className="sidebar-title mt-5">9. Blog</h3>
-                <p>On our website we also offer a blog at <Link href="/blog" title="Blog">https://www.daskeyboard.com/blog/</Link>. We publish regularly different contributions to topics around our business fields.</p>
+                <p>On our website we also offer a blog at <a href="https://www.daskeyboard.com/blog/" title="Blog">https://www.daskeyboard.com/blog/</a>. We publish regularly different contributions to topics around our business fields.</p>
                 <p>Thereby a commentary function is provided in this blog, over which you can make public comments on the blogged topics. Your comment will be published together with your specified username in direct relation to the post.</p>
                 <p>We recommend that you use a pseudonym instead of your plain name when using this comment function. The username and email address is required, the further information to the 'website' is voluntary. When submitting a comment, only the name used and, if applicable, the voluntarily supplemented website information are published. A publication of your specified email address does not occur.</p>
                 <p>Our blog uses the DISQUS, a user-forum and commenting application provided by Disqus Inc., 301 Howard St., Suite 300, San Francisco, CA 94105, USA (hereafter referred to as 'Disqus').</p>

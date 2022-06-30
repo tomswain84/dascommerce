@@ -65,7 +65,7 @@ const Footer: VFC = () => {
     },
     {
       title: 'Blog',
-      href: '/blog'
+      href: 'https://www.daskeyboard.com/blog/'
     },
     {
       title: 'Contact Us',
@@ -179,8 +179,9 @@ const Footer: VFC = () => {
             <div className="col-md-12 col-lg-6 col-xxl-7 py-3 text-center text-lg-start">
               <p className="text-white mb-sm-0">
                 <span className="d-block d-sm-inline mb-2 mb-sm-0">Hello from Austin!</span>
-                <span className="d-block d-sm-inline"> {new Date().getFullYear()}-2005 - All Rights Reserved.</span>
-                <span className="d-block d-xxl-inline text-gray-medium">Das Keyboard is a registered trademark and copyright of Metadot.</span>
+                <br/>
+                <span className="d-block d-sm-inline"> © 2005-{new Date().getFullYear()} - All rights reserved.</span>
+                <span className="d-block d-xxl-inline text-gray-medium ms-2">Das Keyboard is a registered trademark and copyright of Metadot.</span>
               </p>
             </div>
             <div className="col-md-6 col-lg-4 col-xxl-3 d-flex align-items-center justify-content-center">
@@ -218,9 +219,9 @@ const Footer: VFC = () => {
                   </a>
                 </li>
                 <li>
-                  <Link href="/blog" title="Blog">
+                  <a href="https://www.daskeyboard.com/blog/" title="Blog">
                     <FontAwesomeIcon icon='rss' />
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
