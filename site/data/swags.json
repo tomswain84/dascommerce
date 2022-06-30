@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "slug": "the-click-magnet-t-shirt",
+    "name": "WAREHOUSE CLEARANCE - THE CLICK MAGNET T-SHIRT",
+    "price": 15.0,
+    "currency": "$",
+    "image": "/images/product-images/cards/swag/the-click-magnet-t-shirt.jpg"
+  },
+  {
+    "id": 2,
+    "slug": "the-bad-ass-t-shirt",
+    "name": "WAREHOUSE CLEARANCE - THE BADASS T-SHIRT",
+    "price": 15.0,
+    "currency": "$",
+    "image": "/images/product-images/cards/swag/the-bad-ass-t-shirt.jpg"
+  },
+  {
+    "id": 3,
+    "slug": "das-grizzly",
+    "name": "WAREHOUSE CLEARANCE - THE CLICK MAGNET T-SHIRT",
+    "price": 15.0,
+    "currency": "$",
+    "image": "/images/product-images/cards/swag/das-grizzly.jpg"
+  },
+  {
+    "id": 4,
+    "slug": "das-keyboard-stainless-steel-tumbler",
+    "name": "WAREHOUSE CLEARANCE - DAS KEYBOARD STAINLESS STEEL TUMBLER",
+    "price": 9.0,
+    "currency": "$",
+    "image": "/images/product-images/cards/swag/das-keyboard-stainless-steel-tumbler.jpg"
+  },
+  {
+    "id": 5,
+    "slug": "das-keyboard-4-piece-stone-coaster-set",
+    "name": "DAS KEYBOARD 4-PIECE STONE COASTER SET",
+    "price": 9.0,
+    "currency": "$",
+    "image": "/images/product-images/cards/swag/das-keyboard-4-piece-stone-coaster-set.jpg"
+  }
+]
