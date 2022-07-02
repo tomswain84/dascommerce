@@ -6,22 +6,23 @@ import s from './BestSelling.module.scss'
 import Link from "@components/core/Link"
 
 interface Props {
-
+  isCommerce?: boolean
 }
-const BestSelling: VFC<Props> = () => {
+const BestSelling: VFC<Props> = ({ isCommerce: _isCommerce }) => {
   const bestSellingProducts = products.filter(prod => prod.tags.includes('bestsellers'))
+  const isCommerce = _isCommerce || false
   return (
     <>
       <h3 className="sidebar-title">Best Selling Products</h3>
       <div className="d-flex flex-column px-3">
         {bestSellingProducts.map(prod => (
           <div key={prod.id} className='d-flex align-items-center'>
-            <Link href={`/products/daskeyboard/${prod.slug}`}>
+            <Link href={`/products/${isCommerce ? 'commerce' : 'daskeyboard'}/${prod.slug}`}>
               <img src={prod.image} alt={prod.name} className={s.thumb} />
             </Link>
             <div className="d-flex flex-column ms-3">
               <h4 className="fw-normal fs-6 text-capitalize">
-                <Link href={`/products/daskeyboard/${prod.slug}`} className='text-black'>
+                <Link href={`/products/${isCommerce ? 'commerce' : 'daskeyboard'}/${prod.slug}`} className='text-black'>
                   Das Keyboard {prod.name.toLowerCase()}
                 </Link>
               </h4>
