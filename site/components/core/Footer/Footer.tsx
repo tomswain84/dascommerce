@@ -61,7 +61,7 @@ const Footer: VFC = () => {
     },
     {
       title: 'Switch Comparison',
-      href: '#'
+      href: '/switches'
     },
     {
       title: 'Blog',
