@@ -17,6 +17,7 @@ import ModelSPro from "@components/daskeyboard/ModelSPro"
 import Prime13 from "@components/daskeyboard/Prime13"
 import X50Q from "@components/daskeyboard/X50Q"
 import { convertProductVariantId } from "@lib/convert-ids"
+import { scrollTop } from "@lib/scroll-top"
 
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
   let product = (products as Product[]).find(product => product.slug === params?.slug || product.slug === params?.slug?.replace(/^refurbished-/, ''))
@@ -158,6 +159,7 @@ const ProductDetail: VFC<Props> = ({ title, product }) => {
           canDownload: product.software || false,
         }}
         isRefurbished={isRefurbished}
+        onClickTitle={scrollTop}
       />
 
       <ProductComponent product={product} isRefurbished={isRefurbished} />
