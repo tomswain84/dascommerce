@@ -33,15 +33,21 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   }
 }
 
-interface ProductWithVariants extends Product {
+interface ProductWithShopifyData extends Product {
   variants?: Array<ProductTypes['product']['variants'][0] & {
     name: string
     price: number
   }>
+  images?: Array<{
+    url: string
+    altText: string
+    width: number
+    height: number
+  }>
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
-  let product = (products as ProductWithVariants[]).find(product => product.slug === params?.slug || product.slug === params?.slug?.replace(/^refurbished-/, ''))
+  let product = (products as ProductWithShopifyData[]).find(product => product.slug === params?.slug || product.slug === params?.slug?.replace(/^refurbished-/, ''))
   if (!product) {
     throw new Error(`Product with slug '${params!.slug}' not found`)
   }
@@ -58,8 +64,9 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
     else {
       product.price = shopifyProduct.price.value
     }
-    product.variants = (shopifyProduct as unknown as ProductWithVariants).variants
+    product.variants = (shopifyProduct as unknown as ProductWithShopifyData).variants
     product.variantId = parseInt(convertProductVariantId(shopifyProduct.variants[0].id))
+    product.images = (shopifyProduct as unknown as ProductWithShopifyData).images
     const shopifyId = convertProductId(shopifyProduct.id)
     if (shopifyId) {
       product.shopifyId = parseInt(shopifyId)
@@ -80,7 +87,7 @@ interface Props {
   title: string
   bodyId: string
   bodyClass: string
-  product: ProductWithVariants,
+  product: ProductWithShopifyData,
   isRefurbished: boolean
 }
 const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
@@ -100,6 +107,8 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
 
   const selectedVariantId = selectedVariant ? convertProductVariantId(selectedVariant.id) : ''
   const atcLink = `https://shop.daskeyboard.com/cart/add?id=${selectedVariantId}&quantity=${quantity}`
+
+  const mainImage = product.images?.[0]?.url || product.image
 
   useEffect(() => {
     const script = document.createElement('script')
@@ -144,12 +153,12 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
                   </div>
                 </div>
                 <img
-                  src={product.image} alt={stripHTML(product.name)}
+                  src={mainImage} alt={stripHTML(product.name)}
                   style={{
                     width: '100%',
-                    height: 500,
-                    objectFit: 'cover',
-                    objectPosition: 'right'
+                    height: 700,
+                    objectFit: 'contain',
+                    objectPosition: 'center'
                   }}
                 />
                 {isRefurbished && (
@@ -253,7 +262,7 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
           <div className="container-boxed">
             <div className="row">
               <div className="col-lg-4 col-md-6">
-                <BestSelling />
+                <BestSelling isCommerce />
               </div>
               <div className="col-lg-4 col-md-6 mt-5 mt-md-0">
                 <FrequentlyBoughtTogether product={product} />
