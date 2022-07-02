@@ -53,7 +53,7 @@ const Home = () => {
           button: {
             variant: 'outline-primary',
             label: "Learn More",
-            href: '/technology/q-software/'
+            href: '/switches'
           }
         }}
         image={{
