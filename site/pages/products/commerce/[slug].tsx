@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useCallback, useEffect, useState, VFC } from "react"
+import { useCallback, useEffect, useRef, useState, VFC } from "react"
 import products from '@data/products.json'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next"
 import { Product } from "@interfaces/product"
@@ -101,6 +101,21 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
   const selectedVariantId = selectedVariant ? convertProductVariantId(selectedVariant.id) : ''
   const atcLink = `https://shop.daskeyboard.com/cart/add?id=${selectedVariantId}&quantity=${quantity}`
 
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.async = true
+    script.src = 'https://na-library.klarnaservices.com/lib.js'
+    script.setAttribute('data-client-id', 'acfb1e1e-8879-5051-bc94-5c9a72e324fc')
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
+  const orderTotal = (variantPrice * quantity).toFixed(2)
+
   return (
     <>
       <PageTitle
@@ -160,33 +175,22 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
                     </span>
                   </div>
 
-                  <div className="d-flex flex-column my-3">
-                    <small>4 interest-free payments of {product.currency}{Number(product.price / 4).toFixed(2)} with <strong>Klarna</strong></small>
-                    <a className="text-red fw-bold mt-1" href="#"><small>Learn More</small></a>
+                  <div className="d-flex flex-column my-3 pe-5">
+                    {/* <!-- Placement v2 --> */}
+                    <klarna-placement
+                      data-key="credit-promotion-auto-size"
+                      data-locale="en-US"
+                      data-purchase-amount={parseFloat(orderTotal) * 100}
+                    />
+                    {/* <!-- end Placement --> */}
+                    {/* <small>4 interest-free payments of {product.currency}{Number(product.price / 4).toFixed(2)} with <strong>Klarna</strong></small>
+                    <a className="text-red fw-bold mt-1" href="#"><small>Learn More</small></a> */}
                   </div>
 
                   <button className="btn btn-primary">
                     <FontAwesomeIcon icon='heart' className="me-2" />
                     Add to wishlist
                   </button>
-
-                  {/* <div className="product-price">
-                    <h3>
-                      Starting At:
-                      <span className="text-red ms-2">{product.currency}{product.price}</span>
-                    </h3>
-                  </div> */}
-
-
-                  {/* <!-- Placement v2 --> */}
-                  {/* <klarna-placement
-                    data-key="credit-promotion-auto-size"
-                    data-locale="en-US"
-                    data-purchase-amount=""
-                  ></klarna-placement> */}
-                  {/* <!-- end Placement --> */}
-
-                  {/* <img className="img-fluid my-4" src="/images/temp-klarma.png" alt="Temp Klarma" /> */}
 
                   {hasSwitchType && (
                     <div className="option-switches mt-5">
@@ -221,7 +225,7 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
                   <div className="cartCTA mt-5">
                     <h3 className="sidebar-title">
                       Order Total:
-                      <span className="text-red ms-2">{product.currency}{(variantPrice * quantity).toFixed(2)}</span>
+                      <span className="text-red ms-2">{product.currency}{orderTotal}</span>
                     </h3>
                     <div className="d-flex">
                       <div className="d-flex bg-black text-white px-3 py-2 rounded-1 fs-sm fw-bold align-items-center" role='button'>
