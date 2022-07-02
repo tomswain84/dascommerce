@@ -13,6 +13,7 @@ interface Props {
   },
   showStartingAt?: boolean,
   isRefurbished?: boolean,
+  onClickTitle?: () => void
 }
 const defaultProps = {
   title: '',
@@ -33,13 +34,20 @@ const PageTitle: VFC<Props> = (props) => {
   let buyUrl = ''
   if (canBuy) buyUrl = `/products/commerce/${isRefurbished ? 'refurbished-' : ''}${product?.slug}`
   // if (canBuy) buyUrl = `https://shop.daskeyboard.com/cart/add?id=${props?.product?.variantId}`
+  const onClickTitle = () => {
+    if (props.onClickTitle) props.onClickTitle()
+  }
   return (
     <section id="pageTitle" className="bg-gray-darker text-white">
       <div className="container-boxed">
         <div className="row">
           <div className="col text-center d-sm-flex align-items-center justify-content-between">
             <div className='text-start'>
-              <h1 className={showStartingAt ? 'text-red' : 'text-white'}>
+              <h1
+                className={showStartingAt ? 'text-red' : 'text-white'}
+                style={{ cursor: props.onClickTitle ? 'pointer' : 'initial' }}
+                onClick={onClickTitle}
+              >
                 {stripHTML(title, true)}
                 {isProduct && product && (
                   <>

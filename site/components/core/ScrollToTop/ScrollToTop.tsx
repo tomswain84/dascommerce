@@ -1,14 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { scrollTop } from "@lib/scroll-top"
 import type { VFC } from "react"
 
 const ScrollToTop: VFC = () => {
-  function scrollTop() {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    })
-  }
   return (
     <div
       className="text-red"
