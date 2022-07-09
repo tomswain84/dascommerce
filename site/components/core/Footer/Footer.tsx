@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import stripHTML from '@lib/strip-html'
+import useTrans from 'lang/useTrans'
+import { useRouter } from 'next/router'
 import type { VFC } from 'react'
 import Link from '../Link'
 import ListItem from '../ListItem'
@@ -10,92 +12,98 @@ interface FooterLink {
   blank?: boolean
 }
 const Footer: VFC = () => {
+  // language navigation
+  const { $html, say } = useTrans()
+  const router = useRouter()
+  const changeLang = (lang: 'en' | 'de') => {
+    router.push(router.pathname, undefined, { locale: lang })
+  }
   const column1Links: FooterLink[] = [
     {
-      title: 'Where to buy',
+      title: say('were_to_buy'),
       href: '/where-to-buy',
     },
     {
-      title: '*Shipping',
+      title: say('shipping'),
       href: '/shipping',
     },
     {
-      title: '**Guarantee',
+      title: say('guarantee'),
       href: '/guarantee',
     },
     {
-      title: 'Education Program',
-      href: '/company-information/education-program'
+      title: say('education_program'),
+      href: '/company-information/education-program',
     },
     {
-      title: 'Corporate Sales',
-      href: '/corporate-sale'
+      title: say('corpoarate-sale'),
+      href: '/corporate-sale',
     },
     {
-      title: 'Become A Reseller',
-      href: '/company-information/become-a-reseller'
+      title: say('become_a_reseller'),
+      href: '/company-information/become-a-reseller',
     },
     {
-      title: 'Destroy This Site',
-      href: '#'
+      title: say('kickass'),
+      href: `javascript:var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='/scripts/asteroids.min.js';void(0);`,
     },
     {
-      title: 'Privacy Policy',
-      href: '/privacy-policy'
+      title: say('privacy-policy'),
+      href: '/privacy-policy',
     },
     {
       title: `Do not sell my personal info<span class="d-md-none d-lg-inline">rmation</span>`,
       href: 'https://shop.daskeyboard.com/pages/ccpa-opt-out',
-      blank: true
+      blank: true,
     },
     {
-      title: 'Mechanical Keyboard Guide',
+      title: say('Mechanical-guide'),
       href: 'https://www.daskeyboard.com/blog/mechanical-keyboard-guide/',
-      blank: true
-    }
+      blank: true,
+    },
   ]
   const column2Links: FooterLink[] = [
     {
-      title: 'Press Kit & Media Contact',
-      href: '/company-information/press-kit'
+      title: say('press_kit'),
+      href: '/company-information/press-kit',
     },
     {
-      title: 'Switch Comparison',
-      href: '/switches'
+      title: say('switches-comp'),
+      href: '/switches',
     },
     {
-      title: 'Blog',
-      href: 'https://www.daskeyboard.com/blog/'
+      title: say('blog'),
+      href: 'https://www.daskeyboard.com/blog/',
     },
     {
-      title: 'Contact Us',
-      href: '/contact-us'
+      title: say('contact_us'),
+      href: '/contact-us',
     },
     {
-      title: 'Das Keyboard Story',
-      href: '/history'
+      title: say('our-story'),
+      href: '/history',
     },
     {
-      title: 'Type Faster',
+      title: say('typefaster'),
       href: 'http://app.typrx.com/',
-      blank: true
+      blank: true,
     },
     {
-      title: 'Professional Reviews',
-      href: '/reviews'
+      title: say('reviews'),
+      href: '/reviews',
     },
     {
-      title: 'Unauthorized Dealer Warning',
-      href: '/unauthorized-warning'
+      title: say('Unauthorized_warning'),
+      href: '/unauthorized-warning',
     },
     {
       title: 'Das Keyboard Status Page',
       href: 'https://daskeyboard.montastic.io/',
-      blank: true
+      blank: true,
     },
     {
-      title: 'Das Keyboard Affiliate Program',
-      href: '/affiliates-program'
+      title: say('affiliates-program'),
+      href: '/affiliates-program',
     },
   ]
   const FooterLink = (link: FooterLink, index: number) => (
@@ -104,7 +112,7 @@ const Footer: VFC = () => {
         <a
           href={link.href}
           title={link.title}
-          target='_blank'
+          target="_blank"
           rel="noreferrer"
           dangerouslySetInnerHTML={{ __html: link.title }}
         />
@@ -123,9 +131,14 @@ const Footer: VFC = () => {
         <div className="container-boxed">
           <div className="row">
             <div className="col p-4 d-flex align-items-center justify-content-center text-white">
-              <a id="winKeyboard" className="text-white text-decoration-none d-flex align-items-center" href="/giveaway" title="Win A FREE Das Keyboard">
-                <FontAwesomeIcon icon='gift' className='pe-1' />
-                <span className="oswald">Win a Free Das Keyboard!</span>
+              <a
+                id="winKeyboard"
+                className="text-white text-decoration-none d-flex align-items-center"
+                href="/giveaway"
+                title={say('giveaway-link')}
+              >
+                <FontAwesomeIcon icon="gift" className="pe-1" />
+                <span className="oswald" dangerouslySetInnerHTML={$html('giveaway-link')} />
               </a>
             </div>
           </div>
@@ -135,17 +148,27 @@ const Footer: VFC = () => {
         <div className="container-boxed">
           <div className="row">
             <div className="col-sm-6 col-md-4 col-lg-5 col-xl-6 py-5 pe-lg-5">
-              <h3>What Makes a Mechanical Keyboard Awesome?</h3>
-              <p>A mechanical keyboard is a high-performance keyboard with tactile and audio feedback so accurate it allows you to execute every keystroke with lightning-fast precision. Because of the durability and construction of the switches, mechanical keyboards are built to last far longer than standard keyboards. Read our <a className="fw-bolder" href="https://www.daskeyboard.com/blog/mechanical-keyboard-guide/" rel='noreferrer' title="Mechanical Keyboard Guide">mechanical keyboard guide</a> to learn more about what makes a mechanical keyboard awesome. Your fingers will be thanking you.</p>
+              <h3 dangerouslySetInnerHTML={$html('footer_about_title')} />
+              <p dangerouslySetInnerHTML={$html('footer_about_content')} />
 
-              <h3 className="mt-sm-5">Sign Up For Our Newsletter</h3>
+              <h3 className="mt-sm-5">{say('news-signup')}</h3>
               <form id="newsletterForm" className="row align-items-center">
                 <div className="col-xl-8 col-xxl-6">
-                  <label className="visually-hidden" htmlFor="newsletterFormEmail">Username</label>
+                  <label
+                    className="visually-hidden"
+                    htmlFor="newsletterFormEmail"
+                  >
+                    Username
+                  </label>
                   <div className="input-group">
-                    <input type="text" className="form-control" id="newsletterFormEmail" placeholder="Enter Your Email" />
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="newsletterFormEmail"
+                      placeholder="Enter Your Email"
+                    />
                     <a type="submit" className="btn btn-submit">
-                      <FontAwesomeIcon icon='paper-plane' />
+                      <FontAwesomeIcon icon="paper-plane" />
                     </a>
                   </div>
                 </div>
@@ -154,15 +177,19 @@ const Footer: VFC = () => {
             <div className="col-sm-6 col-md-8 col-lg-7 col-xl-6 pb-5 py-sm-5">
               <div className="row flex-column flex-md-row">
                 <div className="col pb-5 pb-md-0">
-                  <h3>Connect</h3>
+                  <h3>{say('footer_contact_title')}</h3>
                   <ul className="list-unstyled">
                     {column1Links.map(FooterLink)}
                   </ul>
                 </div>
                 <div className="col mt-md-3 pt-md-2">
-                  <a className="btn btn-outline-primary mb-4" href="/guarantee" title="Das Keyboard Warranty">
-                    Das Keyboard Warranty
-                    <FontAwesomeIcon icon='gear' className='ms-2' />
+                  <a
+                    className="btn btn-outline-primary mb-4"
+                    href="/guarantee"
+                    title={say('das-keyboard-warranty')}
+                  >
+                    {say('das-keyboard-warranty')}
+                    <FontAwesomeIcon icon="gear" className="ms-2" />
                   </a>
                   <ul className="list-unstyled">
                     {column2Links.map(FooterLink)}
@@ -178,33 +205,58 @@ const Footer: VFC = () => {
           <div className="row">
             <div className="col-md-12 col-lg-6 col-xxl-7 py-3 text-center text-lg-start">
               <p className="text-white mb-sm-0">
-                <span className="d-block d-sm-inline mb-2 mb-sm-0">Hello from Austin!</span>
-                <br/>
-                <span className="d-block d-sm-inline"> © 2005-{new Date().getFullYear()} - All rights reserved.</span>
-                <span className="d-block d-xxl-inline text-gray-medium ms-2">Das Keyboard is a registered trademark and copyright of Metadot.</span>
+                <span className="d-block d-sm-inline mb-2 mb-sm-0">
+                  {say('hello_from_austin')}
+                </span>
+                <br />
+                <span className="d-block d-sm-inline">
+                  {' '}
+                  © 2005-{new Date().getFullYear()} - {say('all_rights_reserved')}
+                </span>
+                <span className="d-block d-xxl-inline text-gray-medium ms-xxl-2">
+                  {say('trademark')}
+                </span>
               </p>
             </div>
             <div className="col-md-6 col-lg-4 col-xxl-3 d-flex align-items-center justify-content-center">
-              <p className="text-white mb-0 me-2">Select Language:</p>
+              <p className="text-white mb-0 me-2">{say('select_language')}:</p>
               <ul className="list-unstyled d-flex align-items-center justify-content-center mb-0">
                 <li className="mb-0">
-                  <a className="text-gray-medium" href="#" title="English">English</a>
+                  <button
+                    className="btn btn-link text-gray-medium p-0 text-decoration-none"
+                    title="English"
+                    onClick={() => changeLang('en')}
+                  >
+                    English
+                  </button>
                 </li>
                 <span className="text-gray-medium">&nbsp;|&nbsp;</span>
                 <li className="mb-0">
-                  <a className="text-gray-medium" href="#" title="German">German</a>
+                  <button
+                    className="btn btn-link text-gray-medium p-0 text-decoration-none"
+                    title="German"
+                    onClick={() => changeLang('de')}
+                  >
+                    German
+                  </button>
                 </li>
               </ul>
             </div>
             <div className="col-md-6 col-lg-2 mt-3 mt-lg-0 d-lg-flex align-items-center justify-content-center">
               <ul className="list-unstyled social icons d-flex align-items-center justify-content-center mb-lg-0">
                 <li className="me-3">
-                  <a href="https://www.facebook.com/DasKeyboard" title="Facebook">
+                  <a
+                    href="https://www.facebook.com/DasKeyboard"
+                    title="Facebook"
+                  >
                     <FontAwesomeIcon icon={['fab', 'facebook']} />
                   </a>
                 </li>
                 <li className="me-3">
-                  <a href="https://www.instagram.com/daskeyboard/" title="Instagram">
+                  <a
+                    href="https://www.instagram.com/daskeyboard/"
+                    title="Instagram"
+                  >
                     <FontAwesomeIcon icon={['fab', 'instagram']} />
                   </a>
                 </li>
@@ -214,13 +266,16 @@ const Footer: VFC = () => {
                   </a>
                 </li>
                 <li className="me-3">
-                  <a href="https://www.youtube.com/user/DasKeyboardCommunity" title="YouTube">
+                  <a
+                    href="https://www.youtube.com/user/DasKeyboardCommunity"
+                    title="YouTube"
+                  >
                     <FontAwesomeIcon icon={['fab', 'youtube']} />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.daskeyboard.com/blog/" title="Blog">
-                    <FontAwesomeIcon icon='rss' />
+                    <FontAwesomeIcon icon="rss" />
                   </a>
                 </li>
               </ul>
