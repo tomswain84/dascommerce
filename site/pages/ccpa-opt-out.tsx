@@ -1,13 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import ListItem from "@components/core/ListItem"
 import PageTitle from "@components/core/PageTitle"
-import { useEffect, VFC } from "react"
+import { VFC } from "react"
 import Script from 'next/script'
+import useTrans, { getTrans } from "lang/useTrans"
+import { GetStaticPropsContext } from "next"
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const { say } = getTrans(locale)
   return {
     props: {
-      title: "Do not sell my personal information",
+      title: say("ccpa_title"),
       bodyId: 'ccpa-opt-out',
       bodyClass: 'single-content',
     },
@@ -21,10 +23,11 @@ declare global {
 }
 
 const CcpaOptOut: VFC<{}> = () => {
+  const { say, $html } = useTrans()
   function loadFeatureCallback() {
-    const OPT_OUT_TEXT = 'Do not sell my personal information';
-    const OPT_IN_TEXT = 'Allow my data to be shared with third-parties';
-    const NOT_VISITING_FROM_CALIFORNIA_TEXT = 'To be eligible to opt-out, you must be browsing from California.'
+    const OPT_OUT_TEXT = say('ccpa_title');
+    const OPT_IN_TEXT = say('ccpa_opt_in');
+    const NOT_VISITING_FROM_CALIFORNIA_TEXT = say('ccpa_eligible')
 
     const node = document.getElementById('opt-out-p-id');
     if (!node) return
@@ -83,12 +86,12 @@ const CcpaOptOut: VFC<{}> = () => {
           <div className="container">
             <div className="row">
               <div id="contentContainer" className="col">
-                <h2>Do not sell my personal information</h2>
-                <p className="strong fw-bold text-red">Your rights under the California Consumer Privacy Act</p>
-                <p className="mt-2">The California Consumer Privacy Act (CCPA) provides you with rights regarding how your data or personal information is treated. Under the legislation, California residents can choose to opt out of the “sale” of their personal information to third parties. Based on the CCPA definition, “sale” refers to data collection for the purpose of creating advertising and other communications. <a href="https://oag.ca.gov/privacy/ccpa" target="_blank" title="Learn more about CCPA and your privacy rights" rel="noreferrer">Learn more about CCPA and your privacy rights</a>.</p>
+                <h2>{say('ccpa_title')}</h2>
+                <p className="strong fw-bold text-red">{say('ccpa_subtitle')}</p>
+                <p className="mt-2" dangerouslySetInnerHTML={$html('ccpa_description')} />
 
-                <h3 className="sidebar-title">How to opt out</h3>
-                <p>By clicking on the link below, we will no longer collect or sell your personal information. This applies to both third-parties and the data we collect to help personalize your experience on our website or through other communications. For more information, view our privacy policy.</p>
+                <h3 className="sidebar-title">{say('ccpa_howto')}</h3>
+                <p dangerouslySetInnerHTML={$html('ccpa_guide')} />
                 {/* <p>To be eligible to opt-out, you must be browsing from California.</p> */}
                 <p id="opt-out-p-id"></p>
               </div>
