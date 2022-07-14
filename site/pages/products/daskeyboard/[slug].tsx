@@ -79,19 +79,25 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   }
 }
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async (params) => {
-  const paths: Array<{ params: { slug: string } }> = []
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async ({ locales }) => {
+  const paths: Array<{ params: { slug: string }, locale: string }> = []
   products.forEach(product => {
-    paths.push({
-      params: {
-        slug: product.slug,
+    if (locales) {
+      for (const locale of locales) {
+        paths.push({
+          params: {
+            slug: product.slug,
+          },
+          locale
+        })
+        paths.push({
+          params: {
+            slug: `refurbished-${product.slug}`,
+          },
+          locale
+        })
       }
-    })
-    paths.push({
-      params: {
-        slug: `refurbished-${product.slug}`,
-      }
-    })
+    }
   })
   return {
     paths,
