@@ -6,7 +6,6 @@ import useTrans, { getTrans, TranslateKey } from "lang/useTrans"
 import { GetStaticPropsContext } from "next"
 import { useRouter } from "next/router"
 import type { VFC } from "react"
-import { renderToString } from 'react-dom/server'
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
@@ -23,20 +22,25 @@ const WhereToBuy: VFC<{}> = () => {
   const { locale } = useRouter()
   const { say, $html } = useTrans()
 
-  const parseRetailers = (key: TranslateKey) => {
-    let result = $html(key).__html
-    result = result.replace(/<ul>/g, '<ul class="list-unstyled ms-0 mb-5">')
-    result = result.replace(/<li>(.*)<\/li>/g, (_, children) => {
-      return renderToString(
-        <ListItem>
-          <span dangerouslySetInnerHTML={{ __html: children }} />
-        </ListItem>
-      )
-    })
-    return {
-      __html: result
+  const Retailers = ({ center }: { center: TranslateKey }) => {
+    let result = $html(center).__html
+    result = result.replace(/<ul>/g, '')
+    result = result.replace(/<\/ul>/g, '')
+    const lis = result.match(/<li>(.*?)<\/li>/g)?.map(li => li.replace(/<li>/, '').replace(/<\/li>/, ''))
+    if (!lis || !lis.length) {
+      return null
     }
+    return (
+      <ul className="list-unstyled ms-0 mb-5">
+        {lis?.map((li, index) => (
+          <ListItem key={index}>
+            <span dangerouslySetInnerHTML={{ __html: li }} />
+          </ListItem>
+        ))}
+      </ul>
+    )
   }
+
   return (
     <>
       <PageTitle
@@ -54,52 +58,52 @@ const WhereToBuy: VFC<{}> = () => {
                     <h2>{say('where-to-buy_title_center_1')}</h2>
                     {/* Denmark */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_denmark_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_denmark_center')} />
+                    <Retailers center='where-to-buy_content_denmark_center' />
                     {/* Germany */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1_center')} />
+                    <Retailers center='where-to-buy_content_1_center' />
                     {/* france */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.4_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.4_center')} />
+                    <Retailers center='where-to-buy_content_1.4_center' />
                     {/* finland */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_2_bis_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_2_bis_center')} />
+                    <Retailers center='where-to-buy_content_2_bis_center' />
                     {/* italy */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.5_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.5_new_center')} />
+                    <Retailers center='where-to-buy_content_1.5_new_center' />
                     {/* Luxembourg */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_luxembourg_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_luxembourg_center')} />
+                    <Retailers center='where-to-buy_content_luxembourg_center' />
                     {/* Netherlands */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_2_bisbis_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_2_bisbis_center')} />
+                    <Retailers center='where-to-buy_content_2_bisbis_center' />
                     {/* Austria */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_austria_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_austria_center')} />
+                    <Retailers center='where-to-buy_content_austria_center' />
                     {/* Polen */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_polen_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_polen_center')} />
+                    <Retailers center='where-to-buy_content_polen_center' />
                     {/* Russia */}
                     {/* <p className="fw-bold mb-2">{say('where-to-buy_subtitle_7_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_7_center')} /> */}
+                    <Retailers center='where-to-buy_content_7_center' /> */}
                     {/* Slovenia */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.8_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.8_new_center')} />
+                    <Retailers center='where-to-buy_content_1.8_new_center' />
                     {/* spain */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_spain_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_spain_center')} />
+                    <Retailers center='where-to-buy_content_spain_center' />
                     {/* sweden */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_2_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_2_center')} />
+                    <Retailers center='where-to-buy_content_2_center' />
                     {/* Switzerland */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.6_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.6_new_center')} />
+                    <Retailers center='where-to-buy_content_1.6_new_center' />
                     {/* UK */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_3_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_3_center')} />
+                    <Retailers center='where-to-buy_content_3_center' />
                     {/* hungary */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.7_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.7_new_center')} />
+                    <Retailers center='where-to-buy_content_1.7_new_center' />
                   </>
                 )}
                 {/* Language: Others */}
@@ -108,52 +112,52 @@ const WhereToBuy: VFC<{}> = () => {
                     <h2>{say('where-to-buy_title_center_1')}</h2>
                     {/* Austria */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_austria_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_austria_center')} />
+                    <Retailers center='where-to-buy_content_austria_center' />
                     {/* Denmark */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_denmark_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_denmark_center')} />
+                    <Retailers center='where-to-buy_content_denmark_center' />
                     {/* france */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.4_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.4_center')} />
+                    <Retailers center='where-to-buy_content_1.4_center' />
                     {/* Finland */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_2_bis_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_2_bis_center')} />
+                    <Retailers center='where-to-buy_content_2_bis_center' />
                     {/* Germany */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1_center')} />
+                    <Retailers center='where-to-buy_content_1_center' />
                     {/* hungary */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.7_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.7_new_center')} />
+                    <Retailers center='where-to-buy_content_1.7_new_center' />
                     {/* Italy */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.5_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.5_new_center')} />
+                    <Retailers center='where-to-buy_content_1.5_new_center' />
                     {/* Luxembourg */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_luxembourg_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_luxembourg_center')} />
+                    <Retailers center='where-to-buy_content_luxembourg_center' />
                     {/* Netherlands */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_2_bisbis_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_2_bisbis_center')} />
+                    <Retailers center='where-to-buy_content_2_bisbis_center' />
                     {/* Polen */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_polen_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_polen_center')} />
+                    <Retailers center='where-to-buy_content_polen_center' />
                     {/* Russia */}
                     {/* <p className="fw-bold mb-2">{say('where-to-buy_subtitle_7_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_7_center')} /> */}
+                    <Retailers center='where-to-buy_content_7_center' /> */}
                     {/* Slovenia */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.8_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.8_new_center')} />
+                    <Retailers center='where-to-buy_content_1.8_new_center' />
                     {/* spain */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_spain_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_spain_center')} />
+                    <Retailers center='where-to-buy_content_spain_center' />
                     {/* sweden */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_2_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_2_center')} />
+                    <Retailers center='where-to-buy_content_2_center' />
                     {/* Switzerland */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1.6_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1.6_new_center')} />
+                    <Retailers center='where-to-buy_content_1.6_new_center' />
                     {/* UK */}
                     <p className="fw-bold mb-2">{say('where-to-buy_subtitle_3_center')}</p>
-                    <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_3_center')} />
+                    <Retailers center='where-to-buy_content_3_center' />
                   </>
                 )}
               </div>
@@ -162,22 +166,22 @@ const WhereToBuy: VFC<{}> = () => {
                 <h2>{say('where-to-buy_title_left')}</h2>
                 {/* Canada */}
                 <p className="fw-bold mb-2">{say('canada')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('canada-where-to-buy-content')} />
+                <Retailers center='canada-where-to-buy-content' />
                 {/* USA */}
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_4_left')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_4_left')} />
+                <Retailers center='where-to-buy_content_4_left' />
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_1_left')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_1_left')} />
+                <Retailers center='where-to-buy_content_1_left' />
                 {/* ASIA */}
                 {/* australia */}
                 <h2>{say('where-to-buy_title_left_2')}</h2>
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_8_center')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_8_center')} />
+                <Retailers center='where-to-buy_content_8_center' />
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_4_center')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_4_center')} />
+                <Retailers center='where-to-buy_content_4_center' />
                 {/* china */}
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_china-distributors')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_china-distributors')} />
+                <Retailers center='where-to-buy_content_china-distributors' />
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_chinabisbisbisbis_center')}</p>
                 <ul className="list-unstyled ms-0 mb-5">
                   <ListItem> <a href="http://mall.jd.com/view_search---729342-0-5-0-0-1-1-24.html?keyword=das%2520keyboard&isGlobalSearch=0">Jiajiatu
@@ -190,13 +194,13 @@ const WhereToBuy: VFC<{}> = () => {
                 </ul>
                 {/* korea */}
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_korea_center')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_korea_center')} />
+                <Retailers center='where-to-buy_content_korea_center' />
                 {/* new zealand */}
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_6_center')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_6_center')} />
+                <Retailers center='where-to-buy_content_6_center' />
                 {/* singapore */}
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_7bis_center')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_7bis_center')} />
+                <Retailers center='where-to-buy_content_7bis_center' />
               </div>
 
               <div className="col-12 col-sm-4">
@@ -213,7 +217,7 @@ const WhereToBuy: VFC<{}> = () => {
                 <h2 className="mt-5">{say('where-to-buy_title_center_2')}</h2>
                 {/* israel */}
                 <p className="fw-bold mb-2">{say('where-to-buy_subtitle_5_center')}</p>
-                <div dangerouslySetInnerHTML={parseRetailers('where-to-buy_content_5_center')} />
+                <Retailers center='where-to-buy_content_5_center' />
               </div>
 
             </div>
