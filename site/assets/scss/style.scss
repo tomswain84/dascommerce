@@ -719,7 +719,7 @@ section#font img {
 
 /*Reviews*/
 section#reviews ul.nav-tabs {
-  max-width: 20rem;
+  max-width: max-content;
   margin: auto;
   border: none;
 }

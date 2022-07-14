@@ -1,12 +1,14 @@
 import ProductScreen from "@components/section/ProductScreen"
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 const DragDropAppletConfigure: VFC = () => {
+  const { say } = useTrans()
   return (
     <ProductScreen
       id="softwareVideo"
-      title="LIMITLESS POSSIBILITIES"
-      description="CONFIGURE RGB NOTIFICATIONS WITH DRAG AND DROP APPLETS"
+      title={say('limitless_possibilities')}
+      description={say('das-keyboard-q-in-action')}
       hasScreenBase
       background="light"
       video={{

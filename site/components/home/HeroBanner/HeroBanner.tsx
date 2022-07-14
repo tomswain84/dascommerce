@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "@components/core/Link"
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 const HeroBanner: VFC = () => {
+  const { say } = useTrans()
   return (
     <>
       <section id="hero" className="bg-gray-darker text-white pb-sm-5 d-flex flex-column pt-5">
@@ -13,11 +15,11 @@ const HeroBanner: VFC = () => {
                 <figure className="heading mt-lg-0">
                   <figcaption className="text-white">
                     <h1>
-                      <small>The Ultimate</small>
-                      <br />Mechanical Keyboard
+                      <small>{say('home_slider_1_title')}</small>
+                      <br />{say('home_slider_1_subtitle')}
                     </h1>
                   </figcaption>
-                  <p className="mt-3 mt-xl-4 text-white">Das Keyboard offers badass geeks the ultimate experience with high-performance mechanical keyboards with superior durability, construction, and design.</p>
+                  <p className="mt-3 mt-xl-4 text-white">{say('home_slider_1_description')}</p>
                 </figure>
               </div>
             </div>
