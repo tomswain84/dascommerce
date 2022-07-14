@@ -16,7 +16,7 @@ const Footer: VFC = () => {
   const { $html, say } = useTrans()
   const router = useRouter()
   const changeLang = (lang: 'en' | 'de') => {
-    router.push(router.pathname, undefined, { locale: lang })
+    router.push(router.asPath, undefined, { locale: lang })
   }
   const column1Links: FooterLink[] = [
     {

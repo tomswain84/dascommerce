@@ -4,10 +4,21 @@ import de from './de.json'
 
 const useTrans = () => {
   const { locale } = useRouter()
-  const language = locale === 'de' ? de : en
+  const language = locale === 'de' ? de as unknown as typeof en : en
+  const getHtml = (key: keyof typeof en) => {
+    let result = en[key]
+    if (language[key]) {
+      result = (language as typeof en)[key]
+    }
+    return result || ''
+  }
   return {
-    $html: (key: keyof typeof language) => ({ __html: language[key].html }),
-    say: (key: keyof typeof language) => language[key].html.replace(/\&nbsp/, '&'),
+    $html: (key: keyof typeof en) => {
+      return {
+        __html: getHtml(key)
+      }
+    },
+    say: (key: keyof typeof en) => getHtml(key).replace(/\&nbsp/, '&'),
   }
 }
 export default useTrans
