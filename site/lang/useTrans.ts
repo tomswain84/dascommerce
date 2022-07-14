@@ -2,9 +2,11 @@ import { useRouter } from "next/router"
 import en from './en.json'
 import de from './de.json'
 
+export type TranslateKey = keyof typeof en
+
 export function getTrans(locale: string | undefined) {
   const language = locale === 'de' ? de as unknown as typeof en : en
-  const getHtml = (key: keyof typeof en) => {
+  const getHtml = (key: TranslateKey) => {
     let result = en[key]
     if (language[key]) {
       result = (language as typeof en)[key]
@@ -12,12 +14,12 @@ export function getTrans(locale: string | undefined) {
     return result || ''
   }
   return {
-    $html: (key: keyof typeof en) => {
+    $html: (key: TranslateKey) => {
       return {
         __html: getHtml(key)
       }
     },
-    say: (key: keyof typeof en) => getHtml(key).replace(/\&nbsp/, '&'),
+    say: (key: TranslateKey) => getHtml(key).replace(/\&nbsp/, '&'),
   }
 }
 
