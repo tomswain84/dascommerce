@@ -1,12 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import PageTitle from "@components/core/PageTitle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import useTrans, { getTrans } from "lang/useTrans"
+import { GetStaticPropsContext } from "next"
 import type { VFC } from "react"
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const { say } = getTrans(locale)
   return {
     props: {
-      title: "Corporate Purchase Program",
+      title: say('corporate_sale_title'),
       bodyId: 'corporate-sales',
       bodyClass: 'single-content',
     },
@@ -14,10 +17,11 @@ export async function getStaticProps() {
 }
 
 const CorporateSale: VFC = () => {
+  const { say, $html } = useTrans()
   return (
     <>
       <PageTitle
-        title="Corporate Purchase Program"
+        title={say('corporate_sale_title')}
         type='category'
       />
       <main className="content-container">
@@ -29,12 +33,12 @@ const CorporateSale: VFC = () => {
               </div>
               <div className="bg-gray-lighter col-12 col-md-6 p-3 p-sm-4 p-md-5 d-flex align-items-center justify-content-center">
                 <div>
-                  <h2>Das Keyboard Corporate Purchase Program</h2>
-                  <p className="text-red"><strong>Unlock Extra Savings for your Business</strong></p>
-                  <p>The titans of the tech world buy our mechanical keyboards to maximize the performance of their engineering and business teams, while faculty from the top ivy league colleges trust Das Keyboard to help them excel in their fields. </p>
-                  <p>Take your employees typing to the next level today, contact your dedicated business account manager to place an order or set up a business discount. </p>
+                  <h2>{say('corporate_sale_heading')}</h2>
+                  <p className="text-red"><strong>{say('corporate_sale_subtitle')}</strong></p>
+                  <p>{say('corporate_sale_description1')}</p>
+                  <p>{say('corporate_sale_description2')}</p>
                   {/* <!-- Modal Trigger - Business Program --> */}
-                  <a className="btn btn-outline-primary text-gray-dark ms-auto" href="#" title="Learn more about business program" data-bs-toggle="modal" data-bs-target="#businessProgram">Learn more about business program</a>
+                  <a className="btn btn-outline-primary text-gray-dark ms-auto" href="#" title={say('corporate_sale_learn_more')} data-bs-toggle="modal" data-bs-target="#businessProgram">{say('corporate_sale_learn_more')}</a>
                   {/* <!-- Modal - Business Program --> */}
                   <div className="modal fade" id="businessProgram" tabIndex={-1} aria-labelledby="businessProgram" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered">
@@ -68,18 +72,18 @@ const CorporateSale: VFC = () => {
             <div className="row">
               <div className="col-12 col-sm-4 text-center">
                 <FontAwesomeIcon icon="percent" size='5x' />
-                <h3 className="text-red">Discount</h3>
-                <p>Business discounts available, save on your next business order, early access to new models.</p>
+                <h3 className="text-red">{say('corporate_sale_benefit_1_title')}</h3>
+                <p>{say('corporate_sale_benefit_1_description')}</p>
               </div>
               <div className="col-12 col-sm-4 text-center">
                 <FontAwesomeIcon icon='life-ring' size='5x' />
-                <h3 className="text-red">Risk free</h3>
-                <p>30-day money-back guarantee, 1-year limited hardware warranty.</p>
+                <h3 className="text-red">{say('corporate_sale_benefit_2_title')}</h3>
+                <p>{say('corporate_sale_benefit_2_description')}</p>
               </div>
               <div className="col-12 col-sm-4 text-center">
                 <FontAwesomeIcon icon="assistive-listening-systems" size='5x' />
-                <h3 className="text-red">Dedicated contact</h3>
-                <p>Dedicated business specialist, special orders available, easy returns.</p>
+                <h3 className="text-red">{say('corporate_sale_benefit_3_title')}</h3>
+                <p>{say('corporate_sale_benefit_3_description')}</p>
               </div>
             </div>
           </div>
@@ -88,9 +92,9 @@ const CorporateSale: VFC = () => {
           <div className="container">
             <div className="row">
               <div className="col text-center">
-                <h2 className="text-white mb-5">Ready to take your team to the next level?</h2>
+                <h2 className="text-white mb-5">{say('corporate_sale_cta_title')}</h2>
                 {/* <!-- Modal Trigger - Business Program --> */}
-                <a className="btn btn-primary text-gray-dark ms-auto" href="#" title="Learn more about business program" data-bs-toggle="modal" data-bs-target="#businessProgram">Learn more about business program</a>
+                <a className="btn btn-primary text-gray-dark ms-auto" href="#" title={say('corporate_sale_learn_more')} data-bs-toggle="modal" data-bs-target="#businessProgram">{say('corporate_sale_learn_more')}</a>
               </div>
             </div>
           </div>

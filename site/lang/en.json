@@ -3182,5 +3182,18 @@
   "ccpa_eligible": "To be eligible to opt-out, you must be browsing from California.",
   "ccpa_howto": "How to opt out",
   "ccpa_guide": "By clicking on the link below, we will no longer collect or sell your personal information. This applies to both third-parties and the data we collect to help personalize your experience on our website or through other communications. For more information, view our <a href=\"/privacy-policy\">privacy policy</a>.",
-  "contact_info": "Contact Info"
+  "contact_info": "Contact Info",
+  "corporate_sale_title": "Corporate Purchase Program",
+  "corporate_sale_heading": "Das Keyboard Corporate Purchase Program",
+  "corporate_sale_subtitle": "Unlock Extra Savings for your Business",
+  "corporate_sale_description1": "The titans of the tech world buy our mechanical keyboards to maximize the performance of their engineering and business teams, while faculty from the top ivy league colleges trust Das Keyboard to help them excel in their fields.",
+  "corporate_sale_description2": "Take your employees typing to the next level today, contact your dedicated business account manager to place an order or set up a business discount.",
+  "corporate_sale_learn_more": "Learn more about business program",
+  "corporate_sale_benefit_1_title": "DISCOUNT",
+  "corporate_sale_benefit_1_description": "Business discounts available, save on your next business order, early access to new models.",
+  "corporate_sale_benefit_2_title": "RISK FREE",
+  "corporate_sale_benefit_2_description": "30-day money-back guarantee, 1-year limited hardware warranty.",
+  "corporate_sale_benefit_3_title": "DEDICATED CONTACT",
+  "corporate_sale_benefit_3_description": "Dedicated business specialist, special orders available, easy returns.",
+  "corporate_sale_cta_title": "Ready to take your team to the next level?"
 }
