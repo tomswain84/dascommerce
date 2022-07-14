@@ -353,7 +353,7 @@
   "contact-us_Inquiries_about_link_2": "Werde ein H\u00e4ndler",
   "contact-us_Inquiries_about_link_1": "Sende eine Anfrage",
   "contact-us_Inquiries_about_link_5": "Die ganze Geschichte",
-  "send-mail_content": "F\u00fcr technischen Support, <a href=\"https://daskeyboard.mojohelpdesk.com/\" style=\"text-decoration: underline;color:#9e0b0f\">besuche unser Hilfscenter</a>",
+  "send-mail_content": "F\u00fcr technischen Support, <a class=\"fw-bold\" href=\"https://daskeyboard.mojohelpdesk.com/\" style=\"text-decoration: underline;color:#9e0b0f\">besuche unser Hilfscenter</a>",
   "unauthorized-warning_content_3": "Eine Liste der autorisierten H\u00e4ndler von Das Keyboard finden Sie auf der Seite <a href=\"http://www.daskeyboard.com/de/where-to-buy/\">Wo Kaufen.</a>",
   "unauthorized-warning_title": "Warnung vor nicht autorisierten H\u00e4ndlern",
   "model-s-ultimate_brand_home": "Model S Ultimate Mechanische Tastatur",
@@ -1822,7 +1822,7 @@
   "5QSdescription_small": "Die intelligente mechanische RGB-Tastatur, die die Produktivit\u00e4t in die H\u00f6he treibt. Schnellste Schalter, Elektronik, erh\u00f6hte Helligkeit.",
   "contact-us_Inquiries_about_link_8": "Sende eine Anfrage",
   "shipping": "*Versand",
-  "temporary_redirection": "In unseren Callcentern ist der Personalbestand reduziert, und die Beantwortung von Supportproblemen kann 2-3 Werktage dauern. Um eine Antwort innerhalb von 1 Werktag zu erhalten, bitte \u00f6ffnen Sie ein Ticket in unserem Online-Hilfscenter (https://daskeyboard.mojohelpdesk.com/login/create_request#/ticket-form-selection/)",
+  "temporary_redirection": "In unseren Callcentern ist der Personalbestand reduziert, und die Beantwortung von Supportproblemen kann 2-3 Werktage dauern. <br/><br/>Um eine Antwort innerhalb von 1 Werktag zu erhalten, bitte \u00f6ffnen <a href=\"https://daskeyboard.mojohelpdesk.com/login/create_request#/ticket-form-selection\" target=\"_blank\" title=\"Sie ein Ticket\" rel=\"noreferrer\">Sie ein Ticket</a> in unserem Online-Hilfscenter",
   "giveaway-link": "Gewinne eine FREIE Das Keyboard",
   "user_manual": "Benutzerhandbuch",
   "das_keyboard_Q_description": "Das Keyboard Q Software turns an RGB keyboard into a smart keyboard whose keys change colors based on information trends such as weather, stock quotes, project statuses (e.g. Trello, Basecamp, etc.). Customize your keyboard to meet your needs and stay informed on what is important to you.",
@@ -1868,5 +1868,6 @@
   "reviews_subtitle": "von echten Menschen",
   "reviews_description": "Unsere Kunden lieben Das Keyboard. Aber nehmen Sie uns nicht beim Wort...",
   "reviews_editorial": "Redaktionelle Rezensionen",
-  "reviews_customer": "Kundenrezensionen"
+  "reviews_customer": "Kundenrezensionen",
+  "contact_info": "Kontaktinformationen"
 }
