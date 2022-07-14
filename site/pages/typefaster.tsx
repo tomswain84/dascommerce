@@ -1,12 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import PageTitle from "@components/core/PageTitle"
 import Banner from "@components/section/Banner"
+import useTrans, { getTrans } from "lang/useTrans"
+import { GetStaticPropsContext } from "next"
 import type { VFC } from "react"
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const { say } = getTrans(locale)
   return {
     props: {
-      title: "Das Keyboard Guide to Type Faster",
+      title: say('typefaster'),
       bodyId: 'type-faster',
       bodyClass: 'single-content',
     },
@@ -14,10 +17,11 @@ export async function getStaticProps() {
 }
 
 const Typefaster: VFC<{}> = () => {
+  const { say } = useTrans()
   return (
     <>
       <PageTitle
-        title="Das Keyboard Guide to Type Faster"
+        title={say('typefaster')}
         type='category'
       />
       <main className="content-container mx-auto" style={{ maxWidth: 1024 }}>
@@ -25,9 +29,8 @@ const Typefaster: VFC<{}> = () => {
           <div className="container">
             <div className="row">
               <div id="contentContainer" className="col">
-                <h2>Improve your typing skills</h2>
-                <p>Have you ever experienced the rush that comes with typing fast, that moment of becoming one with the computer as your fingers fly on the keyboard? If you haven't, it's time to learn to type so you can impress your friends, boss and co-workers with your blazing fast typing speeds.
-                  Stop wasting time and start typing faster with our tips below.</p>
+                <h2>{say('typefaster_first_title')}</h2>
+                <p>{say('typefaster-introduction')}</p>
               </div>
             </div>
           </div>
@@ -36,15 +39,9 @@ const Typefaster: VFC<{}> = () => {
         <div className="container">
           <Banner
             content={{
-              title: 'Go Clicky',
+              title: say('typefaster_title_1'),
               textAlign: 'left',
-              description: `
-              Try a mechanical keyboard once and you'll never go back. The tactile feedback not only increases speed, but also feels so good, you'll look for any excuse to keep typing.
-              <br/><br/>
-              Mechanical keyboards get their name from the mechanical key switch beneath each key. These switches are designed to register before you bottom out, requiring less force to activate. This enables typists to move to the next letter more quickly with less energy wasted.
-              <br/><br/>
-              Mechanical key switches also provide an audible click when depressed. Many people find the sound of the clicks helps increase typing speed, and as an added benefit, offers a great way to let your boss know you are working.
-            `
+              description: say('typefaster_content_1'),
             }}
             image={{
               position: 'right',
@@ -55,13 +52,9 @@ const Typefaster: VFC<{}> = () => {
 
           <Banner
             content={{
-              title: 'Type Daily',
+              title: say('typefaster_title_2'),
               textAlign: 'left',
-              description: `
-              A dusty keyboard will get you nowhere. The only way to improve your typing speed is to practice. Practicing not only helps to learn the keyboard layout, but also builds muscle memory, making it easier to know exactly where the right keys are without looking. Typing accuracy, one of the keys to typing fast, can be improved via typing tutorials, typing out chapters from books for practice or playing typing games.
-              <br/><br/>
-              Many people love to practice using typrX, an online typing competition. typrX keeps track of your typing speed, while allowing you to compete against other people, either around the world in public races or with friends in private races. Destroying the competition can be satisfying, and provides a fun incentive to practice.
-            `
+              description: say('typefaster_content_2'),
             }}
             image={{
               position: 'left',
@@ -72,13 +65,9 @@ const Typefaster: VFC<{}> = () => {
 
           <Banner
             content={{
-              title: 'Go Blank',
+              title: say('typefaster_title_3'),
               textAlign: 'left',
-              description: `
-              Have you ever thought about how much you look at the keyboard when you type? Every time you look down to find key, the time you spend looking significantly decrease your typing speed. Professional typists touch type because memorizing the keyboard layout is much more efficient and accurate. Learning to touch type is simple and there are several free touch typing tutorials out there to help.
-              <br/><br/>
-              A blank keyboard prevents you from hunting and pecking. With no temptation to look down, you'll learn to touch type even faster and see major improvement in your WPM (words per minute).
-            `
+              description: say('typefaster_content_3'),
             }}
             image={{
               position: 'right',
@@ -89,13 +78,9 @@ const Typefaster: VFC<{}> = () => {
 
           <Banner
             content={{
-              title: 'Sit Properly',
+              title: say('typefaster_title_4'),
               textAlign: 'left',
-              description: `
-              Mom always told you to sit up straight and she was right. If you want to spend more time at your computer programming that masterpiece, fragging the competition, or surfing the internet, you'll need to set up your desk ergonomically.
-              <br/><br/>
-              While touch typing is about placing the hands efficiently for minimal movement on the keyboard, proper posture and desk ergonomics are about positioning the body ideally for typing on a computer; causing less movement and more efficient typing. This helps prevent injuries from repetitive movement, and enables you to spend large amounts of time more comfortably at your desk.
-            `
+              description: say('typefaster_content_4'),
             }}
             image={{
               position: 'left',
@@ -104,7 +89,7 @@ const Typefaster: VFC<{}> = () => {
             }}
           />
 
-          <p className="my-5">Following these suggestions will help you improve your typing skills and increase your typing speed. While we can't all be typing champions like Sean Wrona, we can use his experience and knowledge to type faster.</p>
+          <p className="my-5">{say('typefaster_content_5')}</p>
         </div>
       </main>
     </>
