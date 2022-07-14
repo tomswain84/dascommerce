@@ -1,11 +1,15 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
 import PageTitle from "@components/core/PageTitle"
+import useTrans, { getTrans } from "lang/useTrans"
+import { GetStaticPropsContext } from "next"
 import type { VFC } from "react"
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const { say } = getTrans(locale)
   return {
     props: {
-      title: "5 meta hacks of the week",
+      title: say('5-meta-hacks'),
       bodyId: 'reseller',
       bodyClass: 'single-content',
     },
@@ -13,6 +17,7 @@ export async function getStaticProps() {
 }
 
 const FiveMetaHacks: VFC = () => {
+  const { say, $html } = useTrans()
   return (
     <>
       <PageTitle
@@ -26,9 +31,9 @@ const FiveMetaHacks: VFC = () => {
               <div id="contentContainer" className="col">
                 <img src="/images/pages/5-meta-hacks-wide.png" alt="5 meta hacks" className="img-fluid" />
 
-                <p className="mt-5">Hello,</p>
-                <p>I am Daniel, founder of Das Keyboard. Each week, I discover and share 5 new hacks that engage the tech community and challenge the mind. These can be anything from apps that boost productivity, interesting quotes, life hacks, and other fascinating topics.</p>
-                <p>If you’re interested in receiving these 5 new hacks, sign up here:</p>
+                <p className="mt-5">{say('hello')},</p>
+                <p>{say('content-5weeklymetahacks')}</p>
+                <p>{say('signup-5weeklymetahacks')}</p>
 
                 <form
                   action="https://daskeyboard.us5.list-manage.com/subscribe/post?u=56e3c495115ea26f98ce8d429&id=80814cfb3c"
@@ -47,15 +52,9 @@ const FiveMetaHacks: VFC = () => {
                   </div>
                 </form>
 
-                <p>
-                  Do you have an interesting piece of information you would like to share?<br />
-                  Your Meta Hack could be featured in one of our future emails. Whether it's a book, gadget, article, story, tip, news, or just interesting information - we want to hear from you! <a href="https://goo.gl/forms/wYyAEhXKBh8vmQ8S2" target='_blank' rel="noreferrer">Share your Meta Hack.</a>
-                </p>
+                <p dangerouslySetInnerHTML={$html('submit-meta-hack')}/>
 
-                <p>
-                  Daniel, Founder & CEO<br />
-                  Metadot / Das Keyboard / Mojo Helpdesk
-                </p>
+                <p dangerouslySetInnerHTML={$html('CEOsignature-5weeklymetahacks')}/>
               </div>
             </div>
           </div>
