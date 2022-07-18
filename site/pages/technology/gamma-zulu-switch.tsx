@@ -3,10 +3,13 @@ import Banner from "@components/section/Banner"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
+import useTrans, { getTrans } from "lang/useTrans"
+import { GetStaticPropsContext } from "next"
 import type { VFC } from "react"
 
 const pageTitle = 'Das Keyboard - Mechanical switches Gamma Zulu'
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const { say } = getTrans(locale)
   return {
     props: {
       title: pageTitle,
@@ -17,6 +20,7 @@ export async function getStaticProps() {
 }
 
 const GammaZuluSwitch: VFC = () => {
+  const { say, $html } = useTrans()
   const specTable = (
     <table className="table table-dark table-bordered">
       <thead>
@@ -27,7 +31,7 @@ const GammaZuluSwitch: VFC = () => {
               id="gamma-zulu-table-line-1-col-2"
               metadot-translation=""
               className="ng-isolate-scope"
-            >Standard mechanical switches*</span>
+            >{say("gamma-zulu-table-line-1-col-2")}</span>
           </th>
           <th className="text-end text-red" style={{ fontSize: 11 }}>
             <span
@@ -35,7 +39,7 @@ const GammaZuluSwitch: VFC = () => {
               metadot-translation=""
               className="ng-isolate-scope"
             >
-              Das&nbsp;Keyboard Gamma Zulu by Omron
+              {say("gamma-zulu-table-line-1-col-3")}
             </span>
           </th>
         </tr>
@@ -47,21 +51,21 @@ const GammaZuluSwitch: VFC = () => {
               id="x50-table-actuation"
               metadot-translation=""
               className="ng-isolate-scope"
-            >Actuation point</span>
+            >{say("x50-table-actuation")}</span>
           </td>
           <td className="gamma-zulu-column">
             <span
               id="x50-table-2mm"
               metadot-translation=""
               className="ng-isolate-scope"
-            >2.0 mm</span>
+            >{say("x50-table-2mm")}</span>
           </td>
           <td className="gamma-zulu-column dk-5q-color">
             <span
               id="x50-table-1point5mm"
               metadot-translation=""
               className="ng-isolate-scope text-red"
-            >1.5 mm</span>
+            >{say("x50-table-1point5mm")}</span>
           </td>
         </tr>
         <tr>
@@ -70,21 +74,21 @@ const GammaZuluSwitch: VFC = () => {
               id="x50-table-travel"
               metadot-translation=""
               className="ng-isolate-scope"
-            >Total travel</span>
+            >{say("x50-table-travel")}</span>
           </td>
           <td className="gamma-zulu-column">
             <span
               id="x50-table-4mm"
               metadot-translation=""
               className="ng-isolate-scope"
-            >4.0 mm</span>
+            >{say("x50-table-4mm")}</span>
           </td>
           <td className="gamma-zulu-column dk-5q-color">
             <span
               id="x50-table-3point5mm"
               metadot-translation=""
               className="ng-isolate-scope text-red"
-            >3.5 mm</span>
+            >{say("x50-table-3point5mm")}</span>
           </td>
         </tr>
         <tr>
@@ -93,21 +97,21 @@ const GammaZuluSwitch: VFC = () => {
               id="x50-table-life"
               metadot-translation=""
               className="ng-isolate-scope"
-            >Life span</span>
+            >{say("x50-table-life")}</span>
           </td>
           <td className="gamma-zulu-column">
             <span
               id="x50-table-50million"
               metadot-translation=""
               className="ng-isolate-scope"
-            >50 Million</span>
+            >{say("x50-table-50million")}</span>
           </td>
           <td className="gamma-zulu-column dk-5q-color">
             <span
               id="x50-table-100million"
               metadot-translation=""
               className="ng-isolate-scope text-red"
-            >100 Million</span>
+            >{say("x50-table-100million")}</span>
           </td>
         </tr>
         <tr>
@@ -116,21 +120,21 @@ const GammaZuluSwitch: VFC = () => {
               id="x50-table-contact"
               metadot-translation=""
               className="ng-isolate-scope"
-            >Contact type</span>
+            >{say("x50-table-contact")}</span>
           </td>
           <td className="gamma-zulu-column">
             <span
               id="x50-table-sigle-point"
               metadot-translation=""
               className="ng-isolate-scope"
-            >Single cross point</span>
+            >{say("x50-table-sigle-point")}</span>
           </td>
           <td className="gamma-zulu-column dk-5q-color">
             <span
               id="x50-table-double-point"
               metadot-translation=""
               className="ng-isolate-scope text-red"
-            >Double cross point</span>
+            >{say("x50-table-double-point")}</span>
           </td>
         </tr>
       </tbody>
@@ -146,8 +150,8 @@ const GammaZuluSwitch: VFC = () => {
       <Banner
         sectionPad
         content={{
-          title: 'Gamma Zulu',
-          description: "The most advanced mechanical switches: by Das Keyboard with Omron"
+          title: say('gamma-zulu-page-title'),
+          description: $html('gamma-zulu-subtitle').__html,
         }}
         image={{
           position: 'bottom',
@@ -163,10 +167,9 @@ const GammaZuluSwitch: VFC = () => {
           },
           {
             type: 'content',
-            heading: '2x brighter: RGB+',
-            title: 'Brilliant colors that are not washed out',
-            description: 'Due to its enhanced brightness mode(*) and its modern switch design, the 5Q delivers 16.8M intense colors that are not washed out by daylight - a problem that most RGB keyboards suffer from.',
-            descriptionHint: '* requires an USB 3.0 connection.',
+            heading: say('gamma-zulu-brighter-rgb-title'),
+            title: say('gamma-zulu-brighter-rgb-subtitle'),
+            description: say('gamma-zulu-brighter-rgb-paragraph'),
             image: {
               position: 'left',
               src: '/images/gama-zulu-color-switch.jpg',
@@ -174,9 +177,9 @@ const GammaZuluSwitch: VFC = () => {
           },
           {
             type: 'content',
-            heading: 'Fine tuned for speed and comfort',
-            title: 'You can tell a lot about a switch by their force curve',
-            description: 'Gamma Zulus require 45 grams to actuate at 1.5 mm for effortless speed, and have a full travel of 3.5mm, the perfect middle ground for amazing feel and comfort.',
+            heading: say('gamma-zulu-custom-designed-title'),
+            title: say('gamma-zulu-custom-designed-subtitle'),
+            description: say('gamma-zulu-custom-designed-paragraph'),
             image: {
               position: 'left',
               src: '/images/software/gamma-zulu-switches-graph-invert.png',
@@ -184,11 +187,9 @@ const GammaZuluSwitch: VFC = () => {
           },
           {
             type: 'content',
-            heading: 'Best in class',
-            title: 'Technical specifications unmatched by anyone',
-            description: `
-              The Gamma Zulu mechanical switch sports a gold plated double cross point that ensures incredible reliability.
-            `,
+            heading: say('gamma-zulu-best-class-title'),
+            title: say('gamma-zulu-best-class-subtitle'),
+            description: say('gamma-zulu-best-class-paragraph'),
             extraElement: specTable,
             image: {
               position: 'left',
@@ -200,11 +201,11 @@ const GammaZuluSwitch: VFC = () => {
 
       <ProductVideo
         theme='dark'
-        title="Japanese precision, inside out"
+        title={say('gamma-zulu-tuned-title')}
         description={`
-          <strong class="text-red">An interactive look inside</strong>
+          <strong class="text-red">${say('gamma-zulu-tuned-subtitle')}</strong>
           <br/>
-          Custom made by Omron (Japan) for the fastest and most comfortable typing experience. Go ahead, take a look at every angle of the Gamma Zulu switch, both inside and out.
+          ${say('gamma-zulu-tuned-paragraph')}
         `}
         video={{
           src: 'https://emersya.com/showcase/ZMFZFFTAWF'

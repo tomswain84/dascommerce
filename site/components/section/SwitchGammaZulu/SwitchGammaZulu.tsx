@@ -2,8 +2,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useRef, useState } from "react"
 import type { VFC } from "react"
+import useTrans from "lang/useTrans"
 
 const SwitchGammaZulu: VFC<{}> = () => {
+  const { say, $html } = useTrans()
   const audio = useRef(undefined as unknown as HTMLAudioElement)
   const [playing, setPlaying] = useState(false)
   return (
@@ -13,11 +15,11 @@ const SwitchGammaZulu: VFC<{}> = () => {
           <figure className="heading m-0">
             <figcaption>
               <h2>
-                <small>Ultra-fast & comfortable</small>
-                <br />Gamma Zulu mechanical key switches
+                <small>{say('gamma-zulu-lifecycle-title')}</small>
+                <br />{say('gamma-zulu-lifecycle-subtitle')}
               </h2>
             </figcaption>
-            <p>Made by Omron (Japan) for Das Keyboard, the Gamma Zulu is a modern best-in-class, fast, soft tactile key switch. It lasts forever with its unequaled 100 million life cycle. The feel is amazing and allows effortless typing and gaming sessions.</p>
+            <p dangerouslySetInnerHTML={$html('gamma-zulu-lifecycle-paragraph')} />
           </figure>
           <div className="row mb-4">
             <div className="col d-sm-flex align-items-center justify-content-start">
@@ -26,7 +28,7 @@ const SwitchGammaZulu: VFC<{}> = () => {
                   <i>
                     <FontAwesomeIcon icon="play" className="me-2" />
                   </i>
-                  Play Soft Tactile Sound
+                  {say("5q-play-sound")}
                 </span>
                 <span className="pause me-2" onClick={() => audio.current.pause()}>
                   <i>

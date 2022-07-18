@@ -2,6 +2,7 @@ import ProductCard from "@components/product/ProductCard"
 import type { VFC } from "react"
 import allProducts from '@data/products.json'
 import { Product } from "@interfaces/product"
+import useTrans from "lang/useTrans"
 
 interface Props {
   sectionId?: string
@@ -12,6 +13,7 @@ interface Props {
   switch?: "GAMMA ZULU" | "CHERRY MX RGB" | "CHERRY MX" | 'ALL'
 }
 const RelatedProducts: VFC<Props> = ({ sectionId, title, series, className, boxed: _boxed, switch: _switch }) => {
+  const { say } = useTrans()
   const boxed = _boxed || false
   const products = allProducts.filter(p => p.series === series && (typeof _switch === 'undefined' || p.switch === _switch)) as Product[]
   return (
@@ -22,8 +24,7 @@ const RelatedProducts: VFC<Props> = ({ sectionId, title, series, className, boxe
             <figure className="heading m-0">
               <figcaption>
                 <h2>
-                  <small>Das Keybaord</small>
-                  <br />{title} Lineup
+                  <small>{say('related-products')}</small>
                 </h2>
               </figcaption>
             </figure>
