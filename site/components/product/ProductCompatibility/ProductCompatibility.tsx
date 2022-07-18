@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 interface Props {
@@ -14,7 +15,8 @@ interface Props {
   }
 }
 const ProductCompatibility: VFC<Props> = (props) => {
-  const title = props.title || 'Operating System Compatibility'
+  const { say } = useTrans()
+  const title = props.title || say('cross-platform-software')
   const compatible = props.compatible || { mac: true, windows: true, linux: true }
   return (
     <section id="compatibility" className="bg-white">

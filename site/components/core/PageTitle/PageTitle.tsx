@@ -10,6 +10,7 @@ interface Props {
   product?: Partial<Product> & {
     canBuy?: boolean,
     canDownload?: boolean,
+    downloadText?: string,
   },
   showStartingAt?: boolean,
   isRefurbished?: boolean,
@@ -21,6 +22,7 @@ const defaultProps = {
   product: {
     canBuy: true,
     canDownload: false,
+    downloadText: 'Software',
   },
   showStartingAt: false,
   isRefurbished: false
@@ -28,6 +30,7 @@ const defaultProps = {
 const PageTitle: VFC<Props> = (props) => {
   const { title, type, product, showStartingAt } = props
   let { canBuy, canDownload } = product || defaultProps.product
+  const downloadText = product?.downloadText || defaultProps.product.downloadText
   const isRefurbished = props.isRefurbished || defaultProps.isRefurbished
   const isProduct = type === 'product'
   const isCategory = type === 'category'
@@ -94,7 +97,7 @@ const PageTitle: VFC<Props> = (props) => {
                 {canDownload && (
                   <a id="dlQsoftware" className="btn btn-outline-primary ms-3" href="https://www.daskeyboard.io/" target="_blank" title="Download Software" rel="noreferrer">
                     <span className="d-none d-lg-inline me-1">Download</span>
-                    Software
+                    {downloadText}
                     <i>
                       <FontAwesomeIcon icon='download' className='ms-2' />
                     </i>

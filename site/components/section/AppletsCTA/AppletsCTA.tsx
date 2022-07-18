@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 const AppletsCTA: VFC<{}> = () => {
+  const { say } = useTrans()
   return (
     <section className="bg-gray-darker dark-section section-pad">
       <div className="container-boxed">
@@ -10,8 +12,8 @@ const AppletsCTA: VFC<{}> = () => {
             <i className="text-gray-light d-block fs-1" >
               <FontAwesomeIcon icon='code' />
             </i>
-            <h2 className="text-white my-5"><span className="animated-cursor cursor-light">Software API for developers</span></h2>
-            <a className="btn btn-primary" href="https://www.daskeyboard.io/" target="_blank" title="Create Your Own Applets" rel="noreferrer">Create Your Own Applets</a>
+            <h2 className="text-white my-5"><span className="animated-cursor cursor-light">{say("rest-api-title")}</span></h2>
+            <a className="btn btn-primary" href="https://www.daskeyboard.io/" target="_blank" title={say("show-the-code")} rel="noreferrer">{say("show-the-code")}</a>
           </div>
         </div>
       </div>

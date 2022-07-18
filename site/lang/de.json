@@ -1733,7 +1733,7 @@
   "crypto-watch-content": "Zeigt Kryptow\u00e4hrungstrends an.",
   "ram-usage-content": "Gibt den Prozentsatz der RAM-Nutzung an.",
   "das-keyboard-q-software": "Das Keyboard Q software",
-  "q-applets-to-maximize-productivity": "Q-Applets zur Maximierung der Produktivit\u00e4t",
+  "q-applets-to-maximize-productivity": "<small>Q-Applets</small><br /><span className=\"animated-cursor cursor-dark\">zur Maximierung der Produktivit\u00e4t</span>",
   "gmail-content": "Meldet Benachrichtigungen jedes Mal, wenn eine E-Mail von einem Priorit\u00e4tssender ankommt.",
   "stand-up-reminder-content": "Setzt st\u00fcndliche Erinnerungen zum Aufstehen.",
   "game-deals-content": "Benachrichtigt Sie, wenn f\u00fcr ausgew\u00e4hlte Spiele ein Deal verf\u00fcgbar ist.",

@@ -3098,7 +3098,7 @@
   "easy-configuration": "Easy configuration",
   "das-keyboard-q-message-preview": "Das Keyboard Q message preview",
   "preview_any_key_with_a_key_press": "Preview any message with a keypress",
-  "q-applets-to-maximize-productivity": "Q applets to maximize productivity",
+  "q-applets-to-maximize-productivity": "<small>Q Applets</small><br /><span className=\"animated-cursor cursor-dark\">To Maximize Productivity</span>",
   "q-applets-to-maximize-productivity-content": "Everything from your GitHub repository status, to project management notifications from Asana or Trello to priority emails from your boss or your Mom. It will tell you if your website goes down or if an answer to your question is posted on Stack Overflow.",
   "related-products": "Das Keyboard Q series lineup",
   "cross-platform-software": "Cross platform software",

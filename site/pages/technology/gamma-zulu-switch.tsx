@@ -3,13 +3,11 @@ import Banner from "@components/section/Banner"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
-import useTrans, { getTrans } from "lang/useTrans"
-import { GetStaticPropsContext } from "next"
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 const pageTitle = 'Das Keyboard - Mechanical switches Gamma Zulu'
-export async function getStaticProps({ locale }: GetStaticPropsContext) {
-  const { say } = getTrans(locale)
+export async function getStaticProps() {
   return {
     props: {
       title: pageTitle,
