@@ -87,7 +87,7 @@ const ModelSPro: VFC = () => {
       />
 
       <TechnicalSpecifications
-        productSlug="daskeyboard-model-s-pro"
+        productSlug="model-s-pro"
         userManual="https://docs.google.com/document/d/1CU2jnB3jaOifmPNesTwSE6phJu_D2K2CmjeQ3uGmMB8/edit"
       />
     </>

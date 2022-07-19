@@ -142,7 +142,7 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
       />
 
       <TechnicalSpecifications
-        productSlug="daskeyboard-4-professional-for-mac"
+        productSlug="4-professional-for-mac"
         userManual="https://docs.google.com/document/d/1CU2jnB3jaOifmPNesTwSE6phJu_D2K2CmjeQ3uGmMB8/edit"
       />
 

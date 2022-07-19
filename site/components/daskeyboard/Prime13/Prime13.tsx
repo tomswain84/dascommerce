@@ -108,7 +108,7 @@ const Prime13: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, i
       />
 
       <TechnicalSpecifications
-        productSlug="daskeyboard-prime-13"
+        productSlug="prime-13"
         userManual="https://docs.google.com/document/d/1Djy89I0huhK3E3e81URyj8raA3AlMY9AjBVlWGgCgwc/edit?usp=sharing"
       />
 

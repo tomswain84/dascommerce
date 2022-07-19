@@ -52,7 +52,7 @@ const D4CTKL: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, is
       </div>
 
       <TechnicalSpecifications
-        productSlug="daskeyboard-4C-tkl"
+        productSlug="4C-tkl"
         userManual="https://docs.google.com/document/d/1CU2jnB3jaOifmPNesTwSE6phJu_D2K2CmjeQ3uGmMB8/edit?usp=sharing"
       />
 

@@ -84,7 +84,7 @@ const ModelSProForMac: VFC<{}> = () => {
       />
 
       <TechnicalSpecifications
-        productSlug="daskeyboard-model-s-pro-for-mac"
+        productSlug="model-s-pro-for-mac"
         userManual="https://docs.google.com/document/d/1CU2jnB3jaOifmPNesTwSE6phJu_D2K2CmjeQ3uGmMB8/edit"
       />
     </>

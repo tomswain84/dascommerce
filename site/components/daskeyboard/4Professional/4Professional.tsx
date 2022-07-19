@@ -115,7 +115,7 @@ const D4Professional: VFC = () => {
         }}
       />
 
-      <TechnicalSpecifications productSlug="daskeyboard-4-professional" />
+      <TechnicalSpecifications productSlug="4-professional" />
 
       <RelatedProducts
         title="4 Series"

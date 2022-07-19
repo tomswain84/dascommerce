@@ -115,7 +115,7 @@ const D4Ultimate: VFC = () => {
       />
 
       <TechnicalSpecifications
-        productSlug="daskeyboard-4-ultimate"
+        productSlug="4-ultimate"
         userManual="https://docs.google.com/document/d/1CU2jnB3jaOifmPNesTwSE6phJu_D2K2CmjeQ3uGmMB8/edit"
       />
 
