@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import stripHTML from "@lib/strip-html"
+import useTrans from "lang/useTrans"
+import { useRouter } from "next/router"
 import type { VFC } from "react"
 
 interface Props {
@@ -18,6 +20,8 @@ interface Props {
   className?: string
 }
 const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, currency, isCherry, fill, className }) => {
+  const { locale } = useRouter()
+  const { formatPrice } = useTrans()
   const ImageBlock: VFC = () => (
     <>
       <img className="img-fluid d-none d-sm-block breakout" src={image.src} alt={stripHTML(title)} />
@@ -37,10 +41,10 @@ const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, curre
           <br />{title}
         </h1>
         {isCherry && !noCherry && <Cherry />}
-        {hasPrice && (
+        {hasPrice && price && (
           <h6 className="mt-5">
-            Starting at:
-            <span className="text-red ms-1">{currency || '$'}{price}</span>
+            {locale === 'de' ? 'Ab: ' : 'Starting at: '}
+            <span className="text-red ms-1">{formatPrice(price, currency)}</span>
           </h6>
         )}
       </figcaption>

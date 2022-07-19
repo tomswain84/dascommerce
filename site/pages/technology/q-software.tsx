@@ -62,7 +62,7 @@ const QSoftware: VFC = () => {
       <ProductVideo
         theme="dark"
         title="DAS KEYBOARD Q SOFTWARE"
-        description="MAKE YOUR KEYBOARD SMART"
+        description={say('Q-Software-configuration')}
         video={{
           src: 'https://www.youtube.com/embed/9lDXlrVwkEU'
         }}
