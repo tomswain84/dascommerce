@@ -7,23 +7,23 @@ import Link from '../Link'
 import useTrans from 'lang/useTrans'
 
 const Header: VFC = () => {
-  const { say } = useTrans()
+  const { say, $html } = useTrans()
   const TopNav = () => (
     <>
       <li className="nav-item">
-        <a className="nav-link" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" rel="noreferrer">{say('support')}</a>
+        <a className="nav-link" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" rel="noreferrer" dangerouslySetInnerHTML={$html('support')} />
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="https://www.daskeyboard.com/blog">{say('blog')}</a>
+        <a className="nav-link" href="https://www.daskeyboard.com/blog" dangerouslySetInnerHTML={$html('blog')} />
       </li>
       <li className="nav-item">
-        <Link className="nav-link" href="/contact-us">{say('contact-us')}</Link>
+        <Link className="nav-link" href="/contact-us" html={say('contact-us')} />
       </li>
       <li className="nav-item">
-        <Link className="nav-link" href="/values">{say('us')}</Link>
+        <Link className="nav-link" href="/values" html={say('us')} />
       </li>
       <li className="nav-item">
-        <Link className="nav-link" href="#">{say('wishlist')}</Link>
+        <Link className="nav-link" href="#" html={say('wishlist')} />
       </li>
     </>
   )

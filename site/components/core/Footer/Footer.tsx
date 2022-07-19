@@ -131,15 +131,15 @@ const Footer: VFC = () => {
         <div className="container-boxed">
           <div className="row">
             <div className="col p-4 d-flex align-items-center justify-content-center text-white">
-              <a
+              <Link
                 id="winKeyboard"
                 className="text-white text-decoration-none d-flex align-items-center"
                 href="/giveaway"
-                title={say('giveaway-link')}
+                title={say('giveaway-link', true)}
               >
                 <FontAwesomeIcon icon="gift" className="pe-1" />
                 <span className="oswald" dangerouslySetInnerHTML={$html('giveaway-link')} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -151,7 +151,7 @@ const Footer: VFC = () => {
               <h3 dangerouslySetInnerHTML={$html('footer_about_title')} />
               <p dangerouslySetInnerHTML={$html('footer_about_content')} />
 
-              <h3 className="mt-sm-5">{say('news-signup')}</h3>
+              <h3 className="mt-sm-5" dangerouslySetInnerHTML={$html('news-signup')} />
               <form id="newsletterForm" className="row align-items-center">
                 <div className="col-xl-8 col-xxl-6">
                   <label
@@ -177,20 +177,20 @@ const Footer: VFC = () => {
             <div className="col-sm-6 col-md-8 col-lg-7 col-xl-6 pb-5 py-sm-5">
               <div className="row flex-column flex-md-row">
                 <div className="col pb-5 pb-md-0">
-                  <h3>{say('footer_contact_title')}</h3>
+                  <h3 dangerouslySetInnerHTML={$html('footer_contact_title')} />
                   <ul className="list-unstyled">
                     {column1Links.map(FooterLink)}
                   </ul>
                 </div>
                 <div className="col mt-md-3 pt-md-2">
-                  <a
+                  <Link
                     className="btn btn-outline-primary mb-4"
                     href="/guarantee"
-                    title={say('das-keyboard-warranty')}
+                    title={say('das-keyboard-warranty', true)}
                   >
-                    {say('das-keyboard-warranty')}
+                    <span dangerouslySetInnerHTML={$html('das-keyboard-warranty')} />
                     <FontAwesomeIcon icon="gear" className="ms-2" />
-                  </a>
+                  </Link>
                   <ul className="list-unstyled">
                     {column2Links.map(FooterLink)}
                   </ul>
@@ -205,21 +205,18 @@ const Footer: VFC = () => {
           <div className="row">
             <div className="col-md-12 col-lg-6 col-xxl-7 py-3 text-center text-lg-start">
               <p className="text-white mb-sm-0">
-                <span className="d-block d-sm-inline mb-2 mb-sm-0">
-                  {say('hello_from_austin')}
-                </span>
+                <span className="d-block d-sm-inline mb-2 mb-sm-0" dangerouslySetInnerHTML={$html('hello_from_austin')} />
                 <br />
-                <span className="d-block d-sm-inline">
-                  {' '}
-                  © 2005-{new Date().getFullYear()} - {say('all_rights_reserved')}
-                </span>
-                <span className="d-block d-xxl-inline text-gray-medium ms-xxl-2">
-                  {say('trademark')}
-                </span>
+                <span className="d-block d-sm-inline" dangerouslySetInnerHTML={{
+                  __html: `
+                  &nbsp;© 2005-${new Date().getFullYear()} - ${say('all_rights_reserved')}
+                `}}
+                />
+                <span className="d-block d-xxl-inline text-gray-medium ms-xxl-2" dangerouslySetInnerHTML={$html('trademark')} />
               </p>
             </div>
             <div className="col-md-6 col-lg-4 col-xxl-3 d-flex align-items-center justify-content-center">
-              <p className="text-white mb-0 me-2">{say('select_language')}:</p>
+              <p className="text-white mb-0 me-2" dangerouslySetInnerHTML={$html('select_language')} />
               <ul className="list-unstyled d-flex align-items-center justify-content-center mb-0">
                 <li className="mb-0">
                   <button
