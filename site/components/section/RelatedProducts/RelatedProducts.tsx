@@ -23,9 +23,7 @@ const RelatedProducts: VFC<Props> = ({ sectionId, title, series, className, boxe
           <div className="col">
             <figure className="heading m-0">
               <figcaption>
-                <h2>
-                  <small dangerouslySetInnerHTML={$html('related-products')} />
-                </h2>
+                <h2 dangerouslySetInnerHTML={$html('related-products')} />
               </figcaption>
             </figure>
           </div>
