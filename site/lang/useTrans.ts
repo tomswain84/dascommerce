@@ -22,7 +22,7 @@ export function getTrans(locale: string | undefined) {
         __html: getHtml(key)
       }
     },
-    say: (key: TranslateKey, getRaw = false) => getHtml(key, getRaw).replace(/\&nbsp/, '&'),
+    say: (key: TranslateKey, getRaw = false) => getHtml(key, getRaw),
     formatPrice(price: number, currency = '$') {
       if (locale === 'de') {
         return `${price}${currency}`

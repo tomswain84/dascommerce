@@ -28,7 +28,7 @@ const ProductCompatibility: VFC<Props> = (props) => {
           <div className="col-md d-flex align-items-center justify-content-center">
             <div className="row text-center p-3 p-md-0">
               <div className="col-12 pb-5">
-                <h2>{title}</h2>
+                <h2 dangerouslySetInnerHTML={{ __html: title }} />
               </div>
               {compatible.mac && (
                 <div className="col">
