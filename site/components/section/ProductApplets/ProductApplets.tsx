@@ -41,7 +41,7 @@ const ProductApplets: VFC<{}> = () => {
               <figcaption>
                 <h2 dangerouslySetInnerHTML={$html('q-applets-to-maximize-productivity')} />
               </figcaption>
-              <p>{say("q-applets-to-maximize-productivity-content")}</p>
+              <p dangerouslySetInnerHTML={$html('q-applets-to-maximize-productivity-content')} />
             </figure>
           </div>
         </div>
@@ -52,10 +52,10 @@ const ProductApplets: VFC<{}> = () => {
                 <figure className="card applets mx-3" key={index}>
                   <img src={item.image} className="card-img-top rounded" alt={item.title} />
                   <figcaption className="card-body">
-                    <h6 className="applet-title text-center my-3">{item.title}</h6>
+                    <h6 className="applet-title text-center my-3" dangerouslySetInnerHTML={{ __html: item.title }} />
                   </figcaption>
                   <div className="card-footer bg-white text-center border-0 p-0">
-                    <p className="small m-0">{item.description}</p>
+                    <p className="small m-0" dangerouslySetInnerHTML={{ __html: item.description }} />
                   </div>
                   {item.link && (
                     <a className="stretched-link" href="<?=$applet_url?>" title="<?=$applet_title?>"></a>

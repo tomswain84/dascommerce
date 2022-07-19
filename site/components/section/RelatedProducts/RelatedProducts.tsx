@@ -13,7 +13,7 @@ interface Props {
   switch?: "GAMMA ZULU" | "CHERRY MX RGB" | "CHERRY MX" | 'ALL'
 }
 const RelatedProducts: VFC<Props> = ({ sectionId, title, series, className, boxed: _boxed, switch: _switch }) => {
-  const { say } = useTrans()
+  const { $html } = useTrans()
   const boxed = _boxed || false
   const products = allProducts.filter(p => p.series === series && (typeof _switch === 'undefined' || p.switch === _switch)) as Product[]
   return (
@@ -24,7 +24,7 @@ const RelatedProducts: VFC<Props> = ({ sectionId, title, series, className, boxe
             <figure className="heading m-0">
               <figcaption>
                 <h2>
-                  <small>{say('related-products')}</small>
+                  <small dangerouslySetInnerHTML={$html('related-products')} />
                 </h2>
               </figcaption>
             </figure>

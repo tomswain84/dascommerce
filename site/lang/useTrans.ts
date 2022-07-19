@@ -6,10 +6,13 @@ export type TranslateKey = keyof typeof en
 
 export function getTrans(locale: string | undefined) {
   const language = locale === 'de' ? de as unknown as typeof en : en
-  const getHtml = (key: TranslateKey) => {
+  const getHtml = (key: TranslateKey, getRaw = false) => {
     let result = en[key]
     if (language[key]) {
       result = (language as typeof en)[key]
+    }
+    if (result && !getRaw) {
+      return `<span data-translate-id="${key}">${result}</span>`
     }
     return result || ''
   }
@@ -19,7 +22,15 @@ export function getTrans(locale: string | undefined) {
         __html: getHtml(key)
       }
     },
-    say: (key: TranslateKey) => getHtml(key).replace(/\&nbsp/, '&'),
+    say: (key: TranslateKey, getRaw = false) => getHtml(key, getRaw).replace(/\&nbsp/, '&'),
+    formatPrice(price: number, currency = '$') {
+      if (locale === 'de') {
+        return `${price}${currency}`
+      }
+      else {
+        return `${currency}${price}`
+      }
+    }
   }
 }
 

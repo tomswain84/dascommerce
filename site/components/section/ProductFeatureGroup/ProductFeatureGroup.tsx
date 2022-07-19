@@ -13,6 +13,9 @@ interface Content extends ProductFeatureProps {
 }
 interface Switch {
   type: 'switch'
+  heading?: string
+  title?: string
+  description?: string
 }
 interface Props {
   rows: Array<Heading | Content | Switch>
@@ -27,9 +30,9 @@ const ProductFeatureGroup: VFC<Props> = ({ rows }) => {
             {row.type === 'heading' && (
               <div className={`row mb-4 ${index > 0 ? 'mt-5' : ''}`}>
                 <div className="col text-center">
-                  <h2>{row.heading}</h2>
+                  <h2 dangerouslySetInnerHTML={{ __html: row.heading }} />
                   {row.description && (
-                    <p>{row.description}</p>
+                    <p dangerouslySetInnerHTML={{ __html: row.description }} />
                   )}
                 </div>
               </div>
@@ -37,7 +40,7 @@ const ProductFeatureGroup: VFC<Props> = ({ rows }) => {
             {row.type === 'content' && (
               <ProductFeature {...row} />
             )}
-            {row.type === 'switch' && <SwitchGammaZulu />}
+            {row.type === 'switch' && <SwitchGammaZulu {...row} />}
           </div>
         ))}
       </div>

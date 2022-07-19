@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 interface Props {
@@ -16,6 +17,7 @@ interface Props {
   }
 }
 const ProductPerformance: VFC<Props> = ({ title, description, image, features }) => {
+  const { $html } = useTrans()
   return (
     <section className="bg-white section-pad">
       <div className="container-boxed">
@@ -24,14 +26,14 @@ const ProductPerformance: VFC<Props> = ({ title, description, image, features })
             <img className="img-fluid" src={image.src} alt={image.alt || 'Keyboard Right Angle'} />
           </div>
           <div className="col-md">
-            <h2 className="text-red">{title}</h2>
-            <p className="mb-5">{description}</p>
+            <h2 className="text-red" dangerouslySetInnerHTML={{ __html: title }} />
+            <p className="mb-5" dangerouslySetInnerHTML={{ __html: description }} />
             <div className="row">
               {features.gamma && (
                 <div className="col">
                   <figure className="text-center">
                     <img className="img-fluid mb-3" src="/images/gamma-zulu-badge.png" alt="Gamma Zulu 100M Lifecycle" />
-                    <figcaption className="small">World's longest lasting switches</figcaption>
+                    <figcaption className="small" dangerouslySetInnerHTML={$html('GammaZulu_badge')} />
                   </figure>
                 </div>
               )}
@@ -39,7 +41,7 @@ const ProductPerformance: VFC<Props> = ({ title, description, image, features })
                 <div className="col">
                   <figure className="text-center">
                     <img className="img-fluid mb-3" src="/images/color-badge.png" alt="Enhanced 16.8M Per Key RGB" />
-                    <figcaption className="small">2x ultra enhanced brightness</figcaption>
+                    <figcaption className="small" dangerouslySetInnerHTML={$html('Color_badge')} />
                   </figure>
                 </div>
               )}
@@ -47,7 +49,7 @@ const ProductPerformance: VFC<Props> = ({ title, description, image, features })
                 <div className="col">
                   <figure className="text-center">
                     <img className="img-fluid mb-3" src="/images/aluminum-badge.png" alt="Aluminum 26.982" />
-                    <figcaption className="small">Anodized aluminum top panel</figcaption>
+                    <figcaption className="small" dangerouslySetInnerHTML={$html('Aluminum_badge')} />
                   </figure>
                 </div>
               )}

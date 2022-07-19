@@ -18,9 +18,7 @@ const AppletDashboard: VFC<Props> = ({ title, description, image, background }) 
         <div id="appletDashboard" className="row align-items-center justify-content-between">
           <div className="col-12 col-xl-8 col-xxl-6">
             <h2 className="text-red">
-              <span className="animated-cursor cursor-light">
-                {title}
-              </span>
+              <span className="animated-cursor cursor-light" dangerouslySetInnerHTML={{ __html: title }} />
             </h2>
             <p className="mt-3" dangerouslySetInnerHTML={{ __html: description }} />
           </div>

@@ -39,22 +39,24 @@ const ProductFeature: VFC<ProductFeatureProps> = ({ heading, title, description,
         <div className={colClass()}>
           <figure className="heading m-0">
             <figcaption>
-              <h2>
-                <small>{heading}</small>
-                <br />{title}
-              </h2>
+              <h2 dangerouslySetInnerHTML={{
+                __html: `
+                <small>${heading}</small>
+                <br />${title}
+              `}}
+              />
             </figcaption>
           </figure>
           {image.position === 'center' && <ImageBlock />}
           <p dangerouslySetInnerHTML={{ __html: description }} />
           {descriptionHint && (
-            <p className="small text-gray-light">{descriptionHint}</p>
+            <p className="small text-gray-light" dangerouslySetInnerHTML={{ __html: descriptionHint }} />
           )}
           {extras && (
             <>
               {extras.map((extra, index) => (
                 <>
-                  <h6 className="text-red mt-4">{extra.title}</h6>
+                  <h6 className="text-red mt-4" dangerouslySetInnerHTML={{ __html: extra.title }} />
                   <p dangerouslySetInnerHTML={{ __html: extra.description }} />
                 </>
               ))}
