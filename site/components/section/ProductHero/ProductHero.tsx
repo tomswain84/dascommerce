@@ -36,10 +36,12 @@ const ProductHero: VFC<Props> = ({ heading, title, image, hasPrice, price, curre
   const Heading: VFC<{ noCherry?: boolean }> = ({ noCherry } = { noCherry: false }) => (
     <figure className="heading">
       <figcaption>
-        <h1>
-          <small>{heading}</small>
-          <br />{title}
-        </h1>
+        <h1 dangerouslySetInnerHTML={{
+          __html: `
+          <small>${heading}</small>
+          <br/>${title}
+        `}}
+        />
         {isCherry && !noCherry && <Cherry />}
         {hasPrice && price && (
           <h6 className="mt-5">

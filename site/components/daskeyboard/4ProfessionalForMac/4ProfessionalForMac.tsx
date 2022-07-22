@@ -11,13 +11,15 @@ import RelatedProducts from "@components/section/RelatedProducts"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import ProductHero from "@components/section/ProductHero"
 import { Product } from "@interfaces/product"
+import useTrans from "lang/useTrans"
 
 const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
+  const { say, $html } = useTrans();
   return (
     <>
       <ProductHero
-        heading="ENHANCE"
-        title="YOUR MAC"
+        heading={say('model-4-professional-for-mac_slider_3_heading')}
+        title={say('model-4-professional-for-mac_slider_3_title')}
         hasPrice
         price={isRefurbished ? product.refurbished.price : product.price}
         isCherry
@@ -32,9 +34,13 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
         content={{
           background: 'light',
           textAlign: 'center',
-          title: `<span class="text-red">DAS KEYBOARD 4 PROFESSIONAL FOR MAC</span>`,
-          titleExtra: `AN EXPERIENCE LIKE NO OTHER`,
-          description: `The Das Keyboard 4 is an experience like no other. From the initial idea to every fine detail when crafting this machine, the experience we deliver to customers is what drives our team.<br/>The combination of tactile feel, the psycho-acoustic experience and incredible craftsmanship all deliver an unmatched typing experience that only Das Keyboard 4 offers. With a Das Keyboard 4 for Mac, you’ll type faster and longer. It feels so good, you won’t want to stop.<br/>Das Keyboard 4 Professional for Mac mechanical keyboard is specifically designed for Mac compatibility. It's made of the highest-quality materials and has a robust construction you can feel. All of our keyboards are designed with high-performance, gold-plated mechanical key switches lasting up to 50 million keystrokes. Give your Mac the keyboard it deserves.`
+          title: `<span class="text-red">${say('slogan_model-4-professional-for-mac_title_1')}</span>`,
+          titleExtra: say('slogan_model-4-professional-for-mac_title_2'),
+          description: `
+            ${say('slogan_model-4-professional-for-mac_content_1')}
+            ${say('slogan_model-4-professional-for-mac_content_1.1')}
+            ${say('slogan_model-4-professional-for-mac_content_1.2')}
+          `
         }}
         image={{
           position: 'bottom',
@@ -49,9 +55,9 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
         className="pt-5"
         containerPadding="pt-md-5 mt-xl-5"
         content={{
-          textAlign: 'center',
+          textAlign: 'left',
           title: `QUALITY <span class="text-red">YOU CAN FEEL</span>`,
-          description: 'Das Keyboard 4 Professional mechanical keyboard is made of the highest-quality materials and robust construction you can feel. All of our keyboards are designed with high-performance, gold-plated mechanical key switches lasting up to 50 million keystrokes.',
+          description: say('slogan_model-4-professional-for-mac_content_11'),
           background: 'dark'
         }}
         image={{
@@ -68,7 +74,10 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
 
       <ForceDiagram type="both" />
 
-      <OversizedVolume />
+      <OversizedVolume
+        title={say('slogan_model-4-professional-for-mac_title_5')}
+        description={say('slogan_model-4-professional-for-mac_content_5')}
+      />
 
       <Banner
         sectionId="usbHub"
@@ -77,7 +86,7 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
           textAlign: "left",
           titlePadding: 'm-0',
           title: `USB 3.0 <span class="text-red">SUPERSPEED HUB</span>.`,
-          description: '<br/>Need to transfer videos to your workstation but don’t have time to wait all day for file transfers to complete? Don’t worry. Das Keyboard 4 for Mac has a blazing fast two-port USB 3.0 hub to transfer music, high resolution pictures and large videos at up to 5Gb per second. That’s 10 times faster than USB 2.0. It is backwards compatible with all USB 2.0/1.1 devices and hosts so previous peripheral investments are protected.'
+          description: say('slogan_model-4-professional-for-mac_content_6'),
         }}
         image={{
           position: 'left',
@@ -86,7 +95,9 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
         }}
       />
 
-      <NKeyRollover />
+      <NKeyRollover
+        description={say('slogan_model-4-professional-for-mac_content_7')}
+      />
 
       <Banner
         sectionId="functionKeys"
@@ -96,7 +107,7 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
           titlePadding: 'm-0',
           background: "light",
           title: `MAC OS SPECIFIC <span class="text-red">KEY FUNCTIONS</span>.`,
-          description: '<br/>In addition to standard command and Alt/Option keys, Das Keyboard 4 Professional for Mac offers quick, convenient access to a number of other Mac specific key functions. The Das Keyboard 4 Professional for Mac makes it easy to toggle between screens, view your desktop along with other applications that you have open, and access your brightness controls all at the push of a button.'
+          description: say('slogan_model-4-professional-for-mac_content_7bis')
         }}
         image={{
           position: 'left',
@@ -105,7 +116,9 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
         }}
       />
 
-      <FootbarRuler />
+      <FootbarRuler
+        description={say('slogan_model-4-professional-for-mac_content_8')}
+      />
 
       <Banner
         sectionId="everyDetail"
@@ -113,11 +126,7 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
           textAlign: "left",
           background: "dark",
           title: `EVERY DETAIL <span class="text-red">MATTERS</span>.`,
-          description: `
-            Featuring a stunning look, Das Keyboard 4 Professional for Mac has been designed with a slick anodized aluminum top panel, a resonance-free bottom enclosure, a magnetically attached footbar, and a laser-engraved aluminum bottom label… all which make the design feel more badass and the typing feel more responsive.
-            <br/><br/>
-            There is no detail too tiny for us.
-          `
+          description: say('slogan_model-4-professional-for-mac_content_10')
         }}
         image={{
           position: 'left',
@@ -132,7 +141,7 @@ const D4ProfessionalForMac: VFC<{ product: Product, isRefurbished: boolean }> = 
         content={{
           textAlign: "left",
           title: `EXTRA LONG <span class="text-red">CABLE</span>.`,
-          description: 'Das Keyboard 4 Professional for Mac sports a 2-meter (6.5ft) cable that goes through desk grommets to keep your workspace neat and tidy. Now equipped with only one USB cable to power the keyboard and USB hub at the same time.'
+          description: say('slogan_model-4-professional-for-mac_content_9')
         }}
         image={{
           position: 'left',
