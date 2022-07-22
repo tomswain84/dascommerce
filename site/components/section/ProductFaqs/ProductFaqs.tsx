@@ -22,9 +22,7 @@ const ProductFaqs: VFC<Props> = ({ heading, faqs }) => {
               {faqs.map((faq, index) => (
                 <div key={index} className="accordion-item border-0">
                   <h2 className="accordion-header" id="headingOne">
-                    <a className="accordion-button bg-gray-darker text-white text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target={`#faq-${index}`} aria-expanded="true" aria-controls="collapseOne">
-                      {faq.question}
-                    </a>
+                    <a className="accordion-button bg-gray-darker text-white text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target={`#faq-${index}`} aria-expanded="true" aria-controls="collapseOne" dangerouslySetInnerHTML={{ __html: faq.question }} />
                   </h2>
                   <div id={`faq-${index}`} className={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`} aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
                     <div className="accordion-body bg-gray-dark small" dangerouslySetInnerHTML={{ __html: faq.answer }} />

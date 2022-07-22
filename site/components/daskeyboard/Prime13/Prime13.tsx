@@ -9,13 +9,15 @@ import ProductHero from "@components/section/ProductHero"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import AppletDashboard from "@components/product/AppletDashboard"
 import { Product } from "@interfaces/product"
+import useTrans from "lang/useTrans"
 
 const Prime13: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
+  const { say } = useTrans();
   return (
     <>
       <ProductHero
-        heading="MINIMALIST DESIGN,"
-        title="WHITE BACKLIT CHERRY MX"
+        heading={say('prime13_slider_1_title')}
+        title={say('prine13-professional_slider_1_subtitle')}
         hasPrice={true}
         price={isRefurbished ? product.refurbished.price : product.price}
         isCherry={false}
@@ -38,9 +40,9 @@ const Prime13: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, i
         containerBoxed={false}
         content={{
           textAlign: "center",
-          title: `<span className="text-red">MINIMALIST DESIGN</span>`,
+          title: `<span class="text-red">${say('p13-section-topanel-title')}</span>`,
           titleSmall: true,
-          description: "Start with pure lines sculpted in aluminum, add clean white backlit keys with a modern font face, and you get an incredibly efficient tool that helps get the job done."
+          description: say('p13-section-topanel-paragraph')
         }}
         image={{
           position: 'bottom',
@@ -55,8 +57,8 @@ const Prime13: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, i
         content={{
           background: 'dark',
           textAlign: "center",
-          title: `<span className="text-red">TYPE ANYWHERE, EVEN IN YOUR CAVE.</span>`,
-          description: "The Das Keyboard Prime 13 wields white LED backlit keys with 7 levels of brightness. Plenty-enough settings even for desks located in challengingly-dark environments.",
+          title: `<span class="text-red">${say('p13-lighting-subtitle')}</span>`,
+          description: say('p13-lighting-paragraph'),
         }}
         image={{
           fluid: false,
@@ -67,18 +69,18 @@ const Prime13: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, i
       />
 
       <ProductExtra
-        heading="USB Connectivity"
+        heading={say('p13-usb-title')}
         extras={[
           {
-            title: 'IMPROVED CABLE MANAGEMENT',
-            description: 'With the extra-long braided cable and its rectangular shape, the Prime 13 keeps you knolling more then ever.',
+            title: say('p13-usb-subtitle-1'),
+            description: say('p13-usb-paragraph-1'),
             image: {
               src: '/images/product-images/product-details/prime-13/prime13-braided-usb.jpg'
             }
           },
           {
-            title: 'CONNECT ANY DEVICE WITH A USB PASS-THROUGH',
-            description: `Conveniently plug a mouse, thumb drive, headset, or phone directly into the keyboard's USB pass-through.`,
+            title: say('p13-usb-subtitle-2'),
+            description: say('p13-usb-paragraph-2'),
             image: {
               src: '/images/product-images/product-details/prime-13/prime13-usb-port-side-view.jpg'
             }
@@ -87,19 +89,19 @@ const Prime13: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, i
       />
 
       <ProductExtra
-        heading="EVERY DETAIL MATTERS"
+        heading={say('p13-details-title')}
         background="white"
         extras={[
           {
-            title: 'LASER ENGRAVED ALUMINUM LABEL',
-            description: 'Forget stickers. Find excellence down to the laser-engraved aluminum label under the keyboard.',
+            title: say('p13-details-subtitle-1'),
+            description: say('p13-details-paragraph-1'),
             image: {
               src: '/images/product-images/product-details/prime-13/prime13-mechanical-keyboard-backlabel.jpg'
             }
           },
           {
-            title: 'SIDELIT MEDIA CONTROLS',
-            description: 'We rotated the LED switches to be front facing so that even the media controls icons located on the side of the keycaps are backlit. The best way to explain this is to create this new word, sidelit.',
+            title: say('p13-details-subtitle-2'),
+            description: say('p13-details-paragraph-2'),
             image: {
               src: '/images/product-images/product-details/prime-13/prime13-mechanical-keyboard-sidelit.jpg'
             }
@@ -128,21 +130,21 @@ const Prime13: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, i
       <ProductFeatureGroup rows={[
         {
           type: "content",
-          heading: "SAVE THE PLANET.",
-          title: "YOUR PRIME 13 SAVES ENERGY",
-          description: "The planet needs your help. Every bit counts. The Prime 13 has built-in energy saving features.",
+          heading: say("p13-energy-heading"),
+          title: say("p13-energy-title"),
+          description: say('p13-energy-sub'),
           image: {
             position: "left",
             src: "/images/product-images/product-details/prime-13/earth.jpg",
           },
           extras: [
             {
-              title: "SLEEP CONTROL FUNCTION",
-              description: "Das Keyboard was one of the first to incorporate a computer sleep control to its keyboards. Having a computer sleep a few hours a day while you are away from your desk will make your power hungry 600-watt, eight-core, fire-breathing monster computer stop burning unnecessary energy when it is not needed.",
+              title: say('p13-energy-subtitle'),
+              description: say('p13-energy-paragraph'),
             },
             {
-              title: "LED AUTO-DIM",
-              description: "The Prime 13 backlighting automatically dims after 10 minutes of inactivity. Even keyboards like naps.",
+              title: say('p13-energy-subtitle2'),
+              description: say('p13-energy-paragraph2'),
             },
           ]
         },
@@ -161,20 +163,20 @@ const Prime13: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, i
       <ProductFaqs
         faqs={[
           {
-            question: "DOES THE PRIME 13 COME WITH DEDICATED DRIVER SOFTWARE?",
-            answer: "The Prime 13 does not need any special software or firmware. Just plug it in and start typing."
+            question: say('p13-faq-q1'),
+            answer: say('p13-faq-a1')
           },
           {
-            question: "WHAT OPERATING SYSTEMS WILL THE PRIME 13 WORK WITH?",
-            answer: "The Prime 13 is compatible with Windows, macOS, Linux operating systems, and Chrome OS."
+            question: say('p13-faq-q2'),
+            answer: say('p13-faq-a2')
           },
           {
-            question: "WHICH LAYOUTS ARE AVAILABLE FOR THE PRIME 13?",
-            answer: `The Prime 13 is currently available in US and UK layouts. DE and Nordic layouts will be coming soon. All European layouts are only available through our <a href="http://www.daskeyboard.com/where-to-buy/">international resellers</a>.`
+            question: say('p13-faq-q3'),
+            answer: say('p13-faq-a3')
           },
           {
-            question: "DOES DAS KEYBOARD SHIP OUTSIDE THE UNITED STATES?",
-            answer: `No, you can buy it from your local reseller. Please visit <a href="http://www.daskeyboard.com/where-to-buy/">http://www.daskeyboard.com/where-to-buy/</a>`
+            question: say('p13-faq-q5'),
+            answer: say('p13-faq-a5')
           },
         ]}
       />
