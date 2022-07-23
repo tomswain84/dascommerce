@@ -6,15 +6,16 @@ import ForceDiagram from "@components/section/ForceDiagram"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import SwitchCherryBlue from "@components/product/SwitchCherryBlue"
 import NKeyRollover from "@components/product/NKeyRollover"
+import useTrans from "lang/useTrans"
 
 const ModelSProForMac: VFC<{}> = () => {
-  // const product = products.find(p => p.slug === slug)
+  const { say } = useTrans();
   return (
     <>
       <ProductHero
         className="pb-sm-5"
-        heading="HIGH PERFORMANCE"
-        title="HIGH QUALITY."
+        heading={say('model-s-professional_slider_1_title')}
+        title={say('model-s-professional_slider_1_subtitle')}
         fill
         isCherry
         hasPrice={false}
@@ -28,7 +29,7 @@ const ModelSProForMac: VFC<{}> = () => {
         theme="dark"
         className="mt-0"
         title={`SUPER <span className="text-red">AWESOME FEEL</span>.`}
-        description="Behold the outstanding tactile and audio response with every keystroke you make. This high-performance, mechanical keyboard feels amazing on your fingertips and offers two distinct tactile experiences - click and soft. Your fingers will love it."
+        description={say('slogan_model-s-professional-for-mac_content_1')}
         video={{ src: 'https://www.youtube.com/embed/NHIMMqhW3kY?rel=0' }}
       />
 
@@ -38,8 +39,8 @@ const ModelSProForMac: VFC<{}> = () => {
         content={{
           background: 'light',
           textAlign: "left",
-          title: `DESIGNED <span className="text-red">FOR MAC</span>.`,
-          description: "Unlike other keyboards on the market claiming to be Mac-friendly, Das Keyboard Professional for Mac is specifically designed for maximum compatibility. Give your Mac some love with the best mechanical keyboard on the planet."
+          title: say('slogan_model-s-professional-for-mac_title_2'),
+          description: say('slogan_model-s-professional-for-mac_content_2')
         }}
         image={{
           position: 'left',
