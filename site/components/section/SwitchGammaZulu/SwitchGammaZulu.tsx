@@ -2,31 +2,40 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useRef, useState } from "react"
 import type { VFC } from "react"
+import useTrans from "lang/useTrans"
 
-const SwitchGammaZulu: VFC<{}> = () => {
+interface Props {
+  heading?: string
+  title?: string
+  description?: string
+}
+const SwitchGammaZulu: VFC<Props> = ({ heading, title, description }) => {
+  const { say, $html } = useTrans()
   const audio = useRef(undefined as unknown as HTMLAudioElement)
   const [playing, setPlaying] = useState(false)
   return (
     <>
       <div className="row align-items-center py-5 my-md-0 border-bottom">
-        <div className="col-md order-md-2">
+        <div className="col-md-8 order-md-2">
           <figure className="heading m-0">
             <figcaption>
-              <h2>
-                <small>Ultra-fast & comfortable</small>
-                <br />Gamma Zulu mechanical key switches
-              </h2>
+              <h2 dangerouslySetInnerHTML={{
+                __html: `
+                <small>${heading || say('gamma-zulu-lifecycle-title')}</small>
+                <br/>${title || say('gamma-zulu-lifecycle-subtitle')}
+              `}}
+              />
             </figcaption>
-            <p>Made by Omron (Japan) for Das Keyboard, the Gamma Zulu is a modern best-in-class, fast, soft tactile key switch. It lasts forever with its unequaled 100 million life cycle. The feel is amazing and allows effortless typing and gaming sessions.</p>
+            <p dangerouslySetInnerHTML={{ __html: description || $html('gamma-zulu-lifecycle-paragraph').__html }} />
           </figure>
           <div className="row mb-4">
-            <div className="col d-sm-flex align-items-center justify-content-start">
-              <a className={`btn btn-outline-primary ${playing ? 'playing' : ''}`} id="playButton">
+            <div className="col d-sm-flex flex-wrap align-items-center justify-content-start">
+              <a className={`btn btn-outline-primary mb-3 me-sm-3 ${playing ? 'playing' : ''}`} id="playButton">
                 <span className="play" onClick={() => audio.current.play()}>
                   <i>
                     <FontAwesomeIcon icon="play" className="me-2" />
                   </i>
-                  Play Soft Tactile Sound
+                  <span dangerouslySetInnerHTML={$html('5q-play-sound')} />
                 </span>
                 <span className="pause me-2" onClick={() => audio.current.pause()}>
                   <i>
@@ -35,11 +44,11 @@ const SwitchGammaZulu: VFC<{}> = () => {
                   Pause Soft Tactile Sound
                 </span>
               </a>
-              <a className="btn btn-primary my-3 my-sm-0 ms-sm-3" href="#" title="About Gamma Zulu Switches">About Gamma Zulu Switches</a>
+              <a className="btn btn-primary my-3 my-sm-0" href="#" title="About Gamma Zulu Switches" dangerouslySetInnerHTML={$html('learn-more-about-switch')} />
             </div>
           </div>
         </div>
-        <div className="col-md text-center">
+        <div className="col-md-4 text-center">
           <img className="img-fluid rounded" src="/images/product-images/product-details/x50q/gammazulu.gif" alt="Gamma Zulu mechanical key switches" />
         </div>
 

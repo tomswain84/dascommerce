@@ -2,9 +2,11 @@
 /* eslint-disable @next/next/no-img-element */
 import Carousel from "@components/core/Carousel"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 const Reviews: VFC = () => {
+  const { say } = useTrans()
   const editorialReviews = [
     {
       copy: `It's almost like typing on a cloud compared to Apple's Magic Keyboard.`,
@@ -171,9 +173,9 @@ const Reviews: VFC = () => {
           <div className="col">
             <figure className="heading text-center">
               <figcaption>
-                <h1>Real Reviews <span className="text-red d-block d-sm-inline">from real people</span></h1>
+                <h1>{say('reviews_title')} <span className="text-red d-block d-sm-inline">{say('reviews_subtitle')}</span></h1>
               </figcaption>
-              <p>Our customers love Das Keyboard. But don't take our word for it...</p>
+              <p>{say('reviews_description')}</p>
             </figure>
           </div>
         </div>
@@ -183,13 +185,13 @@ const Reviews: VFC = () => {
               <li className="nav-item">
                 <FontAwesomeIcon icon='newspaper' className="text-red me-1" size="lg" />
                 <a href="#editorialReviews" className="nav-link active" data-bs-toggle="tab">
-                  Editorial Reviews
+                  {say('reviews_editorial')}
                 </a>
               </li>
               <li className="nav-item">
                 <FontAwesomeIcon icon='user' className='text-red me-1' />
                 <a href="#customerReviews" className="nav-link" data-bs-toggle="tab">
-                  Customer Reviews
+                  {say('reviews_customer')}
                 </a>
               </li>
             </ul>

@@ -2,16 +2,24 @@ import type { VFC } from "react"
 import SwitchCherryBlue from "../SwitchCherryBlue"
 import SwitchCherryBrown from "../SwitchCherryBrown"
 
-const SwitchCherryBoth: VFC = () => {
+interface Props {
+  brown?: {
+    description: string
+  }
+  blue?: {
+    description: string
+  }
+}
+const SwitchCherryBoth: VFC<Props> = ({ brown, blue }) => {
   return (
     <section className="bg-white section-pad">
       <div className="container-boxed">
         <div className="row">
           <div className="col-12 col-sm-6">
-            <SwitchCherryBrown />
+            <SwitchCherryBrown description={brown ? brown.description : ''} />
           </div>
           <div className="col-12 col-sm-6 mb-5 mb-sm-0">
-            <SwitchCherryBlue />
+            <SwitchCherryBlue description={blue ? blue.description : ''} />
           </div>
         </div>
       </div>

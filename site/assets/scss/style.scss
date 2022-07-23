@@ -130,13 +130,13 @@ a#playButton,
 a#playButton1 {
   padding: 0;
 }
-a#playButton span,
-a#playButton1 span {
+a#playButton > span,
+a#playButton1 > span {
   padding: 0.6rem 1.4rem;
   line-height: 2.5;
 }
-a#playButton span.pause,
-a#playButton1 span.pause {
+a#playButton > span.pause,
+a#playButton1 > span.pause {
   display: none;
 }
 a#playButton.playing span.pause,
@@ -719,7 +719,7 @@ section#font img {
 
 /*Reviews*/
 section#reviews ul.nav-tabs {
-  max-width: 20rem;
+  max-width: max-content;
   margin: auto;
   border: none;
 }

@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import PageTitle from "@components/core/PageTitle"
+import useTrans, { getTrans } from "lang/useTrans"
+import { GetStaticPropsContext } from "next"
 import type { VFC } from "react"
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const { say } = getTrans(locale)
   return {
     props: {
-      title: "Become a Reseller",
+      title: say('become-a-reseller_title'),
       bodyId: 'reseller',
       bodyClass: 'single-content',
     },
@@ -13,10 +16,11 @@ export async function getStaticProps() {
 }
 
 const BecomeReseller: VFC = () => {
+  const { say, $html } = useTrans()
   return (
     <>
       <PageTitle
-        title="Become a Reseller"
+        title={say('become-a-reseller_title')}
         type='category'
       />
       <main className="content-container">
@@ -24,20 +28,8 @@ const BecomeReseller: VFC = () => {
           <div className="container">
             <div className="row">
               <div id="contentContainer" className="col">
-
-                <h3 className="sidebar-title mt-5">Sell Das Keyboard products</h3>
-                <p>We are always open to expand our reseller and distribution community. Let’s find out how we can work together.</p>
-
-                <p>We need the following information: </p>
-
-                <ul className="list-unstyled">
-                  <li>How did you hear about Das Keyboard?</li>
-                  <li>What is your business (please provide your website)?</li>
-                  <li>In which product are you interested?</li>
-                </ul>
-
-                <p>After you <a href="https://daskeyboard.mojohelpdesk.com/login/create_request" target="_blank" title="Submit a request" rel="noreferrer">submit a request</a> with the above information we will get in touch.</p>
-
+                <h3 className="sidebar-title mt-5">{say('become-a-reseller_subtitle')}</h3>
+                <div dangerouslySetInnerHTML={$html('become-a-reseller_content')} />
               </div>
             </div>
           </div>

@@ -2,12 +2,16 @@
 import Link from "@components/core/Link"
 import PageTitle from "@components/core/PageTitle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import useTrans, { getTrans } from "lang/useTrans"
+import { GetStaticPropsContext } from "next"
+import { useRouter } from "next/router"
 import type { VFC } from "react"
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const { say } = getTrans(locale)
   return {
     props: {
-      title: "Contact Us",
+      title: say('contact-us'),
       bodyId: 'contact',
       bodyClass: 'single-content',
     },
@@ -15,10 +19,12 @@ export async function getStaticProps() {
 }
 
 const ContactUs: VFC<{}> = () => {
+  const { say, $html } = useTrans()
+  const { locale } = useRouter()
   return (
     <>
       <PageTitle
-        title="Contact Us"
+        title={say('contact-us')}
         type='category'
       />
       <main className="content-container">
@@ -26,42 +32,41 @@ const ContactUs: VFC<{}> = () => {
           <div className="container-boxed">
             <div className="row">
               <div id="contentContainer" className="col-md-9">
-                <h2>Connect with Das Keyboard</h2>
-                <p>Technical Support: For support questions visit our <a className="fw-bold" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" title="Help Center" rel="noreferrer">Help Center</a>.</p>
+                <h2>{say('connect_with')}</h2>
+                <p>{say('send-mail')}: <span dangerouslySetInnerHTML={$html('send-mail_content')}></span></p>
                 <div className="row">
                   <div className="col">
-                    <h3>For Inquiries About</h3>
+                    <h3>{say('contact-us_Inquiries_about_title')}</h3>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-12 col-sm-6 col-lg-4">
-                    <p className="mb-2">Sales Information</p>
-                    <a href="https://daskeyboard.mojohelpdesk.com/login/create_request" target="_blank" title="Send us a Request" rel="noreferrer">Send us a request</a>
-                    <p className="mt-4 mb-2">The story behind Das Keyboard</p>
-                    <Link href="/company-information/our-story/" title="Get the full story">Get the full story</Link>
+                    <p className="mb-2">{say('contact-us_Inquiries_about_content_1')}</p>
+                    <a href="https://daskeyboard.mojohelpdesk.com/login/create_request" target="_blank" title={say('contact-us_Inquiries_about_link_1')} rel="noreferrer">{say('contact-us_Inquiries_about_link_1')}</a>
+                    <p className="mt-4 mb-2">{say('contact-us_Inquiries_about_content_5')}</p>
+                    <Link href="/company-information/our-story/" title={say('contact-us_Inquiries_about_link_5')}>{say('contact-us_Inquiries_about_link_5')}</Link>
                   </div>
                   <div className="col-12 col-sm-6 col-lg-4">
-                    <p className="mt-4 mt-sm-0 mb-2">Reseller inquiries</p>
-                    <Link href="/company-information/become-a-reseller/" title="Become a reseller">Become a reseller</Link>
-                    <p className="mt-4 mb-2">For everything else</p>
-                    <a href="https://daskeyboard.mojohelpdesk.com/login/create_request" target="_blank" title="Create a request" rel="noreferrer">Create a request</a>
+                    <p className="mt-4 mt-sm-0 mb-2">{say('contact-us_Inquiries_about_content_2')}</p>
+                    <Link href="/company-information/become-a-reseller/" title={say('contact-us_Inquiries_about_link_2')}>{say('contact-us_Inquiries_about_link_2')}</Link>
+                    <p className="mt-4 mb-2">{say('contact-us_Inquiries_about_content_8')}</p>
+                    <a href="https://daskeyboard.mojohelpdesk.com/login/create_request" target="_blank" title={say('contact-us_Inquiries_about_link_8')} rel="noreferrer">{say('contact-us_Inquiries_about_link_8')}</a>
                   </div>
                   <div className="col-12 col-lg-4">
-                    <p className="mt-4 mt-lg-0 mb-2">Education discounts</p>
-                    <Link href="/company-information/education-program" title="Learn about our education program">Learn about our education program</Link>
-                    <p className="mt-4 mb-2">Media contact</p>
-                    <a href="https://daskeyboard.mojohelpdesk.com/" target="_blank" title="Contact our media department" rel="noreferrer">Contact our media department</a> - <Link href="/company-information/press-kit/" title="Get the press kit">Get the press kit</Link>
+                    <p className="mt-4 mt-lg-0 mb-2">{say('contact-us_Inquiries_about_content_3')}</p>
+                    <Link href="/company-information/education-program" title={say('contact-us_Inquiries_about_link_3')}>{say('contact-us_Inquiries_about_link_3')}</Link>
+                    <p className="mt-4 mb-2">{say('contact-us_Inquiries_about_content_6')}</p>
+                    <a href="https://daskeyboard.mojohelpdesk.com/" target="_blank" title={say('contact-us_Inquiries_about_link_6')} rel="noreferrer">{say('contact-us_Inquiries_about_link_6')}</a> - <Link href="/company-information/press-kit/" title={say('contact-us_Inquiries_about_link_7')}>{say('contact-us_Inquiries_about_link_7')}</Link>
                   </div>
                   <div className="row">
                     <div className="col">
-                      <h3>Contact Us</h3>
+                      <h3>{say('head_office')}</h3>
                     </div>
                   </div>
-                  <div className="row mt-5">
+                  <div className="row">
                     <div className="col">
                       <div className="alert alert-danger" role="alert">
-                        <p>Our call center operations are under reduced staffing and responses to Support issues may take 2-3 business days.</p>
-                        <p>To receive a response in 1 business day please <a href="https://daskeyboard.mojohelpdesk.com/login/create_request#/ticket-form-selection" target="_blank" title="Submit A Ticket" rel="noreferrer">Submit A Ticket</a></p>
+                        <p dangerouslySetInnerHTML={$html('temporary_redirection')} />
                       </div>
                     </div>
                   </div>
@@ -79,20 +84,30 @@ const ContactUs: VFC<{}> = () => {
               </div>
               <div id="sidebar" className="col-md-3 mt-5">
                 <div className="sidebar-content">
-                  <h3 className="sidebar-title">Contact Info</h3>
-                  <FontAwesomeIcon icon='location-dot' className="text-red me-2" />
-                  <span className="oswald fw-normal">Address</span>
-                  <p className="small mt-2">
-                    9600 Great Hills Trail, Suite 150W <br />
-                    Austin, Texas 78759 <br />
-                    USA
-                  </p>
-                  <FontAwesomeIcon icon='phone' className="text-red me-2" />
-                  <span className="oswald fw-normal">Phone</span>
-                  <p className="small mt-2">
-                    +1 512 346 0360 – GMT-6 <br />
-                    Fax: 512.233.5335
-                  </p>
+                  <h3 className="sidebar-title">{say('contact_info')}</h3>
+                  {locale === 'en' ? (
+                    <>
+                      <FontAwesomeIcon icon='location-dot' className="text-red me-2" />
+                      <span className="oswald fw-normal">Address</span>
+                      <p className="small mt-2">
+                        9600 Great Hills Trail, Suite 150W <br />
+                        Austin, Texas 78759 <br />
+                        USA
+                      </p>
+                      <FontAwesomeIcon icon='phone' className="text-red me-2" />
+                      <span className="oswald fw-normal">Phone</span>
+                      <p className="small mt-2">
+                        +1 512 346 0360 – GMT-6 <br />
+                        Fax: 512.233.5335
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <FontAwesomeIcon icon='envelope' className="text-red me-2" />
+                      <span className="oswald fw-normal">Email:</span>
+                      <p className="small mt-2"><a href="mailto:info@daskeyboard.com">info@daskeyboard.com</a></p>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

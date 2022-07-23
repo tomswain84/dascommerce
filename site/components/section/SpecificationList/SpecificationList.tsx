@@ -17,7 +17,7 @@ const FeatureColumn: VFC<FeatureColumnProps> = ({ title, items, type: _type, but
   return (
     <>
       {title && (
-        <h3 className="text-red mb-2">{title}</h3>
+        <h3 className="text-red mb-2" dangerouslySetInnerHTML={{ __html: title }} />
       )}
       {type === 'list' && items && (
         <ul className={`list-unstyled ${!title ? 'mt-4' : ''}`}>
@@ -28,8 +28,8 @@ const FeatureColumn: VFC<FeatureColumnProps> = ({ title, items, type: _type, but
       )}
       {type === 'button' && button && (
         <>
-          <a className="btn btn-outline-primary" href={button.href} target={button.blank ? '_blank' : '_self'} title={button.text} rel="noreferrer">{button.text}</a>
-          {button.description && <p>{button.description}</p>}
+          <a className="btn btn-outline-primary" href={button.href} target={button.blank ? '_blank' : '_self'} rel="noreferrer" dangerouslySetInnerHTML={{ __html: button.text }} />
+          {button.description && <p dangerouslySetInnerHTML={{ __html: button.description }} />}
         </>
       )}
     </>
@@ -57,7 +57,7 @@ const SpecificationList: VFC<FeatureListProps> = ({ id: sectionId, background, r
           <div className={`row ${index && row.type === 'heading' ? 'mt-5' : ''}`} key={index}>
             {row.type === 'heading' && (
               <div className="col">
-                <h2>{row.heading}</h2>
+                <h2 dangerouslySetInnerHTML={{ __html: row.heading }} />
               </div>
             )}
             {row.type === 'feature' && (

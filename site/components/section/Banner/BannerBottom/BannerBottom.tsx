@@ -14,10 +14,11 @@ const BannerBottom: VFC<BannerProps> = ({ content, image, containerPadding, cont
             <figure className={`heading text-${textAlign || 'center'}`}>
               <figcaption>
                 {titleExtra ? (
-                  <h1 className="mb-5">
-                    <small dangerouslySetInnerHTML={{ __html: title }} />
+                  <h1 className="mb-5" dangerouslySetInnerHTML={{__html: `
+                    <small>${title}</small>
                     <br />
-                    {titleExtra}
+                    ${titleExtra}
+                  `}}>
                   </h1>
                 ) : titleSmall ? (
                   <h2 dangerouslySetInnerHTML={{ __html: title }} className="mb-4" />

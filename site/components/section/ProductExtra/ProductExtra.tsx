@@ -19,12 +19,12 @@ const ProductExtra: VFC<Props> = ({ heading, background, extras }) => {
       <div className="container">
         <div className="row">
           <div className="col-12 pb-5">
-            <h2 className="text-center">{heading}</h2>
+            <h2 className="text-center" dangerouslySetInnerHTML={{ __html: heading }} />
           </div>
           {extras.map((extra, index) => (
             <div className="col-12 col-lg-6" key={index}>
               <img className="img-fluid rounded border w-100" src={extra.image.src} alt={extra.title} />
-              <h3 className="text-red mt-4">{extra.title}</h3>
+              <h3 className="text-red mt-4" dangerouslySetInnerHTML={{ __html: extra.title }} />
               <p dangerouslySetInnerHTML={{ __html: extra.description }} />
             </div>
           ))}

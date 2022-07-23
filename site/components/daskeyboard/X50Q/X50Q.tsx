@@ -13,8 +13,10 @@ import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
 import AppletDashboard from "@components/product/AppletDashboard"
 import { Product } from "@interfaces/product"
+import useTrans from "lang/useTrans"
 
 const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
+  const { say, $html } = useTrans()
   return (
     <>
       <ProductHero
@@ -30,8 +32,8 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
       />
 
       <AppletDashboard
-        title="Win at work and win in the endgame"
-        description="A smart RGB keyboard for those that want to win at work, and at gaming. Q Software transforms the X50Q into an essential productivity tool that streamlines information gathering, keeping professionals focused and operating at the highest level of concentration. Instead of relying on alerts from different devices, the Das Keyboard X50Q displays them directly on its RGB keys. For example, if your website is down, you have been assigned a new task on Basecamp or Trello, or if your favorite Twitch user is online, the Das Keyboard X50Q will display a notification by changing the color of its keys. Built-in features include macros to play recorded keystroke sequences and multiple built-in RGB profiles."
+        title={say('x50_animation_title-new')}
+        description={say('x50description')}
         image={{
           src: "/images/product-images/product-details/x50q/dkx50q_intro.png"
         }}
@@ -40,7 +42,7 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
       <ProductVideo
         theme="light"
         title='DAS KEYBOARD Q SOFWARE'
-        description='MAKE YOUR KEYBOARD SMART'
+        description={say("Q-Software-configuration")}
         video={{
           src: 'https://www.youtube.com/embed/9lDXlrVwkEU'
         }}
@@ -64,17 +66,17 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           <div className="row">
             <div className="col-lg-8 offset-lg-2 text-center">
               <h2 className="text-white my-5">
-                <span className="animated-cursor cursor-light">When Winning is Everything</span>
+                <span className="animated-cursor cursor-light" dangerouslySetInnerHTML={$html('X50Q-dashboard')} />
               </h2>
-              <p>The most advanced technology for high performance gaming. Your weapon of choice. The X50Q will make you better at gaming and give you an adrenaline rush when your keyboard lights up.</p>
+              <p dangerouslySetInnerHTML={$html('marketplace-subtitle-new2')} />
             </div>
           </div>
         </div>
       </section>
 
       <ProductPerformance
-        title="Performance Meets Design"
-        description="Whether on your desk at work or at home, the X50Q looks stunning and delivers fast precision keystrokes that help you get the job done."
+        title={say('x50-section-topanel-title')}
+        description={say('x50-section-topanel-text')}
         image={{
           src: '/images/product-images/product-details/x50q/x50q-performance-meet-design.jpeg'
         }}
@@ -89,13 +91,13 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
         rows={[
           {
             type: 'heading',
-            heading: 'Intense RGB colors in broad daylight'
+            heading: say('rgb-lighting-title')
           },
           {
             type: 'content',
-            heading: '16.8 MILLION ULTRA BRIGHT COLORS',
-            title: 'AT WORK OR IN YOUR CAVE, THE X50Q RGB SHINES EVERYWHERE',
-            description: 'Due to its enhanced brightness mode(*) and its modern switch design, the X50Q delivers intense colors that are not washed out by daylight - a problem that most RGB keyboards suffer from.',
+            heading: say('rgb-lighting-subtitle'),
+            title: say('rgb-lighting-subtitle-2'),
+            description: say('rgb-lighting-paragraph'),
             image: {
               src: '/images/gama-zulu-color-switch.jpg',
               position: 'left'
@@ -103,13 +105,13 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'heading',
-            heading: 'Premium Materials Throughout'
+            heading: say('x50-durable-premium-title')
           },
           {
             type: 'content',
-            heading: 'FRICTION FREE',
-            title: 'SOFT TOUCH PALM REST',
-            description: 'Das Keyboard X50Q includes a frictionless detachable palm rest that helps typists rest their palms comfortably.',
+            heading: say('x50-soft-touch-palm-rest-subtitle'),
+            title: say('x50-soft-touch-palm-rest-title'),
+            description: say('x50-soft-touch-palm-rest-paragraph'),
             image: {
               position: 'left',
               src: '/images/product-images/product-details/x50q/soft-touch-palm-blurred.jpg'
@@ -117,9 +119,9 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'content',
-            heading: 'BUILT TO LAST FOR YEARS',
-            title: 'DURABLE ALUMINUM PANEL',
-            description: 'Das Keyboard X50Q sports a slick anodized black aluminum top panel. Its hex-screws allow users to easily customize it.(*)',
+            heading: say('x50-aluminum-top-panel-subtitle'),
+            title: say('x50-aluminum-top-panel-title'),
+            description: say('x50-aluminum-top-panel-paragraph'),
             descriptionHint: '(*) Available in the future',
             image: {
               position: 'right',
@@ -128,9 +130,9 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'content',
-            heading: 'ONE-CLICK ACTION',
-            title: 'MACRO FUNCTIONS',
-            description: 'Allows you to program customizable keys to perform a series of actions with one click. For example, you can set a specific pattern of keystrokes to create a specific sequence that helps you attack a space alien or to mine for materials. They can also come in handy for combinations without having to try to remember what all of the hotkeys are.',
+            heading: say('macro-section-subtitle'),
+            title: say('macro-section-title'),
+            description: say('macro-section-content'),
             image: {
               position: 'left',
               src: '/images/product-images/product-details/x50q/macro.png'
@@ -138,9 +140,9 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'content',
-            heading: 'PREVENT INTERRUPTIONS',
-            title: 'GAMING MODE',
-            description: 'The X50Q has a toggle that locks the Windows key from triggering the start menu, preventing the game from being pushed to the background and enables the Function keys and the Numpad keys to be used for macro functions.',
+            heading: say('gaming-section-subtitle'),
+            title: say('gaming-section-title'),
+            description: say('gaming-section-content'),
             image: {
               position: 'right',
               src: '/images/product-images/product-details/x50q/gaming-mode.png'
@@ -148,9 +150,9 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'content',
-            heading: 'SIMPLE CONTROL AT YOUR FINGERTIPS',
-            title: 'QUICK ACCESS MEDIA CONTROLS',
-            description: 'Das Keyboard X50Q provides direct controls to quickly set sound level, play or pause songs, and adjust RGB brightness while gaming or working.',
+            heading: say('x50-quick-audio-access-subtitle'),
+            title: say('x50-quick-audio-access-title'),
+            description: say('x50-quick-audio-access-paragraph'),
             image: {
               position: 'left',
               src: '/images/product-images/product-details/x50q/das-keyboard-x50-audio-control.jpg'
@@ -158,9 +160,9 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'content',
-            heading: 'REGISTER ALL KEY PRESSES',
-            title: 'FULL N-KEY ROLLOVER',
-            description: 'With 100% anti-ghosting with full n-key rollover, no matter how many keys you press simultaneously, all of them will be reliably registered. Whether you type super fast or your gameplay finger dexterity is amazing, the X50Q NKRO is able to deliver the spanking your opponent deserve.',
+            heading: say('x50-n-key-subtitle'),
+            title: say('x50-n-key-title'),
+            description: say('x50-n-key-paragraph'),
             image: {
               position: 'right',
               src: '/images/product-images/product-details/x50q/x50-rgb-mechanical-keyboard-side-view-cropped.jpg'
@@ -168,9 +170,9 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'content',
-            heading: 'PROTECT THE ENVIRONMENT',
-            title: 'ENERGY-SAVING SLEEP FUNCTION',
-            description: 'A small details that makes a big difference: The X50Q has a function control to put the computer to sleep instantly. It saves energy and helps the environment.',
+            heading: say('x50-energy-subtitle'),
+            title: say('x50-energy-title'),
+            description: say('x50-energy-paragraph'),
             image: {
               position: 'left',
               src: '/images/product-images/product-details/x50q/earth.jpg'
@@ -178,9 +180,9 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'content',
-            heading: 'KEEP YOUR DESK TIDY',
-            title: 'EXTRA LONG BRAIDED CABLE',
-            description: 'The X50Q sports an extra-long 2-meter (6.5ft) braided USB cable that goes through desk grommets to keep the desk clean.',
+            heading: say('x50-long-cable-subtitle'),
+            title: say('x50-long-cable-title'),
+            description: say('x50-long-cable-paragraph'),
             image: {
               position: 'center',
               src: '/images/product-images/product-details/x50q/long-dog-with-long-cable.png',
@@ -188,12 +190,18 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'switch',
+            heading: say('gzs-section-subtitle'),
+            title: say('gzs-section-title'),
+            description: say('x50-switches-paragraph')
           },
           {
             type: 'content',
-            heading: 'KEYPRESS PRECISION',
-            title: 'WASD KEYCAPS INCLUDED',
-            description: 'Accurate key presses are mandatory. The included gaming textured WASD keycap upgrade kit will give you a huge tactical advantage. Precision and style on your path to total domination. Key puller included as well.',
+            heading: say('key_press_precision'),
+            title: say('x50-WASD-keycaps-title'),
+            description: `
+              ${say('x50-WASD-keycaps-paragraph')}
+              ${say('x50-WASD-keycaps-subparagraph')}
+            `,
             image: {
               position: 'right',
               src: '/images/product-images/product-details/x50q/wasd-shapes-rgb.png',
@@ -208,52 +216,53 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
         rows={[
           {
             type: 'heading',
-            heading: 'SPECIFICATIONS'
+            heading: say('x50-specifications-title')
           },
           {
             type: 'feature',
             columns: [
               [
                 {
-                  title: 'PRODUCT INFORMATION',
+                  title: say('x50-specifications-subtitle-1'),
                   items: [
-                    '<strong>Backlighting</strong>: RGB',
-                    '<strong>Connection Type</strong>: USB 2.0',
-                    '<strong>Keycap Material</strong>: ABS',
-                    '<strong>Aluminum top panel</strong>: Yes',
-                    '<strong>USB Ports (Built-in)</strong>: No',
-                    '<strong>Dedicated Media Controls</strong>: Volume Knob, Play/Pause, Track Forward/Backward',
-                    '<strong>Easy Access Media Controls</strong>: Yes',
-                    '<strong>Firmware Updatable</strong>: Yes',
+                    say('x50-specifications-1'),
+                    say('x50-specifications-2'),
+                    say('x50-specifications-3'),
+                    say('x50-specifications-4'),
+                    say('x50-specifications-5'),
+                    say('x50-specifications-6'),
+                    say('x50-specifications-7'),
+                    say('x50-specifications-8'),
+                    say('x50-specifications-9'),
+                    say('x50-specifications-10'),
                   ]
                 },
                 {
-                  title: 'SYSTEM REQUIREMENTS',
+                  title: say('x50-specifications-subtitle-2'),
                   items: [
-                    'Windows 10',
-                    'One 2.0 USB port',
-                    'Internet connection for software download',
-                    'This keyboard is compatible with Windows only.',
+                    say('x50-specifications-11'),
+                    say('x50-specifications-12'),
+                    say('x50-specifications-13'),
                   ]
                 },
                 {
-                  title: 'WARRANTY INFORMATION',
+                  title: say('x50-specifications-subtitle-3'),
                   items: [
-                    '1-Year Limited Hardware Warranty'
+                    say('x50-specifications-14'),
                   ]
                 },
                 {
-                  title: 'PACKAGE CONTENT',
+                  title: say('x50-specifications-subtitle-4'),
                   items: [
-                    'Keyboard',
-                    'Palm rest',
-                    'WASD two-tone keycaps',
-                    'Keycap puller',
-                    'User documentation',
+                    say('x50-specifications-15'),
+                    say('x50-specifications-16'),
+                    say('x50-specifications-17'),
+                    say('x50-specifications-18'),
+                    say('x50-specifications-19'),
                   ]
                 },
                 {
-                  title: 'USER MANUAL',
+                  title: say('user_manual'),
                   type: 'button',
                   button: {
                     text: 'View the X50Q User Manual',
@@ -264,42 +273,42 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
               ],
               [
                 {
-                  title: 'PHYSICAL SPECIFICATIONS',
+                  title: say('x50-specifications-subtitle-5'),
                   items: [
-                    '<strong>Height</strong>: 1.28 in (3.2 cm)',
-                    '<strong>Width</strong>: 6.63 in (16.8 cm)',
-                    '<strong>Length</strong>: 18 in (45.7 cm)',
-                    '<strong>Weight</strong>: 3.5 lbs (1.55 kg)',
-                    '<strong>Cable</strong>: 6.5 ft (2 m)',
+                    say('x50-specifications-20'),
+                    say('x50-specifications-21'),
+                    say('x50-specifications-22'),
+                    say('x50-specifications-23'),
+                    say('x50-specifications-24'),
                   ]
                 },
                 {
-                  title: 'GAMMA ZULU SWITCHES MADE BY OMRON FOR DAS KEYBOARD',
+                  title: say('x50-specifications-subtitle-6'),
                   items: [
-                    '<strong>Feel</strong>: Soft tactile',
-                    '<strong>Gold Cross Point Contacts</strong>: 2',
-                    '<strong>Durability</strong>: 100 million actuations',
-                    '<strong>Actuation distance</strong>: 0.06 in (1.5 mm)',
-                    '<strong>Actuation force</strong>: 1.6 oz (45 g)',
-                    '<strong>Total travel distance</strong>: 0.14 in (3.5 mm)',
+                    say('x50-specifications-25'),
+                    say('x50-specifications-26'),
+                    say('x50-specifications-27'),
+                    say('x50-specifications-28'),
+                    say('x50-specifications-29'),
+                    say('x50-specifications-30'),
                   ]
                 },
                 {
-                  title: 'AVAILABLE LAYOUTS',
+                  title: say('x50-specifications-subtitle-7'),
                   items: [
-                    '104 US',
-                    '105 UK',
-                    '105 DE',
-                    '105 NO',
+                    say('x50-specifications-31'),
+                    say('x50-specifications-32'),
+                    say('x50-specifications-33'),
+                    say('x50-specifications-34'),
                   ]
                 },
                 {
-                  title: 'SOFTWARE',
+                  title: say('x50-specifications-subtitle-8'),
                   type: 'button',
                   button: {
-                    text: 'Download Das Keyboard Q Software',
+                    text: say('download-daskeyboard-software'),
                     href: 'https://www.daskeyboard.io/',
-                    description: 'Additional language keycaps are available as an add-on. (See accessories below.)',
+                    description: say('x50-specifications-35'),
                   }
                 }
               ]
@@ -307,24 +316,24 @@ const X50Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'heading',
-            heading: 'ACCESSORIES'
+            heading: say('x50-accessories-title')
           },
           {
             type: 'feature',
             columns: [
               [
                 {
-                  title: 'TRANSLUCENT KEYCAP SET',
+                  title: say('x50-accessories-title-1'),
                   items: [
-                    'Without inscriptions for 104 and 105 key layouts.',
-                    'With inscriptions for US, UK, German, French, Nordic, Spanish, and Russian.',
-                    'With inscriptions for Dvorak Layout',
+                    say('x50-accessories-1'),
+                    say('x50-accessories-2'),
+                    say('x50-accessories-3'),
                   ]
                 },
                 {
-                  title: 'BLACK, PROFESSIONAL FONT KEYCAP SET',
+                  title: say('x50-accessories-title-4'),
                   items: [
-                    'With inscriptions, available only in US'
+                    say('x50-accessories-4'),
                   ]
                 }
               ]

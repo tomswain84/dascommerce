@@ -16,6 +16,7 @@ import SpecificationList from "@components/section/SpecificationList"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 import { Product } from "@interfaces/product"
+import useTrans from "lang/useTrans"
 
 export async function getStaticProps() {
   return {
@@ -28,6 +29,7 @@ export async function getStaticProps() {
 }
 
 const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
+  const { say, $html, formatPrice } = useTrans()
   return (
     <>
       <ProductHero
@@ -42,8 +44,8 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
       />
 
       <AppletDashboard
-        title="THE INFORMATION YOU NEED - ON YOUR KEYBOARD"
-        description="The Das Keyboard 4Q is the smart RGB Cherry MX version of the iconic industry-standard Das Keyboard 4 Professional. It is the ultimate productivity tool that keeps programmers focused on writing software and operating at the highest level of concentration. No more unwanted interruptions. Instead of relying on snooze-able, momentary alerts from different devices, the Das Keyboard 4Q ambiently tracks the most important information directly on its RGB keys. Users can configure it for their needs. For example, if a website is down or you have been assigned a new task, or if the software build fails, the Das Keyboard 4Q will change color and let you know."
+        title={say('4q_animation_title')}
+        description={say('4Qdescription')}
         image={{
           src: "/images/product-images/product-details/4q/dk4q_intro.jpg"
         }}
@@ -52,7 +54,7 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
       <ProductVideo
         theme="light"
         title="DAS KEYBOARD Q SOFTWARE"
-        description="MAKE YOUR KEYBOARD SMART"
+        description={say('Q-Software-configuration')}
         video={{
           src: 'https://www.youtube.com/embed/9lDXlrVwkEU'
         }}
@@ -69,6 +71,7 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
       <AppletsCTA />
 
       <ProductCompatibility
+        title={say('das-keyboard-4q-oses')}
         image={{
           src: '/images/product-images/product-details/4q/4q_compatibility.jpg',
           alt: '4Q Compatibility'
@@ -99,9 +102,9 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
         rows={[
           {
             type: 'content',
-            title: 'DURABLE ALUMINUM PANEL',
-            heading: 'BUILT TO LAST FOR YEARS',
-            description: 'Das Keyboard 4Q sports an anodized black aluminum top panel. Made with first-class electronics this top panel will be serving you for years to come.',
+            title: say('4q-aluminum-top-panel-title'),
+            heading: say('4q-aluminum-top-panel-subtitle'),
+            description: say('4q-aluminum-top-panel-paragraph'),
             image: {
               position: 'left',
               src: '/images/product-images/product-details/4q/dk4q-aluminum-top-panel.png',
@@ -109,9 +112,9 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
           },
           {
             type: 'content',
-            title: 'KEEP YOUR GAMING SPACE CLEAN',
-            heading: 'EXTRA LONG BRAIDED CABLE',
-            description: 'The 4Q sports a 2-meter (6.5ft) braided USB cable that goes through desk grommets to keep the desk clean.',
+            heading: say('4q-long-cable-subtitle'),
+            title: say('4q-long-cable-title'),
+            description: say('4q-long-cable-text'),
             image: {
               position: 'center',
               src: '/images/product-images/product-details/4q/long-dog-with-long-cable.png',
@@ -119,9 +122,9 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
           },
           {
             type: 'content',
-            title: 'USB CONVENIENCE AT YOUR FINGERTIPS',
-            heading: 'TWO-PORT USB HUB',
-            description: 'Das Keyboard 4Q has a convenient two-port USB Hub for transferring files and connecting devices. No more reaching to the back of your computer.',
+            title: say('4q-two-port-usb-subtitle'),
+            heading: say('4q-two-port-usb-title'),
+            description: say('4q-two-port-usb-text'),
             image: {
               position: 'left',
               src: '/images/product-images/product-details/4q/dk4q-usb-ports.jpg',
@@ -129,9 +132,9 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
           },
           {
             type: 'content',
-            title: 'QUICK ACCESS FOR AUDIO PLAYBACK AND VOLUME',
-            heading: 'DEDICATED MEDIA CONTROLS',
-            description: 'Direct controls to quickly set sound level, play or pause songs, and adjust volume while gaming or working.',
+            title: say('4q-dedicated-media-controls-subtitle'),
+            heading: say('4q-dedicated-media-controls-title'),
+            description: say('4q-dedicated-media-controls-text'),
             image: {
               position: 'right',
               src: '/images/product-images/product-details/4q/dk4q-media-controls.jpg',
@@ -146,7 +149,7 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
         rows={[
           {
             type: 'heading',
-            heading: 'SPECIFICATIONS'
+            heading: say('4q-specifications-title'),
           },
           {
             type: 'feature',
@@ -154,46 +157,46 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
               [
                 {
                   type: 'list',
-                  title: 'PRODUCT INFORMATION',
+                  title: say('4q-specifications-subtitle-1'),
                   items: [
-                    'Lasered keycaps US, and ABS lased ROW',
-                    'Extra long 6.5ft (201cm) USB cable with single type A USB connector',
-                    'NKRO over USB for faster gaming, programming, or anything that makes you a formidable opponent in work or play',
-                    'Two-port USB 2.0 hub',
-                    'Anodized aluminum top panel',
-                    'Firmware updatable',
-                    'Cherry MX RGB electronics',
-                    'Footbar to raise keyboard also functions as a ruler (you’ll thank us later)',
+                    say('4q-specifications-1'),
+                    say('4q-specifications-2'),
+                    say('4q-specifications-3'),
+                    say('4q-specifications-4'),
+                    say('4q-specifications-5'),
+                    say('4q-specifications-6'),
+                    say('4q-specifications-7'),
+                    say('4q-specifications-8'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'SYSTEM REQUIREMENTS',
+                  title: say('4q-specifications-subtitle-2'),
                   items: [
-                    'Windows 10 or Ubuntu',
-                    'One 2.0 USB port (Optional 3.0 USB port for Enhanced Brightness Mode), Optional 2nd 2.0 USB port hub',
-                    'Internet connection for software and cloud features',
+                    say('4q-specifications-9'),
+                    say('4q-specifications-10'),
+                    say('4q-specifications-11'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'WARRANTY INFORMATION',
+                  title: say('4q-specifications-subtitle-3'),
                   items: [
-                    '1-Year Limited Hardware Warranty',
+                    say('4q-specifications-12'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'PACKAGE CONTENT',
+                  title: say('4q-specifications-subtitle-4'),
                   items: [
-                    'Das Keyboard 4Q',
-                    'Footbar ruler',
-                    'Getting started guide',
+                    say('4q-specifications-13'),
+                    say('4q-specifications-14'),
+                    say('4q-specifications-15'),
                   ]
                 },
                 {
                   type: 'button',
-                  title: 'USER MANUAL',
+                  title: say('user_manual'),
                   button: {
                     text: 'View the 4Q User Manual',
                     href: 'https://docs.google.com/document/d/113RqlXeGU22Wx8xhvaGl6w--tYiXIrimflQeGH7x9EQ/edit',
@@ -203,44 +206,44 @@ const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRef
               [
                 {
                   type: 'list',
-                  title: 'PHYSICAL SPECIFICATIONS',
+                  title: say('4q-specifications-subtitle-5'),
                   items: [
-                    '<strong>Height</strong>: 0.80 in (2 cm)',
-                    '<strong>Width</strong>: 6.8 in (17.3 cm)',
-                    '<strong>Length</strong>: 18 in (45.7 cm)',
-                    '<strong>Weight</strong>: 2.9 lbs (1.3 kg)',
-                    '<strong>Cable</strong>: 6.5 ft (2m)',
+                    say('4q-specifications-16'),
+                    say('4q-specifications-17'),
+                    say('4q-specifications-18'),
+                    say('4q-specifications-19'),
+                    say('4q-specifications-20'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'CHERRY MX RGB SWITCHES',
+                  title: say('4q-specifications-subtitle-6'),
                   items: [
-                    '<strong>Gold Cross Point Contacts</strong>: 2',
-                    '<strong>Lifetime</strong>: 50 million actuations',
-                    '<strong>Total Travel Distance</strong>: 4mm',
-                    '<strong>Pre-travel Distance</strong>: 2mm',
-                    '<strong>Cherry MX Brown',
-                    '<strong>Feel</strong>: Soft tactile',
-                    '<strong>Actuation force</strong>: 45g',
-                    '<strong>Tactile Force</strong>: 55g',
+                    say('4q-specifications-21'),
+                    say('4q-specifications-22'),
+                    say('4q-specifications-23'),
+                    say('4q-specifications-24'),
+                    say('4q-specifications-25'),
+                    say('4q-specifications-25-1'),
+                    say('4q-specifications-25-2'),
+                    say('4q-specifications-25-3'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'AVAILABLE LAYOUTS',
+                  title: say('4q-specifications-subtitle-7'),
                   items: [
-                    '104 US',
-                    '105 UK',
-                    '105 DE',
-                    '105 NO',
+                    say('4q-specifications-27'),
+                    say('4q-specifications-28'),
+                    say('4q-specifications-29'),
+                    say('4q-specifications-30'),
                   ]
                 },
                 {
                   type: 'button',
-                  title: 'SOFTWARE',
+                  title: say('x50-specifications-subtitle-8'),
                   button: {
-                    text: 'Download DAS Keyboard Q Software',
+                    text: say('download-daskeyboard-software-5q'),
                     href: 'https://www.daskeyboard.io/'
                   }
                 }

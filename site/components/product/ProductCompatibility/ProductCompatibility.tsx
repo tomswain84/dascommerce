@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 interface Props {
@@ -14,7 +15,8 @@ interface Props {
   }
 }
 const ProductCompatibility: VFC<Props> = (props) => {
-  const title = props.title || 'Operating System Compatibility'
+  const { say } = useTrans()
+  const title = props.title || say('cross-platform-software')
   const compatible = props.compatible || { mac: true, windows: true, linux: true }
   return (
     <section id="compatibility" className="bg-white">
@@ -26,7 +28,7 @@ const ProductCompatibility: VFC<Props> = (props) => {
           <div className="col-md d-flex align-items-center justify-content-center">
             <div className="row text-center p-3 p-md-0">
               <div className="col-12 pb-5">
-                <h2>{title}</h2>
+                <h2 dangerouslySetInnerHTML={{ __html: title }} />
               </div>
               {compatible.mac && (
                 <div className="col">

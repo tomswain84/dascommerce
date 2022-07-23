@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Carousel from "@components/core/Carousel"
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 const ProductApplets: VFC<{}> = () => {
+  const { say, $html } = useTrans()
   const items: Array<{
     title: string
     description: string
@@ -11,22 +13,22 @@ const ProductApplets: VFC<{}> = () => {
   }> = [
       {
         title: 'CPU Usage',
-        description: 'Displays the percentage of CPU used in a bar graph',
+        description: say("cpu-usage-content"),
         image: '/images/applets/applet_icon-cpu_usage.jpg'
       },
       {
         title: 'RAM Usage',
-        description: 'Indicates the percentage of RAM used',
+        description: say("ram-usage-content"),
         image: '/images/applets/applet_icon-ram_usage.jpg'
       },
       {
         title: 'GPU Usage',
-        description: 'Display the percentage of GPU used',
+        description: say("gpu-usage-content"),
         image: '/images/applets/applet_icon-gpu_usage.jpg'
       },
       {
         title: 'MINI Meters',
-        description: 'Displays CPU, memory, load and GPU usage',
+        description: say("mini-meters-content"),
         image: '/images/applets/applet_icon-mini_meters.jpg'
       },
     ]
@@ -37,12 +39,9 @@ const ProductApplets: VFC<{}> = () => {
           <div className="col-12 col-lg-8">
             <figure className="heading mb-5">
               <figcaption>
-                <h2>
-                  <small>Q Applets</small>
-                  <br /><span className="animated-cursor cursor-dark">To Maximize Productivity</span>
-                </h2>
+                <h2 dangerouslySetInnerHTML={$html('q-applets-to-maximize-productivity')} />
               </figcaption>
-              <p>Everything from your GitHub repository status, to project management notifications from Asana or Trello to priority emails from your boss or your Mom. It will tell you if your website goes down or if an answer to your question is posted on Stack Overflow.</p>
+              <p dangerouslySetInnerHTML={$html('q-applets-to-maximize-productivity-content')} />
             </figure>
           </div>
         </div>
@@ -53,10 +52,10 @@ const ProductApplets: VFC<{}> = () => {
                 <figure className="card applets mx-3" key={index}>
                   <img src={item.image} className="card-img-top rounded" alt={item.title} />
                   <figcaption className="card-body">
-                    <h6 className="applet-title text-center my-3">{item.title}</h6>
+                    <h6 className="applet-title text-center my-3" dangerouslySetInnerHTML={{ __html: item.title }} />
                   </figcaption>
                   <div className="card-footer bg-white text-center border-0 p-0">
-                    <p className="small m-0">{item.description}</p>
+                    <p className="small m-0" dangerouslySetInnerHTML={{ __html: item.description }} />
                   </div>
                   {item.link && (
                     <a className="stretched-link" href="<?=$applet_url?>" title="<?=$applet_title?>"></a>

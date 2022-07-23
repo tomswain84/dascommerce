@@ -4,8 +4,29 @@ import Logo from '@components/core/Logo'
 import Menu from '@components/core/Menu'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from '../Link'
+import useTrans from 'lang/useTrans'
 
 const Header: VFC = () => {
+  const { say, $html } = useTrans()
+  const TopNav = () => (
+    <>
+      <li className="nav-item">
+        <a className="nav-link" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" rel="noreferrer" dangerouslySetInnerHTML={$html('support')} />
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="https://www.daskeyboard.com/blog" dangerouslySetInnerHTML={$html('blog')} />
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" href="/contact-us" html={say('contact-us')} />
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" href="/values" html={say('us')} />
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" href="#" html={say('wishlist')} />
+      </li>
+    </>
+  )
   return (
     <>
       <section id="navSecondary" className="bg-gray-dark">
@@ -194,41 +215,13 @@ const Header: VFC = () => {
                     </span>
                   </a>
                   <ul className="dropdown-menu dropdown-menu-start bg-gray-dark border-0 rounded-0" aria-labelledby="navbarDropdown">
-                    <li className="nav-item">
-                      <a className="nav-link" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" rel="noreferrer">Support</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="https://www.daskeyboard.com/blog">Blog</a>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="/contact-us">Contact Us</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="/values">About Us</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="#">Wishlist</Link>
-                    </li>
+                    <TopNav />
                   </ul>
                 </div>
 
                 <div className="collapse navbar-collapse d-none order-sm-2" id="navbarNavDropdown">
                   <ul className="navbar-nav ms-auto me-3 mt-3 mt-sm-0">
-                    <li className="nav-item">
-                      <a className="nav-link" href="https://daskeyboard.mojohelpdesk.com/" target="_blank" rel="noreferrer">Support</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="https://www.daskeyboard.com/blog">Blog</a>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="/contact-us">Contact Us</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="/values">About Us</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" href="#">Wishlist</Link>
-                    </li>
+                    <TopNav />
                   </ul>
                 </div>
               </nav>

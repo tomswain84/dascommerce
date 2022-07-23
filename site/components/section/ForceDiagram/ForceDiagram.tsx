@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 interface DiagramProps {
@@ -12,14 +13,15 @@ const Diagram: VFC<DiagramProps> = ({ title, image }) => {
   return (
     <figure>
       <img className="img-fluid" src={image.src} alt={image.alt || title} />
-      <h2 className="mt-3">{title}</h2>
+      <h2 className="mt-3" dangerouslySetInnerHTML={{ __html: title }} />
     </figure>
   )
 }
 const ForceDiagramBrown = () => {
+  const { say } = useTrans()
   return (
     <Diagram
-      title="Force diagram soft (Brown)"
+      title={say('force-diagram-soft-caption')}
       image={{
         src: '/images/diagram-switch-brown.png'
       }}

@@ -9,6 +9,7 @@ import Banner from "@components/section/Banner"
 import ProductApplets from "@components/section/ProductApplets"
 import ProductVideo from "@components/section/ProductVideo"
 import RelatedProducts from "@components/section/RelatedProducts"
+import useTrans from "lang/useTrans"
 import { VFC } from "react"
 
 const pageTitle = 'Das Keyboard Q software'
@@ -23,11 +24,16 @@ export async function getStaticProps() {
 }
 
 const QSoftware: VFC = () => {
+  const { say, $html } = useTrans()
   return (
     <>
       <PageTitle
         title={pageTitle}
-        type='page'
+        type='product'
+        product={{
+          canDownload: true,
+          downloadText: 'Q Software',
+        }}
       />
       {/* <AppletDashboard
         title="THE INFORMATION YOU NEED - ON YOUR KEYBOARD"
@@ -44,12 +50,8 @@ const QSoftware: VFC = () => {
       <Banner
         sectionPad
         content={{
-          title: `<span class="text-red">THE INFORMATION YOU NEED - ON YOUR KEYBOARD</span>`,
-          description: `
-            Das Keyboard Q Software turns an RGB keyboard into a smart keyboard whose keys change colors based on information trends such as weather, stock quotes, project statuses (e.g. Trello, Basecamp, etc.). 
-            <br /><br />
-            Customize your keyboard to meet your needs and stay informed on what is important to you.
-          `
+          title: `<span class="text-red">${say("5Q-future-of-keyboard")}</span>`,
+          description: say("das_keyboard_Q_description"),
         }}
         image={{
           position: 'bottom',
@@ -60,7 +62,7 @@ const QSoftware: VFC = () => {
       <ProductVideo
         theme="dark"
         title="DAS KEYBOARD Q SOFTWARE"
-        description="MAKE YOUR KEYBOARD SMART"
+        description={say('Q-Software-configuration')}
         video={{
           src: 'https://www.youtube.com/embed/9lDXlrVwkEU'
         }}

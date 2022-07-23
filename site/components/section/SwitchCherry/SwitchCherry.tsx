@@ -28,7 +28,7 @@ const SwitchCherry: VFC<Props> = ({ type, label, description, image, button }) =
           <figure className="heading">
             <figcaption>
               <h2 className="m-0 p-0">Cherry MX <span className={`text-${type == 'blue' ? 'blue' : 'red'}`}>{type} Switch</span>.</h2>
-              <p className="oswald">{label}</p>
+              <p className="oswald" dangerouslySetInnerHTML={{ __html: label }} />
             </figcaption>
             <p dangerouslySetInnerHTML={{ __html: description }} />
           </figure>

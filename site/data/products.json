@@ -6,13 +6,15 @@
     "slug": "x50q",
     "name": "X50Q",
     "collection": "DAS KEYBOARD",
+    "originalPrice": 199,
     "price": 115,
     "refurbished": {
       "price": 104.99,
       "handle": "das-keyboard-x50q-rgb-soft-tactile-smart-mechanical-gaming-keyboard-certified-refurbished"
     },
     "currency": "$",
-    "description": "A smart keyboard for professionals who also like gaming and winning. Fastest Gamma Zulu switches, gaming look and palm rest.",
+    "description": "x50description",
+    "descriptionSmall": "x50description_small",
     "tags": ["supercharged", "backlit", "smart-rgb", "aluminum", "pc"],
     "keystroke": "100M",
     "switch": "GAMMA ZULU",
@@ -60,7 +62,8 @@
       "handle": "5qs-smart-rgb-mechanical-keyboard-certified-refurbished"
     },
     "currency": "$",
-    "description": "The second generation of the 5Q keyboard, the only smart RGB mechanical keyboard with built-in RGB profiles and macros. Fastest mechanical switches with 100M lifecycle and ultra-bright RGB lighting.",
+    "description": "5QSdescription",
+    "descriptionSmall": "5QSdescription_small",
     "tags": [
       "supercharged",
       "backlit",
@@ -116,7 +119,8 @@
       "handle": "das-keyboard-4q-soft-tactile-mx-brown-rgb-smart-mechanical-keyboard-certified-refurbished"
     },
     "currency": "$",
-    "description": "The smart Das Keyboard with Cherry MX RGB switches. Iconic design, aluminum top panel, built-in USB hub.",
+    "description": "4Q_description",
+    "descriptionSmall": "4Q_description",
     "tags": [
       "supercharged",
       "backlit",
@@ -171,7 +175,8 @@
       "handle": "refurbished-das-keyboard-4-professional"
     },
     "currency": "$",
-    "description": "An expression of refinement and a premium typing experience, the DasKeyboard 4 Professional features dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
+    "description": "dk4pdescription",
+    "descriptionSmall": "dk4pdescription",
     "tags": ["supercharged", "aluminum", "pc", "linux", "bestsellers"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
@@ -247,7 +252,8 @@
       "handle": "refurbished-das-keyboard-4-ultimate"
     },
     "currency": "$",
-    "description": "For the expert typist desiring ultimate sleekness, the stealthy DasKeyboard 4 Ultimate has blank keys, dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
+    "description": "dk4udescription",
+    "descriptionSmall": "dk4udescription",
     "tags": ["supercharged", "minimalist", "aluminum", "pc", "linux"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
@@ -323,7 +329,8 @@
       "handle": "refurbished-das-keyboard-4-professional-for-mac-mechanical-keyboard"
     },
     "currency": "$",
-    "description": "Designed for Mac compatibility, this premium finish mechanical keyboard features dedicated media controls, a machined volume knob, a two-port 3.0 SuperSpeed hub, and an anodized aluminum top panel.",
+    "description": "dk4pmacdesc",
+    "descriptionSmall": "dk4pmacdesc",
     "tags": ["supercharged", "aluminum", "mac"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
@@ -398,7 +405,8 @@
       "handle": "das-keyboard-4c-tkl-mechanical-keyboard-certified-refurbished-new-sku"
     },
     "currency": "$",
-    "description": "Sleek tenkeyless design with PBT keycaps and Cherry MX Brown switches will help you type faster. Enjoy the pleasing ultra-modern design piece sitting at your workstation.",
+    "description": "dk4tenkeylesspdescription",
+    "descriptionSmall": "dk4tenkeylesspdescription",
     "tags": ["supercharged", "aluminum", "pc", "linux"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
@@ -472,7 +480,8 @@
       "handle": "refurbished-das-keyboard-prime-13-mechanical-keyboard"
     },
     "currency": "$",
-    "description": "Need simple, high quality minimalist design? The Das Keyboard Prime 13, with its white LED backlighting and anodized aluminum top panel, is for you.",
+    "description": "p13descrition",
+    "descriptionSmall": "p13descrition",
     "tags": [
       "supercharged",
       "minimalist",
@@ -564,7 +573,8 @@
       "handle": "refurbished-model-s-professional"
     },
     "currency": "$",
-    "description": "Need simple, high quality minimalist design? The Das Keyboard Prime 13, with its white LED backlighting and anodized aluminum top panel, is for you.",
+    "description": "model-s-professional_desc",
+    "descriptionSmall": "model-s-professional_desc",
     "tags": ["supercharged", "pc", "linux"],
     "keystroke": "50M",
     "switch": "CHERRY MX",
@@ -650,7 +660,8 @@
       "handle": "refurbished-professional-s-for-mac"
     },
     "currency": "$",
-    "description": "Need a Model S designed for Mac compatibility? The Das Keyboard Model S Professional for Mac, featuring a two-port USB 2.0 Hi-Speed hub and glossy black top panel, is for you.",
+    "description": "Model S Professional Mac desc",
+    "descriptionSmall": "Model S Professional Mac desc",
     "tags": ["supercharged", "mac", "bestsellers"],
     "keystroke": "50M",
     "switch": "CHERRY MX",

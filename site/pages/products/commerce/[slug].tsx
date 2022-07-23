@@ -13,19 +13,25 @@ import commerce from "@lib/api/commerce"
 import { ProductTypes } from "@commerce/types/product"
 import { convertProductId, convertProductVariantId } from "@lib/convert-ids"
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-  const paths: Array<{ params: { slug: string } }> = []
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async ({ locales }) => {
+  const paths: Array<{ params: { slug: string }, locale: string }> = []
   products.forEach(product => {
-    paths.push({
-      params: {
-        slug: product.slug,
+    if (locales) {
+      for (const locale of locales) {
+        paths.push({
+          params: {
+            slug: product.slug,
+          },
+          locale
+        })
+        paths.push({
+          params: {
+            slug: `refurbished-${product.slug}`,
+          },
+          locale
+        })
       }
-    })
-    paths.push({
-      params: {
-        slug: `refurbished-${product.slug}`,
-      }
-    })
+    }
   })
   return {
     paths,

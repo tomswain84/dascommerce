@@ -24,7 +24,7 @@ const ProductHeroBlack: VFC<Props> = ({ heading, title, image, isCherry, fill: _
                 <figure className="heading mt-lg-0">
                   <figcaption className="text-white">
                     <h1>
-                      <small>{heading}</small>
+                      <small dangerouslySetInnerHTML={{ __html: heading }} />
                       <br />
                       <span dangerouslySetInnerHTML={{ __html: title }} />
                     </h1>

@@ -11,8 +11,10 @@ import RelatedProducts from "@components/section/RelatedProducts"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import OversizedVolume from "@components/product/OversizedVolume"
 import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
+import useTrans from "lang/useTrans"
 
 const D4Professional: VFC = () => {
+  const { say, $html } = useTrans()
   return (
     <>
       <ProductHeroBlack
@@ -29,11 +31,11 @@ const D4Professional: VFC = () => {
           title: `<span className="text-red">DAS KEYBOARD 4 PROFESSIONAL MECHANICAL KEYBOARD</span>`,
           titleExtra: "AN EXPERIENCE LIKE NO OTHER",
           description: `
-            The Das Keyboard 4 mechanical keyboard experience is like no other. From the initial idea to every fine detail when crafting this machine, the experience we deliver to customers is what drives our team.
+            ${say('slogan_model-4-professional_content_1')}
             <br/><br/>
-            The combination of tactile feel, the psycho-acoustic experience and incredible craftsmanship all deliver an unmatched typing experience that only Das Keyboard 4 offers. With a Das Keyboard 4, you’ll type faster and longer. It feels so good, you won’t want to stop.
+            ${say('slogan_model-4-professional_content_1.1')}
             <br/><br/>
-            Das Keyboard 4 Professional mechanical keyboard is made of the highest-quality materials and robust construction you can feel. All of our keyboards are designed with high-performance, gold-plated mechanical key switches lasting up to 50 million keystrokes.
+            ${say('slogan_model-4-professional_content_1.2')}
           `
         }}
         containerPadding="section-pad"
@@ -63,11 +65,16 @@ const D4Professional: VFC = () => {
 
       <CherryMXSwitches />
 
-      <SwitchCherryBoth />
+      <SwitchCherryBoth
+        brown={{ description: say('slogan_model-4-professional_content_4') }}
+        blue={{ description: say('slogan_model-4-professional_content_3') }}
+      />
 
       <ForceDiagram type="both" />
 
-      <OversizedVolume />
+      <OversizedVolume
+        description={say('slogan_model-4-professional_content_5')}
+      />
 
       <Banner
         sectionId="usbHub"
@@ -85,11 +92,11 @@ const D4Professional: VFC = () => {
         }}
       />
 
-      <NKeyRollover supportMac={false} />
+      <NKeyRollover supportMac={false} description={say('slogan_model-4-professional_content_7')} />
 
-      <KeyboardFont />
+      <KeyboardFont description={say('slogan_model-4-professional_content_11')} />
 
-      <FootbarRuler />
+      <FootbarRuler description={say('slogan_model-4-professional_content_8')} />
 
       <Banner
         sectionId="everyDetail"
@@ -99,11 +106,7 @@ const D4Professional: VFC = () => {
           titlePadding: 'm-0',
           background: "dark",
           title: `EVERY DETAIL <span class="text-red">MATTERS</span>`,
-          description: `
-            Featuring a stunning look, Das Keyboard 4 Professional has been completely redesigned with a sleek anodized aluminum top panel, a resonance-free bottom enclosure, a magnetically attached footbar, and a laser-engraved aluminum bottom label… all which make the design feel more badass and the typing feel more responsive.
-            <br/><br/>
-            There is no detail too tiny for us.
-          `
+          description: say('slogan_model-4-professional_content_10')
         }}
         image={{
           position: 'left',
@@ -112,7 +115,7 @@ const D4Professional: VFC = () => {
         }}
       />
 
-      <TechnicalSpecifications productSlug="daskeyboard-4-professional" />
+      <TechnicalSpecifications productSlug="4-professional" />
 
       <RelatedProducts
         title="4 Series"

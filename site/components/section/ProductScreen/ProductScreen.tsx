@@ -39,10 +39,13 @@ const ProductScreen: VFC<Props> = ({ id, title, description, hasScreenBase, back
             <div className="col-12">
               <figure className="heading text-center mb-5">
                 <figcaption>
-                  <h2>
-                    <small>{title}</small>
-                    <br />{description}
-                  </h2>
+                  <h2 dangerouslySetInnerHTML={{
+                    __html: `
+                    <small>${title}</small>
+                    <br/>
+                    ${description}
+                  `}}
+                  />
                 </figcaption>
               </figure>
             </div>

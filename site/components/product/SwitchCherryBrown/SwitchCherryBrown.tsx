@@ -1,12 +1,17 @@
 import SwitchCherry from "@components/section/SwitchCherry"
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
-const SwitchCherryBrown: VFC = () => {
+interface Props {
+  description?: string
+}
+const SwitchCherryBrown: VFC<Props> = ({ description }) => {
+  const { say } = useTrans()
   return (
     <SwitchCherry
       type="brown"
-      label="Tactile Experience"
-      description="The Cherry MX brown switches have a soft, tactile bump about halfway through the key press. The soft pressure point switch technology makes the mechanical keyboard less clicky while providing an awesome tactile experience."
+      label={say('4q-cherry-mx-subtitle')}
+      description={description || say('4q-cherry-mx-text')}
       image={{
         src: '/images/img-switch_brown.png'
       }}

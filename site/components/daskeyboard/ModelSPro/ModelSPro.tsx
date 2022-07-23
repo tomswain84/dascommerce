@@ -7,13 +7,15 @@ import ProductHero from "@components/section/ProductHero"
 import ProductVideo from "@components/section/ProductVideo"
 import TechnicalSpecifications from "@components/section/TechnicalSpecifications"
 import SwitchCherryBoth from "@components/product/SwitchCherryBoth"
+import useTrans from "lang/useTrans"
 
 const ModelSPro: VFC = () => {
+  const { say } = useTrans();
   return (
     <>
       <ProductHero
-        heading="HIGH PERFORMANCE"
-        title="HIGH QUALITY."
+        heading={say('model-s-professional_slider_1_title')}
+        title={say('model-s-professional_slider_1_subtitle')}
         isCherry={true}
         hasPrice={false}
         fill
@@ -28,8 +30,9 @@ const ModelSPro: VFC = () => {
         className="pt-5 mb-5"
         content={{
           background: 'light',
-          title: `UBER <span class="text-red">QUALITY</span>`,
-          description: "When Germans engineer it, you know it has to be good. We’re perfectionists focused on creating top rated products for our fellow overachievers. Das Keyboard Model S Professional mechanical keyboard is made of the highest-quality materials and robust construction."
+          title: say('slogan_model-s-professional_title_3'),
+          titlePadding: 'pt-5 mt-5',
+          description: say('slogan_model-s-professional_content_3')
         }}
         image={{
           position: 'left',
@@ -44,7 +47,7 @@ const ModelSPro: VFC = () => {
         className="mt-5"
         margin={{ top: 120 }}
         title={`SUPER <span class="text-red">AWESOME FEEL</span>.`}
-        description="Behold the outstanding tactile and audio response with every keystroke you make. This high-performance, mechanical keyboard feels amazing on your fingertips and offers two distinct tactile experiences - click and soft. Your fingers will love it."
+        description={say('slogan_model-s-professional_content_1')}
         video={{ src: "https://www.youtube.com/embed/NHIMMqhW3kY?rel=0" }}
       />
 
@@ -60,8 +63,8 @@ const ModelSPro: VFC = () => {
         content={{
           textAlign: "left",
           titlePadding: "mb-0",
-          title: `TYPE <span class="text-red">SIGNIFICANTLY FASTER</span>.`,
-          description: "Type faster than you ever thought possible on this mechanical wonder. The addictive tactile feedback allows you to have a faster, more accurate typing experience.<br/>Gold plated switches provide the best contact and typing experience because, unlike other metals, gold does not rust and lasts over time.",
+          title: say('slogan_model-s-professional_title_2'),
+          description: say('slogan_model-s-professional_content_2'),
         }}
         image={{
           position: 'left',
@@ -87,7 +90,7 @@ const ModelSPro: VFC = () => {
       />
 
       <TechnicalSpecifications
-        productSlug="daskeyboard-model-s-pro"
+        productSlug="model-s-pro"
         userManual="https://docs.google.com/document/d/1CU2jnB3jaOifmPNesTwSE6phJu_D2K2CmjeQ3uGmMB8/edit"
       />
     </>

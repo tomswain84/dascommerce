@@ -1,3 +1,5 @@
+import { TranslateKey } from "lang/useTrans"
+
 export interface Product {
   id: number,
   variantId?: number,
@@ -6,6 +8,7 @@ export interface Product {
   slug: string,
   handle: string,
   collection: string,
+  originalPrice?: number,
   price: number,
   refurbished: {
     price: number,
@@ -13,7 +16,8 @@ export interface Product {
   }
   currency: string,
   image: string,
-  description: string,
+  description: TranslateKey,
+  descriptionSmall: TranslateKey,
   tags: string[],
   keystroke: string,
   switch: string,

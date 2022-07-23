@@ -7,7 +7,6 @@ interface Props {
   product: Product
 }
 const TechSpecs: VFC<Props> = ({ product }) => {
-  const totalBlocks = product.specs?.length || 1
   return (
     <div className="modal fade content-container" id="techSpecs" tabIndex={-1} aria-labelledby="techSpecs" aria-hidden="true">
       <div className="modal-dialog modal-lg">
@@ -31,15 +30,15 @@ const TechSpecs: VFC<Props> = ({ product }) => {
                   <div key={index}>
                     <h3 className="text-red mb-2">{specs.title}</h3>
                     <ul className="list-unstyled">
-                      {specs.items.map((item, index) => (
+                      {specs.items.map((item, itemIndex) => (
                         <>
                           {typeof item === 'string' && (
-                            <ListItem key={index}>
+                            <ListItem key={itemIndex + '1'}>
                               <span dangerouslySetInnerHTML={{ __html: item }}></span>
                             </ListItem>
                           )}
                           {Array.isArray(item) && (
-                            <ul className="list-unstyled my-2">
+                            <ul className="list-unstyled my-2" key={itemIndex + '2'}>
                               {item.map((subItem, subIndex) => (
                                 <ListItem key={subIndex}>
                                   <span dangerouslySetInnerHTML={{ __html: subItem }}></span>

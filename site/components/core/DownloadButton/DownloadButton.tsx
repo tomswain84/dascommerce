@@ -4,7 +4,7 @@ import type { VFC } from "react"
 interface Props {
   href: string
   label: string
-  ext: 'JPG' | 'PNG'
+  ext: string | 'JPG' | 'PNG'
 }
 const DownloadButton: VFC<Props> = ({ href, label, ext }) => {
   return (

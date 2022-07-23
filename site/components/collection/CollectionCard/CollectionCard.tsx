@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "@components/core/Link"
+import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 }
 const CollectionCard: VFC<{ collection: Props }> = ({ collection }) => {
   const { name, filter, image } = collection
+  const { say } = useTrans()
   return (
     <div className="col">
       <figure className="heading card">
@@ -24,7 +26,7 @@ const CollectionCard: VFC<{ collection: Props }> = ({ collection }) => {
               className="btn btn-outline-primary stretched-link"
             >
               <span>
-                View Keyboards
+                {say('home_collection_card_button')}
                 <i className="fa-solid fa-plus text-red ms-4" />
               </span>
             </Link>

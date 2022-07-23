@@ -14,8 +14,10 @@ import SpecificationList from "@components/section/SpecificationList"
 import ProductFeatureGroup from "@components/section/ProductFeatureGroup"
 import ProductPerformance from "@components/section/ProductPerformance"
 import { Product } from "@interfaces/product"
+import useTrans from "lang/useTrans"
 
 const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
+  const { say, $html } = useTrans()
   return (
     <>
       <ProductHero
@@ -31,11 +33,11 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
       />
 
       <AppletDashboard
-        title="THE INFORMATION YOU NEED - ON YOUR KEYBOARD"
+        title={say('5QS-headline-2')}
         description={`
-          The Das Keyboard 5QS is the second generation of the 5Q keyboard, the smart RGB mechanical keyboard that helps boost productivity by displaying information (e.g. weather, stock quotes, project progress, CPU usage, etc..) in color on the keyboard’s keys. Smart RGB mechanical keyboard with macros to play recorded keystroke sequences and multiple built-in RGB profiles. Built-in features include macros to play recorded keystroke sequences, multiple built-in RGB profiles and effects, and an RGB profile editor.
+          ${say('5QSdescription')}
           <br/><br/>
-          Compatible with Windows, Ubuntu, Linux Mint, and macOS mode is available.
+          ${say('5QScompatibility')}
         `}
         image={{
           src: "/images/product-images/product-details/5qs/dk5q_intro.png"
@@ -48,7 +50,7 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
         rows={[
           {
             type: 'heading',
-            heading: 'Key Features'
+            heading: say('key-features')
           },
           {
             type: 'feature',
@@ -57,16 +59,16 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
                 {
                   type: 'list',
                   items: [
-                    "Das Keyboard Q technology built-in to enable smart RGB notifications",
-                    "Ultra-bright RGB lighting",
-                    "A built-in RGB profile editor with pre-configured profiles",
-                    "A built-in macro editor to replay recorded keystrokes",
-                    "Gaming mode with full-NKRO",
-                    "100M cycle mechanical key switches",
-                    "Detachable palm rest",
-                    "Q volume knob changes volume & previews notifications",
-                    "Anodized aluminum top panel",
-                    "Windows & Ubuntu support. Built-in Mac mode.",
+                    say('5qs-key-features-1'),
+                    say('5qs-key-features-2'),
+                    say('5qs-key-features-3'),
+                    say('5qs-key-features-4'),
+                    say('5qs-key-features-5'),
+                    say('5qs-key-features-6'),
+                    say('5qs-key-features-7'),
+                    say('5qs-key-features-8'),
+                    say('5qs-key-features-9'),
+                    say('5qs-key-features-10'),
                   ]
                 }
               ]
@@ -78,7 +80,7 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
       <ProductVideo
         theme="light"
         title="DAS KEYBOARD Q SOFTWARE"
-        description="MAKE YOUR KEYBOARD SMART"
+        description={say('Q-Software-configuration')}
         video={{
           src: 'https://www.youtube.com/embed/9lDXlrVwkEU'
         }}
@@ -95,6 +97,7 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
       <AppletsCTA />
 
       <ProductCompatibility
+        title={say('das-keyboard-5qs-oses')}
         image={{
           src: '/images/product-images/product-details/5qs/DK5Q_Qbutton_view.jpg',
           alt: 'DK5QS Q Button View'
@@ -107,8 +110,8 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
       />
 
       <ProductPerformance
-        title="THE KEYBOARD OF SUPERLATIVES"
-        description="The most advanced electronics"
+        title={say('5Q-section-topanel-title')}
+        description={say('5Q-section-topanel-text')}
         image={{
           src: '/images/product-images/product-details/5qs/commerce-image.jpg'
         }}
@@ -138,31 +141,35 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
         rows={[
           {
             type: 'heading',
-            heading: 'INTENSE RGB COLORS IN BROAD DAYLIGHT'
+            heading: say('rgb-lighting-title')
           },
           {
             type: 'content',
-            heading: '2X BRIGHTER: RGB+',
-            title: 'BRILLIANT COLORS THAT ARE NOT WASHED OUT',
-            description: 'Due to its enhanced brightness mode(*) and its modern switch design, the 5QS delivers intense colors that are not washed out by daylight - a problem that most RGB keyboards suffer from.',
+            heading: say('2x-brighter-title'),
+            title: say('2x-brighter-subtitle'),
+            description: say('2x-brighter-paragraph-5qs'),
+            descriptionHint: say('required-USB-3'),
             image: {
               position: 'left',
               src: '/images/gama-zulu-color-switch.jpg',
             }
           },
           {
-            type: 'switch'
+            type: 'switch',
+            heading: say('gzs-section-title'),
+            title: say('gzs-section-subtitle'),
+            description: say('x50-switches-paragraph')
           },
           {
             type: 'heading',
-            heading: 'PREMIUM MATERIALS THROUGHOUT',
-            description: 'For a luxurious typing experience'
+            heading: say('5q-premium-material-title'),
+            description: say('5q-premium-material-subtitle')
           },
           {
             type: 'content',
-            heading: 'ALUMINUM TOP',
-            title: 'BUILT TO LAST',
-            description: 'Das Keyboard 5QS sports an anodized black aluminum top panel. Made with first-class electronics this top panel will be serving you for years to come.',
+            heading: say('5q-aluminum-top-panel-title'),
+            title: say('5q-aluminum-top-panel-subtitle'),
+            description: $html('5qs-aluminum-top-panel-paragraph').__html,
             image: {
               position: 'left',
               src: '/images/product-images/product-details/5qs/aluminum-top.jpg',
@@ -170,9 +177,9 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'content',
-            heading: 'DETACHABLE WRIST REST',
-            title: 'COMFORTABLE TYPING',
-            description: 'Das Keyboard 5QS features a detachable wrist rest that’s attached magnetically and helps typists rest their palms comfortably.',
+            heading: say('detachable-wrist-rest'),
+            title: say('comfortable-typing'),
+            description: $html('5qs-palmrest-paragraph').__html,
             image: {
               position: 'right',
               src: '/images/product-images/product-details/5qs/das-keyboard-5q-wristpad.jpg',
@@ -187,7 +194,7 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
         rows={[
           {
             type: 'heading',
-            heading: 'SPECIFICATIONS'
+            heading: say('5q-specifications-title')
           },
           {
             type: 'feature',
@@ -195,43 +202,44 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
               [
                 {
                   type: 'list',
-                  title: 'PRODUCT INFORMATION',
+                  title: say('5q-specifications-subtitle-1'),
                   items: [
-                    "Double shot keycaps US, and ABS lasered ROW",
-                    "Extra long 6.5ft (201cm) USB cable with single type A USB connector",
-                    "NKRO over USB for faster gaming, programming, or anything that makes you a formidable opponent in work or play",
-                    "Anodized aluminum top panel",
-                    "Firmware updatable",
-                    "RGB+ electronics",
+                    say('5q-specifications-1'),
+                    say('5q-specifications-2'),
+                    say('5q-specifications-3'),
+                    say('5q-specifications-4'),
+                    say('5q-specifications-5'),
+                    say('5q-specifications-6'),
+                    say('5q-specifications-7'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'SYSTEM REQUIREMENTS',
+                  title: say('5q-specifications-subtitle-2'),
                   items: [
-                    "Windows, macOS, or Ubuntu0",
-                    "One 2.0 USB port",
-                    "Internet connection for software and smart keyboard features",
+                    say('5qs-specifications-8'),
+                    say('5qs-specifications-9'),
+                    say('5qs-specifications-10'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'WARRANTY INFORMATION',
+                  title: say('5q-specifications-subtitle-3'),
                   items: [
-                    '1-Year Limited Hardware Warranty',
+                    say('5q-specifications-11'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'PACKAGE CONTENT',
+                  title: say('5q-specifications-subtitle-4'),
                   items: [
-                    "Das Keyboard 5QS",
-                    "Detachable wrist rest",
+                    say('5QS_brand'),
+                    say('detachable-wrist-rest'),
                   ]
                 },
                 {
                   type: 'button',
-                  title: 'USER MANUAL',
+                  title: say('user_manual'),
                   button: {
                     text: 'View the 5QS User Manual',
                     href: 'https://docs.google.com/document/d/113RqlXeGU22Wx8xhvaGl6w--tYiXIrimflQeGH7x9EQ/edit',
@@ -241,44 +249,43 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
               [
                 {
                   type: 'list',
-                  title: 'PHYSICAL SPECIFICATIONS',
+                  title: say('5q-specifications-subtitle-5'),
                   items: [
-                    "<strong>Height</strong>: 1.42 in (3.6 cm)",
-                    "<strong>Width</strong>: 6 in (15.2 cm)",
-                    "<strong>Length</strong>: 18 in (45.7 cm)",
-                    "<strong>Weight</strong>: 3.3 lbs (1.44 kg)",
-                    "<strong>Cable</strong>: 6.5 ft (2m)",
+                    say('5q-specifications-16'),
+                    say('5q-specifications-17'),
+                    say('5q-specifications-18'),
+                    say('5q-specifications-19'),
+                    say('5q-specifications-20'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'CHERRY MX RGB SWITCHES',
+                  title: say('5q-specifications-subtitle-6'),
                   items: [
-                    "<strong>Feel</strong> tactile",
-                    "<strong>Gold Cross Point Contacts</strong>: 2",
-                    "<strong>Durability</strong>: million actuations",
-                    "<strong>Actuation distance</strong>: 0.06 in (1.5 mm)",
-                    "<strong>Actuation force</strong>: 1.6 oz (45 g)",
-                    "<strong>Total travel distance</strong>: 0.14 in (3.5 mm)",
+                    say('5q-specifications-21'),
+                    say('5q-specifications-22'),
+                    say('5q-specifications-23'),
+                    say('5q-specifications-24'),
+                    say('5q-specifications-25'),
+                    say('5q-specifications-26'),
                   ]
                 },
                 {
                   type: 'list',
-                  title: 'AVAILABLE LAYOUTS',
+                  title: say('5q-specifications-subtitle-7'),
                   items: [
-                    "104 US",
-                    "105 UK",
-                    "105 DE",
-                    "105 NO",
+                    say('5q-specifications-27'),
+                    say('5q-specifications-28'),
+                    say('5q-specifications-29'),
+                    say('5q-specifications-30'),
                   ]
                 },
                 {
                   type: 'button',
-                  title: 'SOFTWARE',
+                  title: say('5q-specifications-subtitle-8'),
                   button: {
-                    text: 'Download DAS Keyboard Q Software',
+                    text: say('download-daskeyboard-software-5q'),
                     href: 'https://www.daskeyboard.io/',
-                    description: 'Additional language keycaps are available as an add-on. (See accessories below.)'
                   }
                 }
               ]
@@ -286,7 +293,7 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
           },
           {
             type: 'heading',
-            heading: 'ACCESSORIES'
+            heading: say('5q-accessories-title')
           },
           {
             type: 'feature',
@@ -294,9 +301,9 @@ const D5QS: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRe
               {
                 type: 'list',
                 items: [
-                  "Translucent Keycaps, Blank, No Inscriptions",
-                  "Translucent Keycaps, Modern Font",
-                  "Translucent Keycaps, Modern Font, Dvorak",
+                  say('5qs-accessories-1'),
+                  say('5qs-accessories-2'),
+                  say('5qs-accessories-3'),
                 ]
               }
             ]]
