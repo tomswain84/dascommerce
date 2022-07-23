@@ -10,6 +10,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       title: say('values'),
+      description: 'We are a badass Company that makes badass products for badass customers: We Make Stunning Products which stand for No-compromise and overachievers.',
       bodyId: 'values',
       bodyClass: 'single-content',
     },

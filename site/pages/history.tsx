@@ -9,6 +9,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       title: say('history page title'),
+      description: 'Learn how Das Keyboard got started...',
       bodyId: 'history',
       bodyClass: 'single-content',
     },

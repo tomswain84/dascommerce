@@ -11,6 +11,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       title: say('education-program_title'),
+      description: 'Das Keyboard mechanical keyboards help to improve typing efficiency in schools and universities. Our blank mechanical keyboards help students and teachers to learn touch typing faster.',
       bodyId: 'education-program',
       bodyClass: 'single-content',
     },

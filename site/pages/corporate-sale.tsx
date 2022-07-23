@@ -10,6 +10,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       title: say('corporate_sale_title'),
+      description: 'Das Keyboard offers special programs to corporate organizations.',
       bodyId: 'corporate-sales',
       bodyClass: 'single-content',
     },

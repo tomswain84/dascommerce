@@ -12,6 +12,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       title: say('where-to-buy'),
+      description: 'Find the best place to buy your new Das Keyboard mechanical keyboard.',
       bodyId: 'where-to-buy',
       bodyClass: 'single-content',
     },

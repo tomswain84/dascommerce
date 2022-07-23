@@ -11,6 +11,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       title: say('privacy-policy'),
+      description: 'This privacy policy tells you how we use personal information collected at this site.',
       bodyId: 'privacy-policy',
       bodyClass: 'single-content',
     },

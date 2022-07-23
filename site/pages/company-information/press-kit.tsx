@@ -13,6 +13,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       title: say('press-kit'),
+      description: 'Press kit and Das Keyboard news releases.',
       bodyId: 'press-kit',
       bodyClass: 'single-content',
     },

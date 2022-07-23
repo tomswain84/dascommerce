@@ -6,6 +6,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: "Guarantee",
+      description: 'Our Engagement to Happiness Mechanical Keyboards Bags and Wallets Space Pen Das Keyboard Mechanical Keyboards Exclusive daskeyboard.com 30-day',
       bodyId: 'guarantee',
       bodyClass: 'single-content',
     },

@@ -9,6 +9,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       title: say('unauthorized-warning_title'),
+      description: 'Das Keyboard products are sold in the United States and internationally through a network of authorized dealers selected by Das Keyboard. These resellers have been chosen for their ability to properly represent Das Keyboard.',
       bodyId: 'unauthorized-dealer',
       bodyClass: 'single-content',
     },

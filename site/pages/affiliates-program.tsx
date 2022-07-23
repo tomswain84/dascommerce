@@ -10,6 +10,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       title: say('affiliates-program'),
+      description: 'An affiliate simple to earn commission on Das Keyboard sales. Get started today!',
       bodyId: 'affiliate-program',
       bodyClass: 'single-content',
     },

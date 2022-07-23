@@ -7,6 +7,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: "Das Keyboard Mechanical Keyboard - Reviews from Professional",
+      description: 'See Das Keyboard mechanical keyboards and gear tested and reviewed by professional reviewers and tech enthusiasts.',
       bodyId: 'reviews',
       bodyClass: 'single-content',
     },

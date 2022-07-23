@@ -6,6 +6,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: "Das Keyboard - Imprint",
+      description: 'Sie möchten uns kontaktieren? Wir sind gerne für Sie da!',
       bodyId: 'imprint',
       bodyClass: 'single-content',
     },

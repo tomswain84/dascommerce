@@ -2,8 +2,15 @@
 import { ChangeEventHandler, CSSProperties, useState, VFC } from "react"
 import PageTitle from "@components/core/PageTitle"
 import allSwitches from '@data/switches.json'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Link from "@components/core/Link"
+
+export function getStaticProps() {
+  return {
+    props: {
+      title: 'Das Keyboard Mechanical Key Switch Comparison Guide',
+      description: 'What are the best mechanical key switches? Find the best mechanical switches for you.'
+    }
+  }
+}
 
 const SwitchSelect: VFC<{ selected: number, onChange: ChangeEventHandler<HTMLSelectElement> }> = ({ selected, onChange }) => {
   return (

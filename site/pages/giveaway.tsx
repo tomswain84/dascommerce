@@ -6,6 +6,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: "WIN A FREE DAS KEYBOARD",
+      description: 'A chance to Win a free Das Keyboard every month!',
       bodyId: 'giveaway',
       bodyClass: 'single-content',
     },

@@ -11,6 +11,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: pageTitle,
+      description: 'All about Das Keyboard mechanical switches: Gamma Zulu.',
       bodyId: 'gamma-zulu-switch',
       bodyClass: 'product-page keyboards q-series',
     },
