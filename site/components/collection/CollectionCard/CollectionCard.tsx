@@ -30,7 +30,7 @@ const CollectionCard: VFC<{ collection: Props }> = ({ collection }) => {
             >
               <span>
                 <span dangerouslySetInnerHTML={$html('home_collection_card_button')} />
-                <FontAwesomeIcon icon={['far', 'solid']} className="text-red ms-4" />
+                <FontAwesomeIcon icon='plus' className="text-white ms-4" />
               </span>
             </Link>
           </figcaption>
