@@ -33,35 +33,47 @@ const ContactUs: VFC<{}> = () => {
           <div className="container-boxed">
             <div className="row">
               <div id="contentContainer" className="col-md-9">
-                <h2>{say('connect_with')}</h2>
-                <p>{say('send-mail')}: <span dangerouslySetInnerHTML={$html('send-mail_content')}></span></p>
+                <h2 dangerouslySetInnerHTML={$html('connect_with')} />
+                <p>
+                  <span dangerouslySetInnerHTML={$html('send-mail')} />:
+                  <span dangerouslySetInnerHTML={$html('send-mail_content')}></span>
+                </p>
                 <div className="row">
                   <div className="col">
-                    <h3>{say('contact-us_Inquiries_about_title')}</h3>
+                    <h3 dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_title')} />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-12 col-sm-6 col-lg-4">
-                    <p className="mb-2">{say('contact-us_Inquiries_about_content_1')}</p>
-                    <a href="https://daskeyboard.mojohelpdesk.com/login/create_request" target="_blank" title={say('contact-us_Inquiries_about_link_1')} rel="noreferrer">{say('contact-us_Inquiries_about_link_1')}</a>
-                    <p className="mt-4 mb-2">{say('contact-us_Inquiries_about_content_5')}</p>
-                    <Link href="/company-information/our-story/" title={say('contact-us_Inquiries_about_link_5')}>{say('contact-us_Inquiries_about_link_5')}</Link>
+                    <p className="mb-2" dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_content_1')} />
+                    <a href="https://daskeyboard.mojohelpdesk.com/login/create_request" target="_blank" title={say('contact-us_Inquiries_about_link_1', true)} rel="noreferrer" dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_link_1')} />
+                    <p className="mt-4 mb-2" dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_content_5')} />
+                    <Link href="/company-information/our-story/" title={say('contact-us_Inquiries_about_link_5', true)}>
+                      <span dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_link_5')} />
+                    </Link>
                   </div>
                   <div className="col-12 col-sm-6 col-lg-4">
                     <p className="mt-4 mt-sm-0 mb-2">{say('contact-us_Inquiries_about_content_2')}</p>
-                    <Link href="/company-information/become-a-reseller/" title={say('contact-us_Inquiries_about_link_2')}>{say('contact-us_Inquiries_about_link_2')}</Link>
-                    <p className="mt-4 mb-2">{say('contact-us_Inquiries_about_content_8')}</p>
-                    <a href="https://daskeyboard.mojohelpdesk.com/login/create_request" target="_blank" title={say('contact-us_Inquiries_about_link_8')} rel="noreferrer">{say('contact-us_Inquiries_about_link_8')}</a>
+                    <Link href="/company-information/become-a-reseller/" title={say('contact-us_Inquiries_about_link_2', true)}>
+                      <span dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_link_2')} />
+                    </Link>
+                    <p className="mt-4 mb-2" dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_content_8')} />
+                    <a href="https://daskeyboard.mojohelpdesk.com/login/create_request" target="_blank" title={say('contact-us_Inquiries_about_link_8', true)} rel="noreferrer" dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_link_8')} />
                   </div>
                   <div className="col-12 col-lg-4">
-                    <p className="mt-4 mt-lg-0 mb-2">{say('contact-us_Inquiries_about_content_3')}</p>
-                    <Link href="/company-information/education-program" title={say('contact-us_Inquiries_about_link_3')}>{say('contact-us_Inquiries_about_link_3')}</Link>
-                    <p className="mt-4 mb-2">{say('contact-us_Inquiries_about_content_6')}</p>
-                    <a href="https://daskeyboard.mojohelpdesk.com/" target="_blank" title={say('contact-us_Inquiries_about_link_6')} rel="noreferrer">{say('contact-us_Inquiries_about_link_6')}</a> - <Link href="/company-information/press-kit/" title={say('contact-us_Inquiries_about_link_7')}>{say('contact-us_Inquiries_about_link_7')}</Link>
+                    <p className="mt-4 mt-lg-0 mb-2" dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_content_3')} />
+                    <Link href="/company-information/education-program" title={say('contact-us_Inquiries_about_link_3', true)}>
+                      <span dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_link_3')} />
+                    </Link>
+                    <p className="mt-4 mb-2" dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_content_6')} />
+                    <a href="https://daskeyboard.mojohelpdesk.com/" target="_blank" title={say('contact-us_Inquiries_about_link_6', true)} rel="noreferrer" dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_link_6')} /> -
+                    <Link href="/company-information/press-kit/" title={say('contact-us_Inquiries_about_link_7', true)}>
+                      <span dangerouslySetInnerHTML={$html('contact-us_Inquiries_about_link_7')} />
+                    </Link>
                   </div>
                   <div className="row">
                     <div className="col">
-                      <h3>{say('head_office')}</h3>
+                      <h3 dangerouslySetInnerHTML={$html('head_office')} />
                     </div>
                   </div>
                   <div className="row">
@@ -85,7 +97,7 @@ const ContactUs: VFC<{}> = () => {
               </div>
               <div id="sidebar" className="col-md-3 mt-5">
                 <div className="sidebar-content">
-                  <h3 className="sidebar-title">{say('contact_info')}</h3>
+                  <h3 className="sidebar-title" dangerouslySetInnerHTML={$html('contact_info')} />
                   {locale === 'en' ? (
                     <>
                       <FontAwesomeIcon icon='location-dot' className="text-red me-2" />

@@ -34,7 +34,7 @@ const EducationProgram: VFC = () => {
 
                 <h3 className="sidebar-title mt-5">
                   <FontAwesomeIcon icon="graduation-cap" className="me-2" />
-                  {say('education-program_title_1')}
+                  <span dangerouslySetInnerHTML={$html('education-program_title_1')} />
                 </h3>
                 <div dangerouslySetInnerHTML={$html('education-program_content_1')} />
 

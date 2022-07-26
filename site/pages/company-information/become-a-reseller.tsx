@@ -29,7 +29,7 @@ const BecomeReseller: VFC = () => {
           <div className="container">
             <div className="row">
               <div id="contentContainer" className="col">
-                <h3 className="sidebar-title mt-5">{say('become-a-reseller_subtitle')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('become-a-reseller_subtitle')} />
                 <div dangerouslySetInnerHTML={$html('become-a-reseller_content')} />
               </div>
             </div>

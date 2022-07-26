@@ -22,7 +22,7 @@ const CorporateSale: VFC = () => {
   return (
     <>
       <PageTitle
-        title={say('corporate_sale_title')}
+        title={say('corporate_sale_title', true)}
         type='category'
       />
       <main className="content-container">
@@ -34,12 +34,12 @@ const CorporateSale: VFC = () => {
               </div>
               <div className="bg-gray-lighter col-12 col-md-6 p-3 p-sm-4 p-md-5 d-flex align-items-center justify-content-center">
                 <div>
-                  <h2>{say('corporate_sale_heading')}</h2>
-                  <p className="text-red"><strong>{say('corporate_sale_subtitle')}</strong></p>
-                  <p>{say('corporate_sale_description1')}</p>
-                  <p>{say('corporate_sale_description2')}</p>
+                  <h2 dangerouslySetInnerHTML={$html('corporate_sale_heading')} />
+                  <p className="text-red"><strong dangerouslySetInnerHTML={$html('corporate_sale_subtitle')} /></p>
+                  <p dangerouslySetInnerHTML={$html('corporate_sale_description1')} />
+                  <p dangerouslySetInnerHTML={$html('corporate_sale_description2')} />
                   {/* <!-- Modal Trigger - Business Program --> */}
-                  <a className="btn btn-outline-primary text-gray-dark ms-auto" href="#" title={say('corporate_sale_learn_more')} data-bs-toggle="modal" data-bs-target="#businessProgram">{say('corporate_sale_learn_more')}</a>
+                  <a className="btn btn-outline-primary text-gray-dark ms-auto" href="#" title={say('corporate_sale_learn_more', true)} data-bs-toggle="modal" data-bs-target="#businessProgram" dangerouslySetInnerHTML={$html('corporate_sale_learn_more')} />
                   {/* <!-- Modal - Business Program --> */}
                   <div className="modal fade" id="businessProgram" tabIndex={-1} aria-labelledby="businessProgram" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered">
@@ -73,18 +73,18 @@ const CorporateSale: VFC = () => {
             <div className="row">
               <div className="col-12 col-sm-4 text-center">
                 <FontAwesomeIcon icon="percent" size='5x' />
-                <h3 className="text-red">{say('corporate_sale_benefit_1_title')}</h3>
-                <p>{say('corporate_sale_benefit_1_description')}</p>
+                <h3 className="text-red" dangerouslySetInnerHTML={$html('corporate_sale_benefit_1_title')} />
+                <p dangerouslySetInnerHTML={$html('corporate_sale_benefit_1_description')} />
               </div>
               <div className="col-12 col-sm-4 text-center">
                 <FontAwesomeIcon icon='life-ring' size='5x' />
-                <h3 className="text-red">{say('corporate_sale_benefit_2_title')}</h3>
-                <p>{say('corporate_sale_benefit_2_description')}</p>
+                <h3 className="text-red" dangerouslySetInnerHTML={$html('corporate_sale_benefit_2_title')} />
+                <p dangerouslySetInnerHTML={$html('corporate_sale_benefit_2_description')} />
               </div>
               <div className="col-12 col-sm-4 text-center">
                 <FontAwesomeIcon icon="assistive-listening-systems" size='5x' />
-                <h3 className="text-red">{say('corporate_sale_benefit_3_title')}</h3>
-                <p>{say('corporate_sale_benefit_3_description')}</p>
+                <h3 className="text-red" dangerouslySetInnerHTML={$html('corporate_sale_benefit_3_title')} />
+                <p dangerouslySetInnerHTML={$html('corporate_sale_benefit_3_description')} />
               </div>
             </div>
           </div>
@@ -93,9 +93,9 @@ const CorporateSale: VFC = () => {
           <div className="container">
             <div className="row">
               <div className="col text-center">
-                <h2 className="text-white mb-5">{say('corporate_sale_cta_title')}</h2>
+                <h2 className="text-white mb-5" dangerouslySetInnerHTML={$html('corporate_sale_cta_title')} />
                 {/* <!-- Modal Trigger - Business Program --> */}
-                <a className="btn btn-primary text-gray-dark ms-auto" href="#" title={say('corporate_sale_learn_more')} data-bs-toggle="modal" data-bs-target="#businessProgram">{say('corporate_sale_learn_more')}</a>
+                <a className="btn btn-primary text-gray-dark ms-auto" href="#" title={say('corporate_sale_learn_more', true)} data-bs-toggle="modal" data-bs-target="#businessProgram" dangerouslySetInnerHTML={$html('corporate_sale_learn_more')} />
               </div>
             </div>
           </div>

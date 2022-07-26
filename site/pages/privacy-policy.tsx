@@ -34,34 +34,34 @@ const PrivacyPolicy: VFC = () => {
                 <p dangerouslySetInnerHTML={$html('privacy-policy_introduction1')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_introduction2')} />
 
-                <h3 className="sidebar-title mt-5">{say('privacy-policy_subtitle_1')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_1')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_1')} />
                 <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_2')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_2')} />
                 <ul className="list-unstyled">
-                  <ListItem increaseLineHeight>{say('privacy-policy_content_2.1')}</ListItem>
-                  <ListItem increaseLineHeight>{say('privacy-policy_content_2.2')}</ListItem>
-                  <ListItem increaseLineHeight>{say('privacy-policy_content_2.3')}</ListItem>
-                  <ListItem increaseLineHeight>{say('privacy-policy_content_2.4')}</ListItem>
-                  <ListItem increaseLineHeight>{say('privacy-policy_content_2.5')}</ListItem>
-                  <ListItem increaseLineHeight>{say('privacy-policy_content_2.6')}</ListItem>
+                  <ListItem increaseLineHeight><span dangerouslySetInnerHTML={$html('privacy-policy_content_2.1')} /></ListItem>
+                  <ListItem increaseLineHeight><span dangerouslySetInnerHTML={$html('privacy-policy_content_2.2')} /></ListItem>
+                  <ListItem increaseLineHeight><span dangerouslySetInnerHTML={$html('privacy-policy_content_2.3')} /></ListItem>
+                  <ListItem increaseLineHeight><span dangerouslySetInnerHTML={$html('privacy-policy_content_2.4')} /></ListItem>
+                  <ListItem increaseLineHeight><span dangerouslySetInnerHTML={$html('privacy-policy_content_2.5')} /></ListItem>
+                  <ListItem increaseLineHeight><span dangerouslySetInnerHTML={$html('privacy-policy_content_2.6')} /></ListItem>
                 </ul>
 
-                <h3 className="sidebar-title mt-5">{say('privacy-policy_subtitle_3')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_3')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_3')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_3.1')} />
 
-                <h3 className="sidebar-title mt-5">{say('privacy-policy_subtitle_4')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_4')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_4')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_4.1')} />
                 <ul className="list-unstyled">
-                  <ListItem>{say('privacy-policy_content_4.1.1')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_4.1.2')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_4.1.3')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_4.1.4')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_4.1.5')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_4.1.6')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_4.1.7')}</ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_4.1.1')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_4.1.2')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_4.1.3')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_4.1.4')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_4.1.5')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_4.1.6')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_4.1.7')} /></ListItem>
                 </ul>
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_4.2')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_4.3')} />
@@ -69,24 +69,24 @@ const PrivacyPolicy: VFC = () => {
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_4.5')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_4.6')} />
 
-                <h3 className="sidebar-title mt-5">{say('privacy-policy_subtitle_5')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_5')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5')} />
                 <p className="strong fw-bold text-red" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_5.1')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5.1')} />
                 <ul className="list-unstyled">
-                  <ListItem>{say('privacy-policy_content_5.1.1')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_5.1.2')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_5.1.3')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_5.1.4')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_5.1.5')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_5.1.6')}</ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.1.1')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.1.2')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.1.3')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.1.4')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.1.5')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.1.6')} /></ListItem>
                 </ul>
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5.2')} />
                 <ul className="list-unstyled">
-                  <ListItem>{say('privacy-policy_content_5.2.1')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_5.2.2')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_5.2.3')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_5.2.4')}</ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.2.1')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.2.2')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.2.3')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_5.2.4')} /></ListItem>
                 </ul>
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5.3')} />
 
@@ -102,15 +102,15 @@ const PrivacyPolicy: VFC = () => {
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5.12')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5.13')} />
 
-                <p className="strong fw-bold text-red">{say('privacy-policy_subtitle_5.3')}</p>
+                <p className="strong fw-bold text-red" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_5.3')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5.14')} />
 
-                <p className="strong fw-bold text-red">{say('privacy-policy_subtitle_5.4')}</p>
+                <p className="strong fw-bold text-red" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_5.4')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5.15')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5.16')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_5.17')} />
 
-                <h3 className="sidebar-title mt-5">{say('privacy-policy_subtitle_6')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_6')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_6')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_6.1')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_6.2')} />
@@ -118,7 +118,7 @@ const PrivacyPolicy: VFC = () => {
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_6.4')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_6.5')} />
 
-                <h3 className="sidebar-title mt-5">{say('privacy-policy_subtitle_7')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_7')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_7')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_7.1')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_7.2')} />
@@ -128,17 +128,17 @@ const PrivacyPolicy: VFC = () => {
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_7.6')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_7.7')} />
 
-                <h3 className="sidebar-title mt-5">{say('privacy-policy_subtitle_8')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_8')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_8')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_8.1')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_8.2')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_8.3')} />
 
-                <p className="strong fw-bold text-red">{say('privacy-policy_subtitle_8.1')}</p>
+                <p className="strong fw-bold text-red" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_8.1')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_8.4')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_8.5')} />
 
-                <h3 className="sidebar-title mt-5">{say('privacy-policy_subtitle_9')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_9')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_9')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_9.1')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_9.2')} />
@@ -149,16 +149,16 @@ const PrivacyPolicy: VFC = () => {
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_9.7')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_9.8')} />
 
-                <h3 className="sidebar-title mt-5">{say('privacy-policy_subtitle_10')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_10')} />
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_10')} />
-                <p className="strong fw-bold text-red">{say('privacy-policy_subtitle_10.1')}</p>
+                <p className="strong fw-bold text-red" dangerouslySetInnerHTML={$html('privacy-policy_subtitle_10.1')} />
                 <ul className="list-unstyled">
-                  <ListItem>{say('privacy-policy_content_10.1.1')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_10.1.2')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_10.1.3')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_10.1.4')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_10.1.5')}</ListItem>
-                  <ListItem>{say('privacy-policy_content_10.1.6')}</ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_10.1.1')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_10.1.2')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_10.1.3')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_10.1.4')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_10.1.5')} /></ListItem>
+                  <ListItem><span dangerouslySetInnerHTML={$html('privacy-policy_content_10.1.6')} /></ListItem>
                 </ul>
                 <p dangerouslySetInnerHTML={$html('privacy-policy_content_10.2')} />
 
