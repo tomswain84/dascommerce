@@ -24,10 +24,12 @@ const BannerLeft: VFC<BannerProps> = ({ containerPadding, image, content, noCol,
       <figure className={`heading text-${textAlign} ${titlePadding || 'mt-5 mt-md-3 pt-md-5'}`}>
         <figcaption>
           {titleExtra ? (
-            <h2>
-              <small>{stripHTML(title)}</small>
-              <br />{titleExtra}
-            </h2>
+            <h2 dangerouslySetInnerHTML={{
+              __html: `
+              <small>${stripHTML(title)}</small>
+              <br />${titleExtra}
+            `}}
+            />
           ) : (
             <h1 dangerouslySetInnerHTML={{ __html: title }} />
           )}
