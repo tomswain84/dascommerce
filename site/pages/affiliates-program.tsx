@@ -9,7 +9,8 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('affiliates-program'),
+      title: say('affiliates-program', true),
+      description: 'An affiliate simple to earn commission on Das Keyboard sales. Get started today!',
       bodyId: 'affiliate-program',
       bodyClass: 'single-content',
     },
@@ -29,17 +30,17 @@ const AffiliatesProgram: VFC<{}> = () => {
           <div className="container">
             <div className="row">
               <div id="contentContainer" className="col">
-                <h2>{say('affiliates-program-subtitle-1')}</h2>
+                <h2 dangerouslySetInnerHTML={$html('affiliates-program-subtitle-1')} />
                 <p dangerouslySetInnerHTML={$html('affiliates-program-content-1')} />
 
-                <h3>{say('affiliates-program-subtitle-2')}</h3>
+                <h3 dangerouslySetInnerHTML={$html('affiliates-program-subtitle-2')} />
                 <div
                   dangerouslySetInnerHTML={{
                     __html: $html('affiliates-program-content-2').__html.replace(/\<li\>/g, '<li class="mt-3">')
                   }}
                 />
 
-                <h3>{say('affiliates-program-subtitle-3')}</h3>
+                <h3 dangerouslySetInnerHTML={$html('affiliates-program-subtitle-3')} />
                 <ul className="list-unstyled">
                   <ListItem>Orders will lock in 30-days</ListItem>
                   <ListItem>The order value does not include shipping or tax</ListItem>

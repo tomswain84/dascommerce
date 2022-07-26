@@ -5,6 +5,15 @@ import allProducts from '@data/products.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "@components/core/Link"
 
+export function getStaticProps() {
+  return {
+    props: {
+      title: 'Das Keyboard - Compare Keyboards',
+      description: 'Compare keyboard models online with help of our tool.',
+    }
+  }
+}
+
 const ProductSelect: VFC<{ selected: number, onChange: ChangeEventHandler<HTMLSelectElement> }> = ({ selected, onChange }) => {
   return (
     <select name="mySelect" id="mySelect" className="form-select custom-select" value={selected} onChange={onChange}>

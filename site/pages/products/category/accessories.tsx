@@ -7,6 +7,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: 'Keyboard Accessories',
+      description: "The accessories page displays the Das Keyboard accessories",
       bodyId: 'keyboardAccessories',
       bodyClass: 'product-listing accessories',
     },

@@ -2,11 +2,13 @@
 import type { VFC } from "react"
 import allReviews from '@data/reviews.json'
 import PageTitle from "@components/core/PageTitle"
+import useTrans from "lang/useTrans"
 
 export async function getStaticProps() {
   return {
     props: {
       title: "Das Keyboard Mechanical Keyboard - Reviews from Professional",
+      description: 'See Das Keyboard mechanical keyboards and gear tested and reviewed by professional reviewers and tech enthusiasts.',
       bodyId: 'reviews',
       bodyClass: 'single-content',
     },
@@ -14,15 +16,16 @@ export async function getStaticProps() {
 }
 
 const Reviews: VFC = () => {
+  const { say, $html } = useTrans();
   return (
     <>
       <PageTitle
-        title="Professional reviews"
+        title={say('reviews_title1')}
         type='page'
       />
       <div className="container my-5">
         <div className="row text-center">
-          <h5>Tested and reviewed by tech professionals and tech magazines. See what reviewers had to say about our products.</h5>
+          <h5 dangerouslySetInnerHTML={$html('reviews_paragraph1')} />
         </div>
       </div>
       <main className="content-container mx-auto" style={{ maxWidth: 800 }}>

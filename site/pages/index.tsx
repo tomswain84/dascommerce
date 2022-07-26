@@ -8,6 +8,8 @@ import useTrans from "lang/useTrans";
 export async function getStaticProps() {
   return {
     props: {
+      title: 'Das Keyboard - The Ultimate Mechanical Keyboard Experience for Badasses',
+      description: 'Das Keyboard offers badass geeks the ultimate experience with high-performance mechanical keyboards with superior durability, construction, and design. The mechanical key switches provide tactile and audio feedback for the best experience.',
       bodyId: 'home',
       bodyClass: 'single-content',
     },
@@ -15,7 +17,7 @@ export async function getStaticProps() {
 }
 
 const Home = () => {
-  const {say, $html} = useTrans()
+  const { say, $html } = useTrans()
   return (
     <>
       <HeroBanner />

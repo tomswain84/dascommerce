@@ -8,7 +8,8 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('become-a-reseller_title'),
+      title: say('become-a-reseller_title', true),
+      description: 'Das Keyboard is expanding the global reseller and distributor community. Learn more about how we can work together.',
       bodyId: 'reseller',
       bodyClass: 'single-content',
     },
@@ -28,7 +29,7 @@ const BecomeReseller: VFC = () => {
           <div className="container">
             <div className="row">
               <div id="contentContainer" className="col">
-                <h3 className="sidebar-title mt-5">{say('become-a-reseller_subtitle')}</h3>
+                <h3 className="sidebar-title mt-5" dangerouslySetInnerHTML={$html('become-a-reseller_subtitle')} />
                 <div dangerouslySetInnerHTML={$html('become-a-reseller_content')} />
               </div>
             </div>

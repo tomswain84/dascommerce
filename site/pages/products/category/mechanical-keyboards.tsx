@@ -7,6 +7,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: 'Mechanical Keyboards',
+      description: 'Das Keyboard uses award-winning technology in every mechanical keyboard produced. Delivering an unmatched typing experience with premium mechanical keyboards.',
       bodyId: 'mechanicalKeyboards',
       bodyClass: 'product-listing keyboards has-parent',
     },

@@ -73,7 +73,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head title={pageProps.title} />
+      <Head {...pageProps} />
       <Layout pageProps={pageProps}>
         <Header />
         <Component {...pageProps} />

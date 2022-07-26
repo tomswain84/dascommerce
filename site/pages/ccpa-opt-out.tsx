@@ -9,7 +9,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say("ccpa_title"),
+      title: say("ccpa_title", true),
       bodyId: 'ccpa-opt-out',
       bodyClass: 'single-content',
     },

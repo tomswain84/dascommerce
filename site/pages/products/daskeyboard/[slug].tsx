@@ -45,23 +45,35 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   }
   // build bodyClass per slug
   let bodyClass = 'product-page';
+  let description = null;
   switch (params?.slug) {
+    case 'model-s-pro':
+      description = 'The Das Keyboard Model S Professional is a high-performance mechanical keyboard for badass typists. Constructed with Cherry MX mechanical switches, premium materials, two-port USB 3.0 hub and NKRO for the best typing experience.';
+      break
+    case 'model-s-pro-for-mac':
+      description = 'The Das Keyboard Model S Professional for Mac is a high-performance mechanical keyboard designed for Mac. Constructed with Cherry MX mechanical switches, premium materials, two-port USB 3.0 hub and NKRO for the best typing experience.';
+      break
     case '4q':
       bodyClass += ' keyboards q-series'
       break
     case '4-professional-for-mac':
+      description = 'The Das Keyboard 4 Professional for Mac is a high-performance mechanical keyboard designed for the best Mac compatibility. Constructed with Cherry MX mechanical switches, aluminum top panel, two-port USB 3.0 hub and NKRO for the best typing experience.';
     case '4-professional':
+      description = 'The Das Keyboard 4 Professional is a high-performance mechanical keyboard for badass typists. Constructed with Cherry MX mechanical switches, aluminum top panel, two-port USB 3.0 hub and NKRO for the best typing experience.';
     case '4-ultimate':
       bodyClass += ' four-series'
+      description = 'The Das Keyboard 4 Ultimate is a completely blank mechanical keyboard for badass typists. Constructed with Cherry MX mechanical switches, aluminum top panel, two-port USB 3.0 hub and NKRO for the best typing experience.';
       break
     case '4c-tkl':
       bodyClass += ' keyboards'
+      description = 'Limited Edition TKL design with PBT keycaps and Cherry MX';
       break
     case '5qs':
       bodyClass += ' keyboards q-series'
       break
     case 'prime-13':
       bodyClass += ' keyboards'
+      description = 'Das Keyboard Prime 13, a minimalist, white-LED back-lit, Cherry MX, USB pass-through with extra-long braided cable, super-well built mechanical keyboard that sports a slick aluminum top panel.';
       break
     case 'x50q':
       bodyClass += ' keyboards q-series has-parent'
@@ -72,6 +84,8 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   return {
     props: {
       title: `Das Keyboard ${product.name}`,
+      description,
+      image: product.image,
       bodyId: product.slug,
       bodyClass,
       product

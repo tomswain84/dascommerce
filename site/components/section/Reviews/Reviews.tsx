@@ -6,7 +6,7 @@ import useTrans from "lang/useTrans"
 import type { VFC } from "react"
 
 const Reviews: VFC = () => {
-  const { say } = useTrans()
+  const { say, $html } = useTrans()
   const editorialReviews = [
     {
       copy: `It's almost like typing on a cloud compared to Apple's Magic Keyboard.`,
@@ -173,9 +173,14 @@ const Reviews: VFC = () => {
           <div className="col">
             <figure className="heading text-center">
               <figcaption>
-                <h1>{say('reviews_title')} <span className="text-red d-block d-sm-inline">{say('reviews_subtitle')}</span></h1>
+                <h1 dangerouslySetInnerHTML={{
+                  __html: `
+                  ${say('reviews_title')} 
+                  <span className="text-red d-block d-sm-inline">${say('reviews_subtitle')}</span>
+                `}}
+                />
               </figcaption>
-              <p>{say('reviews_description')}</p>
+              <p dangerouslySetInnerHTML={$html('reviews_description')} />
             </figure>
           </div>
         </div>
@@ -184,15 +189,11 @@ const Reviews: VFC = () => {
             <ul className="nav nav-tabs d-flex align-items-center justify-content-between oswald mb-5">
               <li className="nav-item">
                 <FontAwesomeIcon icon='newspaper' className="text-red me-1" size="lg" />
-                <a href="#editorialReviews" className="nav-link active" data-bs-toggle="tab">
-                  {say('reviews_editorial')}
-                </a>
+                <a href="#editorialReviews" className="nav-link active" data-bs-toggle="tab" dangerouslySetInnerHTML={$html('reviews_editorial')} />
               </li>
               <li className="nav-item">
                 <FontAwesomeIcon icon='user' className='text-red me-1' />
-                <a href="#customerReviews" className="nav-link" data-bs-toggle="tab">
-                  {say('reviews_customer')}
-                </a>
+                <a href="#customerReviews" className="nav-link" data-bs-toggle="tab" dangerouslySetInnerHTML={$html('reviews_customer')} />
               </li>
             </ul>
             <div className="tab-content">

@@ -8,7 +8,8 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('unauthorized-warning_title'),
+      title: say('unauthorized-warning_title', true),
+      description: 'Das Keyboard products are sold in the United States and internationally through a network of authorized dealers selected by Das Keyboard. These resellers have been chosen for their ability to properly represent Das Keyboard.',
       bodyId: 'unauthorized-dealer',
       bodyClass: 'single-content',
     },

@@ -9,7 +9,8 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('typefaster'),
+      title: say('typefaster', true),
+      description: 'Learn how to increase your typing speed with our guide on how to type faster and become the ultimate badass. Learn about the benefits of a mechanical keyboard, healthy typing habits, and more.',
       bodyId: 'type-faster',
       bodyClass: 'single-content',
     },

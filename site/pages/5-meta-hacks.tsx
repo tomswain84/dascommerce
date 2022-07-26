@@ -9,7 +9,9 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('5-meta-hacks'),
+      title: say('5-meta-hacks', true),
+      description: 'Every week, Daniel, founder of Das Keyboard, shares the 5 hacks he recently discovered. "These can be productivity apps, life hacks, quotes that make me think or really anything that I find interesting.',
+      image: '/images/pages/5-meta-hacks-wide.png',
       bodyId: 'reseller',
       bodyClass: 'single-content',
     },
@@ -31,9 +33,9 @@ const FiveMetaHacks: VFC = () => {
               <div id="contentContainer" className="col">
                 <img src="/images/pages/5-meta-hacks-wide.png" alt="5 meta hacks" className="img-fluid" />
 
-                <p className="mt-5">{say('hello')},</p>
-                <p>{say('content-5weeklymetahacks')}</p>
-                <p>{say('signup-5weeklymetahacks')}</p>
+                <p className="mt-5" dangerouslySetInnerHTML={$html('hello')} />
+                <p dangerouslySetInnerHTML={$html('content-5weeklymetahacks')} />
+                <p dangerouslySetInnerHTML={$html('signup-5weeklymetahacks')} />
 
                 <form
                   action="https://daskeyboard.us5.list-manage.com/subscribe/post?u=56e3c495115ea26f98ce8d429&id=80814cfb3c"
@@ -52,9 +54,9 @@ const FiveMetaHacks: VFC = () => {
                   </div>
                 </form>
 
-                <p dangerouslySetInnerHTML={$html('submit-meta-hack')}/>
+                <p dangerouslySetInnerHTML={$html('submit-meta-hack')} />
 
-                <p dangerouslySetInnerHTML={$html('CEOsignature-5weeklymetahacks')}/>
+                <p dangerouslySetInnerHTML={$html('CEOsignature-5weeklymetahacks')} />
               </div>
             </div>
           </div>

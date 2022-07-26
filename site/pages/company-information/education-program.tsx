@@ -10,7 +10,8 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('education-program_title'),
+      title: say('education-program_title', true),
+      description: 'Das Keyboard mechanical keyboards help to improve typing efficiency in schools and universities. Our blank mechanical keyboards help students and teachers to learn touch typing faster.',
       bodyId: 'education-program',
       bodyClass: 'single-content',
     },
@@ -33,7 +34,7 @@ const EducationProgram: VFC = () => {
 
                 <h3 className="sidebar-title mt-5">
                   <FontAwesomeIcon icon="graduation-cap" className="me-2" />
-                  {say('education-program_title_1')}
+                  <span dangerouslySetInnerHTML={$html('education-program_title_1')} />
                 </h3>
                 <div dangerouslySetInnerHTML={$html('education-program_content_1')} />
 
