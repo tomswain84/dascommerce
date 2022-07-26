@@ -9,7 +9,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('affiliates-program'),
+      title: say('affiliates-program', true),
       description: 'An affiliate simple to earn commission on Das Keyboard sales. Get started today!',
       bodyId: 'affiliate-program',
       bodyClass: 'single-content',

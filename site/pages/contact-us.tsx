@@ -11,7 +11,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('contact-us'),
+      title: say('contact-us', true),
       description: 'Find the best place to buy your new Das Keyboard mechanical keyboard.',
       bodyId: 'contact',
       bodyClass: 'single-content',

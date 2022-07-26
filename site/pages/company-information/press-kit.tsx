@@ -12,7 +12,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('press-kit'),
+      title: say('press-kit', true),
       description: 'Press kit and Das Keyboard news releases.',
       bodyId: 'press-kit',
       bodyClass: 'single-content',

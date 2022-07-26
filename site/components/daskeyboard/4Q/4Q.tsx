@@ -18,16 +18,6 @@ import SwitchCherryBrown from "@components/product/SwitchCherryBrown"
 import { Product } from "@interfaces/product"
 import useTrans from "lang/useTrans"
 
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Das Keyboard 4Q',
-      bodyId: '4q',
-      bodyClass: 'product-page keyboards q-series',
-    },
-  }
-}
-
 const D4Q: VFC<{ product: Product, isRefurbished: boolean }> = ({ product, isRefurbished }) => {
   const { say, $html, formatPrice } = useTrans()
   return (

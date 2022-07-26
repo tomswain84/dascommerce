@@ -9,8 +9,9 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('5-meta-hacks'),
+      title: say('5-meta-hacks', true),
       description: 'Every week, Daniel, founder of Das Keyboard, shares the 5 hacks he recently discovered. "These can be productivity apps, life hacks, quotes that make me think or really anything that I find interesting.',
+      image: '/images/pages/5-meta-hacks-wide.png',
       bodyId: 'reseller',
       bodyClass: 'single-content',
     },

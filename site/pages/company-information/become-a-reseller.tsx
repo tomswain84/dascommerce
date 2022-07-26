@@ -8,7 +8,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('become-a-reseller_title'),
+      title: say('become-a-reseller_title', true),
       description: 'Das Keyboard is expanding the global reseller and distributor community. Learn more about how we can work together.',
       bodyId: 'reseller',
       bodyClass: 'single-content',

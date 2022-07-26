@@ -10,7 +10,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('privacy-policy'),
+      title: say('privacy-policy', true),
       description: 'This privacy policy tells you how we use personal information collected at this site.',
       bodyId: 'privacy-policy',
       bodyClass: 'single-content',

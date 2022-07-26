@@ -9,7 +9,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const { say } = getTrans(locale)
   return {
     props: {
-      title: say('corporate_sale_title'),
+      title: say('corporate_sale_title', true),
       description: 'Das Keyboard offers special programs to corporate organizations.',
       bodyId: 'corporate-sales',
       bodyClass: 'single-content',
