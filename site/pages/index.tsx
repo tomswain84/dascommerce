@@ -79,10 +79,10 @@ const Home = () => {
         noCol
         image={{
           position: 'left',
-          src: '/images/product-images/product-details/4-professional/img_blueprint-D.png',
+          src: '/images/D-daskeyboard.png',
           width: 250,
           height: 309,
-          className: 'd-block mx-auto mb-4 mb-md-0 pe-md-5'
+          className: 'd-block mx-auto mb-4 mb-md-0 pe-md-5',
         }}
       />
 

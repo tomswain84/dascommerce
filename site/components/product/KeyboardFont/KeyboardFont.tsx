@@ -16,7 +16,7 @@ const KeyboardFont: VFC<Props> = ({ description }) => {
       }}
       image={{
         position: 'left',
-        src: '/images/product-images/product-details/4-ultimate/img_blueprint-D.png'
+        src: '/images/D-daskeyboard.png',
       }}
     />
   )
