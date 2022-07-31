@@ -1,4 +1,3 @@
-import Schema from "@components/core/Schema";
 import HeroBanner from "@components/home/HeroBanner";
 import HomeCollection from "@components/home/HomeCollection";
 import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure";
@@ -8,10 +7,11 @@ import { PageProps } from "@interfaces/pageProps";
 import useTrans from "lang/useTrans";
 import type { VFC } from "react";
 
+const pageTitle = 'Das Keyboard - The Ultimate Mechanical Keyboard Experience for Badasses';
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Das Keyboard - The Ultimate Mechanical Keyboard Experience for Badasses',
+      title: pageTitle,
       description: 'Das Keyboard offers badass geeks the ultimate experience with high-performance mechanical keyboards with superior durability, construction, and design. The mechanical key switches provide tactile and audio feedback for the best experience.',
       bodyId: 'home',
       bodyClass: 'single-content',
@@ -24,20 +24,6 @@ const Home: VFC<PageProps> = ({ fullUrl, baseUrl }) => {
 
   return (
     <>
-      <Schema data={{
-        '@context': 'http://schema.org',
-        '@type': 'WebSite',
-        url: fullUrl,
-      }} />
-      <Schema data={{
-        '@context': 'http://schema.org',
-        '@type': 'Organization',
-        name: 'Das Keyboard',
-        url: fullUrl,
-        logo: `${baseUrl}/images/logo-das_keyboard-red_white.png`,
-        foundingDate: 2005
-      }} />
-
       <HeroBanner />
 
       <HomeCollection />
