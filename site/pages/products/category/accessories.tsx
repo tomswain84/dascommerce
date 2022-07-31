@@ -2,6 +2,8 @@ import type { VFC } from "react"
 import PageTitle from "@components/core/PageTitle"
 import accessories from '@data/accessories.json'
 import AccessoryCard from "@components/accessory/AccessoryCard"
+import Schema from "@components/core/Schema"
+import { PageProps } from "@interfaces/pageProps"
 
 export async function getStaticProps() {
   return {
@@ -14,7 +16,8 @@ export async function getStaticProps() {
   }
 }
 
-const CategoryAccessories: VFC = () => {
+const CategoryAccessories: VFC<PageProps> = ({ baseUrl, fullUrl }) => {
+  const title = "Keyboard Accessories";
   const keyCaps = accessories.filter(accessory => accessory.category === 'keycap-sets')
   const palmRests = accessories.filter(accessory => accessory.category === 'palm-rests')
   const keyboardParts = accessories.filter(accessory => accessory.category === 'keyboard-parts')
@@ -22,8 +25,64 @@ const CategoryAccessories: VFC = () => {
   const warehouseClearance = accessories.filter(accessory => accessory.category === 'warehouse-clearance')
   return (
     <>
+      {/* breadcrumb schema */}
+      <Schema data={{
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: {
+              '@type': 'Thing',
+              '@id': baseUrl,
+            }
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: title,
+            item: {
+              '@type': 'Thing',
+              '@id': fullUrl,
+            }
+          }
+        ]
+      }} />
+      {/* item list schema */}
+      <Schema data={{
+        '@type': 'ItemList',
+        itemListElement: accessories.map((accessory, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'Product',
+            name: accessory.name,
+            image: {
+              '@type': 'ImageObject',
+              url: `${baseUrl}${accessory.image}`,
+            },
+            offers: {
+              '@type': 'Offer',
+              priceCurrency: accessory.currency,
+              price: accessory.price,
+              itemCondition: 'http://schema.org/NewCondition',
+              availability: 'http://schema.org/InStock',
+              url: `${baseUrl}/products/commerce/accessories/${accessory.slug}`
+            },
+          },
+        }))
+      }} />
+      {/* offer catalog */}
+      <Schema data={{
+        '@type': 'OfferCatalog',
+        name: title,
+        url: fullUrl,
+        numberOfItems: accessories.length,
+      }} />
+      {/* page content */}
       <PageTitle
-        title="Keyboard Accessories"
+        title={title}
         type="category"
       />
       <main id="hideThis" className="content-wrap">
