@@ -18,10 +18,11 @@ library.add(fab, fas);
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { useRouter } from 'next/router';
 import ScrollToTop from '@components/core/ScrollToTop/ScrollToTop';
+import { NextPageContext } from 'next';
 
 const Noop: FC = ({ children }) => <>{children}</>
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const Layout = (Component as any).Layout || Noop
 
   let bootstrap = useRef<any>()
@@ -84,3 +85,26 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </>
   )
 }
+
+MyApp.getInitialProps = async ({ ctx }: { ctx: NextPageContext }) => {
+  const { req, asPath } = ctx;
+  let fullUrl, baseUrl, _query;
+  if (req) {
+    // Server side rendering
+    baseUrl = (req.headers.referer?.split('://')[0] || 'https') + '://' + req.headers.host;
+    fullUrl = baseUrl + req.url
+    _query = asPath ? asPath.split('?')?.[1] || '' : ''
+  } else {
+    // Client side rendering
+    baseUrl = window.location.origin;
+    fullUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '')
+    _query = window.location.search.split('?')?.[1] || ''
+  }
+  const query = _query.split('&').reduce((acc, cur) => {
+    const [key, value] = cur.split('=')
+    acc[key] = value
+    return acc
+  }, {} as Record<string, string>)
+  return { pageProps: { fullUrl, baseUrl, query } }
+}
+export default MyApp;

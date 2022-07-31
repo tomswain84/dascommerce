@@ -12,6 +12,8 @@ import FrequentlyBoughtTogether from "@components/product/FrequentlyBoughtTogeth
 import commerce from "@lib/api/commerce"
 import { ProductTypes } from "@commerce/types/product"
 import { convertProductId, convertProductVariantId } from "@lib/convert-ids"
+import { PageProps } from "@interfaces/pageProps"
+import Schema from "@components/core/Schema"
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async ({ locales }) => {
   const paths: Array<{ params: { slug: string }, locale: string }> = []
@@ -89,14 +91,11 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   }
 }
 
-interface Props {
-  title: string
-  bodyId: string
-  bodyClass: string
+interface Props extends PageProps {
   product: ProductWithShopifyData,
   isRefurbished: boolean
 }
-const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
+const ProductCommerce: VFC<Props> = ({ product, isRefurbished, fullUrl, baseUrl }) => {
   const [quantity, setQuantity] = useState(1)
   const incrQuantity = useCallback(() => {
     setQuantity(quantity + 1)
@@ -133,6 +132,64 @@ const ProductCommerce: VFC<Props> = ({ product, isRefurbished }) => {
 
   return (
     <>
+      {/* breadcrumb schema */}
+      <Schema data={{
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: {
+              '@type': 'Thing',
+              '@id': baseUrl,
+            },
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: `${isRefurbished ? 'Refurbished ' : ''}Mechanical Keyboard`,
+            item: {
+              '@type': 'Thing',
+              '@id': `${baseUrl}/products/category/mechanical-keyboards`,
+            }
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: (isRefurbished ? 'Refurbished ' : '') + product.name,
+            item: {
+              '@type': 'Thing',
+              '@id': fullUrl,
+            }
+          }
+        ]
+      }} />
+      {/* product schema */}
+      <Schema data={{
+        '@type': 'Product',
+        name: product.collection + ' ' + (isRefurbished ? 'Refurbished ' : '') + product.name,
+        sku: (isRefurbished ? 'refurbished-' : '') + product.name,
+        description: product.description,
+        image: `${baseUrl}${product.image}`,
+        brand: {
+          '@type': 'Brand',
+          name: 'Das Keyboard',
+        },
+        offers: {
+          '@type': 'Offer',
+          sku: (isRefurbished ? 'refurbished-' : '') + product.name,
+          priceCurrency: product.currency,
+          price: product.price,
+          itemCondition: `https://schema.org/${isRefurbished ? 'Refurbished' : 'New'}Condition`,
+          availability: 'https://schema.org/InStock',
+          seller: {
+            '@type': 'Organization',
+            name: 'Das Keyboard',
+          }
+        }
+      }} />
+      {/* page content */}
       <PageTitle
         title={`Das Keyboard ${product.name}`}
         type="product"

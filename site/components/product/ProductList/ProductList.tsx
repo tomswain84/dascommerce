@@ -1,22 +1,23 @@
 import { VFC } from "react"
 import ProductCard from "@components/product/ProductCard"
 import filters from '@data/filters.json'
-import { useRouter } from "next/router"
 import PageTitle from "@components/core/PageTitle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "@components/core/Link"
 import { Product } from "@interfaces/product"
+import Schema from "@components/core/Schema"
+import { PageProps } from "@interfaces/pageProps"
 
 interface Props {
+  pageProps: PageProps
   title: string
   products: Product[]
   isRefurbised?: boolean
 }
 
-const ProductList: VFC<Props> = ({ title, products, isRefurbised }) => {
-  const router = useRouter()
+const ProductList: VFC<Props> = ({ title, products, isRefurbised, pageProps: { query, fullUrl, baseUrl, description } }) => {
   if (!filters.length) return null
-  const { filter } = router.query
+  const { filter } = query
   // find current filter
   const currentFilter = filters.find(f => f.filter === filter)
   // list products by current filter
@@ -26,8 +27,66 @@ const ProductList: VFC<Props> = ({ title, products, isRefurbised }) => {
     }
     return !currentFilter || currentFilter.tag === 'all' || p.tags.includes(currentFilter.tag)
   })
+  const schemaPageName = `${currentFilter?.name + ' '}${isRefurbised ? 'Refurbished ' : ''}Mechanical Keyboards`
   return (
     <>
+      {/* breadcrumb schema */}
+      <Schema data={{
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: {
+              '@type': 'Thing',
+              '@id': baseUrl,
+            }
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: schemaPageName,
+            item: {
+              '@type': 'Thing',
+              '@id': fullUrl,
+            }
+          }
+        ]
+      }} />
+      {/* item list schema */}
+      <Schema data={{
+        '@type': 'ItemList',
+        itemListElement: products.map((product, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'Product',
+            name: product.name,
+            image: {
+              '@type': 'ImageObject',
+              url: `${baseUrl}${product.image}`,
+            },
+            description: product.description,
+            offers: {
+              '@type': 'Offer',
+              priceCurrency: product.currency,
+              price: product.price,
+              itemCondition: isRefurbised ? 'http://schema.org/RefurbishedCondition' : 'http://schema.org/NewCondition',
+              availability: 'http://schema.org/InStock',
+              url: `${baseUrl}/products/daskeyboard/${isRefurbised ? 'refurbished-' : ''}${product.slug}`,
+            },
+          },
+        }))
+      }} />
+      {/* offer catalog */}
+      <Schema data={{
+        '@type': 'OfferCatalog',
+        name: schemaPageName,
+        description,
+        url: fullUrl,
+        numberOfItems: products.length,
+      }} />
       <PageTitle
         title={title}
         type='category'
