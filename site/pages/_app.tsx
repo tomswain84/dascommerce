@@ -91,7 +91,7 @@ MyApp.getInitialProps = async ({ ctx }: { ctx: NextPageContext }) => {
   let fullUrl, baseUrl, _query;
   if (req) {
     // Server side rendering
-    baseUrl = (req.headers.referer?.split('://')[0] || 'https') + '://' + req.headers.host;
+    baseUrl = (req.headers.referer?.split('://')[0] || 'https') + '://' + (req.headers.host || 'www.daskeyboard.com');
     fullUrl = baseUrl + req.url
     _query = asPath ? asPath.split('?')?.[1] || '' : ''
   } else {
