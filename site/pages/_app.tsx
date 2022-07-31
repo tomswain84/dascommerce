@@ -19,6 +19,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { useRouter } from 'next/router';
 import ScrollToTop from '@components/core/ScrollToTop/ScrollToTop';
 import { NextPageContext } from 'next';
+import Schema from '@components/core/Schema';
 
 const Noop: FC = ({ children }) => <>{children}</>
 
@@ -76,6 +77,22 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head {...pageProps} />
       <Layout pageProps={pageProps}>
+        {/* organization schema */}
+        <Schema data={{
+          '@context': 'http://schema.org',
+          '@type': 'Organization',
+          name: 'Das Keyboard',
+          url: pageProps.fullUrl,
+          logo: `${pageProps.baseUrl}/images/logo-das_keyboard-red_white.png`,
+          foundingDate: 2005
+        }} />
+        {/* website schema */}
+        <Schema data={{
+          '@context': 'http://schema.org',
+          '@type': 'WebSite',
+          name: pageProps.title,
+          url: pageProps.fullUrl,
+        }} />
         <Header />
         <Component {...pageProps} />
         <hr />
