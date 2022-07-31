@@ -87,17 +87,24 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 }
 
 MyApp.getInitialProps = async ({ ctx }: { ctx: NextPageContext }) => {
-  const { req } = ctx;
-  let fullUrl, baseUrl;
+  const { req, asPath } = ctx;
+  let fullUrl, baseUrl, _query;
   if (req) {
     // Server side rendering
     baseUrl = (req.headers.referer?.split('://')[0] || 'https') + '://' + req.headers.host;
     fullUrl = baseUrl + req.url
+    _query = asPath ? asPath.split('?')?.[1] || '' : ''
   } else {
     // Client side rendering
     baseUrl = window.location.origin;
     fullUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '')
+    _query = window.location.search.split('?')?.[1] || ''
   }
-  return { pageProps: { fullUrl, baseUrl } }
+  const query = _query.split('&').reduce((acc, cur) => {
+    const [key, value] = cur.split('=')
+    acc[key] = value
+    return acc
+  }, {} as Record<string, string>)
+  return { pageProps: { fullUrl, baseUrl, query } }
 }
 export default MyApp;

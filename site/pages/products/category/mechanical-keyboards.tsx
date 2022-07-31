@@ -2,6 +2,7 @@ import type { VFC } from "react"
 import products from '@data/products.json'
 import ProductList from "@components/product/ProductList"
 import { Product } from "@interfaces/product"
+import { PageProps } from "@interfaces/pageProps"
 
 export async function getStaticProps() {
   return {
@@ -14,8 +15,9 @@ export async function getStaticProps() {
   }
 }
 
-const MechanicalKeyboards: VFC = () => {
+const MechanicalKeyboards: VFC<PageProps> = (pageProps) => {
   return <ProductList
+    pageProps={pageProps}
     title={`<small>Mechanical</small><br />Keyboards`}
     products={products as Product[]}
   />
