@@ -18,10 +18,11 @@ library.add(fab, fas);
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { useRouter } from 'next/router';
 import ScrollToTop from '@components/core/ScrollToTop/ScrollToTop';
+import { NextPageContext } from 'next';
 
 const Noop: FC = ({ children }) => <>{children}</>
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const Layout = (Component as any).Layout || Noop
 
   let bootstrap = useRef<any>()
@@ -84,3 +85,19 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </>
   )
 }
+
+MyApp.getInitialProps = async ({ ctx }: { ctx: NextPageContext }) => {
+  const { req } = ctx;
+  let fullUrl, baseUrl;
+  if (req) {
+    // Server side rendering
+    baseUrl = (req.headers.referer?.split('://')[0] || 'https') + '://' + req.headers.host;
+    fullUrl = baseUrl + req.url
+  } else {
+    // Client side rendering
+    baseUrl = window.location.origin;
+    fullUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '')
+  }
+  return { pageProps: { fullUrl, baseUrl } }
+}
+export default MyApp;

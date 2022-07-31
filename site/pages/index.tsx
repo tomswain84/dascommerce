@@ -1,9 +1,12 @@
+import Schema from "@components/core/Schema";
 import HeroBanner from "@components/home/HeroBanner";
 import HomeCollection from "@components/home/HomeCollection";
 import DragDropAppletConfigure from "@components/product/DragDropAppletConfigure";
 import SectionBanner from "@components/section/Banner";
 import Reviews from "@components/section/Reviews";
+import { PageProps } from "@interfaces/pageProps";
 import useTrans from "lang/useTrans";
+import type { VFC } from "react";
 
 export async function getStaticProps() {
   return {
@@ -16,10 +19,25 @@ export async function getStaticProps() {
   }
 }
 
-const Home = () => {
-  const { say, $html } = useTrans()
+const Home: VFC<PageProps> = ({ fullUrl, baseUrl }) => {
+  const { say } = useTrans()
+
   return (
     <>
+      <Schema data={{
+        '@context': 'http://schema.org',
+        '@type': 'WebSite',
+        url: fullUrl,
+      }} />
+      <Schema data={{
+        '@context': 'http://schema.org',
+        '@type': 'Organization',
+        name: 'Das Keyboard',
+        url: fullUrl,
+        logo: `${baseUrl}/images/logo-das_keyboard-red_white.png`,
+        foundingDate: 2005
+      }} />
+
       <HeroBanner />
 
       <HomeCollection />
